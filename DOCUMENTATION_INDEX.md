@@ -6,6 +6,29 @@ Welcome! This repository contains comprehensive documentation for the Eucharist 
 
 ---
 
+## ⭐ NEW: SDLC Role Documentation
+
+**We've added comprehensive role-specific guides!**
+
+These detailed documents define specific tasks, workflows, and best practices for each SDLC role:
+
+- **[SDLC Index](docs/sdlc/INDEX.md)** - Overview and guide to using role documents
+- **[Project Manager Guide](docs/sdlc/PROJECT_MANAGER.md)** - Complete PM handbook (17,000 words)
+- **[Product Owner Guide](docs/sdlc/PRODUCT_OWNER.md)** - Complete PO handbook (25,000 words)
+- **[Software Architect Guide](docs/sdlc/SOFTWARE_ARCHITECT.md)** - Complete architecture handbook (35,000 words)
+
+**What's Included:**
+- Week-by-week action plans
+- Detailed workflows and processes
+- Templates and checklists
+- Decision-making frameworks
+- Best practices and examples
+- Cross-role collaboration guides
+
+**Start with the [SDLC Index](docs/sdlc/INDEX.md) to understand how these documents work together!**
+
+---
+
 ## 🎯 Start Here
 
 ### New to the Project?
@@ -19,24 +42,57 @@ Welcome! This repository contains comprehensive documentation for the Eucharist 
 
 ## 👥 By Role
 
-### 🎯 Project Manager / Product Owner
+### 🎯 Project Manager
 **Start Here:**
-- **[EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)** - Overview and business case
+- **[docs/sdlc/PROJECT_MANAGER.md](docs/sdlc/PROJECT_MANAGER.md)** - ⭐ **NEW** Comprehensive PM guide
 - **[QUICK_START_PM.md](QUICK_START_PM.md)** - Your first 4 weeks, step-by-step
-- **[DISCOVERY.md](DISCOVERY.md)** - Full project vision and requirements
+- **[EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)** - Overview and business case
 
-**Key Sections:**
-- User personas and target audience
-- Feature definitions and roadmap
-- Success metrics and KPIs
-- Team requirements
-- Budget and timeline
-- Risk analysis
+**What's New in PM Guide:**
+- Week-by-week detailed action plan (12 weeks)
+- Team assembly and onboarding processes
+- Sprint management workflows
+- Stakeholder communication templates
+- Risk and issue management
+- Metrics tracking and reporting
+- Tools and templates library
 
-### 💻 Technical Lead / Developer
+### 📊 Product Owner
 **Start Here:**
+- **[docs/sdlc/PRODUCT_OWNER.md](docs/sdlc/PRODUCT_OWNER.md)** - ⭐ **NEW** Complete PO handbook
+- **[DISCOVERY.md](DISCOVERY.md)** - Full project vision and requirements
+- **[EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)** - High-level summary
+
+**What's New in PO Guide:**
+- Detailed user personas with goals and pain points
+- Feature prioritization frameworks (MoSCoW, Value vs Effort)
+- Product backlog management strategies
+- User story templates with examples
+- Acceptance criteria guidelines
+- Success metrics and KPIs
+- Content strategy and planning
+
+### 🏗️ Software Architect / Technical Lead
+**Start Here:**
+- **[docs/sdlc/SOFTWARE_ARCHITECT.md](docs/sdlc/SOFTWARE_ARCHITECT.md)** - ⭐ **NEW** Architecture handbook
 - **[TECHNICAL_ROADMAP.md](TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
 - **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** - Architecture and code organization
+
+**What's New in Architect Guide:**
+- Complete system architecture diagrams
+- Technology stack with detailed rationale
+- Database schemas (PostgreSQL & MongoDB)
+- API design and structure
+- Architecture Decision Records (ADRs)
+- Security architecture
+- Performance optimization strategies
+- Deployment and DevOps practices
+
+### 💻 Developer
+**Start Here:**
+- **[TECHNICAL_ROADMAP.md](TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
+- **[docs/sdlc/SOFTWARE_ARCHITECT.md](docs/sdlc/SOFTWARE_ARCHITECT.md)** - Architecture reference
+- **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** - Code organization
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - Development guidelines
 
 **Key Sections:**
@@ -245,6 +301,71 @@ Welcome! This repository contains comprehensive documentation for the Eucharist 
 - Style guides
 - Community info
 
+### ⭐ [docs/sdlc/INDEX.md](docs/sdlc/INDEX.md)
+**Purpose:** Overview and guide to SDLC role documents  
+**Length:** ~350 lines  
+**Read Time:** 15 minutes  
+**Best For:** Understanding role documentation structure  
+
+**Contains:**
+- Overview of all role documents
+- How to use the documents
+- Document relationships
+- Cross-role collaboration
+- Common scenarios
+- Quick reference
+
+### ⭐ [docs/sdlc/PROJECT_MANAGER.md](docs/sdlc/PROJECT_MANAGER.md)
+**Purpose:** Comprehensive Project Manager guide  
+**Length:** ~625 lines  
+**Read Time:** 60 minutes  
+**Best For:** Project Managers, Scrum Masters  
+
+**Contains:**
+- Core responsibilities
+- Week-by-week action plan (12 weeks)
+- Team management
+- Sprint management workflows
+- Stakeholder communication
+- Risk management
+- Metrics and KPIs
+- Tools and templates
+
+### ⭐ [docs/sdlc/PRODUCT_OWNER.md](docs/sdlc/PRODUCT_OWNER.md)
+**Purpose:** Complete Product Owner handbook  
+**Length:** ~900 lines  
+**Read Time:** 70 minutes  
+**Best For:** Product Owners, Product Managers  
+
+**Contains:**
+- Product vision and mission
+- Detailed user personas
+- Feature prioritization frameworks
+- Backlog management
+- User story templates
+- Acceptance criteria
+- Success metrics
+- Content strategy
+- Stakeholder management
+
+### ⭐ [docs/sdlc/SOFTWARE_ARCHITECT.md](docs/sdlc/SOFTWARE_ARCHITECT.md)
+**Purpose:** Software architecture and technical leadership  
+**Length:** ~1,250 lines  
+**Read Time:** 90 minutes  
+**Best For:** Software Architects, Technical Leads  
+
+**Contains:**
+- System architecture design
+- Technology stack details
+- Database schemas (SQL & NoSQL)
+- API design
+- Architecture Decision Records
+- Security architecture
+- Performance optimization
+- Testing strategy
+- Deployment practices
+- DevOps workflows
+
 ---
 
 ## 🗺️ Reading Paths
@@ -255,20 +376,37 @@ Welcome! This repository contains comprehensive documentation for the Eucharist 
 3. DISCOVERY.md (Skim) - Review key sections
 4. Decision point: Support the project?
 
-### Path 2: Project Manager (2 hours)
+### Path 2: Project Manager (3-4 hours) ⭐ UPDATED
 1. README.md - Get oriented
 2. EXECUTIVE_SUMMARY.md - Understand scope
 3. DISCOVERY.md - Read completely
-4. QUICK_START_PM.md - Plan first month
-5. Action: Assemble team and begin
+4. **docs/sdlc/PROJECT_MANAGER.md - Complete PM guide** ⭐ NEW
+5. QUICK_START_PM.md - First 4 weeks reference
+6. Action: Assemble team and begin
 
-### Path 3: Technical Lead (2-3 hours)
+### Path 3: Product Owner (3-4 hours) ⭐ NEW
+1. README.md - Get oriented
+2. EXECUTIVE_SUMMARY.md - Understand scope
+3. DISCOVERY.md - Read user research sections
+4. **docs/sdlc/PRODUCT_OWNER.md - Complete PO guide** ⭐ NEW
+5. Action: Begin backlog creation
+
+### Path 4: Software Architect/Technical Lead (4-5 hours) ⭐ UPDATED
 1. README.md - Get oriented
 2. DISCOVERY.md - Read technical sections
-3. PROJECT_STRUCTURE.md - Understand architecture
-4. TECHNICAL_ROADMAP.md - Study implementation
-5. CONTRIBUTING.md - Review standards
-6. Action: Set up development environment
+3. **docs/sdlc/SOFTWARE_ARCHITECT.md - Complete architecture guide** ⭐ NEW
+4. PROJECT_STRUCTURE.md - Code organization reference
+5. TECHNICAL_ROADMAP.md - Implementation details
+6. CONTRIBUTING.md - Development standards
+7. Action: Set up development environment
+
+### Path 5: Developer (2-3 hours)
+1. README.md - Get oriented
+2. CONTRIBUTING.md - Development guidelines
+3. docs/sdlc/SOFTWARE_ARCHITECT.md - Architecture reference
+4. TECHNICAL_ROADMAP.md - Sprint details
+5. PROJECT_STRUCTURE.md - Code organization
+6. Action: Set up local environment
 
 ### Path 4: Designer (1.5 hours)
 1. README.md - Get oriented
@@ -357,7 +495,12 @@ README.md (Entry Point)
 | PROJECT_STRUCTURE.md | 624 | ~4,200 | 20 min | ⭐⭐⭐ Technical |
 | TECHNICAL_ROADMAP.md | 908 | ~6,000 | 30 min | ⭐⭐⭐⭐ Complex |
 | CONTRIBUTING.md | 585 | ~3,800 | 15 min | ⭐⭐ Medium |
-| **TOTAL** | **3,819** | **~27,200** | **~2.5 hrs** | - |
+| **SDLC/INDEX.md** ⭐ | **350** | **~3,000** | **15 min** | **⭐⭐ Medium** |
+| **SDLC/PROJECT_MANAGER.md** ⭐ | **625** | **~17,000** | **60 min** | **⭐⭐⭐ Detailed** |
+| **SDLC/PRODUCT_OWNER.md** ⭐ | **900** | **~25,000** | **70 min** | **⭐⭐⭐ Detailed** |
+| **SDLC/SOFTWARE_ARCHITECT.md** ⭐ | **1,250** | **~35,000** | **90 min** | **⭐⭐⭐⭐ Complex** |
+| **TOTAL (Original)** | **3,819** | **~27,200** | **~2.5 hrs** | - |
+| **TOTAL (With SDLC)** | **6,944** | **~107,200** | **~6 hrs** | - |
 
 ---
 

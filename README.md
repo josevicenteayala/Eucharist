@@ -51,9 +51,22 @@ The Eucharist Understanding Platform will consist of:
 
 ## 📚 Documentation
 
+### Core Documents
 - **[Discovery Phase Document](DISCOVERY.md)** - Comprehensive project vision, goals, and planning
+- **[Executive Summary](EXECUTIVE_SUMMARY.md)** - High-level overview for stakeholders
+- **[Quick Start for PM](QUICK_START_PM.md)** - Project Manager's first 4 weeks
+- **[Technical Roadmap](TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
 - **[Project Structure](PROJECT_STRUCTURE.md)** - Technical architecture and organization
 - **[Contributing Guide](CONTRIBUTING.md)** - How to contribute to the project
+
+### SDLC Role Documentation
+- **[SDLC Index](docs/sdlc/INDEX.md)** - Overview of all role documents
+- **[Project Manager](docs/sdlc/PROJECT_MANAGER.md)** - PM responsibilities and workflows
+- **[Product Owner](docs/sdlc/PRODUCT_OWNER.md)** - Product management and backlog
+- **[Software Architect](docs/sdlc/SOFTWARE_ARCHITECT.md)** - Technical architecture and standards
+
+### Other Resources
+- **[Documentation Index](DOCUMENTATION_INDEX.md)** - Complete guide to all documentation
 - **[License](LICENSE)** - Project license details
 
 ## 🚀 Current Status
