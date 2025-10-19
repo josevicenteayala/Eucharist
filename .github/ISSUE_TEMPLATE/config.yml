@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 Documentation
+    url: https://github.com/josevicenteayala/Eucharist/tree/main/docs
+    about: Read project documentation
+  - name: 💬 Discussion
+    url: https://github.com/josevicenteayala/Eucharist/discussions
+    about: Ask questions and discuss ideas
+  - name: 📧 Contact Project Manager
+    url: mailto:project-manager@example.com
+    about: Email the project manager directly for urgent matters
