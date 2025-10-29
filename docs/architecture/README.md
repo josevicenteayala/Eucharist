@@ -8,7 +8,7 @@ This directory contains architectural documentation for the Eucharist Understand
 architecture/
 ├── adr/              # Architecture Decision Records
 ├── coordination/     # Cross-role coordination documents
-├── diagrams/         # Architecture diagrams
+├── diagrams/         # Architecture diagrams (in progress)
 └── README.md         # This file
 ```
 
@@ -18,10 +18,10 @@ ADRs document significant architectural decisions. Each ADR follows the template
 
 ### Active ADRs
 
-- [ADR-001: React + Next.js for Web Frontend](adr/ADR-001-react-nextjs-frontend.md)
-- [ADR-002: Flutter for Mobile Apps](adr/ADR-002-flutter-mobile.md)
-- [ADR-003: PostgreSQL + MongoDB Hybrid](adr/ADR-003-database-hybrid.md)
-- [ADR-004: JWT for Authentication](adr/ADR-004-jwt-authentication.md)
+- ADR-001: React + Next.js for Web Frontend *(documented in [docs/sdlc/SOFTWARE_ARCHITECT.md](../sdlc/SOFTWARE_ARCHITECT.md))*
+- ADR-002: Flutter for Mobile Apps *(documented in [docs/sdlc/SOFTWARE_ARCHITECT.md](../sdlc/SOFTWARE_ARCHITECT.md))*
+- ADR-003: PostgreSQL + MongoDB Hybrid *(documented in [docs/sdlc/SOFTWARE_ARCHITECT.md](../sdlc/SOFTWARE_ARCHITECT.md))*
+- ADR-004: JWT for Authentication *(documented in [docs/sdlc/SOFTWARE_ARCHITECT.md](../sdlc/SOFTWARE_ARCHITECT.md))*
 - [ADR-005: CI/CD with GitHub Actions](adr/ADR-005-cicd-github-actions.md)
 
 ## Coordination Documents
@@ -34,7 +34,7 @@ Documents for coordinating architectural decisions with other roles:
 
 ## Key Architecture Documents
 
-Reference the main SOFTWARE_ARCHITECT.md document in `docs/sdlc/SOFTWARE_ARCHITECT.md` for:
+System architecture visuals are currently being prepared. Until the diagrams folder is populated, reference the architecture narratives in [`docs/sdlc/SOFTWARE_ARCHITECT.md`](../sdlc/SOFTWARE_ARCHITECT.md) for:
 - System architecture
 - Technology stack details
 - Database design

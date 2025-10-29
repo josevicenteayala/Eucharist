@@ -18,7 +18,7 @@ After completing the discovery phase (documented in `/DISCOVERY.md`, `/EXECUTIVE
 ### 1. [PROJECT_MANAGER.md](PROJECT_MANAGER.md)
 **Role**: Project Manager (PM)  
 **Focus**: Project coordination, team management, stakeholder communication  
-**Length**: ~17,000 words | 60 min read
+**Length**: ~2,700 words | 15 min read
 
 **Who Should Read This**:
 - Project Manager
@@ -42,7 +42,7 @@ After completing the discovery phase (documented in `/DISCOVERY.md`, `/EXECUTIVE
 ### 2. [PRODUCT_OWNER.md](PRODUCT_OWNER.md)
 **Role**: Product Owner (PO) / Product Manager  
 **Focus**: Product vision, user needs, backlog management, feature definition  
-**Length**: ~25,000 words | 70 min read
+**Length**: ~3,700 words | 20 min read
 
 **Who Should Read This**:
 - Product Owner
@@ -66,7 +66,7 @@ After completing the discovery phase (documented in `/DISCOVERY.md`, `/EXECUTIVE
 ### 3. [SOFTWARE_ARCHITECT.md](SOFTWARE_ARCHITECT.md)
 **Role**: Software Architect / Technical Lead  
 **Focus**: Technical architecture, technology decisions, engineering standards  
-**Length**: ~35,000 words | 90 min read
+**Length**: ~4,300 words | 25 min read
 
 **Who Should Read This**:
 - Software Architect

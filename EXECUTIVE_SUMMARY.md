@@ -4,7 +4,7 @@
 
 **Project:** Eucharist Understanding Platform  
 **Mission:** Help people understand, appreciate, and live the Eucharist through accessible technology  
-**Status:** Discovery Phase Complete  
+**Status:** Discovery phase complete; entering Phase 1 – Foundation (MVP build)  
 **Timeline:** 12-month roadmap (MVP in 3 months)  
 **Platforms:** Mobile (iOS/Android) + Web Application  
 
@@ -77,7 +77,7 @@ Catholics and spiritual seekers need better resources to understand the Eucharis
 
 - Core authentication and user management
 - Daily Gospel feature
-- 10-20 educational articles
+- 30+ launch-ready reflections and educational articles
 - Basic community features
 - **Budget:** $30K-50K
 

@@ -402,27 +402,27 @@ As a user, I want to see today's Gospel
 
 ### Initial Costs (First 3 Months)
 
-**Team Salaries:**
-- Technical Lead: $XX,XXX
-- Mobile Developer: $XX,XXX
-- UI/UX Designer: $XX,XXX
-- Content Creator (part-time): $X,XXX
-- Community Manager (part-time): $X,XXX
+**Team Salaries (contract or FTE equivalents):**
+- Technical Lead: $12,000 – $16,000
+- Mobile Developer: $9,000 – $13,000
+- UI/UX Designer: $6,000 – $10,000
+- Content Creator (part-time): $3,000 – $4,500
+- Community Manager (part-time): $2,000 – $3,500
 
 **Infrastructure:**
-- Cloud hosting (AWS/GCP/Azure): $500-1,000/month
+- Cloud hosting (AWS/GCP/Azure): $500 – $1,000/month
 - Domain and SSL: $50/year
-- Development tools: $100-500/month
-- Analytics and monitoring: $100-300/month
+- Development tools: $100 – $400/month
+- Analytics and monitoring: $100 – $250/month
 
 **Other:**
 - Stock photos/assets: $500
-- Third-party services (Auth0, etc.): $100-300/month
-- Contingency (10%): Calculate based on above
+- Third-party services (Auth0, etc.): $100 – $250/month
+- Contingency (10%): Calculate based on the subtotal above
 
-**Total Estimated (3 months):** $XX,XXX - $XXX,XXX
+**Total Estimated (3 months):** ~$35,000 – $48,000
 
-*Adjust based on your actual team size and rates*
+*Adjust based on your actual team composition, rates, and in-kind contributions.*
 
 ### Funding Sources
 - Personal investment
@@ -444,13 +444,13 @@ As a user, I want to see today's Gospel
 ### By End of Month 2:
 - [ ] MVP features 50% complete
 - [ ] Design mockups finalized
-- [ ] 20+ content pieces created and reviewed
+- [ ] 15+ content pieces created and reviewed
 - [ ] Alpha testing begins internally
 
 ### By End of Month 3:
 - [ ] MVP feature complete
 - [ ] Beta testing with 20-50 users
-- [ ] 50+ content pieces published
+- [ ] 30+ launch-ready reflections/articles published
 - [ ] Web application deployed to staging
 - [ ] Marketing plan drafted
 

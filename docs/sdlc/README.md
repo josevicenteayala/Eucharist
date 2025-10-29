@@ -16,7 +16,7 @@ This directory contains **comprehensive, role-specific documentation** for the S
 
 ### 🎯 [PROJECT_MANAGER.md](PROJECT_MANAGER.md)
 **For**: Project Managers, Scrum Masters, Program Managers  
-**Length**: ~17,000 words | 60 min read  
+**Length**: ~2,700 words | 15 min read  
 **Focus**: Project coordination, team management, delivery
 
 **What You'll Learn**:
@@ -38,7 +38,7 @@ This directory contains **comprehensive, role-specific documentation** for the S
 
 ### 📊 [PRODUCT_OWNER.md](PRODUCT_OWNER.md)
 **For**: Product Owners, Product Managers, Business Analysts  
-**Length**: ~25,000 words | 70 min read  
+**Length**: ~3,700 words | 20 min read  
 **Focus**: Product vision, user needs, feature definition
 
 **What You'll Learn**:
@@ -62,11 +62,11 @@ This directory contains **comprehensive, role-specific documentation** for the S
 
 ### 🏗️ [SOFTWARE_ARCHITECT.md](SOFTWARE_ARCHITECT.md)
 **For**: Software Architects, Technical Leads, Senior Developers  
-**Length**: ~35,000 words | 90 min read  
+**Length**: ~4,300 words | 25 min read  
 **Focus**: Technical architecture, standards, infrastructure
 
 **What You'll Learn**:
-- ✅ Complete system architecture with diagrams
+- ✅ System architecture overview (diagrams in progress)
 - ✅ Technology stack selection with rationale
 - ✅ Database design (PostgreSQL & MongoDB schemas)
 - ✅ RESTful API design and structure

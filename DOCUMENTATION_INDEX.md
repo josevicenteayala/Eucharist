@@ -13,9 +13,9 @@ Welcome! This repository contains comprehensive documentation for the Eucharist 
 These detailed documents define specific tasks, workflows, and best practices for each SDLC role:
 
 - **[SDLC Index](docs/sdlc/INDEX.md)** - Overview and guide to using role documents
-- **[Project Manager Guide](docs/sdlc/PROJECT_MANAGER.md)** - Complete PM handbook (17,000 words)
-- **[Product Owner Guide](docs/sdlc/PRODUCT_OWNER.md)** - Complete PO handbook (25,000 words)
-- **[Software Architect Guide](docs/sdlc/SOFTWARE_ARCHITECT.md)** - Complete architecture handbook (35,000 words)
+- **[Project Manager Guide](docs/sdlc/PROJECT_MANAGER.md)** - Complete PM handbook (~2,700 words)
+- **[Product Owner Guide](docs/sdlc/PRODUCT_OWNER.md)** - Complete PO handbook (~3,700 words)
+- **[Software Architect Guide](docs/sdlc/SOFTWARE_ARCHITECT.md)** - Complete architecture handbook (~4,300 words)
 
 **What's Included:**
 - Week-by-week action plans
@@ -79,7 +79,7 @@ These detailed documents define specific tasks, workflows, and best practices fo
 - **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** - Architecture and code organization
 
 **What's New in Architect Guide:**
-- Complete system architecture diagrams
+- System architecture overview (diagrams in progress)
 - Technology stack with detailed rationale
 - Database schemas (PostgreSQL & MongoDB)
 - API design and structure
@@ -495,12 +495,12 @@ README.md (Entry Point)
 | PROJECT_STRUCTURE.md | 624 | ~4,200 | 20 min | ⭐⭐⭐ Technical |
 | TECHNICAL_ROADMAP.md | 908 | ~6,000 | 30 min | ⭐⭐⭐⭐ Complex |
 | CONTRIBUTING.md | 585 | ~3,800 | 15 min | ⭐⭐ Medium |
-| **SDLC/INDEX.md** ⭐ | **350** | **~3,000** | **15 min** | **⭐⭐ Medium** |
-| **SDLC/PROJECT_MANAGER.md** ⭐ | **625** | **~17,000** | **60 min** | **⭐⭐⭐ Detailed** |
-| **SDLC/PRODUCT_OWNER.md** ⭐ | **900** | **~25,000** | **70 min** | **⭐⭐⭐ Detailed** |
-| **SDLC/SOFTWARE_ARCHITECT.md** ⭐ | **1,250** | **~35,000** | **90 min** | **⭐⭐⭐⭐ Complex** |
+| **SDLC/INDEX.md** ⭐ | **438** | **~1,900** | **15 min** | **⭐⭐ Medium** |
+| **SDLC/PROJECT_MANAGER.md** ⭐ | **590** | **~2,700** | **15 min** | **⭐⭐ Detailed** |
+| **SDLC/PRODUCT_OWNER.md** ⭐ | **966** | **~3,700** | **20 min** | **⭐⭐⭐ Detailed** |
+| **SDLC/SOFTWARE_ARCHITECT.md** ⭐ | **1,403** | **~4,300** | **25 min** | **⭐⭐⭐ Technical** |
 | **TOTAL (Original)** | **3,819** | **~27,200** | **~2.5 hrs** | - |
-| **TOTAL (With SDLC)** | **6,944** | **~107,200** | **~6 hrs** | - |
+| **TOTAL (With SDLC)** | **7,216** | **~39,800** | **~3.8 hrs** | - |
 
 ---
 
