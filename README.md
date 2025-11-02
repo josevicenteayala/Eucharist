@@ -52,6 +52,7 @@ The Eucharist Understanding Platform will consist of:
 ## 📚 Documentation
 
 ### Core Documents
+- ⭐ **[Next Steps Implementation Prompt](NEXT_STEPS_IMPLEMENTATION_PROMPT.md)** - **NEW!** Complete guide for starting Sprint 1
 - **[Discovery Phase Document](DISCOVERY.md)** - Comprehensive project vision, goals, and planning
 - **[Executive Summary](EXECUTIVE_SUMMARY.md)** - High-level overview for stakeholders
 - **[Quick Start for PM](QUICK_START_PM.md)** - Project Manager's first 4 weeks
