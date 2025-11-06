@@ -174,7 +174,7 @@ An AI-powered Project Manager agent specialized for the **Eucharist Understandin
   title: "Understanding the Real Presence"
   category: "eucharist-basics"
   reviewedBy: "Fr. John Doe"
-  reviewDate: "2025-11-05"
+  reviewDate: "2025-10-15"
   magisteriumRefs: ["CCC 1373-1377"]
   language: "en"
   ---
