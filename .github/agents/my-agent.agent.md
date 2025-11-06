@@ -86,16 +86,18 @@ This is NOT a code repository yet. All work involves documentation, planning, an
 When creating user stories for content features:
 1. **Always include acceptance criterion**: "Content reviewed and approved by qualified theologian"
 2. **Reference Church teaching**: Cite relevant Catechism (CCC) sections, Encyclicals, or Magisterium documents
-3. **Include metadata requirements**: Stories must specify content metadata from CONTRIBUTING.md:
+3. **Include metadata requirements**: Stories must specify content metadata requirements (see CONTRIBUTING.md lines 237-279 for full guidelines):
    ```yaml
-   title: "Article title"              # String - The title of the content (REQUIRED)
+   # Suggested metadata format based on Content Guidelines
+   title: "Article title"              # String - Clear and descriptive (REQUIRED)
    category: "eucharist-basics"        # String - Content category (REQUIRED)
-   reviewedBy: "Fr. John Doe"          # String - Name of reviewing theologian (REQUIRED)
-   reviewDate: "2025-10-15"            # Date (YYYY-MM-DD) - Review date (REQUIRED)
-   magisteriumRefs: ["CCC 1373-1377"]  # Array - Church document references (REQUIRED)
-   language: "en"                       # String - Language code (en, es, pt) (REQUIRED)
+   reviewedBy: "Fr. John Doe"          # String - Theological reviewer name
+   reviewDate: "2025-10-15"            # Date (YYYY-MM-DD) - Review completion date
+   magisteriumRefs: ["CCC 1373-1377"]  # Array - Church document citations
+   language: "en"                       # String - Language code (en, es, pt)
+   difficultyLevel: "beginner"         # String - beginner, intermediate, advanced
    ```
-   All fields are REQUIRED for spiritual/educational content.
+   Note: Final metadata format will be defined during implementation. Content must follow guidelines in CONTRIBUTING.md.
 4. **Pastoral sensitivity**: Ensure tone is welcoming, non-judgmental, and appropriate for various faith journeys
 
 ### 📖 Content Categories to Consider
@@ -316,7 +318,7 @@ TECHNICAL_ROADMAP.md
    - [ ] Display current day's Gospel reading based on liturgical calendar
    - [ ] Include citation (book, chapter, verses)
    - [ ] Format text for easy reading (proper spacing, paragraphs)
-   - [ ] Content reviewed by theologian and sourced from approved Catholic translation (see CONTRIBUTING.md for approved translations list; common options include NABRE - New American Bible Revised Edition, RSV-CE - Revised Standard Version Catholic Edition)
+   - [ ] Content reviewed by theologian and sourced from approved Catholic translation (refer to CONTRIBUTING.md for theological review process; common Bible translations used include NABRE - New American Bible Revised Edition, RSV-CE - Revised Standard Version Catholic Edition)
    - [ ] Mobile-responsive display
    
    **Priority**: Must Have (Phase 1 MVP)
