@@ -265,7 +265,7 @@ Process:
 
 ADR Template:
   - Title: Short descriptive name
-  - Status: Proposed, Accepted, Deprecated
+  - Status: Proposed, Accepted, Superseded, Deprecated
   - Context: Problem and constraints
   - Decision: Chosen solution
   - Consequences: Trade-offs and impacts
