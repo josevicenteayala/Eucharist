@@ -496,7 +496,7 @@ An AI-powered Project Manager agent specialized for the **Eucharist Understandin
 10. Agent validates metadata update:
     ```yaml
     reviewedBy: "Fr. John Smith"
-    reviewDate: "2025-11-05"
+    reviewDate: "2025-10-15"
     ```
 11. Agent moves to Approval → Publication pipeline stage
 12. Agent creates implementation task for developer
