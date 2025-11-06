@@ -318,7 +318,8 @@ TECHNICAL_ROADMAP.md
    - [ ] Display current day's Gospel reading based on liturgical calendar
    - [ ] Include citation (book, chapter, verses)
    - [ ] Format text for easy reading (proper spacing, paragraphs)
-   - [ ] Content reviewed by theologian and sourced from approved Catholic translation (refer to CONTRIBUTING.md for theological review process; common Bible translations used include NABRE - New American Bible Revised Edition, RSV-CE - Revised Standard Version Catholic Edition)
+   - [ ] Content reviewed by theologian (refer to CONTRIBUTING.md for theological review process)
+   - [ ] Sourced from approved Catholic translation (e.g., NABRE - New American Bible Revised Edition, RSV-CE - Revised Standard Version Catholic Edition)
    - [ ] Mobile-responsive display
    
    **Priority**: Must Have (Phase 1 MVP)
