@@ -6,6 +6,12 @@
 **Current Phase**: Planning complete, awaiting implementation (Phase 1 Foundation/MVP)  
 **Critical**: This repository contains **only documentation**—no source code exists yet. Confirm with user before generating implementation code.
 
+**Working with This Repository**:
+- This is a planning and documentation repository for a Catholic education platform
+- Focus is on backlog management, user stories, and architectural planning
+- Custom agents are available for specialized tasks (see "Custom Agents Available" section below)
+- All spiritual/theological content requires review and approval from qualified theologians
+
 ## Architecture at a Glance
 
 ### Three-Layer Pattern
@@ -154,7 +160,19 @@ Details: `docs/sdlc/SOFTWARE_ARCHITECT.md` lines 1000-1100
 ❌ Storing user data in MongoDB or content in PostgreSQL (wrong database)  
 ❌ Skipping theological review metadata for spiritual content  
 ❌ Using Firebase for backend database (only for mobile auth)  
-❌ Making architectural decisions without creating ADR in `docs/architecture/adr/`
+❌ Making architectural decisions without creating ADR in `docs/architecture/adr/`  
+❌ Confusing Product Owner and Project Manager roles (see `/docs/sdlc/` for distinctions)
+
+## Custom Agents Available
+
+This repository has specialized custom agents in `.github/agents/`:
+- **Product Owner Agent** (`my-agent.agent.md`) - Manages product backlog, creates user stories, prioritizes features for this Catholic education platform
+
+When working on backlog management, user stories, or feature prioritization, delegate to the Product Owner agent. They understand:
+- The four user personas (Maria, John, Patricia, David)
+- Theological content requirements
+- Epic structure and roadmap phases
+- Coordination with other SDLC roles
 
 ## Quick Command Reference (Future)
 
