@@ -140,11 +140,11 @@ Review Points:
 
 ### Repository-Specific Stack
 *(Adapt based on your Eucharist repository)*
-- Programming Languages: [Specify languages]
-- Frameworks: [Specify frameworks]
-- Testing Tools: [Specify test frameworks]
-- Build Tools: [Specify build system]
-- Deployment: [Specify deployment process]
+- Programming Languages: TypeScript, Dart
+- Frameworks: Express (Node.js), Next.js (React), Flutter
+- Testing Tools: Jest, Supertest, Playwright
+- Build Tools: npm (Node.js/React), Flutter build
+- Deployment: GitHub Actions (CI/CD pipeline)
 
 ## Communication Standards
 
