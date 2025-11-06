@@ -1,6 +1,8 @@
 # User Story: Display Eucharistic Miracles Gallery
 
 ## Story Metadata
+> *Note: This is tracking metadata for the user story itself. For the database schema used to store miracle content in MongoDB, see the [Technical Considerations](#database-schema-mongodb) section below.*
+
 **Story ID**: US-02.5  
 **Epic**: [Epic 2: Eucharist Education](../epics/epic-02-eucharist-education.md)  
 **Created**: November 6, 2025  
