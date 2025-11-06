@@ -22,6 +22,7 @@ An Architecture Decision Record (ADR) is a document that captures an important a
 | [ADR-003](./ADR-003-postgresql-mongodb-hybrid.md) | Use PostgreSQL + MongoDB Hybrid | Accepted | 2025-10-18 | Decision to use PostgreSQL for structured data and MongoDB for content |
 | [ADR-004](./ADR-004-jwt-authentication.md) | JWT for Authentication | Accepted | 2025-10-18 | Decision to use JSON Web Tokens with dual-token approach for authentication |
 | [ADR-005](./ADR-005-cicd-github-actions.md) | CI/CD with GitHub Actions | Accepted | 2025-10-19 | Decision to use GitHub Actions as primary CI/CD platform |
+| [ADR-006](./ADR-006-sprint-1-tech-stack.md) | Sprint 1 Technology Stack | Accepted | 2025-11-06 | Specific library and tool selections for Sprint 1 implementation (Express, Vite, Zod, Winston, etc.) |
 
 ## Technology Stack Overview
 
@@ -170,6 +171,7 @@ If you have questions about:
 - **2025-10-18**: Created ADR-001 through ADR-004 (core technology stack)
 - **2025-10-19**: Created ADR-005 (CI/CD pipeline)
 - **2025-11-06**: Added this README for navigation
+- **2025-11-06**: Created ADR-006 (Sprint 1 technology stack)
 
 ---
 
