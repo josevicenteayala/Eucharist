@@ -14,15 +14,17 @@ architecture/
 
 ## Architecture Decision Records (ADRs)
 
-ADRs document significant architectural decisions. Each ADR follows the template defined in SOFTWARE_ARCHITECT.md.
+ADRs document significant architectural decisions. See the [ADR README](adr/README.md) for more information about the ADR process.
 
 ### Active ADRs
 
-- ADR-001: React + Next.js for Web Frontend *(documented in [docs/sdlc/SOFTWARE_ARCHITECT.md](../sdlc/SOFTWARE_ARCHITECT.md))*
-- ADR-002: Flutter for Mobile Apps *(documented in [docs/sdlc/SOFTWARE_ARCHITECT.md](../sdlc/SOFTWARE_ARCHITECT.md))*
-- ADR-003: PostgreSQL + MongoDB Hybrid *(documented in [docs/sdlc/SOFTWARE_ARCHITECT.md](../sdlc/SOFTWARE_ARCHITECT.md))*
-- ADR-004: JWT for Authentication *(documented in [docs/sdlc/SOFTWARE_ARCHITECT.md](../sdlc/SOFTWARE_ARCHITECT.md))*
+- [ADR-001: React + Next.js for Web Frontend](adr/ADR-001-react-nextjs-web-frontend.md)
+- [ADR-002: Flutter for Mobile Apps](adr/ADR-002-flutter-mobile-apps.md)
+- [ADR-003: PostgreSQL + MongoDB Hybrid Database](adr/ADR-003-postgresql-mongodb-hybrid.md)
+- [ADR-004: JWT for Authentication](adr/ADR-004-jwt-authentication.md)
 - [ADR-005: CI/CD with GitHub Actions](adr/ADR-005-cicd-github-actions.md)
+
+For detailed technology stack rationale and additional context, also see [docs/sdlc/SOFTWARE_ARCHITECT.md](../sdlc/SOFTWARE_ARCHITECT.md).
 
 ## Coordination Documents
 
@@ -59,5 +61,5 @@ For architecture questions or to propose new ADRs:
 
 ---
 
-**Last Updated**: October 2025
+**Last Updated**: November 2025  
 **Owner**: Software Architect Team
