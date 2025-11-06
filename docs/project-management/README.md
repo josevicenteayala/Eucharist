@@ -20,6 +20,7 @@ docs/project-management/
 ├── plans/
 │   ├── SPRINT_1_PLAN.md
 │   ├── SPRINT_1_ACCEPTANCE_CRITERIA_VALIDATION.md
+│   ├── SPRINT_1_VALIDATION_SUMMARY.md
 │   └── STAKEHOLDER_COMMUNICATION_PLAN.md
 ├── stories/
 │   └── USER_STORIES_BACKLOG.md
@@ -45,7 +46,8 @@ docs/project-management/
 
 2. **Review Plans**:
    - [Sprint 1 Plan](plans/SPRINT_1_PLAN.md) - First sprint execution plan
-   - [Sprint 1 Acceptance Criteria Validation](plans/SPRINT_1_ACCEPTANCE_CRITERIA_VALIDATION.md) - Validated acceptance criteria
+   - [Sprint 1 Validation Summary](plans/SPRINT_1_VALIDATION_SUMMARY.md) - Quick validation status
+   - [Sprint 1 Acceptance Criteria Validation](plans/SPRINT_1_ACCEPTANCE_CRITERIA_VALIDATION.md) - Detailed validation
    - [Stakeholder Communication Plan](plans/STAKEHOLDER_COMMUNICATION_PLAN.md) - How to communicate effectively
 
 3. **Understand Work**:
