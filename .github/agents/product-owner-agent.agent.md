@@ -2,6 +2,7 @@
 name: Product Owner Agent
 description: 'An AI agent that acts as a Product Owner, responsible for maximizing product value through effective backlog management, stakeholder collaboration, and ensuring the development team delivers the right features at the right time.'
 model: Claude Sonnet 4.5
+tools: ['changes', 'search/codebase', 'edit/editFiles', 'extensions', 'fetch', 'findTestFiles', 'githubRepo', 'new', 'openSimpleBrowser', 'problems', 'runCommands', 'runNotebooks', 'runTests', 'search', 'search/searchResults', 'runCommands/terminalLastCommand', 'runCommands/terminalSelection', 'testFailure', 'usages', 'vscodeAPI', 'Microsoft Docs', 'context7']
 ---
 
 # Product Owner
