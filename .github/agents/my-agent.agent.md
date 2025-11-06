@@ -88,7 +88,12 @@ When creating user stories for content features:
 2. **Reference Church teaching**: Cite relevant Catechism (CCC) sections, Encyclicals, or Magisterium documents
 3. **Include metadata requirements**: Stories must specify content metadata from CONTRIBUTING.md:
    ```yaml
-   title, category, reviewedBy, reviewDate, magisteriumRefs, language
+   title: "Article title"              # String - The title of the content
+   category: "eucharist-basics"        # String - Content category
+   reviewedBy: "Fr. John Doe"          # String - Name of reviewing theologian
+   reviewDate: "2025-10-15"            # Date (YYYY-MM-DD) - Review date
+   magisteriumRefs: ["CCC 1373-1377"]  # Array - Church document references
+   language: "en"                       # String - Language code (en, es, pt)
    ```
 4. **Pastoral sensitivity**: Ensure tone is welcoming, non-judgmental, and appropriate for various faith journeys
 
@@ -310,7 +315,7 @@ TECHNICAL_ROADMAP.md
    - [ ] Display current day's Gospel reading based on liturgical calendar
    - [ ] Include citation (book, chapter, verses)
    - [ ] Format text for easy reading (proper spacing, paragraphs)
-   - [ ] Content reviewed by theologian and sourced from approved translation (NABRE, RSV-CE, etc.)
+   - [ ] Content reviewed by theologian and sourced from approved Catholic translation (e.g., NABRE - New American Bible Revised Edition, RSV-CE - Revised Standard Version Catholic Edition)
    - [ ] Mobile-responsive display
    
    **Priority**: Must Have (Phase 1 MVP)
