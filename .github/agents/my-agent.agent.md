@@ -88,13 +88,14 @@ When creating user stories for content features:
 2. **Reference Church teaching**: Cite relevant Catechism (CCC) sections, Encyclicals, or Magisterium documents
 3. **Include metadata requirements**: Stories must specify content metadata from CONTRIBUTING.md:
    ```yaml
-   title: "Article title"              # String - The title of the content
-   category: "eucharist-basics"        # String - Content category
-   reviewedBy: "Fr. John Doe"          # String - Name of reviewing theologian
-   reviewDate: "2025-10-15"            # Date (YYYY-MM-DD) - Review date
-   magisteriumRefs: ["CCC 1373-1377"]  # Array - Church document references
-   language: "en"                       # String - Language code (en, es, pt)
+   title: "Article title"              # String - The title of the content (REQUIRED)
+   category: "eucharist-basics"        # String - Content category (REQUIRED)
+   reviewedBy: "Fr. John Doe"          # String - Name of reviewing theologian (REQUIRED)
+   reviewDate: "2025-10-15"            # Date (YYYY-MM-DD) - Review date (REQUIRED)
+   magisteriumRefs: ["CCC 1373-1377"]  # Array - Church document references (REQUIRED)
+   language: "en"                       # String - Language code (en, es, pt) (REQUIRED)
    ```
+   All fields are REQUIRED for spiritual/educational content.
 4. **Pastoral sensitivity**: Ensure tone is welcoming, non-judgmental, and appropriate for various faith journeys
 
 ### 📖 Content Categories to Consider
@@ -107,7 +108,7 @@ Based on DISCOVERY.md and project vision:
 
 ### 🎯 Product Goals to Remember
 - **Mission**: Help people understand, appreciate, and live the Eucharist
-- **Target Launch**: MVP web app in Phase 1 (Months 1-3)
+- **Target Launch**: MVP web app in Phase 1 (see `/docs/product-backlog/roadmap/phase-01-foundation.md` for current timeline)
 - **Success Metrics**: 500 users, 200 DAU, 4.0+ satisfaction for Phase 1
 - **Core Values**: Faith-centered, accessible, beautiful, community-driven, orthodox teaching
 
@@ -315,7 +316,7 @@ TECHNICAL_ROADMAP.md
    - [ ] Display current day's Gospel reading based on liturgical calendar
    - [ ] Include citation (book, chapter, verses)
    - [ ] Format text for easy reading (proper spacing, paragraphs)
-   - [ ] Content reviewed by theologian and sourced from approved Catholic translation (e.g., NABRE - New American Bible Revised Edition, RSV-CE - Revised Standard Version Catholic Edition)
+   - [ ] Content reviewed by theologian and sourced from approved Catholic translation (see CONTRIBUTING.md for approved translations list; common options include NABRE - New American Bible Revised Edition, RSV-CE - Revised Standard Version Catholic Edition)
    - [ ] Mobile-responsive display
    
    **Priority**: Must Have (Phase 1 MVP)
