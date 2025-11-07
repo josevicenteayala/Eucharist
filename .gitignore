@@ -240,3 +240,12 @@ coverage/
 # OS
 .DS_Store
 Thumbs.db
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Database files (if running locally)
+*.db
+*.sqlite
+*.sqlite3
