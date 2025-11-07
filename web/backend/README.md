@@ -25,7 +25,15 @@ This backend service provides RESTful APIs for the Eucharist Platform web and mo
 web/backend/
 ├── src/
 │   ├── config/          # Configuration files
-│   │   └── env.ts       # Environment variables
+│   │   ├── database/    # Database connections
+│   │   │   ├── index.ts       # Database exports & lifecycle
+│   │   │   ├── postgres.ts    # PostgreSQL connection
+│   │   │   ├── mongodb.ts     # MongoDB connection
+│   │   │   └── redis.ts       # Redis connection
+│   │   ├── cors.ts      # CORS configuration
+│   │   ├── env.ts       # Environment variables
+│   │   ├── helmet.ts    # Security headers
+│   │   └── logger.ts    # Winston logger
 │   ├── controllers/     # Request handlers
 │   ├── middleware/      # Express middleware
 │   │   └── errorHandler.ts
@@ -39,6 +47,7 @@ web/backend/
 │   ├── app.ts           # Express app setup
 │   └── index.ts         # Server entry point
 ├── tests/               # Test files
+│   ├── database.*.test.ts  # Database tests
 │   └── health.test.ts
 ├── .env.example         # Environment variables template
 ├── jest.config.js       # Jest configuration
@@ -54,9 +63,9 @@ web/backend/
 ### Prerequisites
 
 - Node.js 18+ and npm 9+
-- PostgreSQL (for relational data - future)
-- MongoDB (for content - future)
-- Redis (for caching - future)
+- PostgreSQL (for relational data)
+- MongoDB (for content)
+- Redis (for caching)
 
 ### Installation
 
@@ -71,12 +80,34 @@ cp .env.example .env
 # Edit .env with your configuration
 ```
 
-3. Start the development server:
+3. Set up databases:
+
+**PostgreSQL**:
+```bash
+# Install PostgreSQL (if not installed)
+# Create a database
+createdb eucharist_db
+```
+
+**MongoDB**:
+```bash
+# Install MongoDB (if not installed)
+# MongoDB will auto-create the database on first connection
+```
+
+**Redis**:
+```bash
+# Install Redis (if not installed)
+# Start Redis server
+redis-server
+```
+
+4. Start the development server:
 ```bash
 npm run dev
 ```
 
-The server will start on `http://localhost:3000`
+The server will start on `http://localhost:3000` and connect to all databases.
 
 ## Available Scripts
 
@@ -109,7 +140,7 @@ npm run typecheck    # Check TypeScript types
 ```
 GET /api/v1/health
 ```
-Returns server health status and uptime.
+Returns server health status, uptime, and database connection status.
 
 **Response:**
 ```json
@@ -119,10 +150,24 @@ Returns server health status and uptime.
     "status": "healthy",
     "timestamp": "2025-11-06T12:00:00.000Z",
     "uptime": 123.456,
-    "environment": "development"
+    "environment": "development",
+    "databases": {
+      "postgres": { "status": "healthy" },
+      "mongodb": { "status": "healthy" },
+      "redis": { "status": "healthy" }
+    }
   }
 }
 ```
+
+**Database Status Values**:
+- `healthy` - Database is connected and responsive
+- `unhealthy` - Database is connected but not responding correctly
+- `disconnected` - Database is not connected
+
+**Overall Health Status**:
+- `healthy` - All databases are healthy
+- `degraded` - One or more databases are unhealthy or disconnected
 
 ### Root
 ```
@@ -247,7 +292,7 @@ This backend follows a three-layer architecture:
 - Input validation with Zod (future implementation)
 - Rate limiting (future implementation)
 
-## Database Integration (Future)
+## Database Integration
 
 ### PostgreSQL
 For relational data:
@@ -256,6 +301,35 @@ For relational data:
 - Progress tracking
 - User relationships
 
+**Connection Details**:
+- Configured via `POSTGRES_*` environment variables
+- Connection pooling with 10 max connections
+- Automatic reconnection on failure
+- Query method for simple queries
+- Client method for transactions
+
+**Usage Example**:
+```typescript
+import { postgresDb } from './config/database';
+
+// Simple query
+const result = await postgresDb.query('SELECT * FROM users WHERE id = $1', [userId]);
+
+// Transaction
+const client = await postgresDb.getClient();
+try {
+  await client.query('BEGIN');
+  await client.query('INSERT INTO users ...');
+  await client.query('INSERT INTO profiles ...');
+  await client.query('COMMIT');
+} catch (error) {
+  await client.query('ROLLBACK');
+  throw error;
+} finally {
+  client.release();
+}
+```
+
 ### MongoDB
 For flexible content:
 - Educational articles
@@ -263,11 +337,80 @@ For flexible content:
 - Eucharistic miracles
 - Media metadata
 
+**Connection Details**:
+- Configured via `MONGODB_URI` environment variable
+- Using Mongoose ODM
+- Connection pooling (2-10 connections)
+- Automatic reconnection with event handlers
+
+**Usage Example**:
+```typescript
+import { mongoDb } from './config/database';
+
+// Get mongoose instance
+const mongoose = mongoDb.getConnection();
+
+// Define schema and model
+const articleSchema = new mongoose.Schema({
+  title: String,
+  content: String,
+  category: String
+});
+const Article = mongoose.model('Article', articleSchema);
+
+// Use model
+const article = await Article.findOne({ title: 'Example' });
+```
+
 ### Redis
 For caching:
 - Session data
 - Frequently accessed content
 - API response caching
+- Rate limiting data
+
+**Connection Details**:
+- Configured via `REDIS_*` environment variables
+- Using ioredis client
+- Automatic retry with exponential backoff
+- Helper methods for common operations
+
+**Usage Example**:
+```typescript
+import { redisDb } from './config/database';
+
+// Set value with TTL
+await redisDb.set('user:123', JSON.stringify(userData), 3600);
+
+// Get value
+const data = await redisDb.get('user:123');
+
+// Delete value
+await redisDb.del('user:123');
+
+// Advanced operations with client
+const client = redisDb.getClient();
+await client.setex('key', 60, 'value');
+```
+
+### Database Lifecycle
+
+Databases are automatically connected on server startup and disconnected on graceful shutdown (SIGTERM/SIGINT).
+
+**Manual Connection Management**:
+```typescript
+import { connectDatabases, disconnectDatabases } from './config/database';
+
+// Connect all databases
+await connectDatabases();
+
+// Disconnect all databases
+await disconnectDatabases();
+
+// Check health
+import { checkDatabasesHealth } from './config/database';
+const health = await checkDatabasesHealth();
+```
 
 ## Deployment
 
@@ -309,7 +452,7 @@ See [LICENSE](../../LICENSE) file in the repository root.
 ## Next Steps
 
 ### Phase 1 - Foundation
-- [ ] Set up database connections (PostgreSQL, MongoDB, Redis)
+- [x] Set up database connections (PostgreSQL, MongoDB, Redis)
 - [ ] Implement authentication endpoints
 - [ ] Add input validation with Zod
 - [x] Set up logging with Winston
