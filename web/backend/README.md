@@ -197,6 +197,32 @@ Run with coverage (minimum 80% required):
 npm run test:coverage
 ```
 
+## Logging
+
+The project uses Winston for logging with environment-specific configurations:
+
+**Development Mode**: Colorized, human-readable format
+```typescript
+import logger from './config/logger';
+
+logger.info('Server starting', { port: 3000 });
+logger.debug('Debug info', { userId: '123' });
+logger.warn('Warning message', { metric: 'high' });
+logger.error('Error occurred', { error: err.message, stack: err.stack });
+```
+
+**Production Mode**: Structured JSON format with file transports
+- `logs/error.log` - Error-level logs only
+- `logs/combined.log` - All logs
+
+**Log Levels** (set via `LOG_LEVEL` env var):
+- `error` - Error messages only
+- `warn` - Warnings and errors
+- `info` - Informational messages (default)
+- `debug` - Detailed debug information
+
+HTTP requests are automatically logged via Morgan integration.
+
 ## Code Quality Standards
 
 - **TypeScript**: Strict mode enabled
@@ -286,7 +312,7 @@ See [LICENSE](../../LICENSE) file in the repository root.
 - [ ] Set up database connections (PostgreSQL, MongoDB, Redis)
 - [ ] Implement authentication endpoints
 - [ ] Add input validation with Zod
-- [ ] Set up logging with Winston
+- [x] Set up logging with Winston
 - [ ] Add API documentation with Swagger
 
 ### Phase 2 - Core Features
