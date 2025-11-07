@@ -4,7 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { config } from './config/env';
 import { stream } from './config/logger';
-import { errorHandler } from './middleware/errorHandler';
+import { errorHandler, notFoundHandler } from './middleware';
 import routes from './routes';
 import { corsOptions } from './config/cors';
 import { getHelmetOptions } from './config/helmet';
@@ -42,6 +42,9 @@ app.get('/', (_req, res) => {
     },
   });
 });
+
+// 404 handler for unmatched routes (must be before error handler)
+app.use(notFoundHandler);
 
 // Error handling middleware (must be last)
 app.use(errorHandler);
