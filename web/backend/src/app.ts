@@ -6,19 +6,16 @@ import { config } from './config/env';
 import { stream } from './config/logger';
 import { errorHandler } from './middleware/errorHandler';
 import routes from './routes';
+import { corsOptions } from './config/cors';
+import { getHelmetOptions } from './config/helmet';
 
 const app: Application = express();
 
-// Security middleware
-app.use(helmet());
+// Security middleware - Helmet.js sets secure HTTP headers
+app.use(helmet(getHelmetOptions()));
 
-// CORS configuration
-app.use(
-  cors({
-    origin: config.cors.origin,
-    credentials: true,
-  })
-);
+// CORS configuration - Control cross-origin resource sharing
+app.use(cors(corsOptions));
 
 // Body parsing middleware
 app.use(express.json());
