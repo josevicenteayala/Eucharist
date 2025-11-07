@@ -1,6 +1,7 @@
 # User Persona: The RCIA Candidate - David
 
 ## Persona Overview
+
 **Name**: David  
 **Age**: Any age (typically 20-60)  
 **Archetype**: Individual preparing to enter the Catholic Church through RCIA  
@@ -10,6 +11,7 @@
 ## Background & Context
 
 ### Personal Life
+
 - **Age Range**: Can be any age, most commonly 25-50
 - **Background**: Diverse - various careers, education levels, life situations
 - **Lifestyle**: Varies widely based on age and circumstances
@@ -17,13 +19,13 @@
 - **Location**: Any, attending RCIA at local parish
 
 ### Faith Background
-- **Religious History**: 
+
+- **Religious History**:
   - May be unbaptized (never Christian)
   - May be baptized Protestant seeking full communion
   - May have been non-practicing or non-religious
   - Responding to call to enter Catholic Church
   - Serious about faith journey
-  
 - **Current Faith Practice**:
   - Attending weekly RCIA sessions
   - Going to Mass but cannot receive Communion (yet)
@@ -32,6 +34,7 @@
   - Building relationships with sponsor and parish
 
 ### Values & Motivations
+
 - **Core Values**: Truth, commitment, understanding, belonging
 - **Conversion Motivations**:
   - Intellectual conviction about Catholic truth
@@ -44,6 +47,7 @@
 ## Needs & Requirements
 
 ### Primary Needs
+
 1. **Structured learning path**
    - Clear progression through Catholic teaching
    - Organized by topics and importance
@@ -80,6 +84,7 @@
    - Celebration of milestones
 
 ### Secondary Needs
+
 - Practice for Mass responses and prayers
 - Understanding Catholic culture and customs
 - Resources for questions outside class time
@@ -90,6 +95,7 @@
 ## Goals & Objectives
 
 ### Short-term Goals (1-3 months)
+
 - [ ] Understand core Catholic beliefs
 - [ ] Learn essential prayers (Our Father, Hail Mary, etc.)
 - [ ] Grasp what makes Catholicism distinct
@@ -97,6 +103,7 @@
 - [ ] Build basic Catholic vocabulary
 
 ### Medium-term Goals (3-6 months)
+
 - [ ] Deep understanding of Eucharistic theology
 - [ ] Prepare for Sacraments of Initiation
 - [ ] Develop personal prayer life
@@ -104,6 +111,7 @@
 - [ ] Feel confident in decision to enter Church
 
 ### Long-term Goals (6-12 months)
+
 - [ ] Receive Sacraments of Initiation (Baptism, Confirmation, Eucharist)
 - [ ] Full participation in Catholic life
 - [ ] Establish devotional practices
@@ -113,6 +121,7 @@
 ## Pain Points & Frustrations
 
 ### Learning Challenges
+
 - **"There's so much to learn"**
   - Catholic teaching covers vast territory
   - Overwhelmed by scope of doctrine
@@ -126,6 +135,7 @@
   - Cultural references not explained
 
 ### Practical Difficulties
+
 - **"RCIA is only once a week"**
   - Questions arise between sessions
   - Want to study more on own time
@@ -139,6 +149,7 @@
   - Feeling like an outsider
 
 ### Emotional Struggles
+
 - **"I feel like I don't belong yet"**
   - Not fully Catholic but no longer former faith
   - "In-between" status is awkward
@@ -152,6 +163,7 @@
   - Feeling isolated in journey
 
 ### Theological Questions
+
 - **"I have doubts and questions"**
   - Struggling with specific doctrines
   - Questions about Mary, saints, Pope
@@ -167,6 +179,7 @@
 ## Key Features for David
 
 ### Must-Have Features
+
 1. **Beginner-Friendly Content**
    - "Catholicism 101" articles
    - Assumes no prior knowledge
@@ -203,6 +216,7 @@
    - Celebrate milestones
 
 ### Nice-to-Have Features
+
 - Sponsor connection features
 - Practice prayers with audio
 - Video testimonies from converts
@@ -216,18 +230,21 @@
 ## User Journey Map
 
 ### Discovery Phase
+
 1. **Trigger**: Begins RCIA, told about app by director or sponsor
 2. **Download**: Gets app before first class
 3. **Exploration**: Browses beginner content
 4. **Questions**: Has immediate questions app helps answer
 
 ### Onboarding Phase
+
 1. **Registration**: Creates account, indicates RCIA candidate status
 2. **Setup**: Profile includes expected reception date (Easter Vigil)
 3. **Learning Path**: Assigned structured RCIA curriculum
 4. **First Study**: Reads "What is the Eucharist?" foundational article
 
 ### Engagement Phase (RCIA Period)
+
 1. **Weekly Study**: Reads content matching RCIA class topics
 2. **Question Asking**: Posts questions in forum between sessions
 3. **Mass Attendance**: Uses Mass guide each Sunday
@@ -235,6 +252,7 @@
 5. **Community**: Connects with other RCIA candidates
 
 ### Rite of Election Phase
+
 1. **Deep Study**: Focuses intensely on Eucharistic theology
 2. **Preparation**: Lenten practices and reflection
 3. **Anticipation**: Countdown to Easter Vigil
@@ -242,6 +260,7 @@
 5. **Testimony**: Shares own conversion story
 
 ### Post-Initiation Phase
+
 1. **First Communion**: Receives Eucharist at Easter Vigil
 2. **Continued Learning**: Transitions to deeper content
 3. **Practice**: Establishes devotional life as Catholic
@@ -251,6 +270,7 @@
 ## Behavioral Patterns
 
 ### App Usage Patterns
+
 - **Frequency**: 4-5 times per week during RCIA
 - **Session Length**: 15-30 minutes
 - **Time of Day**: After RCIA class, Sunday after Mass, evening study
@@ -258,6 +278,7 @@
 - **Location**: Home study, during commute, waiting times
 
 ### Content Preferences
+
 - **Format**: Clear text with visuals, videos helpful
 - **Tone**: Patient, educational, welcoming
 - **Depth**: Thorough but accessible
@@ -265,6 +286,7 @@
 - **Length**: 5-15 minutes per topic, longer for major doctrines
 
 ### Engagement Style
+
 - **Studious**: Taking conversion seriously
 - **Questioning**: Asks for clarification and deeper understanding
 - **Systematic**: Works through content in order
@@ -274,6 +296,7 @@
 ## Success Indicators
 
 ### David is successful when he:
+
 - [ ] Completes RCIA learning path
 - [ ] Can explain Real Presence to others
 - [ ] Understands core Catholic doctrines
@@ -286,6 +309,7 @@
 - [ ] Helps future RCIA candidates
 
 ### Metrics to Track
+
 - RCIA learning path completion rate
 - Time spent on Eucharistic content
 - Forum question and engagement activity
@@ -312,6 +336,7 @@
 ## Design Implications
 
 ### UI/UX Considerations
+
 - **Clear learning progression** - structured path to follow
 - **Beginner-friendly** - no assumptions about prior knowledge
 - **Progress visualization** - see advancement toward goal
@@ -321,6 +346,7 @@
 - **Bookmark important content** - revisit key topics
 
 ### Content Strategy
+
 - **Foundational focus** - start with basics
 - **Systematic building** - each topic builds on previous
 - **Clear explanations** - avoid jargon, explain when necessary
@@ -330,6 +356,7 @@
 - **Practical application** - how to live this out
 
 ### Feature Prioritization
+
 1. RCIA learning path (structured guidance)
 2. Beginner Eucharist content (core topic)
 3. Glossary (practical necessity)
@@ -339,6 +366,7 @@
 ## Special Considerations
 
 ### Theological Sensitivity
+
 - May have Protestant objections to Catholic teaching
 - Need respectful explanation of differences
 - Address common misconceptions
@@ -346,6 +374,7 @@
 - Acknowledge difficulty of some doctrines
 
 ### Emotional Support
+
 - Conversion is major life decision
 - May face family opposition
 - In liminal space (not old faith, not yet fully Catholic)
@@ -353,6 +382,7 @@
 - Celebration of milestones important
 
 ### Liturgical Education
+
 - Everything about Mass is new
 - Need patient, detailed explanations
 - Why we do what we do
@@ -361,6 +391,7 @@
 - Significance of symbols and actions
 
 ### Sacramental Preparation
+
 - Specific content for each sacrament
 - What to expect at Easter Vigil
 - How to prepare spiritually
@@ -369,6 +400,7 @@
 - Understanding sponsor role
 
 ## Related Personas
+
 - **Similar to**: Seeker (Maria) - learning journey
 - **Supported by**: Lifelong Learner (Patricia) - wisdom and mentorship
 - **May become**: Devoted Parent (John) - passing on faith

@@ -11,7 +11,7 @@ This backend service provides RESTful APIs for the Eucharist Platform web and mo
 - **Runtime**: Node.js 18+
 - **Framework**: Express.js
 - **Language**: TypeScript
-- **Databases**: 
+- **Databases**:
   - PostgreSQL (users, auth, relational data)
   - MongoDB (content, flexible documents)
   - Redis (caching)
@@ -70,11 +70,13 @@ web/backend/
 ### Installation
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Set up environment variables:
+
 ```bash
 cp .env.example .env
 # Edit .env with your configuration
@@ -83,6 +85,7 @@ cp .env.example .env
 3. Set up databases:
 
 **PostgreSQL**:
+
 ```bash
 # Install PostgreSQL (if not installed)
 # Create a database
@@ -90,12 +93,14 @@ createdb eucharist_db
 ```
 
 **MongoDB**:
+
 ```bash
 # Install MongoDB (if not installed)
 # MongoDB will auto-create the database on first connection
 ```
 
 **Redis**:
+
 ```bash
 # Install Redis (if not installed)
 # Start Redis server
@@ -103,6 +108,7 @@ redis-server
 ```
 
 4. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -112,6 +118,7 @@ The server will start on `http://localhost:3000` and connect to all databases.
 ## Available Scripts
 
 ### Development
+
 ```bash
 npm run dev          # Start development server with hot reload
 npm run build        # Build for production
@@ -119,6 +126,7 @@ npm start            # Start production server
 ```
 
 ### Testing
+
 ```bash
 npm test             # Run tests
 npm run test:watch   # Run tests in watch mode
@@ -126,6 +134,7 @@ npm run test:coverage # Run tests with coverage report
 ```
 
 ### Code Quality
+
 ```bash
 npm run lint         # Run ESLint
 npm run lint:fix     # Fix ESLint issues
@@ -137,12 +146,15 @@ npm run typecheck    # Check TypeScript types
 ## API Endpoints
 
 ### Health Check
+
 ```
 GET /api/v1/health
 ```
+
 Returns server health status, uptime, and database connection status.
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -161,21 +173,26 @@ Returns server health status, uptime, and database connection status.
 ```
 
 **Database Status Values**:
+
 - `healthy` - Database is connected and responsive
 - `unhealthy` - Database is connected but not responding correctly
 - `disconnected` - Database is not connected
 
 **Overall Health Status**:
+
 - `healthy` - All databases are healthy
 - `degraded` - One or more databases are unhealthy or disconnected
 
 ### Root
+
 ```
 GET /
 ```
+
 Returns API information.
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -192,6 +209,7 @@ Returns API information.
 All API endpoints follow a standard response format:
 
 ### Success Response
+
 ```json
 {
   "success": true,
@@ -205,6 +223,7 @@ All API endpoints follow a standard response format:
 ```
 
 ### Error Response
+
 ```json
 {
   "success": false,
@@ -233,11 +252,13 @@ See `.env.example` for all available environment variables:
 The project uses Jest and Supertest for testing. Tests are located in the `tests/` directory and co-located `*.test.ts` files.
 
 Run tests:
+
 ```bash
 npm test
 ```
 
 Run with coverage (minimum 80% required):
+
 ```bash
 npm run test:coverage
 ```
@@ -247,6 +268,7 @@ npm run test:coverage
 The project uses Winston for logging with environment-specific configurations:
 
 **Development Mode**: Colorized, human-readable format
+
 ```typescript
 import logger from './config/logger';
 
@@ -257,10 +279,12 @@ logger.error('Error occurred', { error: err.message, stack: err.stack });
 ```
 
 **Production Mode**: Structured JSON format with file transports
+
 - `logs/error.log` - Error-level logs only
 - `logs/combined.log` - All logs
 
 **Log Levels** (set via `LOG_LEVEL` env var):
+
 - `error` - Error messages only
 - `warn` - Warnings and errors
 - `info` - Informational messages (default)
@@ -295,13 +319,16 @@ This backend follows a three-layer architecture:
 ## Database Integration
 
 ### PostgreSQL
+
 For relational data:
+
 - User accounts and authentication
 - Prayer intentions
 - Progress tracking
 - User relationships
 
 **Connection Details**:
+
 - Configured via `POSTGRES_*` environment variables
 - Connection pooling with 10 max connections
 - Automatic reconnection on failure
@@ -309,6 +336,7 @@ For relational data:
 - Client method for transactions
 
 **Usage Example**:
+
 ```typescript
 import { postgresDb } from './config/database';
 
@@ -331,19 +359,23 @@ try {
 ```
 
 ### MongoDB
+
 For flexible content:
+
 - Educational articles
 - Gospel reflections
 - Eucharistic miracles
 - Media metadata
 
 **Connection Details**:
+
 - Configured via `MONGODB_URI` environment variable
 - Using Mongoose ODM
 - Connection pooling (2-10 connections)
 - Automatic reconnection with event handlers
 
 **Usage Example**:
+
 ```typescript
 import { mongoDb } from './config/database';
 
@@ -354,7 +386,7 @@ const mongoose = mongoDb.getConnection();
 const articleSchema = new mongoose.Schema({
   title: String,
   content: String,
-  category: String
+  category: String,
 });
 const Article = mongoose.model('Article', articleSchema);
 
@@ -363,19 +395,23 @@ const article = await Article.findOne({ title: 'Example' });
 ```
 
 ### Redis
+
 For caching:
+
 - Session data
 - Frequently accessed content
 - API response caching
 - Rate limiting data
 
 **Connection Details**:
+
 - Configured via `REDIS_*` environment variables
 - Using ioredis client
 - Automatic retry with exponential backoff
 - Helper methods for common operations
 
 **Usage Example**:
+
 ```typescript
 import { redisDb } from './config/database';
 
@@ -398,6 +434,7 @@ await client.setex('key', 60, 'value');
 Databases are automatically connected on server startup and disconnected on graceful shutdown (SIGTERM/SIGINT).
 
 **Manual Connection Management**:
+
 ```typescript
 import { connectDatabases, disconnectDatabases } from './config/database';
 
@@ -415,11 +452,13 @@ const health = await checkDatabasesHealth();
 ## Deployment
 
 Build for production:
+
 ```bash
 npm run build
 ```
 
 Start production server:
+
 ```bash
 NODE_ENV=production npm start
 ```
@@ -427,6 +466,7 @@ NODE_ENV=production npm start
 ## CI/CD
 
 GitHub Actions pipelines are configured for:
+
 - Linting and formatting checks
 - Type checking
 - Unit and integration tests
@@ -452,6 +492,7 @@ See [LICENSE](../../LICENSE) file in the repository root.
 ## Next Steps
 
 ### Phase 1 - Foundation
+
 - [x] Set up database connections (PostgreSQL, MongoDB, Redis)
 - [ ] Implement authentication endpoints
 - [ ] Add input validation with Zod
@@ -459,12 +500,14 @@ See [LICENSE](../../LICENSE) file in the repository root.
 - [ ] Add API documentation with Swagger
 
 ### Phase 2 - Core Features
+
 - [ ] Gospel reading endpoints
 - [ ] Content management endpoints
 - [ ] User management endpoints
 - [ ] Prayer intentions endpoints
 
 ### Phase 3 - Advanced Features
+
 - [ ] Real-time features with Socket.IO
 - [ ] File upload and media management
 - [ ] Email notifications

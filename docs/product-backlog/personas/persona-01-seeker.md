@@ -1,6 +1,7 @@
 # User Persona: The Seeker - Maria
 
 ## Persona Overview
+
 **Name**: Maria  
 **Age**: 25-35 years old  
 **Archetype**: Young professional returning to faith or exploring Catholicism  
@@ -8,11 +9,12 @@
 **Faith Journey Stage**: Questioning / Exploring / Beginning
 
 ![The Seeker](../../../docs/assets/personas/seeker.png)
-*Note: Add persona illustration when available*
+_Note: Add persona illustration when available_
 
 ## Background & Context
 
 ### Personal Life
+
 - **Education**: College-educated, bachelor's or master's degree
 - **Career**: Young professional in urban/suburban setting
 - **Lifestyle**: Busy, mobile, always connected
@@ -20,12 +22,12 @@
 - **Location**: Urban area with access to multiple parishes
 
 ### Faith Background
-- **Religious History**: 
+
+- **Religious History**:
   - Raised Catholic but drifted away during college/young adulthood
   - May have explored other spiritual paths or been inactive
   - Experiencing a desire to reconnect with faith
   - OR: Never Catholic but curious about the Church
-  
 - **Current Faith Practice**:
   - Occasional Mass attendance (monthly or special occasions)
   - Curious but uncertain about Catholic beliefs
@@ -33,6 +35,7 @@
   - Seeks meaning and purpose in life
 
 ### Values & Motivations
+
 - **Core Values**: Authenticity, community, purpose, social justice
 - **Spiritual Motivations**:
   - Search for meaning beyond material success
@@ -43,6 +46,7 @@
 ## Needs & Requirements
 
 ### Primary Needs
+
 1. **Non-judgmental environment**
    - Fears being judged for time away from Church
    - Needs welcoming, accepting tone
@@ -69,6 +73,7 @@
    - Wants to observe before engaging
 
 ### Secondary Needs
+
 - Visual, engaging content (not just text)
 - Short-form content for busy lifestyle
 - Social sharing capabilities
@@ -78,6 +83,7 @@
 ## Goals & Objectives
 
 ### Short-term Goals (1-3 months)
+
 - [ ] Understand basic Catholic beliefs about the Eucharist
 - [ ] Feel comfortable attending Mass
 - [ ] Know when to stand, sit, kneel during Mass
@@ -85,6 +91,7 @@
 - [ ] Read daily Gospel regularly
 
 ### Medium-term Goals (3-6 months)
+
 - [ ] Develop a daily prayer practice
 - [ ] Connect with a Catholic community
 - [ ] Read and understand more theological content
@@ -92,6 +99,7 @@
 - [ ] Decide about returning to/joining the Church
 
 ### Long-term Goals (6-12 months)
+
 - [ ] Full participation in Mass
 - [ ] Regular Confession and Communion (if Catholic)
 - [ ] RCIA completion (if not Catholic)
@@ -101,6 +109,7 @@
 ## Pain Points & Frustrations
 
 ### Knowledge Gaps
+
 - **"I don't understand the terminology"**
   - Catholic jargon is confusing (transubstantiation, Real Presence, etc.)
   - Mass prayers and responses are unfamiliar
@@ -112,6 +121,7 @@
   - Questions arise outside of class/Mass times
 
 ### Emotional Barriers
+
 - **"I feel disconnected from the Church"**
   - Perceives Church as outdated or irrelevant
   - Past negative experiences with religious people
@@ -123,6 +133,7 @@
   - Fears of hypocrisy
 
 ### Practical Challenges
+
 - **"I don't have time for classes"**
   - Work schedule is demanding and unpredictable
   - Evening/weekend commitments
@@ -136,6 +147,7 @@
 ## Key Features for Maria
 
 ### Must-Have Features
+
 1. **"What is the Eucharist?" Foundational Content**
    - Clear, beginner-friendly explanation
    - Modern language and examples
@@ -168,6 +180,7 @@
    - Moderated for kindness
 
 ### Nice-to-Have Features
+
 - Bookmark and save favorite content
 - Share with friends (with control)
 - Personalized recommendations
@@ -179,18 +192,21 @@
 ## User Journey Map
 
 ### Discovery Phase
+
 1. **Trigger**: Friend mentions the app, Google search, parish recommendation
 2. **First Visit**: Lands on welcoming homepage
 3. **Exploration**: Browses without creating account
 4. **Decision**: Finds valuable content, decides to sign up
 
 ### Onboarding Phase
+
 1. **Registration**: Quick, simple sign-up
 2. **Profile Setup**: Optional faith background questions
 3. **Introduction**: Brief tour of key features
 4. **First Action**: Reads today's Gospel or "What is Eucharist" article
 
 ### Engagement Phase
+
 1. **Daily Habit**: Opens app for daily Gospel
 2. **Deep Dive**: Explores educational articles
 3. **Mass Preparation**: Uses Mass guide before attending
@@ -198,6 +214,7 @@
 5. **Growth**: Tracks progress, sees improvement
 
 ### Maturity Phase
+
 1. **Confidence**: Feels knowledgeable about Eucharist
 2. **Practice**: Regular Mass attendance
 3. **Sharing**: Recommends app to friends
@@ -207,6 +224,7 @@
 ## Behavioral Patterns
 
 ### App Usage Patterns
+
 - **Frequency**: Daily, often during commute or morning coffee
 - **Session Length**: 5-10 minutes typically
 - **Time of Day**: Morning (devotional) or evening (learning)
@@ -214,6 +232,7 @@
 - **Location**: Public transit, coffee shop, home
 
 ### Content Preferences
+
 - **Format**: Short-form text, audio, visual
 - **Tone**: Conversational, welcoming, authentic
 - **Depth**: Starts shallow, gradually deeper
@@ -221,6 +240,7 @@
 - **Length**: 3-7 minutes ideal
 
 ### Engagement Style
+
 - **Initial**: Observer, lurker
 - **Gradual**: Occasional commenter
 - **Eventual**: Active participant
@@ -230,6 +250,7 @@
 ## Success Indicators
 
 ### Maria is successful when she:
+
 - [ ] Opens the app daily for Gospel reading
 - [ ] Understands and can explain the Real Presence
 - [ ] Feels confident attending Mass
@@ -242,6 +263,7 @@
 - [ ] Considers/begins RCIA or returns to practice
 
 ### Metrics to Track
+
 - Daily active user (DAU) status
 - Session length and frequency
 - Content completion rates
@@ -267,6 +289,7 @@
 ## Design Implications
 
 ### UI/UX Considerations
+
 - **Clean, modern design** that feels current, not dated
 - **Intuitive navigation** - no learning curve needed
 - **Minimal barriers** - browse before creating account
@@ -275,6 +298,7 @@
 - **Privacy options** - control over sharing and visibility
 
 ### Content Strategy
+
 - **Welcoming tone** - "Come as you are"
 - **Jargon-free** - explain terms when necessary
 - **Practical application** - "How does this apply to my life?"
@@ -283,6 +307,7 @@
 - **Personal stories** - relatable testimonies
 
 ### Feature Prioritization
+
 1. Daily Gospel + Reflection (immediate value)
 2. What is Eucharist? (foundational knowledge)
 3. Parts of Mass Guide (practical need)
@@ -290,6 +315,7 @@
 5. Community (connection)
 
 ## Related Personas
+
 - **Complementary**: RCIA Candidate (David) - similar learning needs
 - **Contrasts with**: Lifelong Learner (Patricia) - different depth level
 - **May become**: Devoted Parent (John) - future life stage

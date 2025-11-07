@@ -79,12 +79,14 @@ docs/project-management/
 ## Core Documents
 
 ### 1. Project Charter
+
 **File**: [charters/PROJECT_CHARTER.md](charters/PROJECT_CHARTER.md)  
 **Purpose**: Formal authorization to proceed with the project  
 **Owner**: Project Manager  
 **Review Cycle**: Major milestones or significant changes
 
 **Key Contents**:
+
 - Project purpose and justification
 - Objectives and success criteria
 - Scope (in and out)
@@ -95,12 +97,14 @@ docs/project-management/
 - Approval signatures
 
 ### 2. User Stories Backlog
+
 **File**: [stories/USER_STORIES_BACKLOG.md](stories/USER_STORIES_BACKLOG.md)  
 **Purpose**: Complete list of all planned features as user stories  
 **Owner**: Product Owner  
 **Review Cycle**: Updated continuously, groomed weekly
 
 **Key Contents**:
+
 - 27 detailed user stories across 7 epics
 - Story point estimates
 - Acceptance criteria
@@ -109,6 +113,7 @@ docs/project-management/
 - Definition of Ready and Done
 
 **Epics Covered**:
+
 1. Authentication & User Management
 2. Daily Gospel & Reflection
 3. Educational Content
@@ -118,12 +123,14 @@ docs/project-management/
 7. Admin & Content Management
 
 ### 3. Sprint Plans
+
 **File**: [plans/SPRINT_1_PLAN.md](plans/SPRINT_1_PLAN.md)  
 **Purpose**: Detailed execution plan for each sprint  
 **Owner**: Project Manager  
 **Review Cycle**: Each sprint (2 weeks)
 
 **Key Contents**:
+
 - Sprint goal
 - Sprint backlog (committed stories and tasks)
 - Team capacity
@@ -134,12 +141,14 @@ docs/project-management/
 **Future Sprints**: Create SPRINT_2_PLAN.md, SPRINT_3_PLAN.md, etc. as needed
 
 ### 3a. Sprint Acceptance Criteria Validation
+
 **File**: [plans/SPRINT_1_ACCEPTANCE_CRITERIA_VALIDATION.md](plans/SPRINT_1_ACCEPTANCE_CRITERIA_VALIDATION.md)  
 **Purpose**: Product Owner validation of sprint acceptance criteria  
 **Owner**: Product Owner  
 **Review Cycle**: Before sprint starts, updated as needed
 
 **Key Contents**:
+
 - Comprehensive validation of all acceptance criteria
 - INVEST principles compliance check
 - Testability assessment
@@ -150,6 +159,7 @@ docs/project-management/
 - Dependencies validation
 
 **Validation Coverage**:
+
 - All 13 Sprint 1 tasks
 - US-001 (User Registration) and US-002 (User Login)
 - Infrastructure and setup criteria
@@ -159,12 +169,14 @@ docs/project-management/
 **Value**: Ensures team has clear, measurable definition of "done" before sprint starts
 
 ### 4. Risk Register
+
 **File**: [risks/RISK_REGISTER.md](risks/RISK_REGISTER.md)  
 **Purpose**: Track and manage project risks  
 **Owner**: Project Manager  
 **Review Cycle**: Weekly review, monthly comprehensive update
 
 **Key Contents**:
+
 - 15 identified risks with probability and impact
 - Detailed mitigation strategies
 - Contingency plans
@@ -172,6 +184,7 @@ docs/project-management/
 - Escalation criteria
 
 **Top Risks**:
+
 1. Team Assembly Delays
 2. Theological Content Quality
 3. Scope Creep
@@ -179,12 +192,14 @@ docs/project-management/
 5. Budget Constraints
 
 ### 5. Stakeholder Communication Plan
+
 **File**: [plans/STAKEHOLDER_COMMUNICATION_PLAN.md](plans/STAKEHOLDER_COMMUNICATION_PLAN.md)  
 **Purpose**: Define how and when to communicate with stakeholders  
 **Owner**: Project Manager  
 **Review Cycle**: Monthly
 
 **Key Contents**:
+
 - Stakeholder analysis
 - Communication matrix (who, what, when, how)
 - Communication templates (7 templates)
@@ -193,12 +208,14 @@ docs/project-management/
 - Meeting schedule
 
 ### 6. Team Roster
+
 **File**: [templates/TEAM_ROSTER_TEMPLATE.md](templates/TEAM_ROSTER_TEMPLATE.md)  
 **Purpose**: Document team members and their information  
 **Owner**: Project Manager  
 **Review Cycle**: Updated as team changes
 
 **Key Contents**:
+
 - Team member contact information
 - Roles and responsibilities
 - Skills and expertise
@@ -209,12 +226,14 @@ docs/project-management/
 **When to Use**: Fill out this template once team members are hired.
 
 ### 7. Status Reporting Templates
+
 **File**: [templates/STATUS_REPORTING_TEMPLATES.md](templates/STATUS_REPORTING_TEMPLATES.md)  
 **Purpose**: Standardized formats for project reporting  
 **Owner**: Project Manager  
 **Review Cycle**: Updated as needed
 
 **Templates Included**:
+
 1. Daily Status Update (team standup)
 2. Weekly Status Report (executive summary)
 3. Sprint Report (bi-weekly)
@@ -318,22 +337,26 @@ RISK_REGISTER
 ## Tools & Systems
 
 ### Project Management
+
 - **GitHub Projects**: Primary project board for task tracking
   - Backlog, Sprint Backlog, In Progress, Review, Done
 - **GitHub Issues**: For user stories, tasks, and bugs
 
 ### Communication
+
 - **Slack/Discord**: Daily team communication
 - **Email**: Formal stakeholder communications
 - **Zoom/Google Meet**: Video meetings
 - **Loom**: Async video updates and demos
 
 ### Documentation
+
 - **GitHub Repository**: All documentation in Markdown
 - **Notion/Confluence** (optional): Team wiki and collaboration
 - **Google Drive**: Shared documents and files
 
 ### Development
+
 - **GitHub**: Code repository and version control
 - **GitHub Actions**: CI/CD pipeline
 
@@ -378,6 +401,7 @@ RISK_REGISTER
 ## Getting Started Checklist
 
 ### Week 1 - Foundation
+
 - [ ] Review Project Charter
 - [ ] Familiarize with all documents
 - [ ] Set up communication channels
@@ -386,6 +410,7 @@ RISK_REGISTER
 - [ ] Import initial user stories to board
 
 ### Week 2 - Team Setup
+
 - [ ] Complete team hiring
 - [ ] Fill out Team Roster
 - [ ] Onboard team members
@@ -393,6 +418,7 @@ RISK_REGISTER
 - [ ] Begin Sprint 1
 
 ### Ongoing
+
 - [ ] Daily standups
 - [ ] Weekly status reports
 - [ ] Bi-weekly sprint ceremonies
@@ -405,15 +431,18 @@ RISK_REGISTER
 ## Support & Questions
 
 ### Document Questions
+
 - **Owner**: Project Manager
 - **Contact**: [Email/Slack]
 
 ### Project Questions
+
 - **General**: #general channel in Slack
 - **Technical**: #development channel in Slack
 - **Urgent**: Direct message @projectmanager
 
 ### Contributing
+
 See [CONTRIBUTING.md](../../CONTRIBUTING.md) for how to contribute to project documentation.
 
 ---
@@ -421,6 +450,7 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for how to contribute to project do
 ## Acknowledgments
 
 This project management framework is built on:
+
 - Agile/Scrum best practices
 - PMI PMBOK guidelines
 - Catholic project management examples
@@ -431,17 +461,20 @@ This project management framework is built on:
 ## Related Documentation
 
 ### Project Documentation
+
 - [DISCOVERY.md](../../DISCOVERY.md) - Complete project vision
 - [EXECUTIVE_SUMMARY.md](../../EXECUTIVE_SUMMARY.md) - High-level overview
 - [TECHNICAL_ROADMAP.md](../../TECHNICAL_ROADMAP.md) - Technical implementation
 - [PROJECT_STRUCTURE.md](../../PROJECT_STRUCTURE.md) - Technical architecture
 
 ### SDLC Role Documents
+
 - [PROJECT_MANAGER.md](../sdlc/PROJECT_MANAGER.md) - PM role definition
 - [PRODUCT_OWNER.md](../sdlc/PRODUCT_OWNER.md) - PO role definition
 - [SOFTWARE_ARCHITECT.md](../sdlc/SOFTWARE_ARCHITECT.md) - SA role definition
 
 ### Development
+
 - [CONTRIBUTING.md](../../CONTRIBUTING.md) - How to contribute
 - [README.md](../../README.md) - Project readme
 
@@ -449,10 +482,10 @@ This project management framework is built on:
 
 ## Document History
 
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2025-10-19 | Project Manager | Initial README creation |
-| 1.1 | 2025-11-06 | Product Owner | Added Sprint 1 Acceptance Criteria Validation |
+| Version | Date       | Author          | Changes                                       |
+| ------- | ---------- | --------------- | --------------------------------------------- |
+| 1.0     | 2025-10-19 | Project Manager | Initial README creation                       |
+| 1.1     | 2025-11-06 | Product Owner   | Added Sprint 1 Acceptance Criteria Validation |
 
 ---
 

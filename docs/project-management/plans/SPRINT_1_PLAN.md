@@ -14,6 +14,7 @@
 **Primary Goal**: Set up complete development infrastructure and implement secure user authentication system to enable all future development work.
 
 **Success Criteria**:
+
 - Development environment fully configured and documented
 - CI/CD pipeline operational
 - Backend API serving health checks
@@ -30,6 +31,7 @@
 #### Infrastructure & Setup
 
 **TASK-001: Project Infrastructure Setup**
+
 - **Story**: Foundation work
 - **Assignee**: Technical Lead
 - **Story Points**: 8
@@ -52,6 +54,7 @@
 ---
 
 **TASK-002: Database Setup**
+
 - **Story**: Foundation work
 - **Assignee**: Technical Lead
 - **Story Points**: 5
@@ -73,6 +76,7 @@
 ---
 
 **TASK-003: CI/CD Pipeline**
+
 - **Story**: Foundation work
 - **Assignee**: Technical Lead / DevOps
 - **Story Points**: 8
@@ -96,6 +100,7 @@
 #### Backend Development
 
 **TASK-004: Backend Core Setup**
+
 - **Story**: Foundation work
 - **Assignee**: Technical Lead
 - **Story Points**: 5
@@ -119,6 +124,7 @@
 ---
 
 **TASK-005: User Registration (US-001)**
+
 - **Story**: US-001
 - **Assignee**: Full-Stack Developer
 - **Story Points**: 8
@@ -148,6 +154,7 @@
 ---
 
 **TASK-006: User Login (US-002)**
+
 - **Story**: US-002
 - **Assignee**: Full-Stack Developer
 - **Story Points**: 5
@@ -178,6 +185,7 @@
 ---
 
 **TASK-007: JWT Authentication Middleware**
+
 - **Story**: US-002
 - **Assignee**: Full-Stack Developer
 - **Story Points**: 3
@@ -204,6 +212,7 @@
 #### Frontend Development
 
 **TASK-008: Frontend Project Setup**
+
 - **Story**: Foundation work
 - **Assignee**: Full-Stack Developer / UI/UX Designer
 - **Story Points**: 5
@@ -230,6 +239,7 @@
 ---
 
 **TASK-009: Registration Page (US-001)**
+
 - **Story**: US-001
 - **Assignee**: UI/UX Designer + Full-Stack Developer
 - **Story Points**: 5
@@ -259,6 +269,7 @@
 ---
 
 **TASK-010: Login Page (US-002)**
+
 - **Story**: US-002
 - **Assignee**: UI/UX Designer + Full-Stack Developer
 - **Story Points**: 5
@@ -294,6 +305,7 @@
 ### Medium Priority (Should Complete if Time Allows)
 
 **TASK-011: Basic User Profile Page (US-005 - Partial)**
+
 - **Story**: US-005
 - **Assignee**: Full-Stack Developer
 - **Story Points**: 3
@@ -314,6 +326,7 @@
 ---
 
 **TASK-012: Design System Foundation**
+
 - **Story**: Foundation work
 - **Assignee**: UI/UX Designer
 - **Story Points**: 5
@@ -338,6 +351,7 @@
 ### Low Priority (Nice to Have)
 
 **TASK-013: API Documentation**
+
 - **Story**: Foundation work
 - **Assignee**: Technical Lead
 - **Story Points**: 3
@@ -358,16 +372,19 @@
 ## Sprint Dependencies
 
 ### External Dependencies
+
 - **Email Service**: SendGrid account or AWS SES configured
 - **Cloud Services**: AWS or Google Cloud account for staging deployment
 - **Domain**: Domain name for staging environment (optional for Sprint 1)
 
 ### Team Dependencies
+
 - UI/UX Designer needs to complete mockups before frontend development
 - Backend API endpoints must be complete before frontend integration
 - Database schemas must be finalized before API development
 
 ### Technical Dependencies
+
 - Node.js 20+ LTS installed
 - PostgreSQL 14+ available (Docker or local)
 - MongoDB 6+ available (Docker or local)
@@ -377,13 +394,13 @@
 
 ## Risks & Mitigations
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Team onboarding delays | High | High | Start with Technical Lead, have comprehensive setup docs |
-| Email service setup issues | Medium | Low | Use development email logger initially, integrate service in parallel |
-| CI/CD complexity | Medium | Medium | Start with basic workflow, enhance incrementally |
-| Frontend-Backend integration issues | Medium | Medium | Define API contract early, mock endpoints if needed |
-| Underestimated story points | Medium | Medium | Focus on must-have tasks first, move others to Sprint 2 |
+| Risk                                | Probability | Impact | Mitigation                                                            |
+| ----------------------------------- | ----------- | ------ | --------------------------------------------------------------------- |
+| Team onboarding delays              | High        | High   | Start with Technical Lead, have comprehensive setup docs              |
+| Email service setup issues          | Medium      | Low    | Use development email logger initially, integrate service in parallel |
+| CI/CD complexity                    | Medium      | Medium | Start with basic workflow, enhance incrementally                      |
+| Frontend-Backend integration issues | Medium      | Medium | Define API contract early, mock endpoints if needed                   |
+| Underestimated story points         | Medium      | Medium | Focus on must-have tasks first, move others to Sprint 2               |
 
 ---
 
@@ -392,29 +409,34 @@
 ### Week 1
 
 **Monday (Day 1)**
+
 - Sprint planning meeting (2 hours)
 - Team kickoff and introductions
 - Development environment setup begins
 - TASK-001, TASK-002 start
 
 **Tuesday (Day 2)**
+
 - Continue infrastructure setup
 - TASK-001, TASK-002 continue
 - Daily standup (15 min)
 
 **Wednesday (Day 3)**
+
 - Complete infrastructure setup
 - TASK-003 CI/CD pipeline start
 - TASK-004 Backend core start
 - Daily standup
 
 **Thursday (Day 4)**
+
 - Complete backend core
 - TASK-005 User registration start
 - TASK-008 Frontend setup start
 - Daily standup
 
 **Friday (Day 5)**
+
 - Continue registration and frontend setup
 - TASK-012 Design system start (UI/UX Designer)
 - Daily standup
@@ -423,6 +445,7 @@
 ### Week 2
 
 **Monday (Day 1)**
+
 - Complete registration backend
 - Complete frontend setup
 - TASK-006 User login start
@@ -430,18 +453,21 @@
 - Daily standup
 
 **Tuesday (Day 2)**
+
 - Complete login backend
 - TASK-007 JWT middleware start
 - Continue registration page
 - Daily standup
 
 **Wednesday (Day 3)**
+
 - Complete JWT middleware
 - Complete registration page
 - TASK-010 Login page start
 - Daily standup
 
 **Thursday (Day 4)**
+
 - Complete login page
 - Integration testing
 - Bug fixes
@@ -449,6 +475,7 @@
 - Daily standup
 
 **Friday (Day 5)**
+
 - Final testing and bug fixes
 - Sprint review/demo (1 hour)
 - Sprint retrospective (1 hour)
@@ -461,11 +488,13 @@
 **Time**: 9:00 AM (15 minutes)
 
 **Each team member answers**:
+
 1. What did I complete yesterday?
 2. What will I work on today?
 3. Are there any blockers?
 
 **Project Manager tracks**:
+
 - Progress toward sprint goal
 - Blockers that need resolution
 - Risks that need attention
@@ -478,6 +507,7 @@
 **Attendees**: Team, Product Owner, Stakeholders
 
 **Agenda**:
+
 1. **Sprint Overview** (5 min)
    - Sprint goal recap
    - Metrics (velocity, completion rate)
@@ -507,6 +537,7 @@
 **Attendees**: Team only
 
 **Agenda**:
+
 1. **What Went Well** (15 min)
    - Successes to celebrate
    - Practices to continue
@@ -530,6 +561,7 @@
 ## Definition of Done (Sprint)
 
 Sprint 1 is complete when:
+
 - [ ] All "Must Complete" tasks done and tested
 - [ ] User can register and login successfully
 - [ ] Development environment fully documented
@@ -544,6 +576,7 @@ Sprint 1 is complete when:
 ## Success Metrics
 
 **Sprint Success Indicators**:
+
 - ✅ Sprint goal achieved
 - ✅ All must-have stories completed
 - ✅ No critical bugs in staging
@@ -552,6 +585,7 @@ Sprint 1 is complete when:
 - ✅ Positive team feedback in retrospective
 
 **Key Metrics to Track**:
+
 - **Committed Story Points**: [TBD after team capacity known]
 - **Completed Story Points**: [Track during sprint]
 - **Velocity**: [Calculate at sprint end]
@@ -564,11 +598,13 @@ Sprint 1 is complete when:
 ## Notes & Updates
 
 **Pre-Sprint Notes**:
+
 - Team capacity to be finalized when team fully assembled
 - Story point estimates subject to team consensus during planning
 - Tasks may be added or adjusted during sprint based on team progress
 
 **During Sprint** (to be updated daily):
+
 - [Date]: [Update]
 - [Date]: [Update]
 
@@ -576,9 +612,9 @@ Sprint 1 is complete when:
 
 ## Document History
 
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2025-10-19 | Project Manager | Initial Sprint 1 plan |
+| Version | Date       | Author          | Changes               |
+| ------- | ---------- | --------------- | --------------------- |
+| 1.0     | 2025-10-19 | Project Manager | Initial Sprint 1 plan |
 
 ---
 

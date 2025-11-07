@@ -37,9 +37,11 @@ This document provides guidance on how the three key leadership roles - Project 
 ## Primary Responsibilities
 
 ### Product Owner (PO)
+
 **Focus**: Product Vision & User Value
 
 **Key Responsibilities**:
+
 - Define and maintain product vision
 - Prioritize product backlog
 - Write user stories with acceptance criteria
@@ -48,6 +50,7 @@ This document provides guidance on how the three key leadership roles - Project 
 - Represent user needs and business value
 
 **Key Artifacts Owned**:
+
 - User Stories Backlog
 - Product roadmap
 - User personas
@@ -55,6 +58,7 @@ This document provides guidance on how the three key leadership roles - Project 
 - Acceptance criteria
 
 **Success Measures**:
+
 - User satisfaction
 - Feature adoption
 - Product-market fit
@@ -63,9 +67,11 @@ This document provides guidance on how the three key leadership roles - Project 
 ---
 
 ### Software Architect (SA)
+
 **Focus**: Technical Excellence & System Quality
 
 **Key Responsibilities**:
+
 - Define system architecture
 - Make technology decisions
 - Establish coding standards
@@ -74,6 +80,7 @@ This document provides guidance on how the three key leadership roles - Project 
 - Technical mentoring
 
 **Key Artifacts Owned**:
+
 - Architecture Decision Records (ADRs)
 - Technical documentation
 - System architecture diagrams
@@ -81,6 +88,7 @@ This document provides guidance on how the three key leadership roles - Project 
 - Code quality standards
 
 **Success Measures**:
+
 - System performance
 - Code quality
 - Technical debt level
@@ -90,9 +98,11 @@ This document provides guidance on how the three key leadership roles - Project 
 ---
 
 ### Project Manager (PM)
+
 **Focus**: Delivery & Coordination
 
 **Key Responsibilities**:
+
 - Overall project coordination
 - Sprint planning and facilitation
 - Team management
@@ -101,6 +111,7 @@ This document provides guidance on how the three key leadership roles - Project 
 - Budget and timeline tracking
 
 **Key Artifacts Owned**:
+
 - Project Charter
 - Sprint Plans
 - Risk Register
@@ -109,6 +120,7 @@ This document provides guidance on how the three key leadership roles - Project 
 - Team Roster
 
 **Success Measures**:
+
 - On-time delivery
 - Budget adherence
 - Team productivity
@@ -121,21 +133,21 @@ This document provides guidance on how the three key leadership roles - Project 
 
 ### Who Decides What?
 
-| Decision Type | Primary | Consulted | Informed |
-|---------------|---------|-----------|----------|
-| **Product Features** | PO | PM, SA, Team | Stakeholders |
-| **Feature Priority** | PO | PM | SA, Team |
-| **User Stories** | PO | Team | PM, SA |
-| **Acceptance Criteria** | PO | Team | PM, SA |
-| **Technology Stack** | SA | PM, Team | PO |
-| **Architecture** | SA | PM, Team | PO |
-| **Code Standards** | SA | Team | PM, PO |
-| **Sprint Scope** | PM, PO | SA, Team | Stakeholders |
-| **Resource Allocation** | PM | PO, SA | Team |
-| **Budget** | PM | PO, SA | Sponsor |
-| **Timeline** | PM | PO, SA | Team, Sponsor |
-| **Team Hiring** | PM | PO, SA | Sponsor |
-| **Risk Response** | PM | PO, SA | Team |
+| Decision Type           | Primary | Consulted    | Informed      |
+| ----------------------- | ------- | ------------ | ------------- |
+| **Product Features**    | PO      | PM, SA, Team | Stakeholders  |
+| **Feature Priority**    | PO      | PM           | SA, Team      |
+| **User Stories**        | PO      | Team         | PM, SA        |
+| **Acceptance Criteria** | PO      | Team         | PM, SA        |
+| **Technology Stack**    | SA      | PM, Team     | PO            |
+| **Architecture**        | SA      | PM, Team     | PO            |
+| **Code Standards**      | SA      | Team         | PM, PO        |
+| **Sprint Scope**        | PM, PO  | SA, Team     | Stakeholders  |
+| **Resource Allocation** | PM      | PO, SA       | Team          |
+| **Budget**              | PM      | PO, SA       | Sponsor       |
+| **Timeline**            | PM      | PO, SA       | Team, Sponsor |
+| **Team Hiring**         | PM      | PO, SA       | Sponsor       |
+| **Risk Response**       | PM      | PO, SA       | Team          |
 
 ---
 
@@ -144,6 +156,7 @@ This document provides guidance on how the three key leadership roles - Project 
 ### Daily Coordination
 
 **Daily Standup** (15 minutes)
+
 - **When**: Every morning, 9:00 AM
 - **Who**: Team + PM + PO + SA
 - **PM Role**: Facilitate, track blockers
@@ -151,6 +164,7 @@ This document provides guidance on how the three key leadership roles - Project 
 - **SA Role**: Provide technical guidance, identify technical blockers
 
 **Ad-Hoc Questions**
+
 - **Slack**: Quick clarifications
 - **Who answers**:
   - Product questions → PO
@@ -162,6 +176,7 @@ This document provides guidance on how the three key leadership roles - Project 
 ### Weekly Coordination
 
 **Backlog Grooming** (Wednesday, 1 hour)
+
 - **Who**: PO + Team + PM + SA
 - **PO Role**: Lead session, present stories, explain requirements
 - **PM Role**: Facilitate, timebox discussions, track dependencies
@@ -169,9 +184,10 @@ This document provides guidance on how the three key leadership roles - Project 
 - **Outcome**: Refined stories ready for sprint planning
 
 **Weekly Sync** (15 minutes, as needed)
+
 - **Who**: PM + PO + SA only
 - **Purpose**: Align on priorities, address emerging issues, coordinate
-- **Topics**: 
+- **Topics**:
   - Sprint progress vs. goals
   - Upcoming priorities
   - Team concerns
@@ -183,7 +199,8 @@ This document provides guidance on how the three key leadership roles - Project 
 ### Bi-Weekly Coordination (Sprint Ceremonies)
 
 **Sprint Planning** (Monday, 2 hours)
-- **PO Role**: 
+
+- **PO Role**:
   - Present sprint goal
   - Prioritize stories
   - Clarify acceptance criteria
@@ -201,6 +218,7 @@ This document provides guidance on how the three key leadership roles - Project 
   - Confirm team capacity
 
 **Sprint Review** (Friday, 1 hour)
+
 - **PO Role**:
   - Evaluate completed work against acceptance criteria
   - Accept or reject stories
@@ -217,6 +235,7 @@ This document provides guidance on how the three key leadership roles - Project 
   - Preview next sprint
 
 **Sprint Retrospective** (Friday, 1 hour)
+
 - **All Roles**: Equal participants
 - **PM Role**: Facilitate
 - **Topics**: What went well, what to improve, action items
@@ -227,6 +246,7 @@ This document provides guidance on how the three key leadership roles - Project 
 ### Monthly Coordination
 
 **Architecture Review** (As needed, 1-2 hours)
+
 - **Who**: SA + Team + PM + PO (optional)
 - **Purpose**: Review major architecture decisions
 - **SA Role**: Lead discussion
@@ -235,6 +255,7 @@ This document provides guidance on how the three key leadership roles - Project 
 - **Outcome**: ADR created, consensus reached
 
 **Roadmap Review** (First week of month, 1 hour)
+
 - **Who**: PO + PM + SA
 - **Purpose**: Review and adjust 3-month roadmap
 - **PO Role**: Lead discussion, propose changes
@@ -243,6 +264,7 @@ This document provides guidance on how the three key leadership roles - Project 
 - **Outcome**: Updated roadmap
 
 **Risk & Metrics Review** (Last week of month, 30 minutes)
+
 - **Who**: PM + PO + SA
 - **Purpose**: Review project health
 - **PM Role**: Present risks and metrics
@@ -257,6 +279,7 @@ This document provides guidance on how the three key leadership roles - Project 
 ### When to Involve Each Role
 
 #### Involve Product Owner When:
+
 - Defining new features
 - Clarifying user requirements
 - Prioritizing work
@@ -266,6 +289,7 @@ This document provides guidance on how the three key leadership roles - Project 
 - Accepting completed work
 
 #### Involve Software Architect When:
+
 - Making technology decisions
 - Designing system architecture
 - Addressing performance issues
@@ -276,6 +300,7 @@ This document provides guidance on how the three key leadership roles - Project 
 - Technical debt decisions
 
 #### Involve Project Manager When:
+
 - Timeline concerns
 - Resource allocation issues
 - Team conflicts or concerns
@@ -292,9 +317,11 @@ This document provides guidance on how the three key leadership roles - Project 
 ### Disagreement Types & Resolution
 
 #### 1. Feature vs. Technical Debt
+
 **Conflict**: PO wants features, SA wants to address technical debt
 
 **Resolution Process**:
+
 1. SA presents technical debt impact (quantify risk and future cost)
 2. PO presents feature value (user impact and business value)
 3. PM facilitates trade-off discussion
@@ -302,9 +329,11 @@ This document provides guidance on how the three key leadership roles - Project 
 5. **Escalation**: If can't agree, escalate to Project Sponsor
 
 #### 2. Timeline vs. Quality
+
 **Conflict**: PM has timeline pressure, SA wants to maintain quality
 
 **Resolution Process**:
+
 1. SA defines "done" criteria and quality non-negotiables
 2. PM presents timeline constraints and impacts
 3. Identify what can be de-scoped (with PO)
@@ -312,9 +341,11 @@ This document provides guidance on how the three key leadership roles - Project 
 5. **Escalation**: If deadline immovable, escalate to Sponsor for scope reduction
 
 #### 3. Scope vs. Resources
+
 **Conflict**: PO wants more features, PM has limited resources
 
 **Resolution Process**:
+
 1. PO prioritizes features using MoSCoW method
 2. PM presents team capacity reality
 3. SA provides technical effort estimates
@@ -322,9 +353,11 @@ This document provides guidance on how the three key leadership roles - Project 
 5. **Escalation**: If more resources needed, business case to Sponsor
 
 #### 4. User Need vs. Technical Complexity
+
 **Conflict**: PO identifies user need, SA says it's too complex
 
 **Resolution Process**:
+
 1. PO clarifies the user problem (not the solution)
 2. SA proposes alternative technical approaches
 3. Team brainstorms simpler solutions
@@ -335,33 +368,37 @@ This document provides guidance on how the three key leadership roles - Project 
 
 ## Escalation Matrix
 
-| Issue Type | First Contact | If Unresolved | Final Escalation |
-|------------|---------------|---------------|------------------|
-| Feature Priority | PO | PM + PO + SA | Project Sponsor |
-| Technical Approach | SA | PM + PO + SA | External Advisor |
-| Timeline Slip | PM | PM + PO + SA | Project Sponsor |
-| Team Performance | PM | PM + PO + SA | HR/Leadership |
-| Budget Overrun | PM | PM + Sponsor | Funding Committee |
-| Theological Content | PO | Theological Advisor | Diocese Authority |
-| Security Issue | SA | PM + SA | External Security Expert |
+| Issue Type          | First Contact | If Unresolved       | Final Escalation         |
+| ------------------- | ------------- | ------------------- | ------------------------ |
+| Feature Priority    | PO            | PM + PO + SA        | Project Sponsor          |
+| Technical Approach  | SA            | PM + PO + SA        | External Advisor         |
+| Timeline Slip       | PM            | PM + PO + SA        | Project Sponsor          |
+| Team Performance    | PM            | PM + PO + SA        | HR/Leadership            |
+| Budget Overrun      | PM            | PM + Sponsor        | Funding Committee        |
+| Theological Content | PO            | Theological Advisor | Diocese Authority        |
+| Security Issue      | SA            | PM + SA             | External Security Expert |
 
 ---
 
 ## Meeting Cadence Summary
 
 ### Daily
+
 - **9:00 AM**: Team Standup (15 min) - All roles
 
 ### Weekly
+
 - **Wednesday 2:00 PM**: Backlog Grooming (1 hour) - All roles + Team
 - **As needed**: PM-PO-SA Sync (15 min) - Leadership only
 
 ### Bi-Weekly (Sprint Boundaries)
+
 - **Monday 10:00 AM**: Sprint Planning (2 hours) - All roles + Team
 - **Friday 2:00 PM**: Sprint Review (1 hour) - All roles + Team + Stakeholders
 - **Friday 3:30 PM**: Sprint Retrospective (1 hour) - All roles + Team
 
 ### Monthly
+
 - **First Week**: Roadmap Review (1 hour) - PO + PM + SA
 - **Last Week**: Risk & Metrics Review (30 min) - PM + PO + SA
 - **As needed**: Architecture Review - SA + Team + PM
@@ -412,6 +449,7 @@ This document provides guidance on how the three key leadership roles - Project 
 ### When a New PM/PO/SA Joins
 
 **First Week**:
+
 - [ ] Read all role documentation
 - [ ] 1-on-1 with each of the other two leadership roles
 - [ ] Review Project Charter
@@ -420,6 +458,7 @@ This document provides guidance on how the three key leadership roles - Project 
 - [ ] Review recent sprint reports and retrospective notes
 
 **Second Week**:
+
 - [ ] Shadow predecessor (if handoff) or peer
 - [ ] Begin participating in ceremonies
 - [ ] Meet with team members 1-on-1
@@ -427,12 +466,14 @@ This document provides guidance on how the three key leadership roles - Project 
 - [ ] Ask lots of questions
 
 **Third Week**:
+
 - [ ] Take increasing ownership of role
 - [ ] Lead first ceremony or meeting
 - [ ] Make first decisions
 - [ ] Provide first artifacts
 
 **30 Day Check-in**:
+
 - Meeting with other leadership roles
 - Feedback on onboarding
 - Clarify any confusion
@@ -443,12 +484,14 @@ This document provides guidance on how the three key leadership roles - Project 
 ## Tools for Collaboration
 
 ### Shared Tools
+
 - **Slack**: Daily communication
 - **GitHub**: Code, issues, project board, documentation
 - **Zoom**: Video meetings
 - **Shared Calendar**: All meetings visible to all
 
 ### Role-Specific Views
+
 - **PM**: Project board (timeline view), risk register, budget tracker
 - **PO**: Backlog (priority view), user research data, analytics
 - **SA**: Architecture diagrams, ADRs, code quality metrics
@@ -470,12 +513,12 @@ This document provides guidance on how the three key leadership roles - Project 
 
 ## Document History
 
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2025-10-19 | Project Manager | Initial coordination guide |
+| Version | Date       | Author          | Changes                    |
+| ------- | ---------- | --------------- | -------------------------- |
+| 1.0     | 2025-10-19 | Project Manager | Initial coordination guide |
 
 ---
 
-*"Though one may be overpowered, two can defend themselves. A cord of three strands is not quickly broken."* - Ecclesiastes 4:12
+_"Though one may be overpowered, two can defend themselves. A cord of three strands is not quickly broken."_ - Ecclesiastes 4:12
 
 **Ad Majorem Dei Gloriam** ✝️

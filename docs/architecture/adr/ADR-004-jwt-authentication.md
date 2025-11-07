@@ -7,6 +7,7 @@
 ## Context
 
 The Eucharist Understanding Platform requires a secure authentication mechanism that:
+
 - Works seamlessly across web and mobile platforms
 - Scales efficiently as user base grows
 - Provides stateless authentication for better performance
@@ -19,6 +20,7 @@ The Eucharist Understanding Platform requires a secure authentication mechanism 
 ### Key Requirements
 
 **Security**:
+
 - Secure token generation and validation
 - Protection against token theft
 - Automatic token expiration
@@ -26,12 +28,14 @@ The Eucharist Understanding Platform requires a secure authentication mechanism 
 - HTTPS/TLS for all communications
 
 **Scalability**:
+
 - Stateless authentication (no server-side session storage)
 - Horizontal scaling without session stickiness
 - Low latency validation
 - Efficient token validation
 
 **User Experience**:
+
 - Single sign-on capability
 - "Remember me" functionality
 - Seamless token refresh
@@ -39,6 +43,7 @@ The Eucharist Understanding Platform requires a secure authentication mechanism 
 - Cross-device support
 
 **Multi-Platform**:
+
 - Web application support
 - Mobile app support (iOS/Android)
 - API access for future integrations
@@ -47,6 +52,7 @@ The Eucharist Understanding Platform requires a secure authentication mechanism 
 ## Decision
 
 We will use **JSON Web Tokens (JWT)** with a **dual-token approach**:
+
 - **Access Token**: Short-lived (15 minutes), used for API requests
 - **Refresh Token**: Long-lived (7 days), used to obtain new access tokens
 
@@ -59,32 +65,32 @@ We will use **JSON Web Tokens (JWT)** with a **dual-token approach**:
 
 1. Login Request
    User → API: POST /auth/login { email, password }
-   
+
 2. Credential Verification
    API → Database: Verify credentials
    API → bcrypt: Validate password hash
-   
+
 3. Token Generation
    API: Generate Access Token (15 min expiry)
    API: Generate Refresh Token (7 days expiry)
    API: Store refresh token in database
-   
+
 4. Token Response
-   API → User: { 
+   API → User: {
      accessToken: "eyJhbG...",
      refreshToken: "eyJhbG...",
      user: { id, email, name }
    }
-   
+
 5. API Request
    User → API: GET /api/resource
    Header: Authorization: Bearer <accessToken>
-   
+
 6. Token Validation
    API: Verify token signature
    API: Check expiration
    API: Extract user info from payload
-   
+
 7. Token Refresh (when access token expires)
    User → API: POST /auth/refresh { refreshToken }
    API: Validate refresh token
@@ -96,6 +102,7 @@ We will use **JSON Web Tokens (JWT)** with a **dual-token approach**:
 ### Token Structure
 
 #### Access Token Payload
+
 ```javascript
 {
   "sub": "user-uuid-here",        // Subject (user ID)
@@ -108,6 +115,7 @@ We will use **JSON Web Tokens (JWT)** with a **dual-token approach**:
 ```
 
 #### Refresh Token Payload
+
 ```javascript
 {
   "sub": "user-uuid-here",
@@ -123,20 +131,20 @@ We will use **JSON Web Tokens (JWT)** with a **dual-token approach**:
 ```typescript
 // JWT Service
 class JwtService {
-  generateAccessToken(userId: string, email: string, role: string): string
-  generateRefreshToken(userId: string): string
-  verifyAccessToken(token: string): JwtPayload
-  verifyRefreshToken(token: string): JwtPayload
+  generateAccessToken(userId: string, email: string, role: string): string;
+  generateRefreshToken(userId: string): string;
+  verifyAccessToken(token: string): JwtPayload;
+  verifyRefreshToken(token: string): JwtPayload;
 }
 
 // Auth Controller
 class AuthController {
-  login(email, password): { accessToken, refreshToken, user }
-  register(userData): { accessToken, refreshToken, user }
-  refresh(refreshToken): { accessToken }
-  logout(refreshToken): void
-  verifyEmail(token): { success: boolean }
-  resetPassword(email): { success: boolean }
+  login(email, password): { accessToken; refreshToken; user };
+  register(userData): { accessToken; refreshToken; user };
+  refresh(refreshToken): { accessToken };
+  logout(refreshToken): void;
+  verifyEmail(token): { success: boolean };
+  resetPassword(email): { success: boolean };
 }
 
 // Auth Middleware
@@ -150,23 +158,27 @@ function authenticateToken(req, res, next) {
 ### Security Measures
 
 #### Token Storage
-- **Web**: 
+
+- **Web**:
   - Access token: Memory (React state)
   - Refresh token: httpOnly cookie (secure, SameSite)
-- **Mobile**: 
+- **Mobile**:
   - Both tokens: Secure storage (Keychain/Keystore)
 
 #### Token Rotation
+
 - New refresh token issued on each refresh
 - Old refresh token invalidated
 - Prevents token reuse attacks
 
 #### Token Revocation
+
 - Refresh tokens stored in database
 - Can be revoked immediately (logout, password change)
 - Regular cleanup of expired tokens
 
 #### Additional Security
+
 - HTTPS required for all authentication endpoints
 - Rate limiting on login attempts
 - Account lockout after failed attempts
@@ -227,14 +239,17 @@ function authenticateToken(req, res, next) {
 ## Alternatives Considered
 
 ### 1. Session-Based Authentication
-**Pros**: 
+
+**Pros**:
+
 - Simple implementation
 - Immediate invalidation on logout
 - Familiar pattern
 - No token management on client
 - Easy to revoke
 
-**Cons**: 
+**Cons**:
+
 - Requires server-side session storage
 - Sticky sessions or shared session store needed for scaling
 - Database lookup on every request
@@ -244,14 +259,17 @@ function authenticateToken(req, res, next) {
 **Why Not**: Session-based auth requires stateful servers and doesn't scale as well. For a platform with web and mobile clients, JWT's stateless approach is more suitable and performant.
 
 ### 2. OAuth 2.0 Only (Third-Party)
-**Pros**: 
+
+**Pros**:
+
 - Delegated authentication
 - No password management
 - Social login built-in
 - Established security
 - User convenience
 
-**Cons**: 
+**Cons**:
+
 - Dependency on third-party services
 - Doesn't solve our own user authentication
 - More complex flow
@@ -261,13 +279,16 @@ function authenticateToken(req, res, next) {
 **Why Not**: We need our own user authentication system. OAuth will be used for social login options, but we need a primary authentication mechanism. JWT complements OAuth well.
 
 ### 3. API Keys
-**Pros**: 
+
+**Pros**:
+
 - Simple to implement
 - Easy to revoke
 - Long-lived tokens
 - No expiration logic needed
 
-**Cons**: 
+**Cons**:
+
 - Security risk if leaked (no expiration)
 - Not suitable for user authentication
 - Poor user experience
@@ -277,13 +298,16 @@ function authenticateToken(req, res, next) {
 **Why Not**: API keys are better suited for service-to-service authentication, not user authentication. They lack the security features needed for a user-facing application.
 
 ### 4. SAML
-**Pros**: 
+
+**Pros**:
+
 - Enterprise standard
 - Single sign-on
 - Robust security
 - XML-based
 
-**Cons**: 
+**Cons**:
+
 - Overly complex for our needs
 - Heavy XML payload
 - Enterprise-focused
@@ -293,13 +317,16 @@ function authenticateToken(req, res, next) {
 **Why Not**: SAML is designed for enterprise SSO scenarios and is overkill for our platform. JWT provides similar benefits with much less complexity.
 
 ### 5. Basic Authentication
-**Pros**: 
+
+**Pros**:
+
 - Simple to implement
 - No token management
 - Works everywhere
 - Standard HTTP
 
-**Cons**: 
+**Cons**:
+
 - Sends credentials with every request
 - Major security risk
 - No logout mechanism
@@ -309,12 +336,15 @@ function authenticateToken(req, res, next) {
 **Why Not**: Basic authentication is insecure for modern applications and provides a poor user experience. It's only suitable for simple scenarios with additional security layers.
 
 ### 6. Custom Token System
-**Pros**: 
+
+**Pros**:
+
 - Complete control
 - Tailored to exact needs
 - No external dependencies
 
-**Cons**: 
+**Cons**:
+
 - Reinventing the wheel
 - Higher security risk
 - More development time
@@ -326,6 +356,7 @@ function authenticateToken(req, res, next) {
 ## Implementation Plan
 
 ### Phase 1: Backend Setup (Week 1-2)
+
 - [x] Install JWT libraries (jsonwebtoken)
 - [ ] Create JWT service class
 - [ ] Implement token generation
@@ -334,6 +365,7 @@ function authenticateToken(req, res, next) {
 - [ ] Set up refresh token storage in database
 
 ### Phase 2: Auth Endpoints (Week 2-3)
+
 - [ ] POST /auth/register endpoint
 - [ ] POST /auth/login endpoint
 - [ ] POST /auth/refresh endpoint
@@ -343,6 +375,7 @@ function authenticateToken(req, res, next) {
 - [ ] GET /auth/verify-email endpoint
 
 ### Phase 3: Security Hardening (Week 3-4)
+
 - [ ] Implement rate limiting
 - [ ] Add account lockout logic
 - [ ] Set up HTTPS enforcement
@@ -352,6 +385,7 @@ function authenticateToken(req, res, next) {
 - [ ] Set up security headers
 
 ### Phase 4: Web Integration (Week 4-5)
+
 - [ ] Create auth context in React
 - [ ] Implement login/register forms
 - [ ] Add token storage logic
@@ -360,6 +394,7 @@ function authenticateToken(req, res, next) {
 - [ ] Add logout functionality
 
 ### Phase 5: Mobile Integration (Month 4)
+
 - [ ] Implement auth in Flutter
 - [ ] Set up secure storage
 - [ ] Create auth state management
@@ -368,6 +403,7 @@ function authenticateToken(req, res, next) {
 - [ ] Add biometric authentication (optional)
 
 ### Phase 6: Testing & Monitoring (Ongoing)
+
 - [ ] Unit tests for JWT service
 - [ ] Integration tests for auth flow
 - [ ] Security testing (penetration tests)
@@ -378,23 +414,25 @@ function authenticateToken(req, res, next) {
 ## Technical Specifications
 
 ### JWT Configuration
+
 ```javascript
 // config/jwt.config.js
 module.exports = {
   accessToken: {
     secret: process.env.JWT_ACCESS_SECRET,
     expiresIn: '15m',
-    algorithm: 'HS256'
+    algorithm: 'HS256',
   },
   refreshToken: {
     secret: process.env.JWT_REFRESH_SECRET,
     expiresIn: '7d',
-    algorithm: 'HS256'
-  }
+    algorithm: 'HS256',
+  },
 };
 ```
 
 ### Token Generation
+
 ```typescript
 import jwt from 'jsonwebtoken';
 import { v4 as uuidv4 } from 'uuid';
@@ -405,32 +443,32 @@ class JwtService {
       sub: userId,
       email,
       role,
-      type: 'access'
+      type: 'access',
     };
-    
+
     return jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {
       expiresIn: '15m',
-      algorithm: 'HS256'
+      algorithm: 'HS256',
     });
   }
-  
+
   generateRefreshToken(userId: string): string {
     const payload = {
       sub: userId,
       type: 'refresh',
-      jti: uuidv4() // Unique token ID for revocation
+      jti: uuidv4(), // Unique token ID for revocation
     };
-    
+
     return jwt.sign(payload, process.env.JWT_REFRESH_SECRET, {
       expiresIn: '7d',
-      algorithm: 'HS256'
+      algorithm: 'HS256',
     });
   }
-  
+
   verifyAccessToken(token: string): JwtPayload {
     return jwt.verify(token, process.env.JWT_ACCESS_SECRET) as JwtPayload;
   }
-  
+
   verifyRefreshToken(token: string): JwtPayload {
     return jwt.verify(token, process.env.JWT_REFRESH_SECRET) as JwtPayload;
   }
@@ -438,52 +476,50 @@ class JwtService {
 ```
 
 ### Authentication Middleware
+
 ```typescript
 import { Request, Response, NextFunction } from 'express';
 
-async function authenticateToken(
-  req: Request, 
-  res: Response, 
-  next: NextFunction
-) {
+async function authenticateToken(req: Request, res: Response, next: NextFunction) {
   try {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
-    
+
     if (!token) {
-      return res.status(401).json({ 
+      return res.status(401).json({
         success: false,
-        error: { code: 'NO_TOKEN', message: 'Access token required' }
+        error: { code: 'NO_TOKEN', message: 'Access token required' },
       });
     }
-    
+
     const payload = jwtService.verifyAccessToken(token);
-    
+
     // Attach user info to request
     req.user = {
       id: payload.sub,
       email: payload.email,
-      role: payload.role
+      role: payload.role,
     };
-    
+
     next();
   } catch (error) {
     if (error.name === 'TokenExpiredError') {
       return res.status(401).json({
         success: false,
-        error: { code: 'TOKEN_EXPIRED', message: 'Access token expired' }
+        error: { code: 'TOKEN_EXPIRED', message: 'Access token expired' },
       });
     }
-    
+
     return res.status(403).json({
       success: false,
-      error: { code: 'INVALID_TOKEN', message: 'Invalid access token' }
+      error: { code: 'INVALID_TOKEN', message: 'Invalid access token' },
     });
   }
 }
 ```
 
 ### Refresh Token Storage
+
 ```sql
 -- Refresh tokens table
 CREATE TABLE refresh_tokens (
@@ -505,6 +541,7 @@ CREATE INDEX idx_refresh_tokens_expires ON refresh_tokens(expires_at);
 ## Security Best Practices
 
 ### Token Secrets
+
 - Use strong, random secrets (256-bit minimum)
 - Rotate secrets periodically (quarterly)
 - Store secrets in environment variables
@@ -512,24 +549,27 @@ CREATE INDEX idx_refresh_tokens_expires ON refresh_tokens(expires_at);
 - Use different secrets for access and refresh tokens
 
 ### Transport Security
+
 - HTTPS required for all authentication endpoints
 - Set secure flag on cookies
 - Use SameSite=Strict for cookies
 - Implement HSTS headers
 
 ### Rate Limiting
+
 ```javascript
 // Login endpoint rate limiting
 const loginLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 5, // 5 attempts
-  message: 'Too many login attempts, please try again later'
+  message: 'Too many login attempts, please try again later',
 });
 
 app.post('/auth/login', loginLimiter, authController.login);
 ```
 
 ### Password Security
+
 - bcrypt with 12+ salt rounds
 - Minimum password requirements
 - Password strength checking
@@ -539,6 +579,7 @@ app.post('/auth/login', loginLimiter, authController.login);
 ## Monitoring & Alerting
 
 ### Metrics to Track
+
 - Failed login attempts (by user, by IP)
 - Token refresh rate
 - Token expiration patterns
@@ -547,6 +588,7 @@ app.post('/auth/login', loginLimiter, authController.login);
 - Unusual access patterns
 
 ### Alerts
+
 - Multiple failed logins from same IP
 - Multiple failed logins for same account
 - Token usage from unusual locations
@@ -554,6 +596,7 @@ app.post('/auth/login', loginLimiter, authController.login);
 - Suspicious activity patterns
 
 ### Audit Logging
+
 ```javascript
 // Log authentication events
 const authLog = {
@@ -562,7 +605,7 @@ const authLog = {
   timestamp: new Date(),
   ipAddress: req.ip,
   userAgent: req.headers['user-agent'],
-  location: geoip.lookup(req.ip)
+  location: geoip.lookup(req.ip),
 };
 ```
 

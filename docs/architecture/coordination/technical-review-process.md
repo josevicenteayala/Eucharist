@@ -7,16 +7,19 @@ This document defines the technical review process for the Eucharist Understandi
 ## Review Types
 
 ### 1. Code Review
+
 **Purpose**: Ensure code quality, maintainability, and adherence to standards
 
 **Scope**: All code changes before merging to main branches
 
-**Reviewers**: 
+**Reviewers**:
+
 - Primary: Peer developer
 - Secondary: Technical Lead (for complex features)
 - Tertiary: Software Architect (for architectural changes)
 
 ### 2. Design Review
+
 **Purpose**: Validate technical design before implementation
 
 **Scope**: Major features, architectural changes, database schema modifications
@@ -24,6 +27,7 @@ This document defines the technical review process for the Eucharist Understandi
 **Reviewers**: Technical Lead, Software Architect
 
 ### 3. Security Review
+
 **Purpose**: Identify and mitigate security vulnerabilities
 
 **Scope**: Authentication/authorization, data handling, API endpoints, external integrations
@@ -31,6 +35,7 @@ This document defines the technical review process for the Eucharist Understandi
 **Reviewers**: Software Architect, Security specialist (if available)
 
 ### 4. Performance Review
+
 **Purpose**: Ensure performance targets are met
 
 **Scope**: Database queries, API endpoints, critical user flows
@@ -49,6 +54,7 @@ This document defines the technical review process for the Eucharist Understandi
 ### Review Checklist
 
 #### Functionality
+
 - [ ] Code does what it's supposed to do
 - [ ] Edge cases are handled
 - [ ] Error handling is appropriate
@@ -56,6 +62,7 @@ This document defines the technical review process for the Eucharist Understandi
 - [ ] No obvious bugs
 
 #### Code Quality
+
 - [ ] Follows coding standards (ESLint/Prettier rules)
 - [ ] Proper naming conventions
 - [ ] Functions are small and focused
@@ -64,6 +71,7 @@ This document defines the technical review process for the Eucharist Understandi
 - [ ] Code is readable and maintainable
 
 #### Architecture
+
 - [ ] Follows established patterns
 - [ ] Proper separation of concerns
 - [ ] No circular dependencies
@@ -71,6 +79,7 @@ This document defines the technical review process for the Eucharist Understandi
 - [ ] Database changes follow schema design
 
 #### Testing
+
 - [ ] Unit tests present and passing
 - [ ] Test coverage meets minimum (80%)
 - [ ] Tests cover happy path and edge cases
@@ -78,6 +87,7 @@ This document defines the technical review process for the Eucharist Understandi
 - [ ] Test names are descriptive
 
 #### Security
+
 - [ ] No hardcoded secrets or credentials
 - [ ] Input validation and sanitization
 - [ ] Proper authentication/authorization
@@ -86,6 +96,7 @@ This document defines the technical review process for the Eucharist Understandi
 - [ ] CSRF protection where needed
 
 #### Performance
+
 - [ ] No N+1 queries
 - [ ] Appropriate indexing
 - [ ] Efficient algorithms
@@ -93,6 +104,7 @@ This document defines the technical review process for the Eucharist Understandi
 - [ ] No memory leaks
 
 #### Documentation
+
 - [ ] API documentation updated
 - [ ] README updated if needed
 - [ ] Inline comments for complex logic
@@ -119,7 +131,8 @@ This document defines the technical review process for the Eucharist Understandi
 #### Good Feedback Examples
 
 ✅ **Specific and Actionable**
-```
+
+````
 Consider extracting this logic into a separate function for reusability.
 This would also make it easier to test.
 
@@ -128,37 +141,48 @@ Suggestion:
 function validateEmail(email: string): boolean {
   // validation logic
 }
-```
+````
+
 ```
 
 ✅ **Educational**
 ```
-This works, but using Array.filter() here would be more idiomatic and 
-performant than a for loop. Example: 
+
+This works, but using Array.filter() here would be more idiomatic and
+performant than a for loop. Example:
 users.filter(u => u.age > 18)
+
 ```
 
 ✅ **Asks Questions**
 ```
-Have we considered what happens if the API call fails? 
+
+Have we considered what happens if the API call fails?
 Should we add a retry mechanism or show a user-friendly error?
+
 ```
 
 #### Feedback to Avoid
 
 ❌ **Vague**
 ```
+
 This doesn't look right.
+
 ```
 
 ❌ **Prescriptive without Explanation**
 ```
+
 Change this to use a Map instead.
+
 ```
 
 ❌ **Personal**
 ```
+
 You always write messy code.
+
 ```
 
 ### Levels of Feedback
@@ -173,14 +197,16 @@ Use these prefixes to indicate severity:
 
 Example:
 ```
-[CRITICAL] This endpoint doesn't check user authentication. 
+
+[CRITICAL] This endpoint doesn't check user authentication.
 Please add the authMiddleware.
 
-[SUGGESTION] Consider using async/await instead of .then() 
+[SUGGESTION] Consider using async/await instead of .then()
 for better readability.
 
 [PRAISE] Nice use of TypeScript generics here!
-```
+
+````
 
 ## Design Review Process
 
@@ -250,25 +276,28 @@ for better readability.
 - [ ] Technical Lead Approval
 - [ ] Software Architect Approval
 - [ ] Product Owner Acknowledgment (for scope)
-```
+````
 
 ### Design Review Meeting
 
 **Duration**: 1-2 hours
 
-**Participants**: 
+**Participants**:
+
 - Feature developer(s)
 - Technical Lead
 - Software Architect
 - Other relevant team members
 
 **Agenda**:
+
 1. Developer presents design (20-30 min)
 2. Clarifying questions (10 min)
 3. Discussion and feedback (30-45 min)
 4. Decision and next steps (10 min)
 
 **Outcomes**:
+
 - Approved: Proceed with implementation
 - Approved with Modifications: Make changes then proceed
 - Rejected: Significant redesign needed
@@ -287,6 +316,7 @@ for better readability.
 ### Security Checklist
 
 #### Authentication & Authorization
+
 - [ ] Proper authentication required
 - [ ] Role-based access control implemented
 - [ ] Session management secure
@@ -295,6 +325,7 @@ for better readability.
 - [ ] Refresh token rotation
 
 #### Data Protection
+
 - [ ] Sensitive data encrypted at rest
 - [ ] HTTPS/TLS for data in transit
 - [ ] Passwords properly hashed (bcrypt, cost factor 10+)
@@ -303,6 +334,7 @@ for better readability.
 - [ ] Secrets not in code or version control
 
 #### Input Validation
+
 - [ ] All user input validated
 - [ ] SQL injection prevention (parameterized queries)
 - [ ] XSS prevention (output escaping)
@@ -311,6 +343,7 @@ for better readability.
 - [ ] API rate limiting
 
 #### API Security
+
 - [ ] Authentication required for protected endpoints
 - [ ] Authorization checks for resources
 - [ ] Input validation on all parameters
@@ -319,6 +352,7 @@ for better readability.
 - [ ] Security headers (Helmet.js)
 
 #### Dependencies
+
 - [ ] No known vulnerabilities (npm audit, Snyk)
 - [ ] Dependencies kept up to date
 - [ ] License compliance
@@ -360,6 +394,7 @@ for better readability.
 ### Performance Checklist
 
 #### Database
+
 - [ ] Appropriate indexes defined
 - [ ] No N+1 queries
 - [ ] Query optimization reviewed (EXPLAIN ANALYZE)
@@ -367,6 +402,7 @@ for better readability.
 - [ ] Pagination implemented for lists
 
 #### API
+
 - [ ] Response caching where appropriate
 - [ ] Compression enabled (gzip/brotli)
 - [ ] Pagination for large datasets
@@ -374,6 +410,7 @@ for better readability.
 - [ ] Async processing for long operations
 
 #### Frontend
+
 - [ ] Code splitting implemented
 - [ ] Lazy loading for images and components
 - [ ] Minification and bundling optimized
@@ -381,6 +418,7 @@ for better readability.
 - [ ] Service worker for offline support (mobile)
 
 #### Mobile
+
 - [ ] Image optimization
 - [ ] Local caching strategy
 - [ ] Efficient list rendering
@@ -396,7 +434,7 @@ describe('GET /api/gospel/today', () => {
     const start = Date.now();
     const response = await request(app).get('/api/gospel/today');
     const duration = Date.now() - start;
-    
+
     expect(response.status).toBe(200);
     expect(duration).toBeLessThan(500);
   });
@@ -414,18 +452,21 @@ describe('GET /api/gospel/today', () => {
 ## Review Metrics
 
 ### Individual Metrics
+
 - Review turnaround time
 - Number of reviews completed
 - Quality of feedback
 - Issues caught in review
 
 ### Team Metrics
+
 - Average review time
 - Bugs caught in review vs. production
 - Code quality trends
 - Test coverage trends
 
 ### Quality Metrics
+
 - Bug escape rate (bugs found in production)
 - Code coverage percentage
 - Security vulnerabilities found
@@ -480,16 +521,19 @@ describe('GET /api/gospel/today', () => {
 ## Tools
 
 ### Code Review Tools
+
 - **GitHub Pull Requests**: Primary review platform
 - **CodeClimate**: Automated code quality checks
 - **SonarQube**: Code quality and security analysis
 
 ### Communication Tools
+
 - **GitHub Comments**: Inline code comments
 - **Slack/Discord**: Quick discussions
 - **Video Calls**: For complex discussions
 
 ### Testing Tools
+
 - **Jest**: Unit testing
 - **Supertest**: API testing
 - **Playwright**: E2E testing
@@ -501,23 +545,28 @@ describe('GET /api/gospel/today', () => {
 
 ```markdown
 ## Description
+
 [Brief description of changes]
 
 ## Type of Change
+
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Breaking change
 - [ ] Documentation update
 
 ## Related Issue
+
 Closes #[issue number]
 
 ## How Has This Been Tested?
+
 - [ ] Unit tests
 - [ ] Integration tests
 - [ ] Manual testing
 
 ## Checklist
+
 - [ ] Code follows style guidelines
 - [ ] Self-review completed
 - [ ] Comments added for complex logic
@@ -527,9 +576,11 @@ Closes #[issue number]
 - [ ] Dependent changes merged
 
 ## Screenshots (if applicable)
+
 [Add screenshots]
 
 ## Additional Notes
+
 [Any other information]
 ```
 

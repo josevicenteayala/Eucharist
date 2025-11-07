@@ -7,6 +7,7 @@ This document defines the database migration strategy for the Eucharist Understa
 ## Database Systems
 
 We use a hybrid database approach:
+
 1. **PostgreSQL**: Relational data (users, prayers, bookmarks, progress)
 2. **MongoDB**: Flexible content (articles, reflections, miracles)
 3. **Redis**: Caching and sessions
@@ -14,9 +15,11 @@ We use a hybrid database approach:
 ## Migration Tools
 
 ### PostgreSQL Migrations
+
 **Tool**: Sequelize CLI or Knex.js
 
 **Rationale**:
+
 - Version-controlled migrations
 - Up/down migration support
 - Automatic transaction wrapping
@@ -24,12 +27,14 @@ We use a hybrid database approach:
 - Part of our ORM ecosystem
 
 **Installation**:
+
 ```bash
 npm install --save-dev sequelize-cli
 npm install --save sequelize pg pg-hstore
 ```
 
 **Configuration**:
+
 ```javascript
 // config/database.js
 module.exports = {
@@ -39,7 +44,7 @@ module.exports = {
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     dialect: 'postgres',
-    logging: console.log
+    logging: console.log,
   },
   staging: {
     username: process.env.DB_USER,
@@ -47,7 +52,7 @@ module.exports = {
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     dialect: 'postgres',
-    logging: false
+    logging: false,
   },
   production: {
     username: process.env.DB_USER,
@@ -60,30 +65,35 @@ module.exports = {
       max: 10,
       min: 2,
       acquire: 30000,
-      idle: 10000
-    }
-  }
+      idle: 10000,
+    },
+  },
 };
 ```
 
 ### MongoDB Migrations
+
 **Tool**: migrate-mongo
 
 **Rationale**:
+
 - Simple migration framework
 - Up/down migration support
 - MongoDB native driver
 - TypeScript compatible
 
 **Installation**:
+
 ```bash
 npm install --save migrate-mongo
 ```
 
 ### Redis
+
 **Tool**: Manual setup scripts
 
 **Rationale**:
+
 - Redis is primarily for caching (ephemeral data)
 - Configuration rather than schema migrations
 - No persistent schema to migrate
@@ -95,11 +105,13 @@ npm install --save migrate-mongo
 #### 1. Create Migration
 
 **PostgreSQL**:
+
 ```bash
 npx sequelize-cli migration:generate --name create-users-table
 ```
 
 **MongoDB**:
+
 ```bash
 npx migrate-mongo create add-article-tags
 ```
@@ -107,6 +119,7 @@ npx migrate-mongo create add-article-tags
 #### 2. Write Migration
 
 **PostgreSQL Example**:
+
 ```typescript
 // migrations/20251019000000-create-users-table.ts
 import { QueryInterface, DataTypes } from 'sequelize';
@@ -116,37 +129,37 @@ export async function up(queryInterface: QueryInterface) {
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
-      primaryKey: true
+      primaryKey: true,
     },
     email: {
       type: DataTypes.STRING(255),
       allowNull: false,
-      unique: true
+      unique: true,
     },
     password_hash: {
       type: DataTypes.STRING(255),
-      allowNull: true
+      allowNull: true,
     },
     display_name: {
       type: DataTypes.STRING(100),
-      allowNull: true
+      allowNull: true,
     },
     role: {
       type: DataTypes.STRING(20),
-      defaultValue: 'user'
+      defaultValue: 'user',
     },
     email_verified: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false
+      defaultValue: false,
     },
     created_at: {
       type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW
+      defaultValue: DataTypes.NOW,
     },
     updated_at: {
       type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW
-    }
+      defaultValue: DataTypes.NOW,
+    },
   });
 
   // Add indexes
@@ -160,34 +173,29 @@ export async function down(queryInterface: QueryInterface) {
 ```
 
 **MongoDB Example**:
+
 ```javascript
 // migrations/20251019000000-add-article-tags.js
 module.exports = {
   async up(db, client) {
     const articles = db.collection('articles');
-    
+
     // Add tags field to existing articles
-    await articles.updateMany(
-      { tags: { $exists: false } },
-      { $set: { tags: [] } }
-    );
-    
+    await articles.updateMany({ tags: { $exists: false } }, { $set: { tags: [] } });
+
     // Create index on tags
     await articles.createIndex({ tags: 1 });
   },
 
   async down(db, client) {
     const articles = db.collection('articles');
-    
+
     // Remove tags field
-    await articles.updateMany(
-      {},
-      { $unset: { tags: "" } }
-    );
-    
+    await articles.updateMany({}, { $unset: { tags: '' } });
+
     // Drop index
     await articles.dropIndex('tags_1');
-  }
+  },
 };
 ```
 
@@ -218,6 +226,7 @@ git push
 ### Staging Deployment
 
 #### Pre-Deployment Checklist
+
 - [ ] Migration tested locally
 - [ ] Migration reviewed by team
 - [ ] Backup plan documented
@@ -228,6 +237,7 @@ git push
 #### Deployment Steps
 
 1. **Backup Database**
+
 ```bash
 # PostgreSQL backup
 pg_dump -h $DB_HOST -U $DB_USER -d $DB_NAME -F c -f backup_$(date +%Y%m%d_%H%M%S).dump
@@ -237,6 +247,7 @@ mongodump --uri="$MONGO_URI" --out=backup_$(date +%Y%m%d_%H%M%S)
 ```
 
 2. **Run Migration**
+
 ```bash
 # PostgreSQL
 npm run migrate:up -- --env staging
@@ -246,6 +257,7 @@ npx migrate-mongo up
 ```
 
 3. **Verify Schema**
+
 ```bash
 # PostgreSQL - check tables
 psql -h $DB_HOST -U $DB_USER -d $DB_NAME -c "\dt"
@@ -255,11 +267,13 @@ mongosh $MONGO_URI --eval "db.getCollectionNames()"
 ```
 
 4. **Test Application**
+
 - Smoke test critical endpoints
 - Check logs for errors
 - Verify data integrity
 
 5. **Monitor**
+
 - Watch application logs
 - Monitor error rates
 - Check performance metrics
@@ -267,6 +281,7 @@ mongosh $MONGO_URI --eval "db.getCollectionNames()"
 ### Production Deployment
 
 #### Additional Requirements
+
 - [ ] Tested in staging for 24+ hours
 - [ ] No errors in staging
 - [ ] Performance acceptable in staging
@@ -277,6 +292,7 @@ mongosh $MONGO_URI --eval "db.getCollectionNames()"
 #### Deployment Process
 
 1. **Pre-Deployment Communication**
+
 ```
 Subject: Database Migration - [Date] [Time]
 
@@ -298,12 +314,14 @@ Point of contact: [Name]
 2. **Execute Migration** (same as staging)
 
 3. **Post-Deployment Verification**
+
 - Application health checks pass
 - Critical user flows work
 - No spike in error rates
 - Performance metrics normal
 
 4. **Post-Deployment Communication**
+
 ```
 Subject: Database Migration Complete
 
@@ -339,13 +357,13 @@ Status: Monitoring for 1 hour
 await queryInterface.addColumn('users', 'bio', {
   type: DataTypes.TEXT,
   allowNull: true,
-  defaultValue: null
+  defaultValue: null,
 });
 
 // Add index (non-blocking on PostgreSQL 11+)
 await queryInterface.addIndex('users', ['email'], {
   name: 'idx_users_email',
-  concurrently: true
+  concurrently: true,
 });
 
 // Rename column safely
@@ -357,13 +375,13 @@ await queryInterface.renameColumn('users', 'name', 'display_name');
 ```typescript
 // Don't drop columns without down migration
 await queryInterface.removeColumn('users', 'old_field');
-// Without down: 
+// Without down:
 // await queryInterface.addColumn('users', 'old_field', ...);
 
 // Don't make breaking changes without transition period
 await queryInterface.changeColumn('users', 'email', {
   type: DataTypes.STRING(100), // Was 255, might break data
-  allowNull: false // Was nullable, might fail
+  allowNull: false, // Was nullable, might fail
 });
 
 // Don't run data migrations in schema migrations
@@ -378,17 +396,19 @@ await queryInterface.sequelize.query(
 **Separate Data Migrations from Schema Migrations**
 
 **Schema Migration** (migrations/):
+
 ```typescript
 // 20251019000000-add-user-role.ts
 export async function up(queryInterface: QueryInterface) {
   await queryInterface.addColumn('users', 'role', {
     type: DataTypes.STRING(20),
-    defaultValue: 'user'
+    defaultValue: 'user',
   });
 }
 ```
 
 **Data Migration** (scripts/):
+
 ```typescript
 // scripts/20251019-set-admin-roles.ts
 import { User } from '../models';
@@ -397,9 +417,9 @@ export async function run() {
   const admins = await User.findAll({
     where: {
       email: {
-        [Op.like]: '%@admin.com'
-      }
-    }
+        [Op.like]: '%@admin.com',
+      },
+    },
   });
 
   for (const admin of admins) {
@@ -416,15 +436,17 @@ export async function run() {
 For tables with millions of rows:
 
 1. **Add Column Without Constraint**
+
 ```typescript
 // Step 1: Add nullable column
 await queryInterface.addColumn('large_table', 'new_field', {
   type: DataTypes.STRING,
-  allowNull: true
+  allowNull: true,
 });
 ```
 
 2. **Backfill Data in Batches**
+
 ```typescript
 // Step 2: Backfill (separate script)
 const batchSize = 1000;
@@ -434,7 +456,7 @@ while (true) {
   const rows = await Model.findAll({
     where: { new_field: null },
     limit: batchSize,
-    offset: offset
+    offset: offset,
   });
 
   if (rows.length === 0) break;
@@ -450,11 +472,12 @@ while (true) {
 ```
 
 3. **Add Constraint**
+
 ```typescript
 // Step 3: Add constraint after backfill
 await queryInterface.changeColumn('large_table', 'new_field', {
   type: DataTypes.STRING,
-  allowNull: false
+  allowNull: false,
 });
 ```
 
@@ -489,12 +512,14 @@ npm run migrate:status
 #### Emergency Rollback
 
 1. **Stop Application** (if needed)
+
 ```bash
 # Scale down or stop app
 kubectl scale deployment eucharist-api --replicas=0
 ```
 
 2. **Restore from Backup**
+
 ```bash
 # PostgreSQL restore
 pg_restore -h $DB_HOST -U $DB_USER -d $DB_NAME -c backup_file.dump
@@ -504,6 +529,7 @@ mongorestore --uri="$MONGO_URI" --drop backup_dir/
 ```
 
 3. **Revert Application Code**
+
 ```bash
 git revert <commit-hash>
 git push
@@ -511,6 +537,7 @@ git push
 ```
 
 4. **Restart Application**
+
 ```bash
 kubectl scale deployment eucharist-api --replicas=3
 ```
@@ -539,10 +566,10 @@ describe('Create Users Table Migration', () => {
 
   it('should create users table with correct schema', async () => {
     await up(queryInterface);
-    
+
     const tables = await queryInterface.showAllTables();
     expect(tables).toContain('users');
-    
+
     const columns = await queryInterface.describeTable('users');
     expect(columns).toHaveProperty('id');
     expect(columns).toHaveProperty('email');
@@ -551,7 +578,7 @@ describe('Create Users Table Migration', () => {
   it('should drop users table on down migration', async () => {
     await up(queryInterface);
     await down(queryInterface);
-    
+
     const tables = await queryInterface.showAllTables();
     expect(tables).not.toContain('users');
   });
@@ -585,12 +612,12 @@ DATABASE_URL=postgresql://test npm run migrate:down
     "migrate:down:all": "sequelize-cli db:migrate:undo:all",
     "migrate:status": "sequelize-cli db:migrate:status",
     "migrate:create": "sequelize-cli migration:generate --name",
-    
+
     "mongo:migrate:up": "migrate-mongo up",
     "mongo:migrate:down": "migrate-mongo down",
     "mongo:migrate:status": "migrate-mongo status",
     "mongo:migrate:create": "migrate-mongo create",
-    
+
     "db:backup": "node scripts/backup-database.js",
     "db:seed": "sequelize-cli db:seed:all"
   }
@@ -610,6 +637,7 @@ DATABASE_URL=postgresql://test npm run migrate:down
 ### Alerts
 
 Set up alerts for:
+
 - Migration failure
 - Application error spike (>10% increase)
 - Database connection pool exhaustion
@@ -628,34 +656,41 @@ Set up alerts for:
 **Status**: Pending/Applied/Rolled Back
 
 ## Purpose
+
 [Why is this migration needed?]
 
 ## Changes
+
 - Change 1
 - Change 2
 
 ## Impact
+
 - **Breaking Changes**: Yes/No
 - **Downtime Required**: Yes/No (X minutes)
 - **Performance Impact**: Low/Medium/High
 - **Data Volume**: X rows affected
 
 ## Testing
+
 - [ ] Tested locally
 - [ ] Tested in staging
 - [ ] Performance tested
 - [ ] Rollback tested
 
 ## Rollback Plan
+
 [How to rollback if needed]
 
 ## Notes
+
 [Any additional information]
 ```
 
 ## Conclusion
 
 A solid database migration strategy ensures:
+
 - Safe schema evolution
 - Zero data loss
 - Minimal downtime

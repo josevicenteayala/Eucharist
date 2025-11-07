@@ -19,6 +19,7 @@ Thank you for your interest in contributing to the Eucharist Understanding Platf
 ### Our Pledge
 
 This project is rooted in Catholic faith and charity. We pledge to:
+
 - Treat all contributors with respect and dignity
 - Welcome people of all backgrounds who share our mission
 - Maintain theological accuracy and pastoral sensitivity
@@ -45,6 +46,7 @@ This project is rooted in Catholic faith and charity. We pledge to:
 ### Reporting Bugs
 
 If you find a bug, please create an issue with:
+
 - Clear descriptive title
 - Steps to reproduce the problem
 - Expected vs. actual behavior
@@ -54,6 +56,7 @@ If you find a bug, please create an issue with:
 ### Suggesting Features
 
 We welcome feature suggestions! Please:
+
 - Check if the feature has already been suggested
 - Explain the feature and its benefits
 - Consider how it aligns with our mission
@@ -62,6 +65,7 @@ We welcome feature suggestions! Please:
 ### Content Contributions
 
 We especially need help with:
+
 - Educational articles about the Eucharist
 - Daily Gospel reflections
 - Translations (Spanish, Portuguese, etc.)
@@ -72,6 +76,7 @@ We especially need help with:
 ### Code Contributions
 
 Areas where developers can help:
+
 - Backend API development
 - Frontend React components
 - Mobile app features (Flutter)
@@ -82,6 +87,7 @@ Areas where developers can help:
 ### Design Contributions
 
 Design help needed for:
+
 - UI/UX improvements
 - Sacred art and imagery
 - Icon design
@@ -99,22 +105,26 @@ Design help needed for:
 ### Setting Up Your Development Environment
 
 1. **Fork the repository**
+
    ```bash
    # Click "Fork" button on GitHub
    ```
 
 2. **Clone your fork**
+
    ```bash
    git clone https://github.com/YOUR-USERNAME/Eucharist.git
    cd Eucharist
    ```
 
 3. **Add upstream remote**
+
    ```bash
    git remote add upstream https://github.com/josevicenteayala/Eucharist.git
    ```
 
 4. **Install dependencies**
+
    ```bash
    # Backend
    cd web/backend
@@ -130,12 +140,14 @@ Design help needed for:
    ```
 
 5. **Set up environment variables**
+
    ```bash
    cp .env.example .env
    # Edit .env with your configuration
    ```
 
 6. **Run the application**
+
    ```bash
    # Backend
    npm run dev
@@ -162,6 +174,7 @@ git checkout -b content/article-title
 ```
 
 Branch naming conventions:
+
 - `feature/` - New features
 - `bugfix/` - Bug fixes
 - `content/` - Content additions
@@ -190,6 +203,7 @@ Fixes #123
 ```
 
 Types:
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation
@@ -199,6 +213,7 @@ Types:
 - `chore`: Maintenance tasks
 
 Examples:
+
 ```
 feat(gospel): add audio playback for daily readings
 
@@ -215,17 +230,27 @@ Before submitting:
 
 ```bash
 # Run tests
-npm test                    # Backend/Frontend
-flutter test               # Mobile
+npm test                    # All workspaces
+npm test -w web/backend     # Backend only
+flutter test                # Mobile
 
-# Run linter
-npm run lint               # JavaScript/TypeScript
-flutter analyze            # Dart
+# Run linter and formatter (from root)
+npm run lint                # Lint all workspaces
+npm run lint:fix            # Auto-fix linting issues
+npm run format              # Format all files
+npm run format:check        # Check formatting
+
+# Run linter (in specific workspace)
+cd web/backend && npm run lint
+flutter analyze             # Dart
 
 # Build to check for errors
 npm run build              # Frontend
+cd web/backend && npm run build  # Backend
 flutter build apk          # Mobile
 ```
+
+**Note:** Git hooks will automatically run linting and formatting on staged files before commit.
 
 ### 5. Keep Your Branch Updated
 
@@ -260,6 +285,7 @@ git rebase upstream/main
 ### Content Structure
 
 Educational articles should include:
+
 - **Title**: Clear and descriptive
 - **Introduction**: Hook and overview
 - **Main Content**: 3-5 sections with headings
@@ -271,6 +297,7 @@ Educational articles should include:
 ### Gospel Reflections
 
 Daily reflections should:
+
 - Be 300-500 words
 - Connect to daily life
 - Include actionable takeaways
@@ -293,9 +320,11 @@ All theological content must be reviewed before publication.
 ### Theological Reviewers
 
 Current reviewers:
+
 - [To be assigned]
 
 Qualification requirements:
+
 - Advanced degree in theology or equivalent
 - Good standing with the Catholic Church
 - Experience in catechesis or spiritual formation
@@ -315,6 +344,7 @@ Qualification requirements:
 ### Submitting a PR
 
 1. **Push your branch**
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -325,20 +355,25 @@ Qualification requirements:
    - Fill out the PR template
 
 3. **PR Template**
+
    ```markdown
    ## Description
+
    Brief description of changes
 
    ## Type of Change
+
    - [ ] Bug fix
    - [ ] New feature
    - [ ] Content addition
    - [ ] Documentation update
 
    ## Testing
+
    How has this been tested?
 
    ## Checklist
+
    - [ ] Code builds successfully
    - [ ] Tests pass
    - [ ] Documentation updated
@@ -346,9 +381,11 @@ Qualification requirements:
    - [ ] Theological review (if applicable)
 
    ## Screenshots (if applicable)
+
    Add screenshots here
 
    ## Related Issues
+
    Closes #123
    ```
 
@@ -384,8 +421,8 @@ const getData = async () => {
 };
 
 // Use descriptive names
-const userProfile = getUserProfile();  // Good
-const up = getProf();                  // Bad
+const userProfile = getUserProfile(); // Good
+const up = getProf(); // Bad
 
 // Add JSDoc comments for functions
 /**
@@ -409,14 +446,14 @@ const GospelReader = ({ date }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchGospel(date).then(data => {
+    fetchGospel(date).then((data) => {
       setGospel(data);
       setLoading(false);
     });
   }, [date]);
 
   if (loading) return <LoadingSpinner />;
-  
+
   return (
     <div className="gospel-reader">
       <h2>{gospel.title}</h2>
@@ -467,7 +504,7 @@ class _GospelScreenState extends State<GospelScreen> {
     if (_isLoading) {
       return const CircularProgressIndicator();
     }
-    
+
     return Text(_gospel?.content ?? 'No gospel available');
   }
 }
@@ -512,7 +549,7 @@ class _GospelScreenState extends State<GospelScreen> {
 
 ### Markdown (Content)
 
-```markdown
+````markdown
 # Title in Title Case
 
 ## Section Heading
@@ -529,17 +566,19 @@ Regular paragraph text. Keep lines to reasonable length.
 2. Maintain consistent formatting
 3. Add context where needed
 
-**Bold** for emphasis, *italic* for subtle emphasis.
+**Bold** for emphasis, _italic_ for subtle emphasis.
 
 > Use blockquotes for important quotes or Church teaching
 
 ```code
 Use code blocks for technical content
 ```
+````
 
 [Link text](https://example.com) for external links
 
 ![Alt text for image](path/to/image.jpg)
+
 ```
 
 ## Community
@@ -583,3 +622,4 @@ Don't hesitate to ask! We're here to help:
 Thank you for contributing to the Eucharist Understanding Platform! Your work helps people grow closer to Christ in the Eucharist. 🙏
 
 *Ad Majorem Dei Gloriam* (For the Greater Glory of God)
+```

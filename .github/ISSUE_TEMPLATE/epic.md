@@ -25,11 +25,13 @@ assignees: ''
 ## Scope
 
 ### In Scope:
+
 - Item 1
 - Item 2
 - Item 3
 
 ### Out of Scope:
+
 - Item 1
 - Item 2
 

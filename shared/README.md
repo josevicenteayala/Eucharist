@@ -11,6 +11,7 @@ Shared TypeScript types, API contracts, and constants used across frontend, back
 ## Purpose
 
 This directory ensures type safety and consistency across all platforms by providing a single source of truth for:
+
 - API request/response structures
 - Domain entity types
 - Shared enumerations and constants

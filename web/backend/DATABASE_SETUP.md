@@ -36,11 +36,11 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5432:5432"
+      - '5432:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -51,11 +51,11 @@ services:
     environment:
       MONGO_INITDB_DATABASE: eucharist
     ports:
-      - "27017:27017"
+      - '27017:27017'
     volumes:
       - mongodb_data:/data/db
     healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -64,11 +64,11 @@ services:
     image: redis:7-alpine
     container_name: eucharist-redis
     ports:
-      - "6379:6379"
+      - '6379:6379'
     volumes:
       - redis_data:/data
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ['CMD', 'redis-cli', 'ping']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -137,6 +137,7 @@ If you prefer to install databases natively:
 ### PostgreSQL
 
 **macOS (Homebrew)**:
+
 ```bash
 brew install postgresql@16
 brew services start postgresql@16
@@ -144,6 +145,7 @@ createdb eucharist_db
 ```
 
 **Ubuntu/Debian**:
+
 ```bash
 sudo apt update
 sudo apt install postgresql postgresql-contrib
@@ -157,6 +159,7 @@ Download and install from [postgresql.org](https://www.postgresql.org/download/w
 ### MongoDB
 
 **macOS (Homebrew)**:
+
 ```bash
 brew tap mongodb/brew
 brew install mongodb-community
@@ -164,6 +167,7 @@ brew services start mongodb-community
 ```
 
 **Ubuntu/Debian**:
+
 ```bash
 wget -qO - https://www.mongodb.org/static/pgp/server-7.0.asc | sudo apt-key add -
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
@@ -178,12 +182,14 @@ Download and install from [mongodb.com](https://www.mongodb.com/try/download/com
 ### Redis
 
 **macOS (Homebrew)**:
+
 ```bash
 brew install redis
 brew services start redis
 ```
 
 **Ubuntu/Debian**:
+
 ```bash
 sudo apt update
 sudo apt install redis-server
@@ -196,6 +202,7 @@ Download and install from [redis.io](https://redis.io/download) or use WSL2
 ## Database Management Tools
 
 ### PostgreSQL
+
 - **pgAdmin** - Web-based GUI: https://www.pgadmin.org/
 - **DBeaver** - Universal database tool: https://dbeaver.io/
 - **psql** - Command-line tool (included with PostgreSQL)
@@ -205,6 +212,7 @@ psql -U postgres -d eucharist_db
 ```
 
 ### MongoDB
+
 - **MongoDB Compass** - Official GUI: https://www.mongodb.com/products/compass
 - **mongosh** - Modern shell (included with MongoDB)
 
@@ -213,6 +221,7 @@ mongosh mongodb://localhost:27017/eucharist
 ```
 
 ### Redis
+
 - **RedisInsight** - Official GUI: https://redis.com/redis-enterprise/redis-insight/
 - **redis-cli** - Command-line tool (included with Redis)
 
@@ -225,6 +234,7 @@ redis-cli
 ### PostgreSQL Connection Issues
 
 **Error**: "ECONNREFUSED" or "Connection refused"
+
 ```bash
 # Check if PostgreSQL is running
 brew services list  # macOS
@@ -235,6 +245,7 @@ lsof -i :5432  # macOS/Linux
 ```
 
 **Error**: "password authentication failed"
+
 ```bash
 # Update your .env file with correct password
 # Or reset PostgreSQL password
@@ -245,6 +256,7 @@ ALTER USER postgres PASSWORD 'new_password';
 ### MongoDB Connection Issues
 
 **Error**: "MongoNetworkError"
+
 ```bash
 # Check if MongoDB is running
 brew services list  # macOS
@@ -257,6 +269,7 @@ lsof -i :27017  # macOS/Linux
 ### Redis Connection Issues
 
 **Error**: "ECONNREFUSED" or "Redis connection failed"
+
 ```bash
 # Check if Redis is running
 brew services list  # macOS
@@ -272,6 +285,7 @@ redis-cli ping  # Should return "PONG"
 ### Docker Issues
 
 **Containers won't start**:
+
 ```bash
 # Check Docker is running
 docker ps
@@ -291,6 +305,7 @@ docker-compose up -d
 
 **Port conflicts**:
 If ports 5432, 27017, or 6379 are already in use:
+
 ```bash
 # Check what's using the port
 lsof -i :5432  # macOS/Linux
@@ -304,6 +319,7 @@ netstat -ano | findstr :5432  # Windows
 ### Resetting Databases
 
 **PostgreSQL**:
+
 ```bash
 # Drop and recreate database
 psql -U postgres
@@ -312,6 +328,7 @@ CREATE DATABASE eucharist_db;
 ```
 
 **MongoDB**:
+
 ```bash
 # Drop database
 mongosh mongodb://localhost:27017/eucharist
@@ -319,12 +336,14 @@ db.dropDatabase()
 ```
 
 **Redis**:
+
 ```bash
 # Clear all data
 redis-cli FLUSHALL
 ```
 
 **Docker**:
+
 ```bash
 # Remove volumes and restart
 docker-compose down -v
@@ -334,6 +353,7 @@ docker-compose up -d
 ### Backup and Restore
 
 **PostgreSQL**:
+
 ```bash
 # Backup
 pg_dump -U postgres eucharist_db > backup.sql
@@ -343,6 +363,7 @@ psql -U postgres eucharist_db < backup.sql
 ```
 
 **MongoDB**:
+
 ```bash
 # Backup
 mongodump --db eucharist --out ./backup
@@ -352,6 +373,7 @@ mongorestore --db eucharist ./backup/eucharist
 ```
 
 **Redis**:
+
 ```bash
 # Backup (creates dump.rdb)
 redis-cli SAVE
@@ -362,20 +384,26 @@ redis-cli SAVE
 ## Environment-Specific Configuration
 
 ### Development
+
 Use the default configuration in `.env`:
+
 - Local databases on standard ports
 - No authentication for PostgreSQL/MongoDB (Docker only)
 - Redis without password
 
 ### Testing
+
 Create `.env.test` for test databases:
+
 ```env
 POSTGRES_DB=eucharist_test
 MONGODB_URI=mongodb://localhost:27017/eucharist_test
 ```
 
 ### Production
+
 Use secure configuration:
+
 - Strong passwords for all databases
 - SSL/TLS connections
 - Connection pooling tuned for load
@@ -387,16 +415,19 @@ Use secure configuration:
 After setting up databases:
 
 1. **Run migrations** (when implemented):
+
    ```bash
    npm run migrate
    ```
 
 2. **Seed test data** (when implemented):
+
    ```bash
    npm run seed
    ```
 
 3. **Run tests**:
+
    ```bash
    npm test
    ```
@@ -417,6 +448,7 @@ After setting up databases:
 ## Support
 
 For issues with database setup:
+
 1. Check the troubleshooting section above
 2. Review database logs
 3. Consult the official documentation

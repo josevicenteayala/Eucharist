@@ -1,6 +1,7 @@
 # User Persona: The Devoted Parent - John
 
 ## Persona Overview
+
 **Name**: John  
 **Age**: 35-50 years old  
 **Archetype**: Practicing Catholic parent wanting to teach children about the Eucharist  
@@ -10,6 +11,7 @@
 ## Background & Context
 
 ### Personal Life
+
 - **Family**: Married with 2-4 children (ages 5-15)
 - **Career**: Established professional, middle to upper-middle class
 - **Lifestyle**: Family-focused, busy with kids' activities
@@ -17,12 +19,12 @@
 - **Location**: Suburban area, active parish member
 
 ### Faith Background
-- **Religious History**: 
+
+- **Religious History**:
   - Practicing Catholic, regular Mass attendance
   - May have been raised Catholic or converted before/during marriage
   - Faith deepened with parenthood
   - Wants to pass faith to next generation
-  
 - **Current Faith Practice**:
   - Weekly Mass attendance as a family
   - Children in faith formation/CCD programs
@@ -30,6 +32,7 @@
   - Prays with family regularly
 
 ### Values & Motivations
+
 - **Core Values**: Family, tradition, education, faith formation
 - **Parenting Motivations**:
   - Pass on Catholic faith and values
@@ -41,6 +44,7 @@
 ## Needs & Requirements
 
 ### Primary Needs
+
 1. **Simple explanations for complex theology**
    - Can explain to elementary-age children
    - Accurate but accessible
@@ -72,6 +76,7 @@
    - Parent controls
 
 ### Secondary Needs
+
 - Printable resources for family time
 - Ideas for living faith at home
 - Preparation for sacraments (First Communion)
@@ -81,6 +86,7 @@
 ## Goals & Objectives
 
 ### Short-term Goals (1-3 months)
+
 - [ ] Answer children's questions about Eucharist confidently
 - [ ] Establish family prayer routine
 - [ ] Help children understand parts of Mass
@@ -88,6 +94,7 @@
 - [ ] Find age-appropriate content
 
 ### Medium-term Goals (3-6 months)
+
 - [ ] Build family Eucharistic devotion
 - [ ] Create meaningful faith traditions at home
 - [ ] Help children develop personal prayer life
@@ -95,6 +102,7 @@
 - [ ] Deepen own understanding to teach better
 
 ### Long-term Goals (6-12 months)
+
 - [ ] Children actively engaged at Mass
 - [ ] Family practices Eucharistic spirituality
 - [ ] Children can explain Real Presence
@@ -104,6 +112,7 @@
 ## Pain Points & Frustrations
 
 ### Teaching Challenges
+
 - **"How do I explain transubstantiation to a 7-year-old?"**
   - Theology is complex
   - Need simple but accurate explanations
@@ -117,6 +126,7 @@
   - Want to learn while teaching
 
 ### Practical Barriers
+
 - **"Finding quality Catholic resources is hard"**
   - Overwhelmed by options online
   - Unsure which sources are reliable
@@ -130,6 +140,7 @@
   - Must capture short attention spans
 
 ### Time Constraints
+
 - **"There aren't enough hours in the day"**
   - Work full-time
   - Kids' activities and homework
@@ -143,6 +154,7 @@
   - Need tools to help kids engage
 
 ### Family Dynamics
+
 - **"Everyone is at different levels"**
   - Different ages need different approaches
   - Spouse may have different faith background
@@ -152,6 +164,7 @@
 ## Key Features for John
 
 ### Must-Have Features
+
 1. **Simple, Clear Educational Content**
    - "Eucharist Explained for Kids" section
    - Age-appropriate articles
@@ -183,6 +196,7 @@
    - Ways to help children pay attention
 
 ### Nice-to-Have Features
+
 - Family prayer history tracker
 - Printable activity sheets
 - Videos explaining theology simply
@@ -195,18 +209,21 @@
 ## User Journey Map
 
 ### Discovery Phase
+
 1. **Trigger**: Child asks question parent can't answer well
 2. **Search**: Looks for Catholic parenting resources online
 3. **Find**: Discovers app through Google or recommendation
 4. **Evaluate**: Checks content quality and age-appropriateness
 
 ### Onboarding Phase
+
 1. **Registration**: Creates account
 2. **Profile**: Indicates number/ages of children
 3. **Exploration**: Browses family-focused content
 4. **First Use**: Reads article on explaining Eucharist to kids
 
 ### Engagement Phase
+
 1. **Regular Use**: Checks app before faith discussions
 2. **Preparation**: Uses resources before First Communion
 3. **Mass Prep**: Reviews Mass guide with children
@@ -214,6 +231,7 @@
 5. **Community**: Connects with other parents
 
 ### Maturity Phase
+
 1. **Confidence**: Comfortable answering faith questions
 2. **Integration**: Faith education natural part of family life
 3. **Sharing**: Recommends to other parents
@@ -223,6 +241,7 @@
 ## Behavioral Patterns
 
 ### App Usage Patterns
+
 - **Frequency**: 3-4 times per week, often Sunday morning or evening
 - **Session Length**: 10-15 minutes
 - **Time of Day**: Evening after kids' bedtime, Sunday morning prep
@@ -230,6 +249,7 @@
 - **Location**: Home, occasionally during commute
 
 ### Content Preferences
+
 - **Format**: Clear written content with visuals
 - **Tone**: Trustworthy, educational, practical
 - **Depth**: Moderate - deeper than children's level but accessible
@@ -237,6 +257,7 @@
 - **Length**: 5-10 minutes, sometimes longer for thorough guides
 
 ### Engagement Style
+
 - **Goal-oriented**: Looking for specific answers
 - **Research-driven**: Reads multiple articles on topic
 - **Planning-focused**: Prepares in advance
@@ -246,6 +267,7 @@
 ## Success Indicators
 
 ### John is successful when he:
+
 - [ ] Confidently answers children's faith questions
 - [ ] Has family prayers regularly (at least weekly)
 - [ ] Children understand basic Eucharistic theology
@@ -258,6 +280,7 @@
 - [ ] Children show growing love for Eucharist
 
 ### Metrics to Track
+
 - Weekly active user status
 - Article reads (education focus)
 - Bookmark usage
@@ -284,6 +307,7 @@
 ## Design Implications
 
 ### UI/UX Considerations
+
 - **Content filtering by age** - easy to find right level
 - **Bookmarking and collections** - organize saved content
 - **Print-friendly layouts** - for family discussion time
@@ -292,6 +316,7 @@
 - **Structured navigation** - easy to browse by topic
 
 ### Content Strategy
+
 - **Multiple levels** - content for adults and children
 - **Practical application** - "how to teach this at home"
 - **Teaching guides** - step-by-step approaches
@@ -300,6 +325,7 @@
 - **Clear structure** - organized by age and topic
 
 ### Feature Prioritization
+
 1. Simple educational content (immediate need)
 2. Teaching guides and tips (practical application)
 3. Bookmarks and sharing (usability)
@@ -307,6 +333,7 @@
 5. Family discussion guides (ongoing engagement)
 
 ## Related Personas
+
 - **Complementary**: RCIA Candidate (David) - may be converting spouse
 - **Overlaps with**: Seeker (Maria) - was this in younger years
 - **Future**: Lifelong Learner (Patricia) - when children are grown

@@ -22,6 +22,7 @@
 ## Epic 1: Authentication & User Management
 
 ### US-001: User Registration
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 8
 
@@ -31,6 +32,7 @@ I want to create an account
 So that I can access personalized features
 
 **Acceptance Criteria**:
+
 - [ ] User can register with email and password
 - [ ] Email validation (format check)
 - [ ] Password strength requirements enforced (min 8 chars, uppercase, lowercase, number)
@@ -40,12 +42,14 @@ So that I can access personalized features
 - [ ] Duplicate email detection with appropriate error message
 
 **Technical Notes**:
+
 - Use bcrypt for password hashing (cost factor 10)
 - JWT token generation for authentication
 - Email service integration (SendGrid or SES)
 - Rate limiting on registration endpoint
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Unit tests written and passing
 - [ ] Integration tests passing
@@ -57,6 +61,7 @@ So that I can access personalized features
 ---
 
 ### US-002: User Login
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 5
 
@@ -66,6 +71,7 @@ I want to log in to my account
 So that I can access my personalized content
 
 **Acceptance Criteria**:
+
 - [ ] User can log in with email and password
 - [ ] Successful login returns JWT access token and refresh token
 - [ ] "Remember me" option available
@@ -75,12 +81,14 @@ So that I can access my personalized content
 - [ ] Loading state during authentication
 
 **Technical Notes**:
+
 - JWT access token (15 min expiry)
 - Refresh token (7 days expiry)
 - Store refresh token in database
 - Implement rate limiting (5 attempts per 15 min)
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Unit tests written and passing
 - [ ] Integration tests passing
@@ -91,6 +99,7 @@ So that I can access my personalized content
 ---
 
 ### US-003: Email Verification
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 5
 
@@ -100,6 +109,7 @@ I want to verify my email address
 So that I can activate my account
 
 **Acceptance Criteria**:
+
 - [ ] Verification email sent upon registration
 - [ ] Email contains secure verification link
 - [ ] Link expires after 24 hours
@@ -109,12 +119,14 @@ So that I can activate my account
 - [ ] Verification status shown in user profile
 
 **Technical Notes**:
+
 - Generate secure verification token
 - Token stored in database with expiry
 - Email template with branding
 - Redirect to login after verification
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] Email template approved
@@ -124,6 +136,7 @@ So that I can activate my account
 ---
 
 ### US-004: Password Reset
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 8
 
@@ -133,6 +146,7 @@ I want to reset it securely
 So that I can regain access to my account
 
 **Acceptance Criteria**:
+
 - [ ] "Forgot Password" link on login page
 - [ ] User enters email address
 - [ ] Reset email sent if account exists (no indication if account doesn't exist for security)
@@ -143,12 +157,14 @@ So that I can regain access to my account
 - [ ] Automatic login after password reset
 
 **Technical Notes**:
+
 - Secure reset token generation
 - Token stored with expiry
 - Invalidate all existing sessions on password change
 - Email notification for security
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Security testing completed
 - [ ] Tests written and passing
@@ -159,6 +175,7 @@ So that I can regain access to my account
 ---
 
 ### US-005: User Profile
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 5
 
@@ -168,6 +185,7 @@ I want to view and edit my profile
 So that I can manage my personal information
 
 **Acceptance Criteria**:
+
 - [ ] View profile page with current information
 - [ ] Edit display name
 - [ ] Edit profile picture (upload and crop)
@@ -179,12 +197,14 @@ So that I can manage my personal information
 - [ ] Validation for all fields
 
 **Technical Notes**:
+
 - Image upload to S3/Cloud Storage
 - Image optimization and resizing
 - Max file size 5MB
 - Supported formats: JPG, PNG
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -197,6 +217,7 @@ So that I can manage my personal information
 ## Epic 2: Daily Gospel & Reflection
 
 ### US-006: Display Today's Gospel
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 5
 
@@ -206,6 +227,7 @@ I want to see today's Gospel reading
 So that I can pray with the daily Scripture
 
 **Acceptance Criteria**:
+
 - [ ] Gospel displays automatically on home page
 - [ ] Correct date shown
 - [ ] Liturgical season indicated (Advent, Lent, Ordinary Time, etc.)
@@ -218,12 +240,14 @@ So that I can pray with the daily Scripture
 - [ ] Feast day noted if applicable
 
 **Technical Notes**:
+
 - API endpoint: GET /api/gospel/today
 - Cache Gospel for 24 hours (Redis)
 - Data source: USCCB or similar
 - Handle special liturgical days
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] Theological accuracy verified
@@ -236,6 +260,7 @@ So that I can pray with the daily Scripture
 ---
 
 ### US-007: Gospel Calendar View
+
 **Priority**: Should Have  
 **Story Points**: 8
 
@@ -245,6 +270,7 @@ I want to view past and future Gospel readings
 So that I can plan my prayer time
 
 **Acceptance Criteria**:
+
 - [ ] Calendar view showing current month
 - [ ] Navigate to previous/next months
 - [ ] Dates with Gospel readings highlighted
@@ -255,12 +281,14 @@ So that I can plan my prayer time
 - [ ] Mobile-friendly calendar interface
 
 **Technical Notes**:
+
 - API endpoint: GET /api/gospel/calendar/:year/:month
 - Pre-populate database with liturgical calendar
 - Cache calendar data
 - Use existing calendar library (react-calendar or similar)
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -271,6 +299,7 @@ So that I can plan my prayer time
 ---
 
 ### US-008: Daily Reflection
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 3 (per reflection content)
 
@@ -280,6 +309,7 @@ I want to read a brief reflection on the Gospel
 So that I can understand how it applies to my life
 
 **Acceptance Criteria**:
+
 - [ ] Reflection appears with Gospel reading
 - [ ] 300-500 word length
 - [ ] Practical application included
@@ -291,12 +321,14 @@ So that I can understand how it applies to my life
 - [ ] Clear formatting and structure
 
 **Technical Notes**:
+
 - Store reflections in MongoDB
 - Link to Gospel reading by date
 - Markdown support for formatting
 - Theological review workflow in CMS
 
 **Definition of Done**:
+
 - [ ] Content written and edited
 - [ ] Theological review completed and approved
 - [ ] Reflection published to database
@@ -307,6 +339,7 @@ So that I can understand how it applies to my life
 ---
 
 ### US-009: Audio Gospel Playback
+
 **Priority**: Should Have  
 **Story Points**: 8
 
@@ -316,6 +349,7 @@ I want to listen to the Gospel reading
 So that I can pray while commuting or exercising
 
 **Acceptance Criteria**:
+
 - [ ] Audio play button visible on Gospel page
 - [ ] Audio plays without interruption
 - [ ] Play/pause/restart controls work
@@ -327,6 +361,7 @@ So that I can pray while commuting or exercising
 - [ ] Accessible controls (ARIA labels)
 
 **Technical Notes**:
+
 - Audio files stored in S3/Cloud Storage
 - CDN for audio delivery
 - Use HTML5 audio API
@@ -334,6 +369,7 @@ So that I can pray while commuting or exercising
 - Audio format: MP3 (compatibility)
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] Audio quality verified
@@ -346,6 +382,7 @@ So that I can pray while commuting or exercising
 ---
 
 ### US-010: Share Gospel
+
 **Priority**: Should Have  
 **Story Points**: 5
 
@@ -355,6 +392,7 @@ I want to share today's Gospel
 So that I can inspire others
 
 **Acceptance Criteria**:
+
 - [ ] Share button visible on Gospel page
 - [ ] Share via social media (Facebook, Twitter, WhatsApp)
 - [ ] Share via email
@@ -364,12 +402,14 @@ So that I can inspire others
 - [ ] Analytics track shares
 
 **Technical Notes**:
+
 - Social share APIs
 - Open Graph meta tags
 - Canonical URLs
 - UTM parameters for tracking
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] Social previews tested
@@ -383,6 +423,7 @@ So that I can inspire others
 ## Epic 3: Educational Content
 
 ### US-011: Article Display
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 8
 
@@ -392,6 +433,7 @@ I want to read educational articles about the Eucharist
 So that I can deepen my understanding
 
 **Acceptance Criteria**:
+
 - [ ] Article page displays title, author, date
 - [ ] Cover image shown
 - [ ] Article content formatted properly (headings, paragraphs, lists)
@@ -404,6 +446,7 @@ So that I can deepen my understanding
 - [ ] Accessible (WCAG 2.1 AA)
 
 **Technical Notes**:
+
 - Fetch from MongoDB
 - Markdown to HTML conversion
 - Syntax highlighting for quotes
@@ -411,6 +454,7 @@ So that I can deepen my understanding
 - SEO optimization (meta tags)
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -423,6 +467,7 @@ So that I can deepen my understanding
 ---
 
 ### US-012: Article Library
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 8
 
@@ -432,6 +477,7 @@ I want to browse available articles
 So that I can find topics of interest
 
 **Acceptance Criteria**:
+
 - [ ] Grid/list view of all articles
 - [ ] Filter by category
 - [ ] Filter by difficulty level (beginner, intermediate, advanced)
@@ -444,12 +490,14 @@ So that I can find topics of interest
 - [ ] Clear empty state if no articles match filters
 
 **Technical Notes**:
+
 - API endpoint: GET /api/content with query params
 - Implement search using MongoDB text search or Elasticsearch
 - Cache popular queries
 - Optimize database queries with indexes
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -461,6 +509,7 @@ So that I can find topics of interest
 ---
 
 ### US-013: "What is the Eucharist?" Article
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 8 (content creation)
 
@@ -470,6 +519,7 @@ I want to learn about the Real Presence
 So that I can understand this central Catholic belief
 
 **Acceptance Criteria**:
+
 - [ ] Article explains transubstantiation clearly
 - [ ] Biblical foundations included (John 6, Last Supper accounts)
 - [ ] Church teaching cited (Catechism, Vatican II)
@@ -482,12 +532,14 @@ So that I can understand this central Catholic belief
 - [ ] Theologically reviewed and approved
 
 **Technical Notes**:
+
 - Core foundational content
 - High priority for theological review
 - Consider creating video version later
 - Link to related articles
 
 **Definition of Done**:
+
 - [ ] Content written and edited
 - [ ] Theological review completed and approved
 - [ ] Images sourced and credited
@@ -499,6 +551,7 @@ So that I can understand this central Catholic belief
 ---
 
 ### US-014: Parts of the Mass - Interactive Guide
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 13
 
@@ -508,6 +561,7 @@ I want an interactive guide to the Mass
 So that I can understand what's happening and when
 
 **Acceptance Criteria**:
+
 - [ ] All Mass parts listed in chronological order
 - [ ] Each part has explanation of meaning
 - [ ] Common prayers included for each section
@@ -521,12 +575,14 @@ So that I can understand what's happening and when
 - [ ] Citations to liturgical documents
 
 **Sections to Include**:
+
 - Introductory Rites (Entrance, Greeting, Penitential Act, Gloria, Collect)
 - Liturgy of the Word (Readings, Gospel, Homily, Creed, Prayers of Faithful)
 - Liturgy of the Eucharist (Preparation, Eucharistic Prayer, Communion Rite)
 - Concluding Rites (Blessing, Dismissal)
 
 **Technical Notes**:
+
 - Interactive component library
 - Consider timeline/step-by-step interface
 - Bookmark/favorite specific parts
@@ -534,6 +590,7 @@ So that I can understand what's happening and when
 - Multi-language support (future)
 
 **Definition of Done**:
+
 - [ ] All content written and reviewed
 - [ ] Theological review completed
 - [ ] Interactive UI developed and tested
@@ -547,6 +604,7 @@ So that I can understand what's happening and when
 ---
 
 ### US-015: Search Content
+
 **Priority**: Should Have  
 **Story Points**: 8
 
@@ -556,6 +614,7 @@ I want to search for specific topics
 So that I can quickly find relevant information
 
 **Acceptance Criteria**:
+
 - [ ] Search bar visible on main navigation
 - [ ] Real-time search suggestions as user types
 - [ ] Search results show: title, excerpt, category, relevance score
@@ -568,6 +627,7 @@ So that I can quickly find relevant information
 - [ ] Search analytics tracked
 
 **Technical Notes**:
+
 - Full-text search using MongoDB or Elasticsearch
 - Search indexing strategy
 - Cache popular searches
@@ -575,6 +635,7 @@ So that I can quickly find relevant information
 - Consider autocomplete API
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] Search accuracy tested
@@ -589,6 +650,7 @@ So that I can quickly find relevant information
 ## Epic 4: Eucharistic Miracles
 
 ### US-016: Miracles Gallery
+
 **Priority**: Should Have  
 **Story Points**: 8
 
@@ -598,6 +660,7 @@ I want to explore documented Eucharistic miracles
 So that I can deepen my faith in the Real Presence
 
 **Acceptance Criteria**:
+
 - [ ] Grid view of miracle cards
 - [ ] Each card shows: location, date, image thumbnail
 - [ ] Filter by country/region
@@ -610,6 +673,7 @@ So that I can deepen my faith in the Real Presence
 - [ ] Pagination or infinite scroll
 
 **Initial Miracles to Include** (minimum 5):
+
 1. Lanciano, Italy (8th century)
 2. Buenos Aires, Argentina (1996)
 3. Sokółka, Poland (2008)
@@ -617,12 +681,14 @@ So that I can deepen my faith in the Real Presence
 5. Siena, Italy (1730)
 
 **Technical Notes**:
+
 - Store in MongoDB with geolocation data
 - Integrate map library (Google Maps, Mapbox, or Leaflet)
 - Image optimization
 - SEO for individual miracle pages
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -636,6 +702,7 @@ So that I can deepen my faith in the Real Presence
 ---
 
 ### US-017: Miracle Detail Page
+
 **Priority**: Should Have  
 **Story Points**: 5
 
@@ -645,6 +712,7 @@ I want to read the full story of a Eucharistic miracle
 So that I can understand what happened and its significance
 
 **Acceptance Criteria**:
+
 - [ ] Full story with rich formatting
 - [ ] Multiple images/photos
 - [ ] Location information with map
@@ -658,6 +726,7 @@ So that I can understand what happened and its significance
 - [ ] Print-friendly format
 
 **Technical Notes**:
+
 - Rich text content from MongoDB
 - Image gallery component
 - Embedded map
@@ -665,6 +734,7 @@ So that I can understand what happened and its significance
 - SEO optimization
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -678,6 +748,7 @@ So that I can understand what happened and its significance
 ## Epic 5: Community Features
 
 ### US-018: Submit Prayer Intention
+
 **Priority**: Should Have  
 **Story Points**: 8
 
@@ -687,6 +758,7 @@ I want to share a prayer intention
 So that others can pray for me
 
 **Acceptance Criteria**:
+
 - [ ] Simple submission form
 - [ ] Text field for intention (max 500 characters)
 - [ ] Optional anonymity checkbox
@@ -699,12 +771,14 @@ So that others can pray for me
 - [ ] Character count shown
 
 **Technical Notes**:
+
 - Store in PostgreSQL
 - Moderation workflow
 - Content filtering for inappropriate content
 - Rate limiting (max 3 per day per user)
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -717,6 +791,7 @@ So that others can pray for me
 ---
 
 ### US-019: View Prayer Intentions
+
 **Priority**: Should Have  
 **Story Points**: 5
 
@@ -726,6 +801,7 @@ I want to see and pray for others' intentions
 So that I can support my brothers and sisters
 
 **Acceptance Criteria**:
+
 - [ ] List of recent intentions (paginated)
 - [ ] Each intention shows: text, category, date, prayer count
 - [ ] "I Prayed" button for each intention
@@ -738,12 +814,14 @@ So that I can support my brothers and sisters
 - [ ] Responsive layout
 
 **Technical Notes**:
+
 - API endpoint: GET /api/intentions
 - Track prayers in prayer_logs table
 - Real-time or near-real-time updates
 - Cache intention list (short TTL)
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -755,6 +833,7 @@ So that I can support my brothers and sisters
 ---
 
 ### US-020: My Prayer Intentions
+
 **Priority**: Should Have  
 **Story Points**: 5
 
@@ -764,6 +843,7 @@ I want to view my submitted prayer intentions
 So that I can see how many people prayed for them
 
 **Acceptance Criteria**:
+
 - [ ] List of user's own intentions
 - [ ] Show: text, date submitted, prayer count, status (active/answered/archived)
 - [ ] Edit intention (before moderation approval)
@@ -775,12 +855,14 @@ So that I can see how many people prayed for them
 - [ ] Responsive layout
 
 **Technical Notes**:
+
 - API endpoint: GET /api/intentions/mine
 - Edit and delete permissions
 - Status workflow: pending → active → answered/archived
 - Testimony feature for answered prayers
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -794,6 +876,7 @@ So that I can see how many people prayed for them
 ## Epic 6: User Progress & Bookmarks
 
 ### US-021: Bookmark Content
+
 **Priority**: Should Have  
 **Story Points**: 5
 
@@ -803,6 +886,7 @@ I want to bookmark articles and content
 So that I can easily return to them later
 
 **Acceptance Criteria**:
+
 - [ ] Bookmark button on all content types (articles, gospels, miracles)
 - [ ] Visual indication when bookmarked (filled vs outline icon)
 - [ ] Click to toggle bookmark on/off
@@ -812,12 +896,14 @@ So that I can easily return to them later
 - [ ] Works on mobile and desktop
 
 **Technical Notes**:
+
 - Store in bookmarks table
 - API endpoints: POST/DELETE /api/bookmarks
 - Handle different content types
 - Index for efficient queries
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -829,6 +915,7 @@ So that I can easily return to them later
 ---
 
 ### US-022: View Bookmarks
+
 **Priority**: Should Have  
 **Story Points**: 5
 
@@ -838,6 +925,7 @@ I want to view all my bookmarked content
 So that I can quickly access saved items
 
 **Acceptance Criteria**:
+
 - [ ] Bookmarks page lists all saved content
 - [ ] Group by content type (articles, gospels, miracles)
 - [ ] Show: title, excerpt/preview, date bookmarked, notes
@@ -850,12 +938,14 @@ So that I can quickly access saved items
 - [ ] Pagination or infinite scroll
 
 **Technical Notes**:
+
 - API endpoint: GET /api/bookmarks
 - Join with content tables
 - Cache bookmarks list
 - Efficient query with indexes
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -867,6 +957,7 @@ So that I can quickly access saved items
 ---
 
 ### US-023: Track Reading Progress
+
 **Priority**: Could Have  
 **Story Points**: 8
 
@@ -876,6 +967,7 @@ I want my reading progress tracked
 So that I can pick up where I left off
 
 **Acceptance Criteria**:
+
 - [ ] Progress automatically saved as user reads
 - [ ] Progress bar shown on article cards
 - [ ] Resume reading from last position
@@ -886,6 +978,7 @@ So that I can pick up where I left off
 - [ ] Privacy option to disable tracking
 
 **Technical Notes**:
+
 - Store in user_progress table
 - Update progress via scroll position
 - Debounce progress updates
@@ -893,6 +986,7 @@ So that I can pick up where I left off
 - Consider localStorage + server sync
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -905,6 +999,7 @@ So that I can pick up where I left off
 ---
 
 ### US-024: Prayer Streak Tracker
+
 **Priority**: Could Have  
 **Story Points**: 5
 
@@ -914,6 +1009,7 @@ I want to see my prayer streak
 So that I can stay motivated to pray daily
 
 **Acceptance Criteria**:
+
 - [ ] Streak counter on user profile
 - [ ] Increments when user views Gospel for the day
 - [ ] Resets if user misses a day
@@ -924,12 +1020,14 @@ So that I can stay motivated to pray daily
 - [ ] Privacy option to hide streak
 
 **Technical Notes**:
+
 - Track in user_profiles table
 - Daily check for streak continuation
 - Consider timezone handling
 - Grace period option (extend until midnight)
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -943,6 +1041,7 @@ So that I can stay motivated to pray daily
 ## Epic 7: Admin & Content Management
 
 ### US-025: Admin Dashboard
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 8
 
@@ -952,6 +1051,7 @@ I want to view platform statistics
 So that I can monitor health and usage
 
 **Acceptance Criteria**:
+
 - [ ] Dashboard shows key metrics:
   - [ ] Total users
   - [ ] Daily/Monthly active users
@@ -966,12 +1066,14 @@ So that I can monitor health and usage
 - [ ] Mobile-responsive
 
 **Technical Notes**:
+
 - Admin role required
 - Analytics data from database
 - Consider caching aggregated data
 - Use charting library (Chart.js, Recharts)
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -983,6 +1085,7 @@ So that I can monitor health and usage
 ---
 
 ### US-026: Content Editor
+
 **Priority**: Must Have (MVP)  
 **Story Points**: 13
 
@@ -992,6 +1095,7 @@ I want to create and edit articles
 So that I can publish educational content
 
 **Acceptance Criteria**:
+
 - [ ] Rich text editor (WYSIWYG)
 - [ ] Markdown support
 - [ ] Add/edit title, slug, excerpt
@@ -1007,12 +1111,14 @@ So that I can publish educational content
 - [ ] Autosave functionality
 
 **Technical Notes**:
+
 - Rich text editor component (TinyMCE, Quill, or Draft.js)
 - Image upload to cloud storage
 - Workflow: draft → review → published
 - Version control for content
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -1025,6 +1131,7 @@ So that I can publish educational content
 ---
 
 ### US-027: Moderate Prayer Intentions
+
 **Priority**: Should Have  
 **Story Points**: 5
 
@@ -1034,6 +1141,7 @@ I want to review submitted prayer intentions
 So that I can approve appropriate content
 
 **Acceptance Criteria**:
+
 - [ ] Moderation queue showing pending intentions
 - [ ] View intention details
 - [ ] Approve button
@@ -1046,12 +1154,14 @@ So that I can approve appropriate content
 - [ ] Moderation log/history
 
 **Technical Notes**:
+
 - Moderator role required
 - Status workflow in database
 - Email notifications
 - Audit trail of moderation actions
 
 **Definition of Done**:
+
 - [ ] Code complete and reviewed
 - [ ] Tests written and passing
 - [ ] UI/UX approved
@@ -1066,6 +1176,7 @@ So that I can approve appropriate content
 ## Backlog Priority Summary
 
 ### Must Have (MVP) - Phase 1
+
 - US-001: User Registration
 - US-002: User Login
 - US-003: Email Verification
@@ -1081,6 +1192,7 @@ So that I can approve appropriate content
 - US-026: Content Editor
 
 ### Should Have - Phase 1 or Phase 2
+
 - US-007: Gospel Calendar View
 - US-009: Audio Gospel Playback
 - US-010: Share Gospel
@@ -1095,6 +1207,7 @@ So that I can approve appropriate content
 - US-027: Moderate Prayer Intentions
 
 ### Could Have - Phase 2 or Phase 3
+
 - US-023: Track Reading Progress
 - US-024: Prayer Streak Tracker
 
@@ -1103,6 +1216,7 @@ So that I can approve appropriate content
 ## Definition of Ready (Story)
 
 A story is ready for sprint planning when:
+
 - [ ] User story format complete (As a... I want... So that...)
 - [ ] Acceptance criteria defined and clear
 - [ ] Story points estimated by team
@@ -1114,6 +1228,7 @@ A story is ready for sprint planning when:
 ## Definition of Done (Story)
 
 A story is done when:
+
 - [ ] Code complete and peer reviewed
 - [ ] Unit tests written and passing (≥80% coverage)
 - [ ] Integration tests passing
@@ -1128,9 +1243,9 @@ A story is done when:
 
 ## Document History
 
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2025-10-19 | Product Owner | Initial user stories creation |
+| Version | Date       | Author        | Changes                       |
+| ------- | ---------- | ------------- | ----------------------------- |
+| 1.0     | 2025-10-19 | Product Owner | Initial user stories creation |
 
 ---
 

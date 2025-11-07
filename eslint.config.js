@@ -4,15 +4,26 @@ const prettier = require('eslint-plugin-prettier');
 
 module.exports = [
   {
-    ignores: ['node_modules/**', 'dist/**', 'coverage/**', '*.config.js'],
+    ignores: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/build/**',
+      '**/coverage/**',
+      '**/*.config.js',
+      '**/.next/**',
+      '**/out/**',
+    ],
   },
   {
-    files: ['**/*.ts'],
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {
         ecmaVersion: 2020,
         sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
       globals: {
         console: 'readonly',
@@ -20,6 +31,10 @@ module.exports = [
         __dirname: 'readonly',
         module: 'readonly',
         require: 'readonly',
+        window: 'readonly',
+        document: 'readonly',
+        navigator: 'readonly',
+        fetch: 'readonly',
       },
     },
     plugins: {
@@ -30,8 +45,11 @@ module.exports = [
       ...typescript.configs.recommended.rules,
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-      'no-console': 'warn',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
       'prettier/prettier': 'error',
     },
   },

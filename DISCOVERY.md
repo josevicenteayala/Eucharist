@@ -11,6 +11,7 @@ To create an engaging, educational, and spiritually enriching platform that help
 ## Problem Statement
 
 Many Catholics and spiritual seekers lack a comprehensive understanding of:
+
 - The theological significance of the Eucharist
 - The historical development of Eucharistic worship
 - The structure and meaning of the Mass
@@ -22,6 +23,7 @@ Many Catholics and spiritual seekers lack a comprehensive understanding of:
 ## Project Goals
 
 ### Primary Goals
+
 1. Educate users about the Eucharist's theological foundation and significance
 2. Provide daily Gospel readings with practical life applications
 3. Foster a deeper appreciation for the Mass and its parts
@@ -29,6 +31,7 @@ Many Catholics and spiritual seekers lack a comprehensive understanding of:
 5. Create a vibrant community of believers centered on the Eucharist
 
 ### Success Metrics
+
 - User engagement: Daily active users (DAU) and monthly active users (MAU)
 - Content completion rates
 - User retention (30-day, 90-day)
@@ -41,24 +44,28 @@ Many Catholics and spiritual seekers lack a comprehensive understanding of:
 ### Primary Personas
 
 #### 1. **The Seeker - Maria** (25-35 years old)
+
 - **Background:** Young professional returning to faith or exploring Catholicism
 - **Needs:** Clear explanations, modern presentation, flexible learning schedule
 - **Pain Points:** Feels disconnected from traditional religious education, lacks time for in-person classes
 - **Goals:** Understand Catholic practices, deepen spiritual life, find meaning
 
 #### 2. **The Devoted Parent - John** (35-50 years old)
+
 - **Background:** Practicing Catholic wanting to teach children about the faith
 - **Needs:** Family-friendly content, teaching resources, age-appropriate materials
 - **Pain Points:** Difficulty explaining complex theology to children
 - **Goals:** Pass on faith to children, strengthen family spiritual life
 
 #### 3. **The Lifelong Learner - Patricia** (55-70 years old)
+
 - **Background:** Longtime Catholic seeking deeper understanding
 - **Needs:** Theological depth, historical context, contemplative resources
 - **Pain Points:** Limited access to theological education, desire for continued formation
 - **Goals:** Deepen prayer life, understand Church history, prepare for eternal life
 
 #### 4. **The RCIA Candidate - David** (Any age)
+
 - **Background:** Preparing to enter the Catholic Church
 - **Needs:** Structured learning path, clear explanations, conversion stories
 - **Pain Points:** Overwhelming amount of information, unfamiliar terminology
@@ -67,9 +74,11 @@ Many Catholics and spiritual seekers lack a comprehensive understanding of:
 ## Core Features
 
 ### 1. Eucharist Education Module
+
 **Purpose:** Comprehensive understanding of the Eucharist
 
 #### Components:
+
 - **What is the Eucharist?**
   - Real Presence theology
   - Transubstantiation explained
@@ -91,9 +100,11 @@ Many Catholics and spiritual seekers lack a comprehensive understanding of:
   - Source and summit of Christian life
 
 ### 2. Eucharistic Miracles Module
+
 **Purpose:** Inspire faith through historical evidence
 
 #### Components:
+
 - **Miracle Gallery**
   - Lanciano (8th century)
   - Buenos Aires (1996)
@@ -108,9 +119,11 @@ Many Catholics and spiritual seekers lack a comprehensive understanding of:
   - Virtual tours
 
 ### 3. Daily Gospel & Reflection
+
 **Purpose:** Connect Scripture to daily life
 
 #### Components:
+
 - **Daily Readings**
   - Liturgical calendar integration
   - Audio readings option
@@ -127,9 +140,11 @@ Many Catholics and spiritual seekers lack a comprehensive understanding of:
   - Searchable by topic/date
 
 ### 4. History of the Eucharist
+
 **Purpose:** Understand development through centuries
 
 #### Components:
+
 - **Timeline View**
   - Early Church practices
   - Council decisions
@@ -142,9 +157,11 @@ Many Catholics and spiritual seekers lack a comprehensive understanding of:
   - Theological developments
 
 ### 5. Living the Eucharist
+
 **Purpose:** Practical guidance for Eucharistic life
 
 #### Components:
+
 - **Before Mass Preparation**
   - Prayer guides
   - Examination of conscience
@@ -167,9 +184,11 @@ Many Catholics and spiritual seekers lack a comprehensive understanding of:
   - Corpus Christi celebrations
 
 ### 6. Community Features
+
 **Purpose:** Build fellowship and shared faith
 
 #### Components:
+
 - **Prayer Intentions**
   - Submit requests
   - Pray for others
@@ -189,24 +208,29 @@ Many Catholics and spiritual seekers lack a comprehensive understanding of:
 ## Technical Architecture
 
 ### Platform Overview
+
 **Multi-platform approach:** Mobile-first design with web companion
 
 ### Mobile Application
 
 #### Technology Stack Options:
+
 **Option 1: Native Development**
+
 - iOS: Swift/SwiftUI
 - Android: Kotlin/Jetpack Compose
 - Pros: Best performance, full platform features
 - Cons: Separate codebases, higher development cost
 
 **Option 2: Cross-Platform (Recommended)**
+
 - Framework: Flutter or React Native
 - Pros: Single codebase, faster development, good performance
 - Cons: Some platform limitations
 - **Recommendation:** Flutter for better performance and UI consistency
 
 #### Key Features:
+
 - Offline content access
 - Push notifications for daily gospel
 - Background audio for prayers/readings
@@ -216,23 +240,28 @@ Many Catholics and spiritual seekers lack a comprehensive understanding of:
 ### Web Application
 
 #### Technology Stack:
+
 **Frontend:**
+
 - Framework: React or Vue.js
 - UI Library: Tailwind CSS or Material-UI
 - State Management: Redux or Zustand
 - Build Tool: Vite or Next.js
 
 **Backend:**
+
 - Runtime: Node.js with Express or Python with FastAPI
 - Database: PostgreSQL (relational data) + MongoDB (flexible content)
 - Cache: Redis
 - Search: Elasticsearch
 
 **Content Management:**
+
 - CMS: Strapi or Directus for content editors
 - Allows non-technical team to update content
 
 #### Hosting & Infrastructure:
+
 - **Cloud Provider:** AWS, Google Cloud, or Azure
 - **CDN:** CloudFlare or AWS CloudFront
 - **Database:** Managed services (RDS, Cloud SQL)
@@ -242,6 +271,7 @@ Many Catholics and spiritual seekers lack a comprehensive understanding of:
 ### Data Architecture
 
 #### Core Entities:
+
 ```
 User
 ├── Profile (name, email, preferences)
@@ -271,6 +301,7 @@ Liturgical Calendar
 ```
 
 ### Security & Privacy
+
 - GDPR and data protection compliance
 - Encrypted data transmission (HTTPS/TLS)
 - Secure authentication (OAuth 2.0)
@@ -278,6 +309,7 @@ Liturgical Calendar
 - Regular security audits
 
 ### Accessibility
+
 - WCAG 2.1 AA compliance
 - Screen reader support
 - Keyboard navigation
@@ -288,12 +320,14 @@ Liturgical Calendar
 ## Content Strategy
 
 ### Content Pillars
+
 1. **Educational** - Theological and historical teaching
 2. **Devotional** - Prayer guides and spiritual practices
 3. **Practical** - Daily application and life integration
 4. **Community** - Shared experiences and fellowship
 
 ### Content Sources
+
 - Catholic Church documents (Catechism, Vatican II)
 - Church Fathers and Doctors
 - Papal encyclicals (Ecclesia de Eucharistia, etc.)
@@ -302,6 +336,7 @@ Liturgical Calendar
 - Scripture and tradition
 
 ### Content Quality Standards
+
 - Theological accuracy (reviewed by qualified theologians)
 - Pastoral sensitivity
 - Inclusive language where appropriate
@@ -309,6 +344,7 @@ Liturgical Calendar
 - Engaging and accessible writing style
 
 ### Content Delivery
+
 - **Daily:** Gospel reading and reflection
 - **Weekly:** New educational article or video
 - **Monthly:** Deep-dive topic or saint profile
@@ -317,6 +353,7 @@ Liturgical Calendar
 ## User Experience Design
 
 ### Design Principles
+
 1. **Reverent yet Approachable** - Balance sacred content with modern UX
 2. **Clear and Simple** - Avoid overwhelming users
 3. **Beautiful and Contemplative** - Use imagery that inspires prayer
@@ -324,6 +361,7 @@ Liturgical Calendar
 5. **Engaging but Not Distracting** - Foster reflection, not mindless scrolling
 
 ### Visual Design
+
 - **Color Palette:** Deep blues, golds, whites (traditional liturgical colors)
 - **Typography:** Readable serif for content, clean sans-serif for UI
 - **Imagery:** Sacred art, photographs of churches, nature
@@ -333,6 +371,7 @@ Liturgical Calendar
 ### User Flows
 
 #### First-Time User Flow:
+
 1. Welcome screen with mission statement
 2. Optional account creation (or continue as guest)
 3. Brief onboarding (3-4 screens)
@@ -341,6 +380,7 @@ Liturgical Calendar
 6. Tour of main features
 
 #### Daily User Flow:
+
 1. Open app → Daily gospel notification
 2. Read and reflect on gospel
 3. Explore additional content based on interest
@@ -350,7 +390,9 @@ Liturgical Calendar
 ## Development Roadmap
 
 ### Phase 1: Foundation (Months 1-3)
+
 **MVP Development**
+
 - [ ] Core infrastructure setup
 - [ ] User authentication system
 - [ ] Basic content management
@@ -360,13 +402,16 @@ Liturgical Calendar
 - [ ] Web application launch
 
 **Deliverables:**
+
 - Functional web app
 - 10-20 educational articles
 - Daily gospel integration
 - User accounts and profiles
 
 ### Phase 2: Enhancement (Months 4-6)
+
 **Feature Expansion**
+
 - [ ] Eucharistic miracles module
 - [ ] History timeline
 - [ ] Mass parts interactive guide
@@ -376,13 +421,16 @@ Liturgical Calendar
 - [ ] Enhanced search and navigation
 
 **Deliverables:**
+
 - Mobile app beta (iOS and Android)
 - 50+ articles and resources
 - Interactive Mass guide
 - Prayer intention system
 
 ### Phase 3: Community & Growth (Months 7-9)
+
 **Community Building**
+
 - [ ] Discussion forums
 - [ ] User-generated content (moderated)
 - [ ] Parish finder integration
@@ -392,13 +440,16 @@ Liturgical Calendar
 - [ ] Marketing and outreach
 
 **Deliverables:**
+
 - Full mobile and web platform
 - Active community features
 - 100+ articles and resources
 - Multi-language support
 
 ### Phase 4: Advanced Features (Months 10-12)
+
 **Maturity & Scale**
+
 - [ ] Advanced personalization
 - [ ] Learning paths and courses
 - [ ] Video content library
@@ -408,6 +459,7 @@ Liturgical Calendar
 - [ ] Analytics and insights
 
 **Deliverables:**
+
 - Comprehensive platform
 - Video and multimedia library
 - Personalized learning paths
@@ -416,9 +468,11 @@ Liturgical Calendar
 ## Monetization Strategy
 
 ### Initial Approach: Free & Accessible
+
 **Core Principle:** Keep spiritual formation accessible to all
 
 ### Potential Revenue Models:
+
 1. **Freemium Model**
    - Free: Basic content, daily gospel, core education
    - Premium: Advanced courses, ad-free, offline downloads, exclusive content
@@ -445,6 +499,7 @@ Liturgical Calendar
    - Proceeds support platform development
 
 ### Financial Sustainability
+
 - Initial funding: Grants, donations, seed investment
 - Goal: Self-sustaining by Year 2
 - Reinvest profits into content and features
@@ -452,23 +507,27 @@ Liturgical Calendar
 ## Risk Analysis
 
 ### Technical Risks
+
 - **Platform Bugs:** Comprehensive testing, phased rollout
 - **Scalability Issues:** Cloud infrastructure, load testing
 - **Data Loss:** Regular backups, redundancy
 - **Security Breaches:** Penetration testing, security audits
 
 ### Content Risks
+
 - **Theological Errors:** Expert review process, corrections protocol
 - **Controversial Topics:** Clear guidelines, pastoral approach
 - **Copyright Issues:** Proper licensing, original content creation
 
 ### Business Risks
+
 - **Low Adoption:** Marketing strategy, partnerships with parishes
 - **Competition:** Unique value proposition, quality content
 - **Funding Shortfall:** Multiple revenue streams, cost control
 - **Team Turnover:** Documentation, knowledge sharing
 
 ### Mitigation Strategies
+
 - Start with MVP to validate concept
 - Build theological advisory board
 - Establish partnerships early
@@ -478,6 +537,7 @@ Liturgical Calendar
 ## Success Criteria
 
 ### Quantitative Metrics (Year 1)
+
 - 10,000+ registered users
 - 2,000+ daily active users
 - 50%+ 30-day retention rate
@@ -485,6 +545,7 @@ Liturgical Calendar
 - 100,000+ page views per month
 
 ### Qualitative Metrics
+
 - Positive user testimonials
 - Parish partnerships established
 - Theological endorsements
@@ -494,6 +555,7 @@ Liturgical Calendar
 ## Next Steps
 
 ### Immediate Actions (Week 1-2)
+
 1. **Team Assembly**
    - Product Manager
    - Lead Developer (Full-stack)
@@ -524,6 +586,7 @@ Liturgical Calendar
    - Establish CI/CD pipeline
 
 ### Short-term Deliverables (Month 1)
+
 1. **User Research Report**
    - Interview findings
    - User personas refined
@@ -551,6 +614,7 @@ Liturgical Calendar
 ## Appendices
 
 ### A. Theological Resources
+
 - Catechism of the Catholic Church (§§1322-1419)
 - Vatican II Documents (Sacrosanctum Concilium)
 - Pope Benedict XVI - "Sacramentum Caritatis"
@@ -559,25 +623,28 @@ Liturgical Calendar
 - Early Church Fathers (Ignatius of Antioch, Justin Martyr, etc.)
 
 ### B. Competitive Landscape
-| App/Platform | Focus | Strengths | Gaps |
-|--------------|-------|-----------|------|
-| Laudate | General Catholic prayers | Comprehensive, free | Dated UI, limited education |
-| Hallow | Prayer and meditation | Beautiful UX, guided prayer | Less educational depth |
-| Magnificat | Daily prayer | High-quality content | Subscription, limited interactivity |
-| iBreviary | Liturgy of the Hours | Traditional liturgy | Complex for beginners |
-| **Our Platform** | **Eucharist-focused** | **Deep education + practical** | **New entrant** |
+
+| App/Platform     | Focus                    | Strengths                      | Gaps                                |
+| ---------------- | ------------------------ | ------------------------------ | ----------------------------------- |
+| Laudate          | General Catholic prayers | Comprehensive, free            | Dated UI, limited education         |
+| Hallow           | Prayer and meditation    | Beautiful UX, guided prayer    | Less educational depth              |
+| Magnificat       | Daily prayer             | High-quality content           | Subscription, limited interactivity |
+| iBreviary        | Liturgy of the Hours     | Traditional liturgy            | Complex for beginners               |
+| **Our Platform** | **Eucharist-focused**    | **Deep education + practical** | **New entrant**                     |
 
 ### C. Technology Evaluation Matrix
-| Criteria | Flutter | React Native | Native |
-|----------|---------|--------------|--------|
-| Development Speed | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
-| Performance | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| UI Consistency | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Community Support | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Cost Efficiency | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ |
-| **Recommendation** | ✅ **Selected** | Alternative | Future consideration |
+
+| Criteria           | Flutter         | React Native | Native               |
+| ------------------ | --------------- | ------------ | -------------------- |
+| Development Speed  | ⭐⭐⭐⭐⭐      | ⭐⭐⭐⭐     | ⭐⭐⭐               |
+| Performance        | ⭐⭐⭐⭐        | ⭐⭐⭐       | ⭐⭐⭐⭐⭐           |
+| UI Consistency     | ⭐⭐⭐⭐⭐      | ⭐⭐⭐       | ⭐⭐⭐⭐⭐           |
+| Community Support  | ⭐⭐⭐⭐        | ⭐⭐⭐⭐⭐   | ⭐⭐⭐⭐             |
+| Cost Efficiency    | ⭐⭐⭐⭐⭐      | ⭐⭐⭐⭐⭐   | ⭐⭐                 |
+| **Recommendation** | ✅ **Selected** | Alternative  | Future consideration |
 
 ### D. Glossary
+
 - **Eucharist:** The sacrament of Christ's body and blood
 - **Transubstantiation:** Change of substance from bread/wine to body/blood
 - **Real Presence:** Christ truly present in the Eucharist
@@ -589,13 +656,16 @@ Liturgical Calendar
 - **Monstrance:** Vessel used to display the Blessed Sacrament
 
 ### E. Contact & Collaboration
+
 **Project Stakeholders:**
+
 - Product Owner: [To be assigned]
 - Technical Lead: [To be assigned]
 - Theological Advisor: [To be assigned]
 - Community Manager: [To be assigned]
 
 **Communication Channels:**
+
 - Project Management: [Tool TBD - Jira, Asana, etc.]
 - Development: GitHub
 - Design: Figma
@@ -605,6 +675,7 @@ Liturgical Calendar
 ---
 
 ## Document Control
+
 - **Version:** 1.0
 - **Created:** October 2025
 - **Last Updated:** October 2025
@@ -613,6 +684,7 @@ Liturgical Calendar
 - **Status:** Draft for Review
 
 ## Approval Signatures
+
 - [ ] Product Owner
 - [ ] Theological Advisor
 - [ ] Technical Lead
@@ -620,4 +692,4 @@ Liturgical Calendar
 
 ---
 
-*This discovery document is a living document and will be updated as the project evolves and new insights are gained.*
+_This discovery document is a living document and will be updated as the project evolves and new insights are gained._

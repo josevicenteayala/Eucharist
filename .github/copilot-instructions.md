@@ -9,11 +9,13 @@
 ## Architecture at a Glance
 
 ### Three-Layer Pattern
+
 ```
 Presentation → Service → Repository → Database
 ```
 
 **Planned Structure** (not yet created):
+
 - `mobile/` - Flutter app with clean architecture (`/data`, `/domain`, `/presentation`)
 - `web/frontend/` - Next.js with `/components`, `/pages`, `/hooks`, `/services`
 - `web/backend/` - Express with `/controllers`, `/services`, `/models`, `/routes`
@@ -34,6 +36,7 @@ See `PROJECT_STRUCTURE.md` for complete layout.
 ## Database Patterns
 
 ### PostgreSQL Schema Pattern
+
 ```sql
 -- Users, auth, prayer intentions, progress tracking
 -- Foreign keys, ACID transactions required
@@ -46,6 +49,7 @@ CREATE TABLE users (
 ```
 
 ### MongoDB Document Pattern
+
 ```javascript
 // Educational articles, reflections, miracles
 // Rich text, metadata, multilingual support
@@ -66,6 +70,7 @@ Full schemas: `docs/sdlc/SOFTWARE_ARCHITECT.md` lines 400-800
 ## API Conventions
 
 **Standard response format**:
+
 ```typescript
 // Success
 { success: true, data: {...}, meta: { page, limit, total } }
@@ -75,6 +80,7 @@ Full schemas: `docs/sdlc/SOFTWARE_ARCHITECT.md` lines 400-800
 ```
 
 **Endpoint structure** (all under `/api/v1/`):
+
 - `/auth/*` - Login, register, token refresh
 - `/gospel/*` - Daily readings and reflections
 - `/content/*` - Educational articles and resources
@@ -86,14 +92,15 @@ See `docs/sdlc/SOFTWARE_ARCHITECT.md` lines 800-950 for complete API specs.
 ## Content Requirements
 
 All spiritual/educational content must include:
+
 ```markdown
 ---
-title: "Understanding the Real Presence"
-category: "eucharist-basics"
-reviewedBy: "Fr. John Doe"
-reviewDate: "2025-10-15"
-magisteriumRefs: ["CCC 1373-1377"]
-language: "en"
+title: 'Understanding the Real Presence'
+category: 'eucharist-basics'
+reviewedBy: 'Fr. John Doe'
+reviewDate: '2025-10-15'
+magisteriumRefs: ['CCC 1373-1377']
+language: 'en'
 ---
 ```
 
@@ -102,6 +109,7 @@ Guidelines: `CONTRIBUTING.md` lines 50-150
 ## Testing & Quality Standards
 
 **Minimum requirements** (ADR-005):
+
 - Unit tests: Jest (backend), Jest + React Testing Library (frontend)
 - Integration tests: Supertest for APIs
 - E2E tests: Playwright/Cypress for critical flows
@@ -111,6 +119,7 @@ Guidelines: `CONTRIBUTING.md` lines 50-150
 **CI pipeline checks**: ESLint, Prettier, TypeScript compilation, security audit, tests
 
 **Test-Driven Development**:
+
 - Write tests BEFORE implementing features when possible
 - Test file naming: `ComponentName.test.ts` or `ComponentName.spec.ts`
 - Mock external dependencies (APIs, databases) in unit tests
@@ -120,6 +129,7 @@ Guidelines: `CONTRIBUTING.md` lines 50-150
 ## Error Handling & Logging
 
 **Standard error handling pattern**:
+
 ```typescript
 // Backend API
 try {
@@ -149,12 +159,14 @@ try {
 ```
 
 **Logging levels**:
+
 - `error` - Failures, exceptions (always logged)
 - `warn` - Unexpected but handled situations
 - `info` - Important business events (login, content publish)
 - `debug` - Detailed troubleshooting info (dev/staging only)
 
 **Never log**:
+
 - Passwords or tokens
 - Personal identifiable information (PII)
 - Complete error stack traces in production
@@ -173,6 +185,7 @@ try {
 - Dependency scanning: Run `npm audit` before adding/updating packages
 
 **Pre-commit security checks**:
+
 ```bash
 # Check for secrets in code
 git diff --cached | grep -i "password\|secret\|api_key"
@@ -185,6 +198,7 @@ Details: `docs/sdlc/SOFTWARE_ARCHITECT.md` lines 1000-1100
 ## Code Review Standards
 
 **Before requesting review**:
+
 - [ ] Code follows project style guide (run linter)
 - [ ] All tests pass locally
 - [ ] No console.log/debug statements in production code
@@ -194,6 +208,7 @@ Details: `docs/sdlc/SOFTWARE_ARCHITECT.md` lines 1000-1100
 - [ ] Breaking changes clearly noted in PR description
 
 **Reviewer focus areas**:
+
 1. Security vulnerabilities
 2. Performance bottlenecks
 3. Theological accuracy (for content features)
@@ -206,18 +221,21 @@ Details: `docs/sdlc/SOFTWARE_ARCHITECT.md` lines 1000-1100
 ## Performance Guidelines
 
 **Backend**:
+
 - Database queries: Use indexes, avoid N+1 queries, paginate large results
 - Caching: Cache expensive operations in Redis (TTL: 5-60 min)
 - API rate limiting: 100 req/min per user for reads, 20 req/min for writes
 - Response time target: < 200ms for cached, < 1s for database queries
 
 **Frontend**:
+
 - Code splitting: Lazy load routes and heavy components
 - Image optimization: WebP format, lazy loading, responsive images
 - Bundle size: Keep initial bundle < 200KB gzipped
 - Lighthouse score target: Performance > 90, Accessibility > 95
 
 **Mobile**:
+
 - Initial load: < 3 seconds on 3G connection
 - Offline-first: Cache critical content locally
 - Battery efficiency: Minimize background tasks
@@ -226,6 +244,7 @@ Details: `docs/sdlc/SOFTWARE_ARCHITECT.md` lines 1000-1100
 ## Accessibility (WCAG 2.1 AA)
 
 **Required standards**:
+
 - Semantic HTML: Use `<button>`, `<nav>`, `<main>`, `<article>` appropriately
 - Keyboard navigation: All interactive elements accessible via Tab/Enter/Space
 - Screen readers: Add `aria-label` for icon buttons, `alt` text for images
@@ -234,6 +253,7 @@ Details: `docs/sdlc/SOFTWARE_ARCHITECT.md` lines 1000-1100
 - Text scaling: Support up to 200% zoom without horizontal scrolling
 
 **Testing**:
+
 ```bash
 # Run axe accessibility tests
 npm run test:a11y
@@ -244,6 +264,7 @@ npm run test:a11y
 ## Internationalization (i18n)
 
 **String externalization**:
+
 ```typescript
 // Backend (i18next)
 import i18n from '@/config/i18n';
@@ -260,6 +281,7 @@ const title = t('gospel.daily'); // ✅ Good
 ```
 
 **Supported languages** (Phase 1: English, Phase 2+: Spanish, Portuguese):
+
 - Store translations in `/locales/{lang}/translation.json`
 - Use ICU MessageFormat for plurals: `{count, plural, one {# reflection} other {# reflections}}`
 - Date/time formatting: Use `Intl.DateTimeFormat` with user's locale
@@ -268,11 +290,13 @@ const title = t('gospel.daily'); // ✅ Good
 ## Development Workflow
 
 **Branches**:
+
 - `main` = production | `develop` = integration | `feature/*` = new work | `fix/*` = bug fixes
 
 **Commits**: Use Conventional Commits (`feat:`, `fix:`, `docs:`, `refactor:`, `test:`)
 
 **PR process**:
+
 1. Branch from `develop`
 2. Implement with tests
 3. Lint + test locally
@@ -283,11 +307,13 @@ const title = t('gospel.daily'); // ✅ Good
 ## Key Documentation Map
 
 **When implementing features**:
+
 1. `TECHNICAL_ROADMAP.md` - Sprint-by-sprint tasks with code examples
 2. `docs/sdlc/SOFTWARE_ARCHITECT.md` - Architecture patterns, schemas, API specs
 3. `PROJECT_STRUCTURE.md` - Directory conventions and module organization
 
 **For context**:
+
 - `EXECUTIVE_SUMMARY.md` - Business goals and user personas
 - `docs/product-backlog/epics/*.md` - User stories and acceptance criteria
 - `DOCUMENTATION_INDEX.md` - Complete navigation guide
@@ -310,6 +336,7 @@ const title = t('gospel.daily'); // ✅ Good
 ## Git Workflow
 
 **Branch naming**:
+
 ```bash
 feature/EP-123-daily-gospel-audio    # New features (EP = Eucharist Platform ticket)
 fix/EP-456-login-redirect-bug        # Bug fixes
@@ -319,11 +346,13 @@ test/add-gospel-service-tests        # Test additions
 ```
 
 **Commit frequently**:
+
 - Commit after each logical unit of work (not end of day)
 - Each commit should leave code in working state
 - Use `git rebase -i` to clean up commits before PR
 
 **Pre-push checklist**:
+
 ```bash
 npm run lint          # Fix linting issues
 npm test              # All tests pass
@@ -336,7 +365,7 @@ git diff --check      # No whitespace errors
 ```bash
 # These commands don't exist yet—project has no implementation code
 # Backend: npm run dev | test | lint | build
-# Frontend: npm run dev | test | build  
+# Frontend: npm run dev | test | build
 # Mobile: flutter run | test | build apk
 ```
 

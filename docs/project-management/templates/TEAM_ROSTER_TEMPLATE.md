@@ -22,6 +22,7 @@
 ### Leadership
 
 #### Project Manager
+
 - **Name**: [To Be Assigned]
 - **Email**: [Email]
 - **Phone**: [Phone]
@@ -42,6 +43,7 @@
 ---
 
 #### Product Owner
+
 - **Name**: [To Be Assigned]
 - **Email**: [Email]
 - **Phone**: [Phone]
@@ -62,6 +64,7 @@
 ---
 
 #### Software Architect
+
 - **Name**: [To Be Assigned]
 - **Email**: [Email]
 - **Phone**: [Phone]
@@ -84,6 +87,7 @@
 ### Development Team
 
 #### Technical Lead / Full-Stack Developer
+
 - **Name**: [To Be Assigned]
 - **Email**: [Email]
 - **Phone**: [Phone]
@@ -99,7 +103,7 @@
   - Technical mentoring
   - DevOps and CI/CD
   - Database design and optimization
-- **Primary Technologies**: 
+- **Primary Technologies**:
   - Backend: Node.js, Express, TypeScript, PostgreSQL, MongoDB
   - Frontend: React, TypeScript, Tailwind CSS
   - DevOps: Docker, GitHub Actions, AWS/GCP
@@ -111,6 +115,7 @@
 ---
 
 #### Mobile Developer
+
 - **Name**: [To Be Assigned]
 - **Email**: [Email]
 - **Phone**: [Phone]
@@ -126,7 +131,7 @@
   - Performance optimization
   - App store submission and updates
   - Cross-platform coordination
-- **Primary Technologies**: 
+- **Primary Technologies**:
   - Flutter, Dart
   - Firebase (Auth, Messaging, Analytics)
   - iOS development (Swift knowledge helpful)
@@ -139,6 +144,7 @@
 ---
 
 #### UI/UX Designer
+
 - **Name**: [To Be Assigned]
 - **Email**: [Email]
 - **Phone**: [Phone]
@@ -154,7 +160,7 @@
   - Wireframing and prototyping
   - Brand identity and visual design
   - Accessibility design (WCAG 2.1 AA)
-- **Primary Technologies**: 
+- **Primary Technologies**:
   - Figma (primary design tool)
   - Adobe Creative Suite
   - Prototyping tools (InVision, Principle, etc.)
@@ -168,6 +174,7 @@
 ### Part-Time Team
 
 #### Content Creator / Theologian
+
 - **Name**: [To Be Assigned]
 - **Email**: [Email]
 - **Phone**: [Phone]
@@ -183,7 +190,7 @@
   - Theological accuracy review
   - Collaboration with theological advisors
   - Content editing and revision
-- **Qualifications**: 
+- **Qualifications**:
   - Degree in theology or related field
   - Knowledge of Catholic doctrine and teaching
   - Strong writing skills
@@ -194,6 +201,7 @@
 ---
 
 #### Community Manager
+
 - **Name**: [To Be Assigned]
 - **Email**: [Email]
 - **Phone**: [Phone]
@@ -220,6 +228,7 @@
 ### Theological Advisors
 
 #### Primary Theological Advisor
+
 - **Name**: [To Be Assigned]
 - **Title**: [Fr./Deacon/Dr., etc.]
 - **Affiliation**: [Parish/Diocese/University]
@@ -231,6 +240,7 @@
 - **Background**: [Credentials and experience]
 
 #### Secondary Theological Advisor
+
 - **Name**: [To Be Assigned]
 - **Title**: [Fr./Deacon/Dr., etc.]
 - **Affiliation**: [Parish/Diocese/University]
@@ -246,6 +256,7 @@
 ### Parish Partners
 
 #### Partner 1
+
 - **Parish Name**: [Parish Name]
 - **Contact**: [Name, Title]
 - **Email**: [Email]
@@ -256,6 +267,7 @@
 - **Demographics**: [Brief description]
 
 #### Partner 2
+
 - **Parish Name**: [Parish Name]
 - **Contact**: [Name, Title]
 - **Email**: [Email]
@@ -270,22 +282,26 @@
 ## Team Tools & Access
 
 ### Communication
+
 - **Slack/Discord**: [Workspace URL]
 - **Email**: [Team email list]
 - **Video Meetings**: [Zoom/Google Meet links]
 
 ### Development
+
 - **GitHub**: [Repository URL]
   - Access levels documented in repo
 - **Staging Environment**: [URL]
 - **Production Environment**: [URL when available]
 
 ### Project Management
+
 - **Project Board**: [GitHub Projects/Jira URL]
 - **Documentation**: [Notion/Wiki URL]
 - **Design Files**: [Figma URL]
 
 ### Credentials
+
 - **Credential Manager**: [LastPass/1Password shared vault]
 - **Access Request Process**: [How to request access]
 
@@ -294,11 +310,13 @@
 ## Team Working Agreements
 
 ### Core Hours
+
 - **Time**: 10:00 AM - 3:00 PM [Timezone]
 - **Purpose**: Overlap time for meetings and collaboration
 - **Flexibility**: Outside core hours is flexible
 
 ### Meetings
+
 - **Daily Standup**: 9:00 AM, 15 minutes, Monday-Friday
 - **Sprint Planning**: Every other Monday, 2 hours
 - **Sprint Review**: Every other Friday, 1 hour
@@ -306,21 +324,25 @@
 - **Backlog Grooming**: Weekly Wednesday, 1 hour
 
 ### Response Times
+
 - **Urgent (Slack)**: Within 1 hour during working hours
 - **Normal (Slack/Email)**: Within 4 hours during working hours
 - **Non-urgent**: Within 24 hours
 
 ### Code Review
+
 - **Turnaround Time**: Within 24 hours
 - **Reviewers Required**: At least 1 for small changes, 2 for significant changes
 - **Approval Required**: Before merging to develop or main
 
 ### Time Off
+
 - **Request Process**: Notify PM and team at least 1 week in advance
 - **Documentation**: Update shared calendar
 - **Handoff**: Brief team on work status before leave
 
 ### Communication Etiquette
+
 - Use threads in Slack to keep conversations organized
 - Tag people when you need their attention
 - Use appropriate channels (no work talk in #random)
@@ -335,12 +357,14 @@
 ### Week 1 - Setup & Orientation
 
 **Administrative**
+
 - [ ] Employment paperwork completed
 - [ ] Added to payroll/payment system
 - [ ] Added to team roster
 - [ ] Emergency contact information collected
 
 **Access & Accounts**
+
 - [ ] Email account created
 - [ ] Slack/Discord access granted
 - [ ] GitHub access granted
@@ -351,12 +375,14 @@
 - [ ] Credential manager access granted
 
 **Hardware & Software**
+
 - [ ] Computer setup (if provided)
 - [ ] Required software installed
 - [ ] Development environment configured
 - [ ] VPN configured (if applicable)
 
 **Orientation**
+
 - [ ] Welcome meeting with PM
 - [ ] Project overview presentation
 - [ ] Team introductions (1-on-1s scheduled)
@@ -368,6 +394,7 @@
 ### Week 2 - Integration
 
 **Learning**
+
 - [ ] Review architecture documentation
 - [ ] Review coding standards
 - [ ] Review testing practices
@@ -376,6 +403,7 @@
 - [ ] Attend all ceremonies (standup, grooming, etc.)
 
 **First Contributions**
+
 - [ ] First small task assigned
 - [ ] First code contribution (if developer)
 - [ ] First design mockup (if designer)
@@ -383,6 +411,7 @@
 - [ ] First PR reviewed
 
 **Team Integration**
+
 - [ ] All 1-on-1s with team members completed
 - [ ] Added to relevant Slack channels
 - [ ] Comfortable with communication norms
@@ -410,25 +439,29 @@
 ## Team Health & Development
 
 ### 1-on-1s
+
 - **Frequency**: Bi-weekly with PM
 - **Duration**: 30 minutes
 - **Topics**: Progress, blockers, career development, feedback, well-being
 
 ### Team Retrospectives
+
 - **Frequency**: End of each sprint
 - **Duration**: 1 hour
 - **Format**: What went well, what didn't, what to change
 - **Action Items**: Tracked and implemented
 
 ### Professional Development
+
 - **Training Budget**: [Amount if applicable]
 - **Conference Budget**: [Amount if applicable]
 - **Learning Time**: [Policy on time for learning]
 - **Resources**: [List of recommended resources]
 
 ### Performance Reviews
+
 - **Frequency**: Quarterly
-- **Process**: 
+- **Process**:
   - Self-assessment
   - Peer feedback (360-degree)
   - PM evaluation
@@ -440,6 +473,7 @@
 ## Team Culture & Values
 
 ### Our Values
+
 1. **Mission-Driven**: Remember we're serving the faithful and helping people encounter Christ
 2. **Excellence**: Strive for quality in everything we do
 3. **Collaboration**: We're stronger together
@@ -449,6 +483,7 @@
 7. **Balance**: Sustainable pace, not burnout
 
 ### Team Norms
+
 - **Respect working hours**: No expectation to respond outside working hours
 - **Celebrate wins**: Acknowledge achievements, big and small
 - **Learn from mistakes**: Blameless post-mortems, focus on improvement
@@ -461,14 +496,17 @@
 ## Emergency Contacts
 
 ### Project Emergency
+
 - **Primary**: [PM Name] - [Phone] - [Email]
 - **Secondary**: [Technical Lead Name] - [Phone] - [Email]
 
 ### Technical Emergency
+
 - **Primary**: [Technical Lead Name] - [Phone] - [Email]
 - **Secondary**: [Software Architect Name] - [Phone] - [Email]
 
 ### After-Hours Critical Issues
+
 - **On-Call Rotation**: [If applicable]
 - **Emergency Escalation**: [Process and contacts]
 
@@ -476,15 +514,15 @@
 
 ## Document History
 
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2025-10-19 | Project Manager | Initial team roster template |
+| Version | Date       | Author          | Changes                      |
+| ------- | ---------- | --------------- | ---------------------------- |
+| 1.0     | 2025-10-19 | Project Manager | Initial team roster template |
 
 ---
 
 ## Notes
 
-*This roster will be updated as team members are hired and onboarded. Personal information should be kept confidential and shared only with team members who need it.*
+_This roster will be updated as team members are hired and onboarded. Personal information should be kept confidential and shared only with team members who need it._
 
 **Last Updated**: [Date]  
 **Next Review**: [Date]

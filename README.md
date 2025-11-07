@@ -25,12 +25,14 @@ The Eucharist Understanding Platform will consist of:
 ## 🎯 Key Features
 
 ### 1. Daily Gospel & Reflection
+
 - Daily Scripture readings from the liturgical calendar
 - Practical reflections connecting the Gospel to everyday life
 - Audio versions for listening on the go
 - Journal feature for personal notes
 
 ### 2. Eucharist Education
+
 - **What is the Eucharist?** - Theological foundations and Real Presence
 - **Parts of the Mass** - Interactive guide through the liturgy
 - **Living the Eucharist** - Practical guidance for spiritual growth
@@ -38,12 +40,14 @@ The Eucharist Understanding Platform will consist of:
 - **History Timeline** - Development of Eucharistic worship through the ages
 
 ### 3. Community Features
+
 - Prayer intention sharing
 - Discussion forums
 - Parish and adoration chapel finder
 - Testimony sharing
 
 ### 4. Personal Spiritual Growth
+
 - Progress tracking
 - Spiritual journal
 - Bookmarks and favorites
@@ -52,6 +56,7 @@ The Eucharist Understanding Platform will consist of:
 ## 📚 Documentation
 
 ### Core Documents
+
 - ⭐ **[Next Steps Implementation Prompt](NEXT_STEPS_IMPLEMENTATION_PROMPT.md)** - **NEW!** Complete guide for starting Sprint 1
 - **[Discovery Phase Document](DISCOVERY.md)** - Comprehensive project vision, goals, and planning
 - **[Executive Summary](EXECUTIVE_SUMMARY.md)** - High-level overview for stakeholders
@@ -61,12 +66,14 @@ The Eucharist Understanding Platform will consist of:
 - **[Contributing Guide](CONTRIBUTING.md)** - How to contribute to the project
 
 ### SDLC Role Documentation
+
 - **[SDLC Index](docs/sdlc/INDEX.md)** - Overview of all role documents
 - **[Project Manager](docs/sdlc/PROJECT_MANAGER.md)** - PM responsibilities and workflows
 - **[Product Owner](docs/sdlc/PRODUCT_OWNER.md)** - Product management and backlog
 - **[Software Architect](docs/sdlc/SOFTWARE_ARCHITECT.md)** - Technical architecture and standards
 
 ### Other Resources
+
 - **[Documentation Index](DOCUMENTATION_INDEX.md)** - Complete guide to all documentation
 - **[License](LICENSE)** - Project license details
 
@@ -75,6 +82,7 @@ The Eucharist Understanding Platform will consist of:
 **Phase:** Phase 1 – Foundation (MVP Build)
 
 Discovery is complete and we are focused on executing the foundation phase:
+
 - MVP web application development
 - Core content creation (first 30 reflections/articles)
 - Early community feature prototypes
@@ -83,12 +91,14 @@ Discovery is complete and we are focused on executing the foundation phase:
 ## 🛠️ Technology Stack
 
 ### Mobile
+
 - **Framework:** Flutter
 - **State Management:** Provider/Riverpod
 - **Local Storage:** Hive/SQLite
 - **Authentication:** Firebase Auth
 
 ### Web
+
 - **Frontend:** React 18+ with TypeScript
 - **Backend:** Node.js with Express
 - **Database:** PostgreSQL (relational) + MongoDB (content)
@@ -96,6 +106,7 @@ Discovery is complete and we are focused on executing the foundation phase:
 - **Authentication:** JWT + OAuth 2.0
 
 ### DevOps
+
 - **Version Control:** Git & GitHub
 - **CI/CD:** GitHub Actions
 - **Hosting:** TBD (AWS, Google Cloud, or Azure)
@@ -107,7 +118,7 @@ Discovery is complete and we are focused on executing the foundation phase:
 Eucharist/
 ├── docs/              # Documentation
 ├── mobile/            # Flutter mobile app
-├── web/              
+├── web/
 │   ├── frontend/     # React web app
 │   └── backend/      # Node.js API
 ├── content/          # Educational content (Markdown)
@@ -115,7 +126,63 @@ Eucharist/
 └── scripts/          # Automation scripts
 ```
 
-*See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for detailed structure.*
+_See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for detailed structure._
+
+## 🔧 Development Setup
+
+### Prerequisites
+
+- Node.js 18+ and npm 9+
+- Git
+
+### Getting Started
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/josevicenteayala/Eucharist.git
+   cd Eucharist
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Linting and Formatting**
+
+   ```bash
+   # Check code formatting
+   npm run format:check
+
+   # Format all files
+   npm run format
+
+   # Lint code
+   npm run lint
+
+   # Fix linting issues
+   npm run lint:fix
+   ```
+
+4. **Git Hooks**
+
+   Pre-commit hooks are automatically installed via Husky. They will:
+   - Run ESLint and fix issues on staged `.js`, `.jsx`, `.ts`, `.tsx` files
+   - Format all staged files with Prettier
+
+5. **Working with Backend**
+
+   ```bash
+   cd web/backend
+   npm install
+   npm run dev      # Start development server
+   npm test         # Run tests
+   npm run build    # Build for production
+   ```
+
+See individual workspace README files for detailed setup instructions.
 
 ## 👥 Target Audience
 
@@ -128,6 +195,7 @@ Eucharist/
 ## 🤝 Contributing
 
 We welcome contributions from:
+
 - **Developers** (mobile, web, backend)
 - **Designers** (UI/UX, graphics)
 - **Content Creators** (writers, theologians)
@@ -147,30 +215,34 @@ Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
 ## 📋 Roadmap
 
 ### Phase 1: Foundation (Months 1-3)
+
 - ✅ Discovery and planning
 - [ ] MVP development
 - [ ] Core content creation
 - [ ] Web application launch
 
 ### Phase 2: Enhancement (Months 4-6)
+
 - [ ] Mobile app development
 - [ ] Additional features
 - [ ] Community features
 - [ ] Content expansion
 
 ### Phase 3: Growth (Months 7-9)
+
 - [ ] Mobile app public release
 - [ ] Multi-language support
 - [ ] Marketing and outreach
 - [ ] Community building
 
 ### Phase 4: Maturity (Months 10-12)
+
 - [ ] Advanced features
 - [ ] Video content library
 - [ ] Personalization
 - [ ] Scale and optimize
 
-*See [DISCOVERY.md](DISCOVERY.md) for detailed roadmap.*
+_See [DISCOVERY.md](DISCOVERY.md) for detailed roadmap._
 
 ## 📄 License
 
@@ -193,6 +265,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 This project is made possible by:
+
 - The Catholic Church's rich tradition and teaching
 - Open source community
 - Contributors and supporters
@@ -203,9 +276,9 @@ This project is made possible by:
 <div align="center">
 
 **"The Eucharist is the source and summit of the Christian life."**  
-*— Second Vatican Council, Lumen Gentium*
+_— Second Vatican Council, Lumen Gentium_
 
-*Ad Majorem Dei Gloriam* ✝️
+_Ad Majorem Dei Gloriam_ ✝️
 
 [Get Started](DISCOVERY.md) • [Contribute](CONTRIBUTING.md) • [Documentation](docs/)
 
