@@ -9,10 +9,23 @@ describe('Health Check Endpoint', () => {
       expect(response.status).toBe(200);
       expect(response.body).toHaveProperty('success', true);
       expect(response.body).toHaveProperty('data');
-      expect(response.body.data).toHaveProperty('status', 'healthy');
+      expect(response.body.data).toHaveProperty('status');
       expect(response.body.data).toHaveProperty('timestamp');
       expect(response.body.data).toHaveProperty('uptime');
       expect(response.body.data).toHaveProperty('environment');
+      expect(response.body.data).toHaveProperty('databases');
+    });
+
+    it('should return database health status', async () => {
+      const response = await request(app).get('/api/v1/health');
+
+      expect(response.body.data.databases).toHaveProperty('postgres');
+      expect(response.body.data.databases).toHaveProperty('mongodb');
+      expect(response.body.data.databases).toHaveProperty('redis');
+
+      expect(response.body.data.databases.postgres).toHaveProperty('status');
+      expect(response.body.data.databases.mongodb).toHaveProperty('status');
+      expect(response.body.data.databases.redis).toHaveProperty('status');
     });
 
     it('should return valid timestamp', async () => {
