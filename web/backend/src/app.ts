@@ -6,6 +6,7 @@ import { config } from './config/env';
 import { stream } from './config/logger';
 import { errorHandler, notFoundHandler } from './middleware';
 import routes from './routes';
+import healthRoutes from './routes/health.routes';
 import { corsOptions } from './config/cors';
 import { getHelmetOptions } from './config/helmet';
 
@@ -27,6 +28,9 @@ if (config.nodeEnv === 'development') {
 } else {
   app.use(morgan('combined', { stream }));
 }
+
+// Health check endpoint at /api/health (without version)
+app.use('/api/health', healthRoutes);
 
 // API routes
 app.use(`/api/${config.apiVersion}`, routes);
