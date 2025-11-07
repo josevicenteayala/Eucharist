@@ -1,6 +1,7 @@
 import request from 'supertest';
 import express, { Application } from 'express';
-import { errorHandler, ApiError } from '../src/middleware/errorHandler';
+import { errorHandler } from '../src/middleware/errorHandler';
+import { ApiError } from '../src/middleware/errors';
 
 describe('Error Handler Middleware', () => {
   let app: Application;
@@ -17,9 +18,7 @@ describe('Error Handler Middleware', () => {
 
   it('should handle errors with custom status code and message', async () => {
     app.get('/test-error', () => {
-      const error: ApiError = new Error('Custom error message');
-      error.statusCode = 400;
-      error.code = 'CUSTOM_ERROR';
+      const error = new ApiError('Custom error message', 400, 'CUSTOM_ERROR');
       throw error;
     });
     app.use(errorHandler);
@@ -49,9 +48,7 @@ describe('Error Handler Middleware', () => {
     process.env.NODE_ENV = 'production';
 
     app.get('/test-error', () => {
-      const error: ApiError = new Error('Test error');
-      error.statusCode = 400;
-      error.details = { sensitive: 'data' };
+      const error = new ApiError('Test error', 400, 'TEST_ERROR', { sensitive: 'data' });
       throw error;
     });
     app.use(errorHandler);

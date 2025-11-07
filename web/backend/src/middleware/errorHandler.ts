@@ -1,17 +1,37 @@
 import { Request, Response, NextFunction } from 'express';
 import { config } from '../config/env';
 import logger from '../config/logger';
+import { ApiError } from './errors';
 
-export interface ApiError extends Error {
-  statusCode?: number;
-  code?: string;
-  details?: unknown;
-}
+/**
+ * Global Error Handler Middleware
+ *
+ * Catches all errors thrown in the application and returns a standardized
+ * error response format. Integrates with Winston logger for error tracking.
+ *
+ * Error Response Format:
+ * {
+ *   success: false,
+ *   error: {
+ *     code: "ERROR_CODE",
+ *     message: "Human-readable message",
+ *     details: {...} // Only in development
+ *   }
+ * }
+ */
+export const errorHandler = (
+  err: Error | ApiError,
+  _req: Request,
+  res: Response,
+  _next: NextFunction
+) => {
+  // Determine if this is a known ApiError or unknown error
+  const isApiError = err instanceof ApiError;
 
-export const errorHandler = (err: ApiError, _req: Request, res: Response, _next: NextFunction) => {
-  const statusCode = err.statusCode || 500;
+  const statusCode = isApiError ? err.statusCode : 500;
   const message = err.message || 'Internal Server Error';
-  const code = err.code || 'INTERNAL_ERROR';
+  const code = isApiError ? err.code : 'INTERNAL_ERROR';
+  const details = isApiError ? err.details : undefined;
 
   // Log error using Winston
   logger.error('API Error', {
@@ -19,7 +39,7 @@ export const errorHandler = (err: ApiError, _req: Request, res: Response, _next:
     code,
     message,
     stack: err.stack,
-    details: err.details,
+    details,
   });
 
   const errorResponse: {
@@ -37,8 +57,9 @@ export const errorHandler = (err: ApiError, _req: Request, res: Response, _next:
     },
   };
 
-  if (config.nodeEnv === 'development' && err.details) {
-    errorResponse.error.details = err.details;
+  // Include error details in development mode
+  if (config.nodeEnv === 'development' && details) {
+    errorResponse.error.details = details;
   }
 
   res.status(statusCode).json(errorResponse);
