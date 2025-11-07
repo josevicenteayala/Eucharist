@@ -14,16 +14,19 @@
 **Daily Standup - [Name] - [Date]**
 
 ✅ **Yesterday:**
+
 - Completed [Task/Story ID]: [Brief description]
 - Made progress on [Task/Story ID]: [What was done]
 - Reviewed PR #[Number]
 
 🎯 **Today:**
+
 - Will complete [Task/Story ID]: [Brief description]
 - Will start [Task/Story ID]: [Brief description]
 - Will attend [Meeting if applicable]
 
 🚧 **Blockers:**
+
 - [Blocker description] - Need help from @[person]
 - None
 
@@ -40,6 +43,7 @@
 
 ```markdown
 # Weekly Status Report
+
 **Project**: Eucharist Understanding Platform  
 **Reporting Period**: [Start Date] - [End Date]  
 **Prepared By**: [Project Manager Name]  
@@ -59,15 +63,18 @@
 ## Progress Highlights
 
 ### Completed This Week
+
 ✅ [Achievement 1]  
 ✅ [Achievement 2]  
 ✅ [Achievement 3]
 
 ### In Progress
+
 🔄 [Item 1] - [% complete]  
 🔄 [Item 2] - [% complete]
 
 ### Coming Next Week
+
 🎯 [Priority 1]  
 🎯 [Priority 2]  
 🎯 [Priority 3]
@@ -76,15 +83,16 @@
 
 ## Key Metrics
 
-| Metric | This Week | Last Week | Trend |
-|--------|-----------|-----------|-------|
-| Sprint Progress | [X]% | [Y]% | ↗️/➡️/↘️ |
-| Velocity (Story Points) | [X] | [Y] | ↗️/➡️/↘️ |
-| Stories Completed | [X] | [Y] | ↗️/➡️/↘️ |
-| Bugs Fixed | [X] | [Y] | ↗️/➡️/↘️ |
-| Code Coverage | [X]% | [Y]% | ↗️/➡️/↘️ |
+| Metric                  | This Week | Last Week | Trend    |
+| ----------------------- | --------- | --------- | -------- |
+| Sprint Progress         | [X]%      | [Y]%      | ↗️/➡️/↘️ |
+| Velocity (Story Points) | [X]       | [Y]       | ↗️/➡️/↘️ |
+| Stories Completed       | [X]       | [Y]       | ↗️/➡️/↘️ |
+| Bugs Fixed              | [X]       | [Y]       | ↗️/➡️/↘️ |
+| Code Coverage           | [X]%      | [Y]%      | ↗️/➡️/↘️ |
 
 **Budget Status:**
+
 - Spent: $[X] ([Y]% of total)
 - Timeline: Week [X] of [Y] ([Z]% complete)
 - Variance: [On budget / $X over / $X under]
@@ -94,6 +102,7 @@
 ## Risks & Issues
 
 ### 🔴 Critical Issues
+
 - **[Issue Title]**
   - Impact: [Description]
   - Status: [In Progress/Blocked/Resolved]
@@ -101,12 +110,14 @@
   - ETA: [Date]
 
 ### 🟡 Risks Requiring Attention
+
 - **[Risk Title]** (Probability: [H/M/L], Impact: [H/M/L])
   - Description: [Brief description]
   - Mitigation: [Action being taken]
   - Owner: [Name]
 
 ### ✅ Resolved This Week
+
 - [Issue] - Resolved by [action]
 
 ---
@@ -131,14 +142,15 @@
 
 ## Action Items
 
-| Action | Owner | Due Date | Status |
-|--------|-------|----------|--------|
-| [Action 1] | [Name] | [Date] | [Not Started/In Progress/Done] |
-| [Action 2] | [Name] | [Date] | [Not Started/In Progress/Done] |
+| Action     | Owner  | Due Date | Status                         |
+| ---------- | ------ | -------- | ------------------------------ |
+| [Action 1] | [Name] | [Date]   | [Not Started/In Progress/Done] |
+| [Action 2] | [Name] | [Date]   | [Not Started/In Progress/Done] |
 
 ---
 
 ## Attachments / Links
+
 - Sprint Board: [Link]
 - Detailed Metrics: [Link]
 - Code Repository: [Link]
@@ -146,6 +158,7 @@
 ---
 
 ## Questions or Concerns?
+
 Contact: [PM Name] - [Email] - [Phone]
 ```
 
@@ -159,6 +172,7 @@ Contact: [PM Name] - [Email] - [Phone]
 
 ```markdown
 # Sprint [X] Report
+
 **Sprint**: #[X]  
 **Duration**: [Start Date] - [End Date]  
 **Sprint Goal**: [One-sentence goal]  
@@ -175,15 +189,19 @@ Contact: [PM Name] - [Email] - [Phone]
 ## Completed Work
 
 ### User Stories Delivered
+
 ✅ **US-[X]: [Story Title]** ([X] points)
+
 - [Brief description of what was delivered]
 - Demo: [Link to screenshot/video]
 
 ✅ **US-[X]: [Story Title]** ([X] points)
+
 - [Brief description]
 - Demo: [Link]
 
 ### Technical Work
+
 ✅ [Infrastructure/Technical achievement]  
 ✅ [Bug fixes or improvements]
 
@@ -192,12 +210,14 @@ Contact: [PM Name] - [Email] - [Phone]
 ## Sprint Metrics
 
 **Velocity:**
+
 - Committed: [X] story points
 - Completed: [Y] story points
 - Velocity: [Y] points ([Z]% of commitment)
 - 3-Sprint Average: [X] points
 
 **Quality:**
+
 - Code Review: 100% of code reviewed before merge
 - Test Coverage: [X]% (target: 80%)
 - Bugs Fixed: [X]
@@ -205,6 +225,7 @@ Contact: [PM Name] - [Email] - [Phone]
 - Deployment Success: [Z] of [Z] deployments successful
 
 **Team:**
+
 - Team Capacity: [X]% (planned vs. actual)
 - Team Satisfaction: [Rating if collected]
 
@@ -213,7 +234,9 @@ Contact: [PM Name] - [Email] - [Phone]
 ## Incomplete Work
 
 ### Moved to Next Sprint
+
 ⏸️ **US-[X]: [Story Title]** ([X] points)
+
 - Reason: [Why it wasn't completed]
 - Status: [% complete or blockers]
 - Next Steps: [What needs to happen]
@@ -223,15 +246,18 @@ Contact: [PM Name] - [Email] - [Phone]
 ## Retrospective Highlights
 
 ### What Went Well 🎉
+
 - [Positive 1]
 - [Positive 2]
 - [Positive 3]
 
 ### What to Improve 🔧
+
 - [Improvement 1]
 - [Improvement 2]
 
 ### Action Items 📋
+
 - [ ] [Action item 1] - Owner: [Name] - Due: [Date]
 - [ ] [Action item 2] - Owner: [Name] - Due: [Date]
 
@@ -242,6 +268,7 @@ Contact: [PM Name] - [Email] - [Phone]
 **Sprint [X+1] Goal**: [One-sentence goal]
 
 **Planned Stories**:
+
 - US-[X]: [Title] ([X] points)
 - US-[X]: [Title] ([X] points)
 - US-[X]: [Title] ([X] points)
@@ -255,6 +282,7 @@ Contact: [PM Name] - [Email] - [Phone]
 🎥 **View Sprint Demo**: [Link to recorded demo or schedule live demo]
 
 Key Features to See:
+
 - [Feature 1]
 - [Feature 2]
 - [Feature 3]
@@ -264,6 +292,7 @@ Key Features to See:
 ## Feedback Welcome
 
 We value your input! Please share feedback:
+
 - 📧 Email: [PM Email]
 - 📝 Feedback Form: [Link]
 - 💬 Comment on this report
@@ -284,6 +313,7 @@ We value your input! Please share feedback:
 
 ```markdown
 # Monthly Status Report - [Month Year]
+
 **Project**: Eucharist Understanding Platform  
 **Phase**: [Current Phase]  
 **Month**: [Month Year]  
@@ -296,11 +326,13 @@ We value your input! Please share feedback:
 **Project Health**: 🟢 Healthy | 🟡 Concerns | 🔴 Critical
 
 **Month Highlights:**
+
 - [Major achievement 1]
 - [Major achievement 2]
 - [Major milestone reached]
 
 **Overall Progress:**
+
 - Timeline: [X]% complete ([X] of [Y] months)
 - Budget: [X]% spent
 - Features: [X] of [Y] planned features delivered
@@ -310,21 +342,26 @@ We value your input! Please share feedback:
 ## Accomplishments This Month
 
 ### Features Delivered
+
 ✨ **[Feature Name]**
+
 - Description: [What it does]
 - User Benefit: [Why it matters]
 - Status: Live in [staging/production]
 
 ✨ **[Feature Name]**
+
 - Description: [What it does]
 - User Benefit: [Why it matters]
 - Status: Live in [staging/production]
 
 ### Milestones Reached
+
 🎯 [Milestone 1] - [Date achieved]  
 🎯 [Milestone 2] - [Date achieved]
 
 ### Technical Achievements
+
 ⚙️ [Technical infrastructure or improvement]  
 ⚙️ [Performance optimization or enhancement]
 
@@ -333,19 +370,22 @@ We value your input! Please share feedback:
 ## Progress Metrics
 
 ### Development Progress
-| Area | Planned | Completed | % Complete |
-|------|---------|-----------|------------|
-| User Authentication | [X] stories | [Y] stories | [Z]% |
-| Daily Gospel | [X] stories | [Y] stories | [Z]% |
-| Educational Content | [X] stories | [Y] stories | [Z]% |
-| Community Features | [X] stories | [Y] stories | [Z]% |
+
+| Area                | Planned     | Completed   | % Complete |
+| ------------------- | ----------- | ----------- | ---------- |
+| User Authentication | [X] stories | [Y] stories | [Z]%       |
+| Daily Gospel        | [X] stories | [Y] stories | [Z]%       |
+| Educational Content | [X] stories | [Y] stories | [Z]%       |
+| Community Features  | [X] stories | [Y] stories | [Z]%       |
 
 ### Sprint Velocity
+
 - **This Month**: [X] points average
 - **Last Month**: [Y] points average
 - **Trend**: ↗️ Increasing | ➡️ Stable | ↘️ Decreasing
 
 ### Quality Metrics
+
 - **Test Coverage**: [X]% (target: 80%)
 - **Bugs Resolved**: [X]
 - **Open Critical Bugs**: [Y]
@@ -356,16 +396,18 @@ We value your input! Please share feedback:
 ## Budget & Timeline
 
 ### Budget Status
-| Category | Budget | Spent | Remaining | % Used |
-|----------|--------|-------|-----------|--------|
-| Personnel | $[X] | $[Y] | $[Z] | [%] |
-| Infrastructure | $[X] | $[Y] | $[Z] | [%] |
-| Tools & Services | $[X] | $[Y] | $[Z] | [%] |
-| **Total** | **$[X]** | **$[Y]** | **$[Z]** | **[%]** |
+
+| Category         | Budget   | Spent    | Remaining | % Used  |
+| ---------------- | -------- | -------- | --------- | ------- |
+| Personnel        | $[X]     | $[Y]     | $[Z]      | [%]     |
+| Infrastructure   | $[X]     | $[Y]     | $[Z]      | [%]     |
+| Tools & Services | $[X]     | $[Y]     | $[Z]      | [%]     |
+| **Total**        | **$[X]** | **$[Y]** | **$[Z]**  | **[%]** |
 
 **Status**: 🟢 On Budget | 🟡 Slight Variance | 🔴 Over Budget
 
 ### Timeline Status
+
 - **Project Start**: [Date]
 - **Current Phase**: [Phase Name]
 - **Phase End**: [Date]
@@ -377,12 +419,14 @@ We value your input! Please share feedback:
 ## User & Content Metrics
 
 ### User Engagement (if in beta/production)
+
 - **Total Users**: [X] (up [Y]% from last month)
 - **Daily Active Users**: [X] average
 - **Monthly Active Users**: [X]
 - **User Retention (30-day)**: [X]%
 
 ### Content Library
+
 - **Articles Published**: [X] (total: [Y])
 - **Daily Reflections**: [X] (total: [Y])
 - **Eucharistic Miracles**: [X] (total: [Y])
@@ -392,30 +436,35 @@ We value your input! Please share feedback:
 ## Risks & Issues
 
 ### Critical Risks
-| Risk | Probability | Impact | Mitigation | Owner |
-|------|-------------|--------|------------|-------|
-| [Risk 1] | [H/M/L] | [H/M/L] | [Action] | [Name] |
-| [Risk 2] | [H/M/L] | [H/M/L] | [Action] | [Name] |
+
+| Risk     | Probability | Impact  | Mitigation | Owner  |
+| -------- | ----------- | ------- | ---------- | ------ |
+| [Risk 1] | [H/M/L]     | [H/M/L] | [Action]   | [Name] |
+| [Risk 2] | [H/M/L]     | [H/M/L] | [Action]   | [Name] |
 
 ### Active Issues
-| Issue | Impact | Status | Resolution ETA |
-|-------|--------|--------|----------------|
-| [Issue 1] | [H/M/L] | [Status] | [Date] |
+
+| Issue     | Impact  | Status   | Resolution ETA |
+| --------- | ------- | -------- | -------------- |
+| [Issue 1] | [H/M/L] | [Status] | [Date]         |
 
 ---
 
 ## Upcoming Next Month
 
 ### Planned Features
+
 🎯 [Feature 1] - [Expected completion]  
 🎯 [Feature 2] - [Expected completion]  
 🎯 [Feature 3] - [Expected completion]
 
 ### Key Milestones
+
 📅 [Milestone 1] - [Target Date]  
 📅 [Milestone 2] - [Target Date]
 
 ### Events & Activities
+
 - [Event 1] - [Date]
 - [Event 2] - [Date]
 
@@ -424,11 +473,13 @@ We value your input! Please share feedback:
 ## Team Updates
 
 ### Team Status
+
 - **Current Team Size**: [X] members
 - **New Team Members**: [Names if applicable]
 - **Team Morale**: [High/Good/Concerns]
 
 ### Team Achievements
+
 👏 [Shout out to team member for achievement]  
 👏 [Team milestone or celebration]
 
@@ -437,10 +488,12 @@ We value your input! Please share feedback:
 ## Stakeholder Engagement
 
 ### Meetings Held
+
 - [Meeting 1] - [Date] - [Attendees] - [Outcome]
 - [Meeting 2] - [Date] - [Attendees] - [Outcome]
 
 ### Feedback Received
+
 - [Source]: [Summary of feedback]
 - [Action taken or planned]
 
@@ -449,11 +502,13 @@ We value your input! Please share feedback:
 ## Looking Ahead
 
 ### Next 30 Days Focus
+
 1. [Priority 1]
 2. [Priority 2]
 3. [Priority 3]
 
 ### Next 90 Days Vision
+
 - [Strategic goal or milestone]
 - [Major feature or phase completion]
 
@@ -462,12 +517,15 @@ We value your input! Please share feedback:
 ## How You Can Help
 
 **Parish Partners:**
+
 - [Specific ask or opportunity]
 
 **Beta Testers:**
+
 - [Specific ask or opportunity]
 
 **Feedback:**
+
 - Share your thoughts: [Feedback form link]
 
 ---
@@ -475,10 +533,12 @@ We value your input! Please share feedback:
 ## Appendices
 
 ### Detailed Sprint Summaries
+
 - [Link to Sprint X report]
 - [Link to Sprint Y report]
 
 ### Project Artifacts
+
 - Project Board: [Link]
 - Demo Videos: [Link]
 - Documentation: [Link]
@@ -493,7 +553,7 @@ We value your input! Please share feedback:
 
 ---
 
-*"Whatever you do, work at it with all your heart, as working for the Lord."* - Colossians 3:23
+_"Whatever you do, work at it with all your heart, as working for the Lord."_ - Colossians 3:23
 
 **Ad Majorem Dei Gloriam** ✝️
 ```
@@ -508,6 +568,7 @@ We value your input! Please share feedback:
 
 ```markdown
 # Issue Report
+
 **Severity**: 🔴 Critical | 🟡 High | 🟢 Medium | ⚪ Low  
 **Reported By**: [Name]  
 **Date/Time**: [Date Time]  
@@ -516,6 +577,7 @@ We value your input! Please share feedback:
 ---
 
 ## Issue Summary
+
 [Brief 1-2 sentence description of the issue]
 
 ---
@@ -535,18 +597,22 @@ We value your input! Please share feedback:
 ## Issue Details
 
 ### What Happened
+
 [Detailed description of the issue]
 
 ### When Discovered
+
 - **Discovery Date/Time**: [Date/Time]
 - **Occurrence**: [When did this start? Single event or ongoing?]
 
 ### Who is Affected
+
 - [Stakeholder group 1]
 - [Stakeholder group 2]
 - [Specific individuals if applicable]
 
 ### Evidence
+
 - Error logs: [Paste or link]
 - Screenshots: [Attach or link]
 - Related incidents: [IDs or links]
@@ -564,17 +630,20 @@ We value your input! Please share feedback:
 ## Resolution Plan
 
 ### Immediate Actions (Taken or In Progress)
+
 1. [Action 1] - Completed [Time]
 2. [Action 2] - In Progress - Owner: [Name]
 3. [Action 3] - Planned - ETA: [Time]
 
 ### Permanent Fix
+
 **Solution**: [Description of permanent fix]  
 **Owner**: [Name]  
 **ETA**: [Date/Time]  
 **Effort Estimate**: [Hours/Points]
 
 ### Verification Plan
+
 - [ ] [Test 1]
 - [ ] [Test 2]
 - [ ] [User validation]
@@ -584,6 +653,7 @@ We value your input! Please share feedback:
 ## Communication Plan
 
 **Stakeholders Notified**:
+
 - [x] Project Sponsor - [Date/Time]
 - [x] Product Owner - [Date/Time]
 - [ ] End Users - [Planned Date/Time]
@@ -595,10 +665,12 @@ We value your input! Please share feedback:
 ## Prevention
 
 **How to Prevent Recurrence**:
+
 1. [Preventive measure 1]
 2. [Preventive measure 2]
 
 **Process Improvements**:
+
 - [Improvement 1]
 - [Improvement 2]
 
@@ -607,21 +679,23 @@ We value your input! Please share feedback:
 ## Lessons Learned
 
 **What Went Well**:
+
 - [Positive aspect of response]
 
 **What Could Improve**:
+
 - [Improvement area]
 
 ---
 
 ## Document History
 
-| Date/Time | Status Update | Updated By |
-|-----------|---------------|------------|
-| [DateTime] | Issue reported | [Name] |
-| [DateTime] | Investigation started | [Name] |
-| [DateTime] | Fix deployed | [Name] |
-| [DateTime] | Verified resolved | [Name] |
+| Date/Time  | Status Update         | Updated By |
+| ---------- | --------------------- | ---------- |
+| [DateTime] | Issue reported        | [Name]     |
+| [DateTime] | Investigation started | [Name]     |
+| [DateTime] | Fix deployed          | [Name]     |
+| [DateTime] | Verified resolved     | [Name]     |
 
 ---
 
@@ -634,30 +708,35 @@ We value your input! Please share feedback:
 ## Usage Guidelines
 
 ### Daily Status
+
 - **When**: Daily, by 9:30 AM
 - **Where**: Slack #standup channel
 - **Who**: All team members
 - **Format**: Brief, bullet points
 
 ### Weekly Status
+
 - **When**: Friday end of day or Monday morning
 - **Where**: Email to Project Sponsor
 - **Who**: Project Manager
 - **Format**: Structured report with metrics
 
 ### Sprint Report
+
 - **When**: End of each sprint (every 2 weeks)
 - **Where**: Email to all stakeholders
 - **Who**: Project Manager
 - **Format**: Comprehensive sprint summary
 
 ### Monthly Report
+
 - **When**: Last Friday of each month
 - **Where**: Email to all stakeholders
 - **Who**: Project Manager
 - **Format**: Detailed monthly summary
 
 ### Issue Report
+
 - **When**: Immediately upon issue discovery
 - **Where**: Email to affected stakeholders + Issue tracker
 - **Who**: Person discovering issue or Project Manager
@@ -667,9 +746,9 @@ We value your input! Please share feedback:
 
 ## Document History
 
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2025-10-19 | Project Manager | Initial reporting templates |
+| Version | Date       | Author          | Changes                     |
+| ------- | ---------- | --------------- | --------------------------- |
+| 1.0     | 2025-10-19 | Project Manager | Initial reporting templates |
 
 ---
 

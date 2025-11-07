@@ -7,6 +7,7 @@
 ## Context
 
 The Eucharist Understanding Platform requires a modern web application that:
+
 - Provides excellent user experience across devices
 - Ranks well in search engines (SEO is critical for reaching people)
 - Loads quickly and performs well
@@ -15,6 +16,7 @@ The Eucharist Understanding Platform requires a modern web application that:
 - Enables rapid development and iteration
 
 As a Catholic education platform, SEO is particularly important because:
+
 - People searching for spiritual content need to find us
 - Content about Eucharistic teaching should be discoverable
 - Good rankings help fulfill our mission of education
@@ -29,6 +31,7 @@ We will use **React 18+** with **Next.js 14** and **TypeScript** as the foundati
 ### Technology Stack Details
 
 #### Core Framework
+
 ```javascript
 // Primary Technologies
 - React 18+ (Component-based UI)
@@ -96,13 +99,15 @@ We will use **React 18+** with **Next.js 14** and **TypeScript** as the foundati
 
 ✅ **Rich Ecosystem**: Vast library of components, tools, and integrations available for React/Next.js
 
-✅ **Great Developer Experience**: 
+✅ **Great Developer Experience**:
+
 - Hot module reloading
 - TypeScript integration
 - Excellent debugging tools
 - Strong IDE support
 
-✅ **Performance**: 
+✅ **Performance**:
+
 - Automatic code splitting
 - Image optimization
 - Built-in performance features
@@ -139,13 +144,16 @@ We will use **React 18+** with **Next.js 14** and **TypeScript** as the foundati
 ## Alternatives Considered
 
 ### 1. Vue.js + Nuxt.js
-**Pros**: 
+
+**Pros**:
+
 - Easier learning curve than React
 - Great documentation
 - Good performance
 - Similar SSR capabilities with Nuxt
 
-**Cons**: 
+**Cons**:
+
 - Smaller ecosystem than React
 - Fewer developers familiar with Vue
 - Less mature SSR tooling than Next.js
@@ -154,13 +162,16 @@ We will use **React 18+** with **Next.js 14** and **TypeScript** as the foundati
 **Why Not**: While Vue is excellent, React's larger ecosystem and talent pool make it more sustainable for an open-source project
 
 ### 2. Angular
-**Pros**: 
+
+**Pros**:
+
 - Full-featured framework
 - TypeScript by default
 - Good for large enterprise apps
 - Strong opinions reduce decision fatigue
 
-**Cons**: 
+**Cons**:
+
 - Steeper learning curve
 - More complex than needed for our use case
 - Heavier framework
@@ -170,13 +181,16 @@ We will use **React 18+** with **Next.js 14** and **TypeScript** as the foundati
 **Why Not**: Too heavy-weight for our needs, and the steep learning curve would hinder community contributions
 
 ### 3. Svelte + SvelteKit
-**Pros**: 
+
+**Pros**:
+
 - Smaller bundle sizes
 - Less boilerplate code
 - Great performance
 - Innovative reactive programming model
 
-**Cons**: 
+**Cons**:
+
 - Much smaller community
 - Fewer libraries and components available
 - Limited talent pool
@@ -186,13 +200,16 @@ We will use **React 18+** with **Next.js 14** and **TypeScript** as the foundati
 **Why Not**: While innovative, the smaller community and ecosystem pose risks for a project that needs long-term maintainability and community contributions
 
 ### 4. Plain HTML/CSS/JavaScript (No Framework)
-**Pros**: 
+
+**Pros**:
+
 - No framework overhead
 - Complete control
 - Fast initial load
 - No build step needed
 
-**Cons**: 
+**Cons**:
+
 - Significant development time
 - Reinventing the wheel
 - Hard to maintain consistency
@@ -202,13 +219,16 @@ We will use **React 18+** with **Next.js 14** and **TypeScript** as the foundati
 **Why Not**: The time and effort to build features from scratch would delay the mission-critical work of creating spiritual content
 
 ### 5. WordPress or Traditional CMS
-**Pros**: 
+
+**Pros**:
+
 - Content management built-in
 - Many plugins available
 - Non-technical content editing
 - Established platform
 
-**Cons**: 
+**Cons**:
+
 - Less flexible for custom features
 - Performance challenges
 - Security concerns with plugins
@@ -220,6 +240,7 @@ We will use **React 18+** with **Next.js 14** and **TypeScript** as the foundati
 ## Implementation Plan
 
 ### Phase 1: Initial Setup (Week 1)
+
 - [x] Create Next.js project with TypeScript
 - [x] Configure ESLint and Prettier
 - [x] Set up Tailwind CSS
@@ -229,6 +250,7 @@ We will use **React 18+** with **Next.js 14** and **TypeScript** as the foundati
 - [ ] Set up error boundaries
 
 ### Phase 2: Core Infrastructure (Week 2)
+
 - [ ] Set up API client with Axios
 - [ ] Configure React Query
 - [ ] Implement authentication flow
@@ -237,6 +259,7 @@ We will use **React 18+** with **Next.js 14** and **TypeScript** as the foundati
 - [ ] Configure metadata and SEO
 
 ### Phase 3: Development Tools (Week 3)
+
 - [ ] Set up Vitest for unit tests
 - [ ] Configure Playwright for E2E tests
 - [ ] Add Storybook for component development
@@ -244,6 +267,7 @@ We will use **React 18+** with **Next.js 14** and **TypeScript** as the foundati
 - [ ] Configure CI/CD pipeline
 
 ### Phase 4: Advanced Features (Ongoing)
+
 - [ ] Implement code splitting strategies
 - [ ] Add image optimization
 - [ ] Set up analytics
@@ -253,6 +277,7 @@ We will use **React 18+** with **Next.js 14** and **TypeScript** as the foundati
 ## Technical Specifications
 
 ### Folder Structure
+
 ```
 web/frontend/
 ├── src/
@@ -278,6 +303,7 @@ web/frontend/
 ```
 
 ### Performance Targets
+
 - **Lighthouse Score**: >90 for all metrics
 - **First Contentful Paint**: <1.5s
 - **Time to Interactive**: <3s
@@ -285,6 +311,7 @@ web/frontend/
 - **SEO Score**: 100
 
 ### Browser Support
+
 - Chrome (last 2 versions)
 - Firefox (last 2 versions)
 - Safari (last 2 versions)
@@ -294,35 +321,38 @@ web/frontend/
 ## Security Considerations
 
 ### Content Security Policy
+
 ```javascript
 // next.config.js
 const securityHeaders = [
   {
     key: 'X-DNS-Prefetch-Control',
-    value: 'on'
+    value: 'on',
   },
   {
     key: 'X-Frame-Options',
-    value: 'SAMEORIGIN'
+    value: 'SAMEORIGIN',
   },
   {
     key: 'X-Content-Type-Options',
-    value: 'nosniff'
+    value: 'nosniff',
   },
   {
     key: 'Referrer-Policy',
-    value: 'origin-when-cross-origin'
-  }
+    value: 'origin-when-cross-origin',
+  },
 ];
 ```
 
 ### Input Sanitization
+
 - Use Zod for schema validation
 - Sanitize user input before rendering
 - Escape HTML content properly
 - Use Content Security Policy headers
 
 ### Authentication
+
 - JWT tokens stored in httpOnly cookies
 - CSRF protection enabled
 - Secure session management
@@ -342,6 +372,7 @@ const securityHeaders = [
 ## Monitoring & Metrics
 
 ### Key Metrics to Track
+
 - Page load times (Core Web Vitals)
 - Error rates and types
 - API response times
@@ -350,6 +381,7 @@ const securityHeaders = [
 - Conversion rates
 
 ### Tools
+
 - Google Analytics 4
 - Vercel Analytics (if deployed to Vercel)
 - Sentry for error tracking

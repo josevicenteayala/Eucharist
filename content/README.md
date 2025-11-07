@@ -17,6 +17,7 @@ Markdown-based content management for educational articles, reflections, miracle
 ## Content Guidelines
 
 All spiritual/educational content must include frontmatter with:
+
 - `title` - Article title
 - `category` - Content category
 - `reviewedBy` - Name of theological reviewer

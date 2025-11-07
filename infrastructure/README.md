@@ -13,6 +13,7 @@ Configuration files for containerization, orchestration, and cloud infrastructur
 ## Purpose
 
 Defines the infrastructure needed to run the Eucharist Platform, including:
+
 - Containerized application environments
 - Database configurations
 - Load balancing and scaling

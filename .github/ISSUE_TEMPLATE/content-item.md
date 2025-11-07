@@ -33,6 +33,7 @@ assignees: ''
 [Brief description of what this content should cover]
 
 ### Key Points to Include:
+
 - Point 1
 - Point 2
 - Point 3

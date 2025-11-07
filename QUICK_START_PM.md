@@ -7,6 +7,7 @@ This guide provides the Project Manager with actionable steps to move from the d
 ## 🎯 Your Mission
 
 Lead the development of a mobile and web platform that helps people understand and live the Eucharist through:
+
 - Educational content about the Eucharist
 - Daily Gospel readings and reflections
 - Interactive guides to the Mass
@@ -17,19 +18,19 @@ Lead the development of a mobile and web platform that helps people understand a
 
 Before your first meeting, review these documents:
 
-1. **[DISCOVERY.md](DISCOVERY.md)** *(30 min read)*
+1. **[DISCOVERY.md](DISCOVERY.md)** _(30 min read)_
    - Complete project vision and goals
    - User personas
    - Features and technical architecture
    - Development roadmap
 
-2. **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** *(20 min read)*
+2. **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** _(20 min read)_
    - Technical structure and organization
    - Technology stack details
    - Development workflow
    - Content management approach
 
-3. **[CONTRIBUTING.md](CONTRIBUTING.md)** *(15 min read)*
+3. **[CONTRIBUTING.md](CONTRIBUTING.md)** _(15 min read)_
    - How team members will contribute
    - Quality standards
    - Review processes
@@ -66,12 +67,14 @@ Before your first meeting, review these documents:
    - Time commitment: Part-time
 
 #### Optional Roles (Can be added later)
+
 - DevOps Engineer
 - QA Engineer
 - Marketing Manager
 - Additional Content Writers
 
 #### Action Items:
+
 - [ ] Review job descriptions (see templates below)
 - [ ] Post positions or identify candidates
 - [ ] Schedule interviews
@@ -83,6 +86,7 @@ Before your first meeting, review these documents:
 #### 1. Project Management Setup
 
 **Choose a Tool:**
+
 - **Jira** - Enterprise-grade, comprehensive
 - **Asana** - User-friendly, good for content tracking
 - **Linear** - Modern, developer-friendly
@@ -91,6 +95,7 @@ Before your first meeting, review these documents:
 **Recommendation:** Start with GitHub Projects (free, integrated), upgrade if needed.
 
 **Setup Checklist:**
+
 - [ ] Create project board
 - [ ] Set up workflows (To Do, In Progress, Review, Done)
 - [ ] Create initial epic/milestones
@@ -100,6 +105,7 @@ Before your first meeting, review these documents:
 #### 2. Communication Channels
 
 **Slack/Discord Setup:**
+
 - [ ] Create workspace
 - [ ] Set up channels:
   - `#general` - General discussion
@@ -112,6 +118,7 @@ Before your first meeting, review these documents:
 - [ ] Set communication guidelines
 
 **Meeting Schedule:**
+
 - **Daily Standup:** 15 min, every morning
 - **Sprint Planning:** 2 hours, start of each sprint
 - **Sprint Review:** 1 hour, end of each sprint
@@ -121,6 +128,7 @@ Before your first meeting, review these documents:
 #### 3. Repository Organization
 
 Already set up! But you should:
+
 - [ ] Review branch protection rules
 - [ ] Set up GitHub Actions (CI/CD)
 - [ ] Configure issue templates
@@ -147,6 +155,7 @@ Already set up! But you should:
    - Commitment: 1-2 hours for interviews/testing
 
 #### Action Items:
+
 - [ ] Create stakeholder list
 - [ ] Draft outreach emails/messages
 - [ ] Schedule introductory meetings
@@ -159,6 +168,7 @@ Already set up! But you should:
 **Goal:** Validate assumptions from discovery phase
 
 #### Interview 10-15 People Across Personas:
+
 1. **The Seeker** (25-35) - 3-4 interviews
 2. **The Parent** (35-50) - 3-4 interviews
 3. **The Lifelong Learner** (55-70) - 2-3 interviews
@@ -168,32 +178,38 @@ Already set up! But you should:
 
 ```markdown
 ## Introduction (5 min)
+
 - Thank you for participating
 - Project overview
 - Interview structure and timing
 - Recording permission
 
 ## Background (5 min)
+
 - Current faith journey
 - Use of Catholic apps/websites
 - Learning preferences
 
 ## Pain Points (10 min)
+
 - Challenges understanding the Eucharist
 - Gaps in current resources
 - Desired features or content
 
 ## Feature Validation (10 min)
+
 - Show feature concepts from discovery doc
 - Gather reactions and feedback
 - Prioritize features
 
 ## Wrap-up (5 min)
+
 - Additional thoughts
 - Thank you and next steps
 ```
 
 #### Action Items:
+
 - [ ] Recruit interview participants
 - [ ] Prepare interview guide
 - [ ] Conduct interviews
@@ -203,6 +219,7 @@ Already set up! But you should:
 ### Competitive Analysis (Days 11-12)
 
 **Research These Apps:**
+
 1. **Laudate** - General Catholic app
 2. **Hallow** - Prayer and meditation
 3. **Magnificat** - Daily prayer
@@ -210,6 +227,7 @@ Already set up! But you should:
 5. **Catholic Bible** - Scripture reading
 
 **For Each App, Document:**
+
 - Core features
 - User experience (UX)
 - Strengths and weaknesses
@@ -218,6 +236,7 @@ Already set up! But you should:
 - What we can learn
 
 #### Action Items:
+
 - [ ] Download and use each app
 - [ ] Create comparison matrix
 - [ ] Identify opportunities
@@ -244,6 +263,7 @@ Already set up! But you should:
    - Write accessible summaries
 
 #### Action Items:
+
 - [ ] Create content calendar
 - [ ] Assign content to writers
 - [ ] Set up theological review process
@@ -282,6 +302,7 @@ As a user, I want to see today's Gospel
 **Sprint Duration:** 2 weeks
 
 #### Action Items:
+
 - [ ] Break down user stories into tasks
 - [ ] Assign stories to team members
 - [ ] Set sprint goals
@@ -317,6 +338,7 @@ As a user, I want to see today's Gospel
    - Iterate on design
 
 #### Deliverables:
+
 - [ ] User flow diagrams
 - [ ] Wireframes (low-fidelity)
 - [ ] Design system foundation
@@ -347,6 +369,7 @@ As a user, I want to see today's Gospel
    - Configure monitoring
 
 #### Deliverables:
+
 - [ ] Technical architecture document
 - [ ] API specification (OpenAPI/Swagger)
 - [ ] Database schema diagram
@@ -373,6 +396,7 @@ As a user, I want to see today's Gospel
    - Set up review workflow
 
 #### Deliverables:
+
 - [ ] Content style guide
 - [ ] 3 core educational articles (draft)
 - [ ] 7 Gospel reflections (draft)
@@ -382,18 +406,21 @@ As a user, I want to see today's Gospel
 ## 📊 Key Metrics to Track
 
 ### Development Metrics
+
 - **Velocity:** Story points completed per sprint
 - **Code Quality:** Test coverage, code review time
 - **Bugs:** Number of bugs, time to resolution
 - **Deployment:** Deployment frequency, success rate
 
 ### Product Metrics
+
 - **User Engagement:** DAU, MAU, session length
 - **Content:** Articles read, reflections viewed
 - **Retention:** 7-day, 30-day, 90-day retention
 - **Growth:** New users, user sources
 
 ### Content Metrics
+
 - **Production:** Articles published per month
 - **Quality:** Review scores, user ratings
 - **Engagement:** Read time, completion rate
@@ -403,6 +430,7 @@ As a user, I want to see today's Gospel
 ### Initial Costs (First 3 Months)
 
 **Team Salaries (contract or FTE equivalents):**
+
 - Technical Lead: $12,000 – $16,000
 - Mobile Developer: $9,000 – $13,000
 - UI/UX Designer: $6,000 – $10,000
@@ -410,21 +438,24 @@ As a user, I want to see today's Gospel
 - Community Manager (part-time): $2,000 – $3,500
 
 **Infrastructure:**
+
 - Cloud hosting (AWS/GCP/Azure): $500 – $1,000/month
 - Domain and SSL: $50/year
 - Development tools: $100 – $400/month
 - Analytics and monitoring: $100 – $250/month
 
 **Other:**
+
 - Stock photos/assets: $500
 - Third-party services (Auth0, etc.): $100 – $250/month
 - Contingency (10%): Calculate based on the subtotal above
 
 **Total Estimated (3 months):** ~$35,000 – $48,000
 
-*Adjust based on your actual team composition, rates, and in-kind contributions.*
+_Adjust based on your actual team composition, rates, and in-kind contributions._
 
 ### Funding Sources
+
 - Personal investment
 - Grants (Catholic foundations, tech for good)
 - Donations (crowdfunding, individual donors)
@@ -435,6 +466,7 @@ As a user, I want to see today's Gospel
 ## 🎯 Success Criteria for First 90 Days
 
 ### By End of Month 1:
+
 - [ ] Team assembled and onboarded
 - [ ] User research completed
 - [ ] Design system created
@@ -442,12 +474,14 @@ As a user, I want to see today's Gospel
 - [ ] First content pieces drafted
 
 ### By End of Month 2:
+
 - [ ] MVP features 50% complete
 - [ ] Design mockups finalized
 - [ ] 15+ content pieces created and reviewed
 - [ ] Alpha testing begins internally
 
 ### By End of Month 3:
+
 - [ ] MVP feature complete
 - [ ] Beta testing with 20-50 users
 - [ ] 30+ launch-ready reflections/articles published
@@ -457,40 +491,50 @@ As a user, I want to see today's Gospel
 ## 🚧 Common Challenges & Solutions
 
 ### Challenge 1: Theological Accuracy
+
 **Problem:** Content may contain theological errors
-**Solution:** 
+**Solution:**
+
 - Establish theological review board early
 - Create clear submission guidelines
 - Build in review time to schedule
 - Have priest/theologian on retainer
 
 ### Challenge 2: Scope Creep
+
 **Problem:** Team wants to add too many features
 **Solution:**
+
 - Stick to MVP definition
 - Create "future features" backlog
 - Validate features with users first
 - Focus on core value proposition
 
 ### Challenge 3: Technical Complexity
+
 **Problem:** Architecture becomes too complex
 **Solution:**
+
 - Start simple, iterate
 - Use proven technologies
 - Get technical advisor if needed
 - Regular architecture reviews
 
 ### Challenge 4: Content Creation Bottleneck
+
 **Problem:** Not enough quality content
 **Solution:**
+
 - Build contributor network
 - Create clear templates and guidelines
 - Invest in content creator role
 - Partner with Catholic publishers
 
 ### Challenge 5: User Adoption
+
 **Problem:** Hard to get initial users
 **Solution:**
+
 - Partner with parishes for beta testing
 - Leverage Catholic social media
 - Create referral program
@@ -499,16 +543,19 @@ As a user, I want to see today's Gospel
 ## 📞 When to Ask for Help
 
 **Technical Questions:**
+
 - Contact Technical Lead
 - Post in `#development` channel
 - Review technical documentation
 
 **Content Questions:**
+
 - Contact Theological Advisor
 - Post in `#content` channel
 - Review content guidelines
 
 **General Questions:**
+
 - Post in `#general` channel
 - Schedule 1-on-1 with team member
 - Review project documentation
@@ -516,16 +563,19 @@ As a user, I want to see today's Gospel
 ## 🎓 Resources for Project Managers
 
 ### Project Management
+
 - [Scrum Guide](https://scrumguides.org/)
 - [Agile Manifesto](https://agilemanifesto.org/)
 - [Shape Up by Basecamp](https://basecamp.com/shapeup)
 
 ### Catholic Resources
+
 - [Catechism of the Catholic Church](https://www.usccb.org/beliefs-and-teachings/what-we-believe/catechism)
 - [Vatican Documents](https://www.vatican.va/)
 - [USCCB Website](https://www.usccb.org/)
 
 ### Product Management
+
 - [Product School Blog](https://productschool.com/blog/)
 - [Mind the Product](https://www.mindtheproduct.com/)
 
@@ -534,6 +584,7 @@ As a user, I want to see today's Gospel
 Print this out and check off as you complete:
 
 **Team & Infrastructure:**
+
 - [ ] Review all project documentation
 - [ ] Set up project management tool
 - [ ] Create communication channels
@@ -541,17 +592,20 @@ Print this out and check off as you complete:
 - [ ] Schedule kickoff meeting
 
 **Stakeholders:**
+
 - [ ] Identify theological advisors
 - [ ] Reach out to parish contacts
 - [ ] Create stakeholder communication plan
 
 **Planning:**
+
 - [ ] Schedule user interviews
 - [ ] Begin competitive analysis
 - [ ] Create initial sprint plan
 - [ ] Set up team meetings
 
 **Communication:**
+
 - [ ] Send kickoff email to stakeholders
 - [ ] Post in relevant Catholic communities
 - [ ] Create project update schedule
@@ -559,6 +613,7 @@ Print this out and check off as you complete:
 ## 🎉 You've Got This!
 
 Remember:
+
 - Start small, iterate often
 - Listen to users
 - Stay mission-focused
@@ -570,10 +625,11 @@ The goal is not perfection, but progress. Every step forward helps someone encou
 ---
 
 **Questions or Need Support?**
+
 - Create an issue in the repository
 - Reach out to project stakeholders
 - Review the [DISCOVERY.md](DISCOVERY.md) document
 
-*"The Eucharist is the source and summit of the Christian life."*
+_"The Eucharist is the source and summit of the Christian life."_
 
 **Let's build something beautiful! 🙏✝️**

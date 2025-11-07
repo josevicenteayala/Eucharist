@@ -37,6 +37,7 @@ Documents for coordinating architectural decisions with other roles:
 ## Key Architecture Documents
 
 System architecture visuals are currently being prepared. Until the diagrams folder is populated, reference the architecture narratives in [`docs/sdlc/SOFTWARE_ARCHITECT.md`](../sdlc/SOFTWARE_ARCHITECT.md) for:
+
 - System architecture
 - Technology stack details
 - Database design
@@ -55,6 +56,7 @@ System architecture visuals are currently being prepared. Until the diagrams fol
 ## Contact
 
 For architecture questions or to propose new ADRs:
+
 - Create an issue with label `architecture`
 - Reach out to the Software Architect
 - Start a discussion in GitHub Discussions

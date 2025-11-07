@@ -7,6 +7,7 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 ## Core Responsibilities
 
 ### 1. Architecture Design & Evolution
+
 - Define overall system architecture
 - Design component interactions and data flows
 - Ensure architectural consistency across platform
@@ -14,6 +15,7 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 - Evolve architecture as needs change
 
 ### 2. Technology Stack Selection
+
 - Evaluate and recommend technologies
 - Balance innovation with stability
 - Consider team capabilities
@@ -21,6 +23,7 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 - Keep abreast of industry trends
 
 ### 3. Technical Standards & Governance
+
 - Define coding standards and best practices
 - Establish development workflows
 - Set up CI/CD pipelines
@@ -28,6 +31,7 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 - Ensure security best practices
 
 ### 4. Team Technical Leadership
+
 - Mentor developers on architecture
 - Review critical code and designs
 - Resolve technical disputes
@@ -35,6 +39,7 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 - Facilitate technical discussions
 
 ### 5. Integration & Infrastructure
+
 - Design API contracts
 - Plan database schemas
 - Define deployment strategies
@@ -97,29 +102,34 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 ### Architecture Principles
 
 **1. Separation of Concerns**
+
 - Clear boundaries between layers
 - Single Responsibility Principle
 - Loose coupling, high cohesion
 
 **2. Scalability**
+
 - Horizontal scaling capability
 - Stateless services where possible
 - Efficient caching strategies
 - Database optimization
 
 **3. Maintainability**
+
 - Clean, readable code
 - Comprehensive documentation
 - Consistent patterns
 - Automated testing
 
 **4. Security**
+
 - Defense in depth
 - Principle of least privilege
 - Data encryption
 - Regular security audits
 
 **5. Performance**
+
 - Optimize critical paths
 - Minimize latency
 - Efficient data access
@@ -130,6 +140,7 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 ### Frontend Technologies
 
 #### Web Application
+
 ```javascript
 // Core Framework
 - React 18+ (Component-based UI)
@@ -161,12 +172,14 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 ```
 
 **Rationale**:
+
 - React/Next.js: Industry standard, great SEO, large community
 - TypeScript: Catch errors early, better IDE support
 - Tailwind: Rapid development, consistent design
 - React Query: Handles server state complexity well
 
 #### Mobile Application
+
 ```dart
 // Framework
 - Flutter 3.16+ (Cross-platform)
@@ -198,6 +211,7 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 ```
 
 **Rationale**:
+
 - Flutter: Single codebase for iOS/Android, excellent performance
 - Native feel with cross-platform efficiency
 - Large widget library, good documentation
@@ -206,6 +220,7 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 ### Backend Technologies
 
 #### API Server
+
 ```javascript
 // Runtime & Framework
 - Node.js 20+ LTS
@@ -246,6 +261,7 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 ```
 
 **Rationale**:
+
 - Node.js: JavaScript full-stack, async I/O efficient
 - Express: Lightweight, flexible, well-known
 - TypeScript: Type safety across stack
@@ -254,6 +270,7 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 ### Databases
 
 #### PostgreSQL (Structured Data)
+
 ```sql
 -- Use Cases:
 - User accounts and authentication
@@ -271,6 +288,7 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 ```
 
 #### MongoDB (Content & Documents)
+
 ```javascript
 // Use Cases:
 - Educational articles (flexible schema)
@@ -288,6 +306,7 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 ```
 
 #### Redis (Caching & Sessions)
+
 ```javascript
 // Use Cases:
 - Session storage
@@ -307,26 +326,27 @@ As the Software Architect for the Eucharist Understanding Platform, you are resp
 ### Infrastructure & DevOps
 
 #### Cloud Provider
+
 ```yaml
 Recommended: AWS or Google Cloud
 
 Services Used:
-- Compute: EC2/ECS or Cloud Run
-- Database: RDS (PostgreSQL), Atlas (MongoDB)
-- Storage: S3 or Cloud Storage
-- CDN: CloudFront or Cloud CDN
-- DNS: Route 53 or Cloud DNS
-- Email: SES or SendGrid
-- Monitoring: CloudWatch or Cloud Monitoring
+  - Compute: EC2/ECS or Cloud Run
+  - Database: RDS (PostgreSQL), Atlas (MongoDB)
+  - Storage: S3 or Cloud Storage
+  - CDN: CloudFront or Cloud CDN
+  - DNS: Route 53 or Cloud DNS
+  - Email: SES or SendGrid
+  - Monitoring: CloudWatch or Cloud Monitoring
 ```
 
 #### CI/CD Pipeline
+
 ```yaml
 # GitHub Actions
 name: CI/CD Pipeline
 
-Stages:
-  1. Lint & Format Check
+Stages: 1. Lint & Format Check
   2. Unit Tests
   3. Integration Tests
   4. Build
@@ -339,6 +359,7 @@ Stages:
 ```
 
 #### Containerization
+
 ```dockerfile
 # Docker for consistent environments
 - Backend: Node.js image
@@ -353,6 +374,7 @@ Stages:
 ## Architecture Decision Records (ADRs)
 
 ### ADR Template
+
 ```markdown
 # ADR-[Number]: [Title]
 
@@ -361,21 +383,27 @@ Stages:
 **Deciders**: [Names]
 
 ## Context
+
 What is the issue we're trying to solve?
 
 ## Decision
+
 What did we decide to do?
 
 ## Consequences
+
 What are the trade-offs?
+
 - Positive:
 - Negative:
 - Neutral:
 
 ## Alternatives Considered
+
 What other options did we evaluate?
 
 ## References
+
 Links to discussions, documentation, etc.
 ```
 
@@ -389,6 +417,7 @@ Links to discussions, documentation, etc.
 **Decision**: Use React 18+ with Next.js 14 and TypeScript.
 
 **Consequences**:
+
 - ✅ Excellent SEO with SSR
 - ✅ Large talent pool
 - ✅ Rich ecosystem
@@ -397,6 +426,7 @@ Links to discussions, documentation, etc.
 - ⚠️ Bundle size management needed
 
 **Alternatives**: Vue.js, Angular, Svelte
+
 - Vue: Smaller ecosystem, less SEO tooling
 - Angular: Steeper learning curve, heavier
 - Svelte: Smaller community, newer
@@ -411,6 +441,7 @@ Links to discussions, documentation, etc.
 **Decision**: Use Flutter with Dart.
 
 **Consequences**:
+
 - ✅ Single codebase for iOS/Android
 - ✅ Native performance
 - ✅ Rich UI components
@@ -419,6 +450,7 @@ Links to discussions, documentation, etc.
 - ⚠️ Team needs to learn Dart
 
 **Alternatives**: React Native, Native Development
+
 - React Native: Good but less performant, more platform-specific code
 - Native: Better performance but 2x development cost
 
@@ -432,6 +464,7 @@ Links to discussions, documentation, etc.
 **Decision**: Use PostgreSQL for relational data, MongoDB for content.
 
 **Consequences**:
+
 - ✅ Right tool for each job
 - ✅ PostgreSQL for ACID compliance
 - ✅ MongoDB for flexible content schema
@@ -439,6 +472,7 @@ Links to discussions, documentation, etc.
 - ⚠️ Potential data sync complexity
 
 **Alternatives**: PostgreSQL only, MongoDB only
+
 - PostgreSQL only: JSON can work but less natural for CMS
 - MongoDB only: Lacks strong relational capabilities
 
@@ -452,6 +486,7 @@ Links to discussions, documentation, etc.
 **Decision**: Use JWT (JSON Web Tokens) with refresh tokens.
 
 **Consequences**:
+
 - ✅ Stateless authentication
 - ✅ Easily scalable
 - ✅ Works across mobile and web
@@ -460,6 +495,7 @@ Links to discussions, documentation, etc.
 - ⚠️ Must secure refresh token flow
 
 **Alternatives**: Session-based, OAuth only
+
 - Sessions: Requires sticky sessions or shared session store
 - OAuth only: Doesn't solve our own user auth
 
@@ -468,6 +504,7 @@ Links to discussions, documentation, etc.
 ### PostgreSQL Schema
 
 #### Users & Authentication
+
 ```sql
 -- Users table
 CREATE TABLE users (
@@ -521,6 +558,7 @@ CREATE INDEX idx_refresh_tokens_token ON refresh_tokens(token);
 ```
 
 #### Gospel & Reflections
+
 ```sql
 -- Gospel readings
 CREATE TABLE gospel_readings (
@@ -565,6 +603,7 @@ CREATE INDEX idx_reflection_author ON reflection_metadata(author_id);
 ```
 
 #### Community Features
+
 ```sql
 -- Prayer intentions
 CREATE TABLE prayer_intentions (
@@ -599,6 +638,7 @@ CREATE INDEX idx_prayer_logs_user ON prayer_logs(user_id);
 ```
 
 #### User Activity
+
 ```sql
 -- Bookmarks
 CREATE TABLE bookmarks (
@@ -634,6 +674,7 @@ CREATE INDEX idx_progress_completed ON user_progress(completed_at);
 ### MongoDB Collections
 
 #### Articles Collection
+
 ```javascript
 {
   _id: ObjectId,
@@ -691,6 +732,7 @@ db.articles.createIndex({ "author.id": 1 });
 ```
 
 #### Reflections Collection
+
 ```javascript
 {
   _id: ObjectId,
@@ -721,6 +763,7 @@ db.reflections.createIndex({ publishedAt: -1 });
 ```
 
 #### Eucharistic Miracles Collection
+
 ```javascript
 {
   _id: ObjectId,
@@ -779,18 +822,20 @@ db.miracles.createIndex({ "location.coordinates": "2dsphere" });
 ### RESTful API Structure
 
 #### Authentication Endpoints
+
 ```typescript
-POST   /api/auth/register
-POST   /api/auth/login
-POST   /api/auth/logout
-POST   /api/auth/refresh-token
-POST   /api/auth/forgot-password
-POST   /api/auth/reset-password
-POST   /api/auth/verify-email
-POST   /api/auth/resend-verification
+POST / api / auth / register;
+POST / api / auth / login;
+POST / api / auth / logout;
+POST / api / auth / refresh - token;
+POST / api / auth / forgot - password;
+POST / api / auth / reset - password;
+POST / api / auth / verify - email;
+POST / api / auth / resend - verification;
 ```
 
 #### User Endpoints
+
 ```typescript
 GET    /api/users/me
 PUT    /api/users/me
@@ -802,6 +847,7 @@ PUT    /api/users/me/preferences
 ```
 
 #### Gospel Endpoints
+
 ```typescript
 GET    /api/gospel/today
 GET    /api/gospel/:date          // YYYY-MM-DD
@@ -810,6 +856,7 @@ GET    /api/gospel/calendar/:year/:month
 ```
 
 #### Content Endpoints
+
 ```typescript
 GET    /api/content                // List all content (paginated)
 GET    /api/content/:category      // Filter by category
@@ -820,6 +867,7 @@ GET    /api/content/:id/related
 ```
 
 #### Miracle Endpoints
+
 ```typescript
 GET    /api/miracles
 GET    /api/miracles/:slug
@@ -828,6 +876,7 @@ GET    /api/miracles/search
 ```
 
 #### Community Endpoints
+
 ```typescript
 GET    /api/intentions
 POST   /api/intentions
@@ -839,6 +888,7 @@ GET    /api/intentions/mine
 ```
 
 #### Bookmark & Progress Endpoints
+
 ```typescript
 GET    /api/bookmarks
 POST   /api/bookmarks
@@ -850,6 +900,7 @@ POST   /api/progress/:contentType/:contentId
 ### API Response Format
 
 #### Success Response
+
 ```typescript
 {
   success: true,
@@ -866,6 +917,7 @@ POST   /api/progress/:contentType/:contentId
 ```
 
 #### Error Response
+
 ```typescript
 {
   success: false,
@@ -883,6 +935,7 @@ POST   /api/progress/:contentType/:contentId
 ```
 
 ### API Versioning
+
 - Version in URL: `/api/v1/...`
 - Major versions only (v1, v2)
 - Maintain backward compatibility within version
@@ -891,6 +944,7 @@ POST   /api/progress/:contentType/:contentId
 ## Security Architecture
 
 ### Authentication Flow
+
 ```
 1. User submits credentials
 2. Server validates credentials
@@ -906,51 +960,60 @@ POST   /api/progress/:contentType/:contentId
 ### Security Best Practices
 
 **1. Input Validation**
+
 ```typescript
 // Validate and sanitize all inputs
 import { z } from 'zod';
 
 const registerSchema = z.object({
   email: z.string().email().max(255),
-  password: z.string().min(8).max(100)
+  password: z
+    .string()
+    .min(8)
+    .max(100)
     .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/),
-  displayName: z.string().min(2).max(100)
+  displayName: z.string().min(2).max(100),
 });
 ```
 
 **2. SQL Injection Prevention**
+
 - Use parameterized queries (ORM)
 - Never concatenate user input into SQL
 - Use prepared statements
 
 **3. XSS Prevention**
+
 - Escape output
 - Content Security Policy headers
 - Sanitize HTML input
 
 **4. CSRF Protection**
+
 - Use CSRF tokens for state-changing operations
 - SameSite cookie attribute
 - Verify origin headers
 
 **5. Rate Limiting**
+
 ```typescript
 // Limit requests per IP
 const rateLimit = {
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // Limit each IP to 100 requests per window
-  message: 'Too many requests from this IP'
+  message: 'Too many requests from this IP',
 };
 
 // Stricter limits for auth endpoints
 const authRateLimit = {
   windowMs: 15 * 60 * 1000,
   max: 5,
-  message: 'Too many login attempts'
+  message: 'Too many login attempts',
 };
 ```
 
 **6. Data Encryption**
+
 - HTTPS everywhere
 - Encrypt sensitive data at rest
 - Use bcrypt for passwords (cost factor 10+)
@@ -961,6 +1024,7 @@ const authRateLimit = {
 ### Caching Strategy
 
 **1. Redis Caching Layers**
+
 ```typescript
 // Daily Gospel (cache for 24 hours)
 const cacheKey = `gospel:${date}`;
@@ -976,16 +1040,18 @@ const ttl = 900;
 ```
 
 **2. CDN for Static Assets**
+
 - Images, CSS, JavaScript
 - Gospel audio files
 - Article images
 - CloudFront or Cloud CDN
 
 **3. Database Query Optimization**
+
 ```sql
 -- Proper indexing
 CREATE INDEX idx_articles_slug ON articles(slug);
-CREATE INDEX idx_articles_category_published 
+CREATE INDEX idx_articles_category_published
   ON articles(category, published_at DESC);
 
 -- Explain analyze queries
@@ -997,6 +1063,7 @@ EXPLAIN ANALYZE SELECT * FROM articles WHERE category = 'eucharist-basics';
 ```
 
 **4. API Response Optimization**
+
 - Pagination (limit, offset)
 - Field selection (sparse fieldsets)
 - Compression (gzip/brotli)
@@ -1005,6 +1072,7 @@ EXPLAIN ANALYZE SELECT * FROM articles WHERE category = 'eucharist-basics';
 ### Monitoring & Observability
 
 **1. Application Metrics**
+
 ```typescript
 // Track with Prometheus/StatsD
 - Request rate
@@ -1016,6 +1084,7 @@ EXPLAIN ANALYZE SELECT * FROM articles WHERE category = 'eucharist-basics';
 ```
 
 **2. Logging Strategy**
+
 ```typescript
 // Winston logging levels
 - error: Critical issues
@@ -1033,6 +1102,7 @@ logger.info('User logged in', {
 ```
 
 **3. Error Tracking**
+
 - Sentry for error monitoring
 - Stack traces
 - User context
@@ -1040,6 +1110,7 @@ logger.info('User logged in', {
 - Release tracking
 
 **4. Health Checks**
+
 ```typescript
 GET /api/health
 {
@@ -1060,6 +1131,7 @@ GET /api/health
 ### Environments
 
 **1. Development**
+
 - Local machines
 - Docker Compose
 - Hot reloading
@@ -1067,6 +1139,7 @@ GET /api/health
 - Test data
 
 **2. Staging**
+
 - Mirrors production
 - Integration testing
 - User acceptance testing
@@ -1074,6 +1147,7 @@ GET /api/health
 - Full monitoring
 
 **3. Production**
+
 - Auto-scaling
 - Load balancing
 - Full monitoring
@@ -1100,7 +1174,7 @@ jobs:
       - Run linting
       - Run unit tests
       - Run integration tests
-      
+
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -1108,7 +1182,7 @@ jobs:
       - Build Docker images
       - Push to container registry
       - Tag with version
-      
+
   deploy-staging:
     needs: build
     runs-on: ubuntu-latest
@@ -1116,7 +1190,7 @@ jobs:
       - Deploy to staging
       - Run smoke tests
       - Run E2E tests
-      
+
   deploy-production:
     needs: deploy-staging
     runs-on: ubuntu-latest
@@ -1126,7 +1200,7 @@ jobs:
       - Health check
       - Smoke tests
       - Monitor for errors
-      
+
   rollback:
     if: failure()
     runs-on: ubuntu-latest
@@ -1136,6 +1210,7 @@ jobs:
 ```
 
 ### Zero-Downtime Deployment
+
 - Blue-green deployment
 - Rolling updates
 - Database migrations run separately
@@ -1147,16 +1222,19 @@ jobs:
 ### Git Branching Strategy
 
 **Main Branches**:
+
 - `main` - Production code
 - `develop` - Integration branch
 
 **Supporting Branches**:
+
 - `feature/*` - New features
 - `bugfix/*` - Bug fixes
 - `hotfix/*` - Production hotfixes
 - `release/*` - Release preparation
 
 **Workflow**:
+
 ```bash
 # Start feature
 git checkout develop
@@ -1178,6 +1256,7 @@ git push origin feature/gospel-audio
 ### Code Review Guidelines
 
 **What to Review**:
+
 - Functionality: Does it work as intended?
 - Tests: Are there tests? Do they pass?
 - Security: Any security concerns?
@@ -1186,6 +1265,7 @@ git push origin feature/gospel-audio
 - Best Practices: Follows standards?
 
 **Review Checklist**:
+
 - [ ] Code builds successfully
 - [ ] Tests pass
 - [ ] No security vulnerabilities
@@ -1213,26 +1293,27 @@ git push origin feature/gospel-audio
 ```
 
 ### Unit Tests
+
 ```typescript
 // Example: Gospel Service Unit Test
 describe('GospelService', () => {
   describe('getTodaysGospel', () => {
-    it('should return today\'s gospel', async () => {
+    it("should return today's gospel", async () => {
       const service = new GospelService();
       const gospel = await service.getTodaysGospel();
-      
+
       expect(gospel).toBeDefined();
       expect(gospel.date).toBe(getTodayDate());
       expect(gospel.gospel).toBeTruthy();
     });
-    
+
     it('should use cache if available', async () => {
       const service = new GospelService();
       const cacheSpy = jest.spyOn(cache, 'get');
-      
+
       await service.getTodaysGospel();
       await service.getTodaysGospel();
-      
+
       expect(cacheSpy).toHaveBeenCalledTimes(2);
     });
   });
@@ -1240,41 +1321,38 @@ describe('GospelService', () => {
 ```
 
 ### Integration Tests
+
 ```typescript
 // Example: API Integration Test
 describe('POST /api/auth/register', () => {
   it('should register a new user', async () => {
-    const response = await request(app)
-      .post('/api/auth/register')
-      .send({
-        email: 'test@example.com',
-        password: 'TestPass123!',
-        displayName: 'Test User'
-      });
-    
+    const response = await request(app).post('/api/auth/register').send({
+      email: 'test@example.com',
+      password: 'TestPass123!',
+      displayName: 'Test User',
+    });
+
     expect(response.status).toBe(201);
     expect(response.body.success).toBe(true);
     expect(response.body.data.user.email).toBe('test@example.com');
     expect(response.body.data.token).toBeDefined();
   });
-  
+
   it('should reject duplicate email', async () => {
     // First registration
     await request(app).post('/api/auth/register').send({
       email: 'test@example.com',
       password: 'TestPass123!',
-      displayName: 'Test User'
+      displayName: 'Test User',
     });
-    
+
     // Duplicate registration
-    const response = await request(app)
-      .post('/api/auth/register')
-      .send({
-        email: 'test@example.com',
-        password: 'TestPass123!',
-        displayName: 'Another User'
-      });
-    
+    const response = await request(app).post('/api/auth/register').send({
+      email: 'test@example.com',
+      password: 'TestPass123!',
+      displayName: 'Another User',
+    });
+
     expect(response.status).toBe(400);
     expect(response.body.error.code).toBe('EMAIL_EXISTS');
   });
@@ -1282,29 +1360,30 @@ describe('POST /api/auth/register', () => {
 ```
 
 ### E2E Tests
+
 ```typescript
 // Example: Playwright E2E Test
 test('User can read daily gospel', async ({ page }) => {
   // Navigate to app
   await page.goto('http://localhost:3000');
-  
+
   // Login
   await page.click('text=Login');
   await page.fill('input[name="email"]', 'test@example.com');
   await page.fill('input[name="password"]', 'TestPass123!');
   await page.click('button[type="submit"]');
-  
+
   // Navigate to Gospel
   await page.click('text=Daily Gospel');
-  
+
   // Verify gospel is displayed
   await expect(page.locator('h1')).toContainText('Gospel');
   await expect(page.locator('.gospel-text')).toBeVisible();
-  
+
   // Play audio
   await page.click('button[aria-label="Play audio"]');
   await page.waitForTimeout(2000);
-  
+
   // Verify audio is playing
   const isPlaying = await page.evaluate(() => {
     const audio = document.querySelector('audio');
@@ -1317,6 +1396,7 @@ test('User can read daily gospel', async ({ page }) => {
 ## Technical Debt Management
 
 ### Identifying Technical Debt
+
 - Code smells
 - Outdated dependencies
 - Missing tests
@@ -1325,6 +1405,7 @@ test('User can read daily gospel', async ({ page }) => {
 - Security vulnerabilities
 
 ### Managing Technical Debt
+
 - Track in issue tracker with `tech-debt` label
 - Allocate 20% of sprint capacity
 - Prioritize by impact and risk
@@ -1334,6 +1415,7 @@ test('User can read daily gospel', async ({ page }) => {
 ## Success Criteria
 
 ### By End of Month 1
+
 - [ ] Architecture defined and documented
 - [ ] Technology stack finalized
 - [ ] Development environment set up
@@ -1341,6 +1423,7 @@ test('User can read daily gospel', async ({ page }) => {
 - [ ] ADRs for major decisions created
 
 ### By End of Month 3
+
 - [ ] Backend API functional
 - [ ] Frontend web app deployed
 - [ ] Database schema implemented
@@ -1348,6 +1431,7 @@ test('User can read daily gospel', async ({ page }) => {
 - [ ] Core features deployed
 
 ### By End of Month 6
+
 - [ ] Mobile app architecture defined
 - [ ] Mobile app in development
 - [ ] API scaled for mobile traffic
@@ -1355,6 +1439,7 @@ test('User can read daily gospel', async ({ page }) => {
 - [ ] Monitoring in place
 
 ### By End of Month 12
+
 - [ ] Full platform scalable
 - [ ] Zero-downtime deployments
 - [ ] Comprehensive monitoring
@@ -1364,11 +1449,13 @@ test('User can read daily gospel', async ({ page }) => {
 ## References & Resources
 
 ### Internal Documents
+
 - [TECHNICAL_ROADMAP.md](/TECHNICAL_ROADMAP.md) - Implementation guide
 - [PROJECT_STRUCTURE.md](/PROJECT_STRUCTURE.md) - Code organization
 - [CONTRIBUTING.md](/CONTRIBUTING.md) - Development guidelines
 
 ### External Resources
+
 - [12-Factor App](https://12factor.net/) - App architecture
 - [AWS Architecture](https://aws.amazon.com/architecture/) - Cloud patterns
 - [Martin Fowler Blog](https://martinfowler.com/) - Software design
@@ -1379,19 +1466,21 @@ test('User can read daily gospel', async ({ page }) => {
 ## Final Thoughts
 
 As Software Architect, you are the technical guardian of this platform. Your decisions will impact:
+
 - **Scalability**: Can we grow to millions of users?
 - **Maintainability**: Can we change things easily?
 - **Reliability**: Can users depend on us?
 - **Security**: Are user data and privacy protected?
 
 Remember:
+
 - **Simplicity First**: Don't over-engineer
 - **Document Decisions**: Use ADRs
 - **Mentor Team**: Share knowledge
 - **Think Long-term**: Build for the future
 - **Serve the Mission**: Technology serves evangelization
 
-*"Let all things be done decently and in order."* - 1 Corinthians 14:40
+_"Let all things be done decently and in order."_ - 1 Corinthians 14:40
 
 **Ad Majorem Dei Gloriam** ✝️
 

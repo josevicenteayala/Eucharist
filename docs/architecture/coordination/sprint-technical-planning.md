@@ -66,14 +66,16 @@ This document defines the technical planning process for each sprint, ensuring t
 **Product Owner**: Presents sprint goal and prioritized stories
 
 **Architect's Input**:
+
 - Technical context for the sprint
 - Architectural considerations
 - Technical dependencies
 - Infrastructure needs
 
 **Example**:
+
 ```
-"This sprint focuses on the Daily Gospel feature. From a technical 
+"This sprint focuses on the Daily Gospel feature. From a technical
 perspective, we'll be:
 1. Integrating with the USCCB API for readings
 2. Implementing caching to reduce API calls
@@ -92,6 +94,7 @@ Key architectural considerations:
 **Process**: Team estimates story points for each story
 
 **Architect's Input**:
+
 - Explain technical complexity
 - Highlight non-obvious challenges
 - Suggest technical approaches
@@ -103,6 +106,7 @@ Key architectural considerations:
 ## Story: Display Today's Gospel
 
 ### Technical Tasks:
+
 1. Create gospel_readings table schema
 2. Implement GospelService class
    - fetchFromUSCCB()
@@ -118,6 +122,7 @@ Key architectural considerations:
 8. Update API documentation
 
 ### Technical Complexity Factors:
+
 - External API integration (uncertainty)
 - Caching implementation (medium)
 - Database operations (low)
@@ -131,6 +136,7 @@ Key architectural considerations:
 **Team**: Commits to stories for the sprint
 
 **Architect's Role**:
+
 - Validate technical feasibility
 - Ensure no overcommitment
 - Confirm technical dependencies are understood
@@ -141,6 +147,7 @@ Key architectural considerations:
 ### Daily Technical Support
 
 **Architect Availability**:
+
 - Attend standup 2-3 times per week
 - Available for technical questions via Slack
 - Scheduled office hours (2 hours, twice per week)
@@ -156,6 +163,7 @@ Key architectural considerations:
 4. **Software Architect**: For architectural decisions
 
 **Blocker Resolution Process**:
+
 ```
 1. Identify blocker clearly
 2. Document what's been tried
@@ -170,13 +178,15 @@ Key architectural considerations:
 **Duration**: 30 minutes
 **Participants**: Architect, Technical Lead, Team
 
-**Purpose**: 
+**Purpose**:
+
 - Review technical progress
 - Address emerging challenges
 - Adjust approach if needed
 - Ensure quality standards
 
 **Questions**:
+
 - Are we on track technically?
 - Any technical challenges emerged?
 - Is code quality meeting standards?
@@ -188,6 +198,7 @@ Key architectural considerations:
 ### Code Review Standards
 
 **All Code Must**:
+
 - Follow coding standards
 - Include tests (unit + integration)
 - Update documentation
@@ -195,6 +206,7 @@ Key architectural considerations:
 - Be reviewed by at least one other developer
 
 **Architect Reviews**:
+
 - Architectural changes
 - Database schema changes
 - API contract changes
@@ -204,12 +216,14 @@ Key architectural considerations:
 ### Technical Debt Tracking
 
 **During Sprint**:
+
 - Identify technical debt as it's created
 - Document in technical debt backlog
 - Tag with appropriate labels
 - Estimate impact and effort
 
 **Technical Debt Criteria**:
+
 - Code that's "good enough" but not optimal
 - Missing tests
 - Incomplete documentation
@@ -221,6 +235,7 @@ Key architectural considerations:
 ### Demo Preparation
 
 **Technical Lead Tasks**:
+
 - Ensure features deployed to staging
 - Verify all tests passing
 - Check performance metrics
@@ -230,12 +245,14 @@ Key architectural considerations:
 ### Demo Best Practices
 
 **What to Demo**:
+
 - Working features from user perspective
 - Technical achievements (performance, etc.)
 - Architecture improvements
 - Developer tools/productivity enhancements
 
 **What to Prepare**:
+
 - Test data for realistic demo
 - Backup plan if demo environment fails
 - Screenshots/videos as backup
@@ -246,18 +263,21 @@ Key architectural considerations:
 ### Technical Retrospective Topics
 
 **What Went Well**:
+
 - Technical processes that worked
 - Tools that were helpful
 - Good architectural decisions
 - Successful problem-solving
 
 **What Didn't Go Well**:
+
 - Technical blockers
 - Process inefficiencies
 - Tool problems
 - Architecture issues
 
 **Action Items**:
+
 - Process improvements
 - Tool changes
 - Documentation needs
@@ -266,6 +286,7 @@ Key architectural considerations:
 ### Technical Metrics Review
 
 **Review Each Sprint**:
+
 - Velocity (story points completed)
 - Test coverage
 - Code quality metrics (SonarQube)
@@ -277,8 +298,9 @@ Key architectural considerations:
 
 ### Technical Story Template
 
-```markdown
+````markdown
 ## User Story
+
 As a [persona]
 I want [action]
 So that [benefit]
@@ -286,18 +308,23 @@ So that [benefit]
 ## Technical Specification
 
 ### Overview
+
 [Brief technical description]
 
 ### Technical Approach
+
 [How we'll implement this]
 
 ### Database Changes
+
 ```sql
 -- Schema changes if any
 CREATE TABLE ...
 ```
+````
 
 ### API Changes
+
 ```typescript
 // New or modified endpoints
 GET /api/resource/:id
@@ -305,41 +332,50 @@ POST /api/resource
 ```
 
 ### Dependencies
+
 - External APIs: [list]
 - New libraries: [list]
 - Other stories: [list]
 
 ### Technical Tasks
+
 - [ ] Task 1
 - [ ] Task 2
 - [ ] Task 3
 
 ### Testing Strategy
+
 - Unit tests: [what to test]
 - Integration tests: [what to test]
 - E2E tests: [if needed]
 
 ### Performance Considerations
+
 [Any performance concerns or optimizations]
 
 ### Security Considerations
+
 [Any security concerns or requirements]
 
 ### Non-Functional Requirements
+
 - Response time: [target]
 - Concurrency: [expectations]
 - Error handling: [strategy]
 
 ### Risks
+
 1. [Risk]: [Mitigation]
 
 ### Acceptance Criteria (Technical)
+
 - [ ] All tests passing
 - [ ] Code reviewed and approved
 - [ ] Documentation updated
 - [ ] Performance targets met
 - [ ] Security review completed
-```
+
+````
 
 ### Sprint Technical Plan Template
 
@@ -407,7 +443,7 @@ POST /api/resource
 
 ## Notes
 [Any additional notes or considerations]
-```
+````
 
 ### Technical Blocker Template
 
@@ -420,28 +456,34 @@ POST /api/resource
 **Severity**: Critical / High / Medium
 
 ### Description
+
 [Detailed description of the blocker]
 
 ### What We've Tried
+
 1. Attempt 1
 2. Attempt 2
 3. Attempt 3
 
 ### Impact
+
 - Timeline: [days delayed]
 - Dependencies: [other stories blocked]
 - Team members affected: [number]
 
 ### Possible Solutions
+
 1. Solution 1: [pros/cons]
 2. Solution 2: [pros/cons]
 
 ### Decision Needed From
+
 - [ ] Technical Lead
 - [ ] Software Architect
 - [ ] Product Owner (if scope impact)
 
 ### Resolution
+
 [How it was resolved - fill in after resolution]
 
 **Resolved By**: [Name]
@@ -462,6 +504,7 @@ POST /api/resource
 ### Documentation Updates
 
 **During Sprint**:
+
 - Update API documentation as endpoints change
 - Update architecture diagrams if structure changes
 - Document architectural decisions (ADRs)
@@ -469,6 +512,7 @@ POST /api/resource
 - Keep technical debt log current
 
 **End of Sprint**:
+
 - Final documentation review
 - Update sprint retrospective learnings
 - Document any workarounds or gotchas
@@ -477,6 +521,7 @@ POST /api/resource
 ## Tools and Resources
 
 ### Development Tools
+
 - **IDE**: VSCode (recommended extensions documented)
 - **Database**: PostgreSQL/MongoDB clients
 - **API Testing**: Postman/Insomnia
@@ -484,12 +529,14 @@ POST /api/resource
 - **Docker**: For local development
 
 ### Monitoring Tools
+
 - **Application**: Sentry for error tracking
 - **Performance**: New Relic or similar
 - **Logs**: CloudWatch or similar
 - **CI/CD**: GitHub Actions
 
 ### Documentation Tools
+
 - **API Docs**: Swagger/OpenAPI
 - **Architecture**: Lucidchart, Miro, or Draw.io
 - **Knowledge Base**: GitHub Wiki or Notion
@@ -498,6 +545,7 @@ POST /api/resource
 ## Success Criteria
 
 ### Sprint Technical Success
+
 - [ ] All committed stories completed
 - [ ] All tests passing
 - [ ] Code quality standards met
@@ -507,6 +555,7 @@ POST /api/resource
 - [ ] Technical debt tracked
 
 ### Team Technical Health
+
 - [ ] No burnout or overwork
 - [ ] Team learning and growth
 - [ ] Good collaboration
@@ -516,6 +565,7 @@ POST /api/resource
 ## Conclusion
 
 Effective sprint technical planning ensures:
+
 - Clear technical direction
 - Reduced uncertainty
 - Better estimates

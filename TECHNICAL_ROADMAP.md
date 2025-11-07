@@ -9,35 +9,41 @@ This document provides a detailed technical implementation roadmap for the Eucha
 ### Final Recommendations
 
 **Mobile:** Flutter (Dart)
+
 - Single codebase for iOS and Android
 - Excellent performance
 - Rich UI components
 - Strong community support
 
 **Web Frontend:** React + TypeScript
+
 - Component-based architecture
 - Large ecosystem
 - TypeScript for type safety
 - Next.js for SEO and SSR
 
 **Backend:** Node.js + Express + TypeScript
+
 - JavaScript full-stack
 - Async/await patterns
 - Large package ecosystem
 - Easy scaling
 
 **Database:**
+
 - PostgreSQL for structured data (users, prayers, etc.)
 - MongoDB for flexible content (articles, reflections)
 - Redis for caching and sessions
 
 **Authentication:** Firebase Auth
+
 - Social login support
 - Email/password auth
 - Multi-platform SDKs
 - Secure and maintained
 
 **Hosting:**
+
 - Frontend: Vercel or Netlify
 - Backend: AWS (EC2/ECS) or Google Cloud Run
 - Database: Managed services (RDS, Atlas)
@@ -48,6 +54,7 @@ This document provides a detailed technical implementation roadmap for the Eucha
 ### Sprint 1: Project Setup & Core Infrastructure (Weeks 1-2)
 
 #### Backend Setup
+
 ```bash
 Tasks:
 1. Initialize Node.js project with TypeScript
@@ -67,6 +74,7 @@ Deliverables:
 ```
 
 **Technical Details:**
+
 ```typescript
 // src/app.ts
 import express from 'express';
@@ -94,6 +102,7 @@ export default app;
 ```
 
 #### Frontend Setup
+
 ```bash
 Tasks:
 1. Create React app with TypeScript
@@ -113,6 +122,7 @@ Deliverables:
 ```
 
 #### Database Schema Design
+
 ```sql
 -- Users table
 CREATE TABLE users (
@@ -167,6 +177,7 @@ CREATE TABLE reflections (
 ```
 
 #### Sprint 1 Acceptance Criteria:
+
 - [ ] Backend server runs without errors
 - [ ] Frontend app loads in browser
 - [ ] Database tables created
@@ -176,6 +187,7 @@ CREATE TABLE reflections (
 ### Sprint 2: Authentication & User Management (Weeks 3-4)
 
 #### Backend Tasks
+
 ```bash
 1. Implement user registration endpoint
 2. Implement login endpoint (JWT)
@@ -196,6 +208,7 @@ Deliverables:
 ```
 
 **Implementation Example:**
+
 ```typescript
 // src/controllers/authController.ts
 import bcrypt from 'bcryptjs';
@@ -206,37 +219,35 @@ import User from '../models/User';
 export const register = async (req: Request, res: Response) => {
   try {
     const { email, password, displayName } = req.body;
-    
+
     // Check if user exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ error: 'Email already registered' });
     }
-    
+
     // Hash password
     const passwordHash = await bcrypt.hash(password, 10);
-    
+
     // Create user
     const user = await User.create({
       email,
       passwordHash,
-      displayName
+      displayName,
     });
-    
+
     // Generate token
-    const token = jwt.sign(
-      { userId: user.id, email: user.email },
-      process.env.JWT_SECRET!,
-      { expiresIn: '7d' }
-    );
-    
+    const token = jwt.sign({ userId: user.id, email: user.email }, process.env.JWT_SECRET!, {
+      expiresIn: '7d',
+    });
+
     res.status(201).json({
       user: {
         id: user.id,
         email: user.email,
-        displayName: user.displayName
+        displayName: user.displayName,
       },
-      token
+      token,
     });
   } catch (error) {
     res.status(500).json({ error: 'Registration failed' });
@@ -245,6 +256,7 @@ export const register = async (req: Request, res: Response) => {
 ```
 
 #### Frontend Tasks
+
 ```bash
 1. Create registration form
 2. Create login form
@@ -264,6 +276,7 @@ Deliverables:
 ```
 
 #### Sprint 2 Acceptance Criteria:
+
 - [ ] Users can register successfully
 - [ ] Users can log in and receive JWT
 - [ ] Password reset flow works
@@ -273,6 +286,7 @@ Deliverables:
 ### Sprint 3: Daily Gospel Feature (Weeks 5-6)
 
 #### Backend Tasks
+
 ```bash
 1. Create liturgical calendar service
 2. Implement Gospel reading endpoints
@@ -291,6 +305,7 @@ Deliverables:
 ```
 
 **Gospel Service Example:**
+
 ```typescript
 // src/services/gospelService.ts
 import axios from 'axios';
@@ -302,30 +317,30 @@ export class GospelService {
     const today = new Date().toISOString().split('T')[0];
     return this.getGospelByDate(today);
   }
-  
+
   async getGospelByDate(date: string) {
     // Check cache first
     const cached = await cache.get(`gospel:${date}`);
     if (cached) return JSON.parse(cached);
-    
+
     // Check database
     let gospel = await GospelReading.findOne({ date });
-    
+
     // If not in DB, fetch from API
     if (!gospel) {
       const readings = await this.fetchFromUSCCB(date);
       gospel = await GospelReading.create({
         date,
-        ...readings
+        ...readings,
       });
     }
-    
+
     // Cache for 24 hours
     await cache.set(`gospel:${date}`, JSON.stringify(gospel), 86400);
-    
+
     return gospel;
   }
-  
+
   private async fetchFromUSCCB(date: string) {
     // Implement USCCB API integration
     // Or use alternative API
@@ -336,6 +351,7 @@ export class GospelService {
 ```
 
 #### Frontend Tasks
+
 ```bash
 1. Create Gospel reader component
 2. Add audio player for readings
@@ -353,6 +369,7 @@ Deliverables:
 ```
 
 #### Sprint 3 Acceptance Criteria:
+
 - [ ] Today's Gospel displays correctly
 - [ ] Users can navigate to past dates
 - [ ] Reflections load with Gospel
@@ -362,6 +379,7 @@ Deliverables:
 ### Sprint 4: Educational Content System (Weeks 7-8)
 
 #### Backend Tasks
+
 ```bash
 1. Create content model (articles)
 2. Implement content endpoints
@@ -380,6 +398,7 @@ Deliverables:
 ```
 
 **Content Model:**
+
 ```typescript
 // MongoDB Schema for Content
 interface Article {
@@ -410,6 +429,7 @@ interface Article {
 ```
 
 #### Frontend Tasks
+
 ```bash
 1. Create content listing page
 2. Create article detail page
@@ -428,6 +448,7 @@ Deliverables:
 ```
 
 #### Sprint 4 Acceptance Criteria:
+
 - [ ] Articles load and display correctly
 - [ ] Markdown renders properly
 - [ ] Search returns relevant results
@@ -437,6 +458,7 @@ Deliverables:
 ### Sprint 5: Community Features - Prayer Intentions (Weeks 9-10)
 
 #### Backend Tasks
+
 ```bash
 1. Create prayer intention model
 2. Implement intention endpoints
@@ -454,6 +476,7 @@ Deliverables:
 ```
 
 #### Frontend Tasks
+
 ```bash
 1. Create prayer intention list
 2. Create submission form
@@ -469,6 +492,7 @@ Deliverables:
 ```
 
 #### Sprint 5 Acceptance Criteria:
+
 - [ ] Users can submit intentions
 - [ ] Users can pray for intentions
 - [ ] Prayer count updates
@@ -478,6 +502,7 @@ Deliverables:
 ### Sprint 6: Testing & Refinement (Weeks 11-12)
 
 #### Testing Tasks
+
 ```bash
 1. Write unit tests (80% coverage minimum)
 2. Write integration tests
@@ -495,6 +520,7 @@ Deliverables:
 ```
 
 #### Refinement Tasks
+
 ```bash
 1. Fix critical bugs
 2. Optimize database queries
@@ -511,6 +537,7 @@ Deliverables:
 ```
 
 #### Sprint 6 Acceptance Criteria:
+
 - [ ] All tests passing
 - [ ] No critical bugs
 - [ ] Performance meets targets
@@ -523,6 +550,7 @@ Deliverables:
 ### Sprint 7-8: Mobile App Foundation (Weeks 13-16)
 
 #### Flutter Setup
+
 ```yaml
 # pubspec.yaml
 dependencies:
@@ -536,7 +564,7 @@ dependencies:
   cached_network_image: ^3.3.0
   flutter_markdown: ^0.6.18
   audioplayers: ^5.2.1
-  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -545,6 +573,7 @@ dev_dependencies:
 ```
 
 #### Core Features to Implement
+
 ```bash
 1. App structure and navigation
 2. Authentication flow
@@ -563,6 +592,7 @@ Deliverables:
 ```
 
 **App Structure:**
+
 ```dart
 lib/
 ├── main.dart
@@ -591,6 +621,7 @@ lib/
 ### Sprint 9: Eucharistic Miracles Module (Weeks 17-18)
 
 #### Backend
+
 ```bash
 1. Create miracle content model
 2. Implement miracle endpoints
@@ -605,6 +636,7 @@ Deliverables:
 ```
 
 #### Frontend/Mobile
+
 ```bash
 1. Miracle listing page
 2. Miracle detail page
@@ -621,6 +653,7 @@ Deliverables:
 ### Sprint 10: History Timeline (Weeks 19-20)
 
 #### Implementation
+
 ```bash
 1. Create timeline data structure
 2. Build interactive timeline component
@@ -637,6 +670,7 @@ Deliverables:
 ### Sprint 11: Mass Parts Interactive Guide (Weeks 21-22)
 
 #### Features
+
 ```bash
 1. Step-by-step Mass walkthrough
 2. Audio/video integration
@@ -653,6 +687,7 @@ Deliverables:
 ### Sprint 12: Community Enhancement (Weeks 23-24)
 
 #### New Features
+
 ```bash
 1. Discussion forums
 2. User testimonies
@@ -671,6 +706,7 @@ Deliverables:
 ### Sprint 13-14: Multi-language Support (Weeks 25-28)
 
 #### Implementation
+
 ```bash
 1. i18n infrastructure
 2. Spanish translation
@@ -717,6 +753,7 @@ Deliverables:
 ## Technical Best Practices
 
 ### Code Quality
+
 ```typescript
 // Use TypeScript for type safety
 interface User {
@@ -747,10 +784,11 @@ class AppError extends Error {
 ```
 
 ### Testing Strategy
+
 ```typescript
 // Unit tests for business logic
 describe('GospelService', () => {
-  it('should fetch today\'s gospel', async () => {
+  it("should fetch today's gospel", async () => {
     const service = new GospelService();
     const gospel = await service.getTodaysGospel();
     expect(gospel).toBeDefined();
@@ -761,14 +799,12 @@ describe('GospelService', () => {
 // Integration tests for API endpoints
 describe('POST /api/auth/register', () => {
   it('should register a new user', async () => {
-    const response = await request(app)
-      .post('/api/auth/register')
-      .send({
-        email: 'test@example.com',
-        password: 'password123',
-        displayName: 'Test User'
-      });
-    
+    const response = await request(app).post('/api/auth/register').send({
+      email: 'test@example.com',
+      password: 'password123',
+      displayName: 'Test User',
+    });
+
     expect(response.status).toBe(201);
     expect(response.body.user.email).toBe('test@example.com');
   });
@@ -776,6 +812,7 @@ describe('POST /api/auth/register', () => {
 ```
 
 ### Performance Optimization
+
 ```typescript
 // Database indexing
 CREATE INDEX idx_gospel_date ON gospel_readings(date);
@@ -785,23 +822,23 @@ CREATE INDEX idx_user_email ON users(email);
 const cacheMiddleware = async (req, res, next) => {
   const key = `cache:${req.url}`;
   const cached = await redis.get(key);
-  
+
   if (cached) {
     return res.json(JSON.parse(cached));
   }
-  
+
   res.sendResponse = res.json;
   res.json = (data) => {
     redis.set(key, JSON.stringify(data), 'EX', 3600);
     res.sendResponse(data);
   };
-  
+
   next();
 };
 
 // Lazy loading images
-<img 
-  src={lowResImage} 
+<img
+  src={lowResImage}
   data-src={highResImage}
   loading="lazy"
   alt="Eucharistic miracle"
@@ -811,13 +848,14 @@ const cacheMiddleware = async (req, res, next) => {
 ## Monitoring & Maintenance
 
 ### Application Monitoring
+
 ```typescript
 // Error tracking with Sentry
 import * as Sentry from '@sentry/node';
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
-  environment: process.env.NODE_ENV
+  environment: process.env.NODE_ENV,
 });
 
 // Performance monitoring
@@ -828,7 +866,7 @@ const measurePerformance = (fn: Function) => {
     const start = performance.now();
     const result = await fn(...args);
     const end = performance.now();
-    
+
     console.log(`${fn.name} took ${end - start}ms`);
     return result;
   };
@@ -836,6 +874,7 @@ const measurePerformance = (fn: Function) => {
 ```
 
 ### Health Checks
+
 ```typescript
 app.get('/api/health', async (req, res) => {
   const health = {
@@ -845,10 +884,10 @@ app.get('/api/health', async (req, res) => {
     checks: {
       database: await checkDatabase(),
       redis: await checkRedis(),
-      external_api: await checkExternalAPIs()
-    }
+      external_api: await checkExternalAPIs(),
+    },
   };
-  
+
   res.json(health);
 });
 ```
@@ -856,6 +895,7 @@ app.get('/api/health', async (req, res) => {
 ## Deployment Pipeline
 
 ### CI/CD with GitHub Actions
+
 ```yaml
 name: Deploy to Production
 
@@ -890,12 +930,14 @@ jobs:
 ## Summary
 
 This technical roadmap provides a detailed, sprint-by-sprint breakdown of implementation. Each sprint has:
+
 - Clear objectives
 - Specific deliverables
 - Acceptance criteria
 - Code examples
 
 The roadmap is flexible and should be adjusted based on:
+
 - Team velocity
 - User feedback
 - Technical challenges
@@ -905,4 +947,4 @@ Regular retrospectives will help optimize the process and ensure the team delive
 
 ---
 
-*For questions or clarifications, refer to the technical lead or create an issue in the repository.*
+_For questions or clarifications, refer to the technical lead or create an issue in the repository._

@@ -9,6 +9,7 @@
 The Eucharist Understanding Platform has diverse data storage requirements that fall into two distinct categories:
 
 ### Structured Data Needs
+
 - User accounts and authentication
 - User profiles and preferences
 - Prayer intentions with relationships
@@ -19,6 +20,7 @@ The Eucharist Understanding Platform has diverse data storage requirements that 
 - Complex queries with joins
 
 ### Flexible Content Needs
+
 - Educational articles with varying structures
 - Gospel readings and reflections
 - Eucharistic miracle stories with rich metadata
@@ -29,6 +31,7 @@ The Eucharist Understanding Platform has diverse data storage requirements that 
 - Document-oriented data
 
 We need a database solution that:
+
 - Provides ACID guarantees for critical user data
 - Offers flexibility for content management
 - Scales efficiently for both read and write operations
@@ -39,6 +42,7 @@ We need a database solution that:
 - Fits within operational budget
 
 ### Key Requirements
+
 - Strong consistency for user data
 - Flexible schema for content
 - Good query performance
@@ -50,6 +54,7 @@ We need a database solution that:
 ## Decision
 
 We will use a **hybrid database approach**:
+
 - **PostgreSQL** for structured, relational data
 - **MongoDB** for flexible, document-oriented content
 - **Redis** for caching and session management
@@ -59,6 +64,7 @@ This polyglot persistence approach uses the right tool for each type of data.
 ### Database Allocation
 
 #### PostgreSQL - Structured Data
+
 ```sql
 Primary Use Cases:
 - users, user_profiles
@@ -80,6 +86,7 @@ Why PostgreSQL:
 ```
 
 #### MongoDB - Content & Documents
+
 ```javascript
 Primary Use Cases:
 - educational_articles
@@ -101,6 +108,7 @@ Why MongoDB:
 ```
 
 #### Redis - Caching & Sessions
+
 ```javascript
 Primary Use Cases:
 - Session storage
@@ -154,6 +162,7 @@ Why Redis:
 ### Separation Principle
 
 ⚠️ **Critical Rule**: Never mix data concerns
+
 - User data → PostgreSQL only
 - Content data → MongoDB only
 - No cross-database joins at database level
@@ -166,6 +175,7 @@ Why Redis:
 ✅ **Right Tool for Each Job**: Each database optimized for its specific use case
 
 ✅ **PostgreSQL Benefits**:
+
 - ACID compliance for user data
 - Strong referential integrity
 - Complex query support
@@ -174,6 +184,7 @@ Why Redis:
 - Strong community support
 
 ✅ **MongoDB Benefits**:
+
 - Schema flexibility for evolving content
 - Fast reads for content delivery
 - Natural JSON/document storage
@@ -185,7 +196,8 @@ Why Redis:
 
 ✅ **Scalability**: Can scale each database independently based on needs
 
-✅ **Developer Experience**: 
+✅ **Developer Experience**:
+
 - Sequelize ORM for PostgreSQL
 - Mongoose ODM for MongoDB
 - Familiar tools and patterns
@@ -223,14 +235,17 @@ Why Redis:
 ## Alternatives Considered
 
 ### 1. PostgreSQL Only
-**Pros**: 
+
+**Pros**:
+
 - Single database to manage
 - Can use JSONB for flexible content
 - Strong ACID compliance everywhere
 - Simpler operations
 - Familiar to most developers
 
-**Cons**: 
+**Cons**:
+
 - JSONB queries less efficient than MongoDB
 - Not optimal for CMS use case
 - Less natural for document storage
@@ -240,14 +255,17 @@ Why Redis:
 **Why Not**: While PostgreSQL's JSONB is powerful, it's not as natural or performant as MongoDB for content management. The CMS features would be more complex to implement and maintain.
 
 ### 2. MongoDB Only
-**Pros**: 
+
+**Pros**:
+
 - Single database to manage
 - Flexible schema everywhere
 - Fast document queries
 - Good for content-heavy apps
 - Horizontal scaling
 
-**Cons**: 
+**Cons**:
+
 - Weaker relational capabilities
 - No strong ACID guarantees (prior to 4.0)
 - Not ideal for complex joins
@@ -257,12 +275,15 @@ Why Redis:
 **Why Not**: User authentication, relationships, and transactional data benefit significantly from PostgreSQL's ACID guarantees and referential integrity. MongoDB's transaction support is newer and less mature.
 
 ### 3. MySQL + MongoDB
-**Pros**: 
+
+**Pros**:
+
 - Similar to our approach
 - MySQL widely known
 - Good performance
 
-**Cons**: 
+**Cons**:
+
 - PostgreSQL has better JSON support
 - PostgreSQL more feature-rich
 - MySQL licensing considerations
@@ -271,13 +292,16 @@ Why Redis:
 **Why Not**: PostgreSQL offers better JSON capabilities, more advanced features (like full-text search), and a more permissive license for open-source projects.
 
 ### 4. Cloud-Native Solutions (DynamoDB, Cosmos DB)
-**Pros**: 
+
+**Pros**:
+
 - Fully managed
 - Auto-scaling
 - High availability
 - Great performance
 
-**Cons**: 
+**Cons**:
+
 - Vendor lock-in
 - Higher costs at scale
 - Limited portability
@@ -287,13 +311,16 @@ Why Redis:
 **Why Not**: We want database portability for an open-source project. Contributors should be able to run the platform on various clouds or on-premises. Vendor lock-in limits this flexibility.
 
 ### 5. NewSQL (CockroachDB, YugabyteDB)
-**Pros**: 
+
+**Pros**:
+
 - SQL interface
 - Horizontal scaling
 - ACID compliance
 - Modern architecture
 
-**Cons**: 
+**Cons**:
+
 - Less mature ecosystems
 - Smaller communities
 - Fewer tools and resources
@@ -306,6 +333,7 @@ Why Redis:
 ## Implementation Plan
 
 ### Phase 1: PostgreSQL Setup (Week 1)
+
 - [x] Set up PostgreSQL instance
 - [ ] Create database schemas
 - [ ] Configure Sequelize ORM
@@ -314,6 +342,7 @@ Why Redis:
 - [ ] Configure backup strategy
 
 ### Phase 2: MongoDB Setup (Week 2)
+
 - [x] Set up MongoDB instance
 - [ ] Design document schemas
 - [ ] Configure Mongoose ODM
@@ -322,6 +351,7 @@ Why Redis:
 - [ ] Configure backup strategy
 
 ### Phase 3: Redis Setup (Week 3)
+
 - [ ] Set up Redis instance
 - [ ] Configure cache client
 - [ ] Implement cache strategies
@@ -329,6 +359,7 @@ Why Redis:
 - [ ] Configure TTL policies
 
 ### Phase 4: Integration (Week 4)
+
 - [ ] Implement repository pattern
 - [ ] Create data access layer
 - [ ] Handle cross-database queries
@@ -337,6 +368,7 @@ Why Redis:
 - [ ] Write integration tests
 
 ### Phase 5: Optimization (Ongoing)
+
 - [ ] Add database indexes
 - [ ] Optimize query patterns
 - [ ] Implement read replicas
@@ -347,6 +379,7 @@ Why Redis:
 ## Technical Specifications
 
 ### PostgreSQL Schema Example
+
 ```sql
 -- Core user table
 CREATE TABLE users (
@@ -401,80 +434,86 @@ CREATE INDEX idx_intentions_created ON prayer_intentions(created_at);
 ```
 
 ### MongoDB Schema Example
+
 ```javascript
 // Educational article schema
-const articleSchema = new Schema({
-  title: {
-    type: String,
-    required: true,
-    index: true
+const articleSchema = new Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+      index: true,
+    },
+    slug: {
+      type: String,
+      required: true,
+      unique: true,
+      index: true,
+    },
+    content: {
+      type: String,
+      required: true,
+    },
+    summary: String,
+    category: {
+      type: String,
+      enum: ['eucharist-basics', 'history', 'saints', 'miracles', 'theology'],
+      index: true,
+    },
+    tags: [String],
+
+    // Theological review
+    theologicalReview: {
+      reviewed: { type: Boolean, default: false },
+      reviewedBy: String,
+      reviewDate: Date,
+      magisteriumRefs: [String],
+      imprimatur: String,
+    },
+
+    // Localization
+    language: {
+      type: String,
+      default: 'en',
+      index: true,
+    },
+    translations: [
+      {
+        language: String,
+        title: String,
+        content: String,
+        summary: String,
+      },
+    ],
+
+    // Metadata
+    author: {
+      id: String, // Reference to PostgreSQL user
+      name: String,
+    },
+    publishedAt: Date,
+    updatedAt: Date,
+    viewCount: { type: Number, default: 0 },
+    readingTime: Number,
+
+    // Media
+    featuredImage: {
+      url: String,
+      alt: String,
+      credits: String,
+    },
+
+    // SEO
+    seo: {
+      metaTitle: String,
+      metaDescription: String,
+      keywords: [String],
+    },
   },
-  slug: {
-    type: String,
-    required: true,
-    unique: true,
-    index: true
-  },
-  content: {
-    type: String,
-    required: true
-  },
-  summary: String,
-  category: {
-    type: String,
-    enum: ['eucharist-basics', 'history', 'saints', 'miracles', 'theology'],
-    index: true
-  },
-  tags: [String],
-  
-  // Theological review
-  theologicalReview: {
-    reviewed: { type: Boolean, default: false },
-    reviewedBy: String,
-    reviewDate: Date,
-    magisteriumRefs: [String],
-    imprimatur: String
-  },
-  
-  // Localization
-  language: {
-    type: String,
-    default: 'en',
-    index: true
-  },
-  translations: [{
-    language: String,
-    title: String,
-    content: String,
-    summary: String
-  }],
-  
-  // Metadata
-  author: {
-    id: String,  // Reference to PostgreSQL user
-    name: String
-  },
-  publishedAt: Date,
-  updatedAt: Date,
-  viewCount: { type: Number, default: 0 },
-  readingTime: Number,
-  
-  // Media
-  featuredImage: {
-    url: String,
-    alt: String,
-    credits: String
-  },
-  
-  // SEO
-  seo: {
-    metaTitle: String,
-    metaDescription: String,
-    keywords: [String]
+  {
+    timestamps: true,
   }
-}, {
-  timestamps: true
-});
+);
 
 // Indexes
 articleSchema.index({ title: 'text', content: 'text' });
@@ -483,6 +522,7 @@ articleSchema.index({ 'author.id': 1 });
 ```
 
 ### Data Access Layer Pattern
+
 ```typescript
 // Repository interface
 interface IUserRepository {
@@ -514,6 +554,7 @@ class ArticleRepository implements IArticleRepository {
 ## Database Configuration
 
 ### Connection Pooling
+
 ```javascript
 // PostgreSQL
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
@@ -521,8 +562,8 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
     max: 20,
     min: 5,
     acquire: 30000,
-    idle: 10000
-  }
+    idle: 10000,
+  },
 });
 
 // MongoDB
@@ -530,11 +571,12 @@ mongoose.connect(process.env.MONGODB_URI, {
   maxPoolSize: 20,
   minPoolSize: 5,
   serverSelectionTimeoutMS: 5000,
-  socketTimeoutMS: 45000
+  socketTimeoutMS: 45000,
 });
 ```
 
 ### Backup Strategy
+
 - **PostgreSQL**: Daily full backups, continuous WAL archiving
 - **MongoDB**: Daily snapshots, oplog for point-in-time recovery
 - **Retention**: 30 days for daily, 12 months for monthly
@@ -543,6 +585,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 ## Security Considerations
 
 ### Access Control
+
 - Separate database users for application and admin
 - Principle of least privilege
 - No root/admin access from application
@@ -550,12 +593,14 @@ mongoose.connect(process.env.MONGODB_URI, {
 - VPC/private network isolation
 
 ### Data Encryption
+
 - Encryption at rest enabled
 - TLS for data in transit
 - Sensitive fields encrypted in application
 - Key rotation policy
 
 ### Audit Logging
+
 - Track schema changes
 - Log administrative actions
 - Monitor suspicious queries
@@ -564,6 +609,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 ## Performance Considerations
 
 ### PostgreSQL Optimization
+
 - Appropriate indexes for common queries
 - Query plan analysis
 - Connection pooling
@@ -571,6 +617,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 - Partitioning for large tables
 
 ### MongoDB Optimization
+
 - Index strategy for queries
 - Compound indexes where beneficial
 - Covered queries when possible
@@ -578,6 +625,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 - Aggregation pipeline optimization
 
 ### Redis Configuration
+
 - Appropriate eviction policies
 - Memory limits set
 - Persistence configured
@@ -588,6 +636,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 ### Key Metrics to Track
 
 **PostgreSQL**:
+
 - Query performance
 - Connection pool utilization
 - Cache hit ratio
@@ -596,6 +645,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 - Replication lag
 
 **MongoDB**:
+
 - Query execution time
 - Collection scan ratio
 - Index usage
@@ -604,6 +654,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 - Connection count
 
 **Redis**:
+
 - Hit/miss ratio
 - Memory usage
 - Eviction rate
@@ -611,6 +662,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 - Connection count
 
 ### Tools
+
 - PostgreSQL: pg_stat_statements, pgAdmin
 - MongoDB: MongoDB Atlas monitoring, mongostat
 - Redis: Redis CLI, RedisInsight
@@ -632,11 +684,13 @@ mongoose.connect(process.env.MONGODB_URI, {
 ## Cost Estimation
 
 ### Development Environment
+
 - PostgreSQL: Free (local)
 - MongoDB: Free (local or Atlas free tier)
 - Redis: Free (local)
 
 ### Production (Managed Services)
+
 - PostgreSQL (RDS/Cloud SQL): ~$50-100/month (small instance)
 - MongoDB (Atlas): ~$60-150/month (small cluster)
 - Redis (ElastiCache/Cloud): ~$25-50/month (small instance)

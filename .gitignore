@@ -249,3 +249,4 @@ docker-compose.override.yml
 *.db
 *.sqlite
 *.sqlite3
+# Root package-lock.json is tracked for reproducible builds

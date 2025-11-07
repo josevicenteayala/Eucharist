@@ -7,6 +7,7 @@
 ## Context
 
 The Eucharist Understanding Platform aims to reach people wherever they are, including on mobile devices. Mobile apps are essential because:
+
 - Many people prefer mobile apps for daily spiritual practices
 - Push notifications can support daily prayer routines
 - Offline functionality enables prayer without internet
@@ -14,6 +15,7 @@ The Eucharist Understanding Platform aims to reach people wherever they are, inc
 - App store presence increases discoverability
 
 We need a mobile development strategy that:
+
 - Supports both iOS and Android platforms
 - Delivers native-like performance and UX
 - Enables rapid development with limited resources
@@ -22,6 +24,7 @@ We need a mobile development strategy that:
 - Fits within the budget constraints of an open-source project
 
 ### Key Requirements
+
 - Cross-platform development (iOS and Android)
 - Offline-first architecture for core features
 - Native performance for smooth animations
@@ -38,6 +41,7 @@ We will use **Flutter 3.16+** with **Dart** as the framework for mobile applicat
 ### Technology Stack Details
 
 #### Core Framework
+
 ```dart
 // Framework & Language
 - Flutter 3.16+ (Cross-platform framework)
@@ -114,7 +118,9 @@ We will use **Flutter 3.16+** with **Dart** as the framework for mobile applicat
 ```
 
 ### Clean Architecture Implementation
+
 Following Flutter clean architecture principles:
+
 - **Presentation**: UI and state management
 - **Domain**: Business logic, independent of implementation
 - **Data**: Implementation of repositories, data sources
@@ -137,7 +143,8 @@ Following Flutter clean architecture principles:
 
 ✅ **Google Support**: Backed by Google with consistent updates and long-term commitment
 
-✅ **Fast Development**: 
+✅ **Fast Development**:
+
 - Pre-built widgets
 - Excellent tooling
 - Clear documentation
@@ -174,14 +181,17 @@ Following Flutter clean architecture principles:
 ## Alternatives Considered
 
 ### 1. React Native
-**Pros**: 
+
+**Pros**:
+
 - JavaScript/TypeScript (team may already know)
 - Large ecosystem
 - Good community
 - Hot reload
 - Expo framework simplifies development
 
-**Cons**: 
+**Cons**:
+
 - Bridge architecture can cause performance issues
 - More platform-specific code needed
 - Dependency on third-party native modules
@@ -191,14 +201,17 @@ Following Flutter clean architecture principles:
 **Why Not**: Flutter provides better out-of-the-box performance and more consistent cross-platform experience. React Native's bridge architecture introduces performance overhead that Flutter avoids with its compilation to native code.
 
 ### 2. Native Development (Swift/Kotlin)
-**Pros**: 
+
+**Pros**:
+
 - Best possible performance
 - Full access to platform APIs
 - No framework overhead
 - Best debugging tools
 - Platform-specific best practices
 
-**Cons**: 
+**Cons**:
+
 - Requires two completely separate codebases
 - Double the development time and cost
 - Need iOS and Android expertise
@@ -208,13 +221,16 @@ Following Flutter clean architecture principles:
 **Why Not**: With limited resources for an open-source project, developing and maintaining two codebases is not feasible. The 2x cost and time don't provide enough benefit over Flutter's near-native performance.
 
 ### 3. Xamarin
-**Pros**: 
+
+**Pros**:
+
 - C# language
 - .NET ecosystem
 - Native UI components
 - Microsoft backing
 
-**Cons**: 
+**Cons**:
+
 - Smaller community than Flutter/React Native
 - More complex setup
 - Less popular (declining interest)
@@ -224,13 +240,16 @@ Following Flutter clean architecture principles:
 **Why Not**: Flutter has overtaken Xamarin in popularity and community support. The ecosystem is less vibrant, making it harder to find help and contributors.
 
 ### 4. Ionic/Capacitor
-**Pros**: 
+
+**Pros**:
+
 - Web technologies (HTML/CSS/JavaScript)
 - Can reuse web code
 - Easy for web developers
 - Fast development
 
-**Cons**: 
+**Cons**:
+
 - WebView-based (performance limitations)
 - Not truly native feel
 - Slower animations
@@ -240,13 +259,16 @@ Following Flutter clean architecture principles:
 **Why Not**: For a spiritual app where user experience is paramount, the performance and native feel of Flutter are essential. WebView limitations would compromise the quality we want to deliver.
 
 ### 5. Progressive Web App (PWA) Only
-**Pros**: 
+
+**Pros**:
+
 - No app store approval needed
 - Single codebase with web
 - Easy updates
 - Cross-platform by nature
 
-**Cons**: 
+**Cons**:
+
 - Limited offline capabilities
 - No push notifications on iOS
 - Poor app store discoverability
@@ -258,6 +280,7 @@ Following Flutter clean architecture principles:
 ## Implementation Plan
 
 ### Phase 1: Project Setup (Week 1)
+
 - [x] Initialize Flutter project
 - [x] Configure package structure
 - [ ] Set up folder structure (clean architecture)
@@ -266,6 +289,7 @@ Following Flutter clean architecture principles:
 - [ ] Configure build flavors (dev/staging/prod)
 
 ### Phase 2: Core Infrastructure (Week 2-3)
+
 - [ ] Implement API client with Dio
 - [ ] Set up state management (Provider/Riverpod)
 - [ ] Configure local storage (Hive/SQLite)
@@ -274,6 +298,7 @@ Following Flutter clean architecture principles:
 - [ ] Set up error handling
 
 ### Phase 3: Firebase Integration (Week 4)
+
 - [ ] Configure Firebase project
 - [ ] Implement Firebase Auth
 - [ ] Set up push notifications
@@ -282,6 +307,7 @@ Following Flutter clean architecture principles:
 - [ ] Test authentication flows
 
 ### Phase 4: UI Foundation (Week 5-6)
+
 - [ ] Create design system
 - [ ] Build reusable widgets
 - [ ] Implement theme system
@@ -290,6 +316,7 @@ Following Flutter clean architecture principles:
 - [ ] Implement responsive design
 
 ### Phase 5: Testing & CI/CD (Week 7-8)
+
 - [ ] Write unit tests
 - [ ] Create widget tests
 - [ ] Set up integration tests
@@ -298,6 +325,7 @@ Following Flutter clean architecture principles:
 - [ ] Configure automated testing
 
 ### Phase 6: App Store Preparation (Months 4-5)
+
 - [ ] Create app icons
 - [ ] Design splash screens
 - [ ] Write app store descriptions
@@ -308,6 +336,7 @@ Following Flutter clean architecture principles:
 ## Technical Specifications
 
 ### Folder Structure
+
 ```
 mobile/
 ├── lib/
@@ -336,6 +365,7 @@ mobile/
 ```
 
 ### Performance Targets
+
 - **App Size**: <30MB on iOS, <25MB on Android
 - **Startup Time**: <2 seconds on modern devices
 - **Frame Rate**: 60fps for animations
@@ -343,6 +373,7 @@ mobile/
 - **Battery Impact**: Minimal background drain
 
 ### Device Support
+
 - **iOS**: iOS 12.0 and above
 - **Android**: Android 5.0 (API level 21) and above
 - **Screen Sizes**: All phone and tablet sizes
@@ -351,12 +382,14 @@ mobile/
 ## Security Considerations
 
 ### Data Storage
+
 - Sensitive data encrypted with flutter_secure_storage
 - API tokens stored securely
 - Local database encrypted at rest
 - User credentials never stored locally
 
 ### API Communication
+
 - HTTPS only
 - Certificate pinning for production
 - Token-based authentication
@@ -364,6 +397,7 @@ mobile/
 - Request signing for sensitive operations
 
 ### Code Security
+
 - Obfuscation enabled for release builds
 - API keys stored in environment variables
 - No hardcoded secrets
@@ -385,6 +419,7 @@ mobile/
 ## Platform-Specific Considerations
 
 ### iOS
+
 - App Store review guidelines compliance
 - iOS-specific design patterns
 - Privacy policy requirements
@@ -392,6 +427,7 @@ mobile/
 - Push notification certificates
 
 ### Android
+
 - Google Play policies compliance
 - Material Design guidelines
 - ProGuard configuration
@@ -401,6 +437,7 @@ mobile/
 ## Monitoring & Metrics
 
 ### Key Metrics to Track
+
 - Crash-free rate (>99.5%)
 - App launch time
 - Screen load times
@@ -410,6 +447,7 @@ mobile/
 - Feature adoption
 
 ### Tools
+
 - Firebase Crashlytics
 - Firebase Analytics
 - Firebase Performance Monitoring

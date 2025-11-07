@@ -10,17 +10,21 @@
 ## Risk Assessment Scale
 
 ### Probability Scale
+
 - **High**: > 70% likelihood
 - **Medium**: 30-70% likelihood
 - **Low**: < 30% likelihood
 
 ### Impact Scale
+
 - **High**: Significant impact on scope, timeline, or budget (> 20%)
 - **Medium**: Moderate impact (10-20%)
 - **Low**: Minor impact (< 10%)
 
 ### Risk Score
+
 Risk Score = Probability × Impact
+
 - **Critical**: High/High (9)
 - **High**: High/Medium or Medium/High (6)
 - **Medium**: High/Low, Medium/Medium, or Low/High (3-4)
@@ -31,23 +35,23 @@ Risk Score = Probability × Impact
 
 ## Active Risks
 
-| Risk ID | Category | Description | Probability | Impact | Score | Owner | Status |
-|---------|----------|-------------|-------------|---------|-------|-------|--------|
-| R-001 | Team | Team Assembly Delays | Medium | High | 6 | PM | Active |
-| R-002 | Content | Theological Content Quality Issues | Medium | High | 6 | PO | Active |
-| R-003 | Scope | Scope Creep | High | Medium | 6 | PM | Active |
-| R-004 | Technical | Technical Complexity Underestimated | Medium | Medium | 4 | SA | Active |
-| R-005 | User | Low User Adoption | Medium | High | 6 | PO | Active |
-| R-006 | Budget | Budget Constraints | Medium | Medium | 4 | PM | Active |
-| R-007 | Technical | Platform Scalability Issues | Low | High | 3 | SA | Active |
-| R-008 | Content | Content Creation Bottleneck | Medium | Medium | 4 | PO | Active |
-| R-009 | External | Theological Advisor Availability | Medium | Medium | 4 | PM | Active |
-| R-010 | Team | Remote Team Coordination | Medium | Low | 2 | PM | Active |
-| R-011 | Technical | Security Vulnerabilities | Low | High | 3 | SA | Active |
-| R-012 | External | Third-Party Service Disruptions | Low | Medium | 2 | SA | Active |
-| R-013 | User | Privacy/Data Protection Concerns | Low | High | 3 | PM/SA | Active |
-| R-014 | Market | Competitor Emergence | Low | Medium | 2 | PO | Active |
-| R-015 | Technical | Mobile Platform Fragmentation | Medium | Low | 2 | Mobile Dev | Active |
+| Risk ID | Category  | Description                         | Probability | Impact | Score | Owner      | Status |
+| ------- | --------- | ----------------------------------- | ----------- | ------ | ----- | ---------- | ------ |
+| R-001   | Team      | Team Assembly Delays                | Medium      | High   | 6     | PM         | Active |
+| R-002   | Content   | Theological Content Quality Issues  | Medium      | High   | 6     | PO         | Active |
+| R-003   | Scope     | Scope Creep                         | High        | Medium | 6     | PM         | Active |
+| R-004   | Technical | Technical Complexity Underestimated | Medium      | Medium | 4     | SA         | Active |
+| R-005   | User      | Low User Adoption                   | Medium      | High   | 6     | PO         | Active |
+| R-006   | Budget    | Budget Constraints                  | Medium      | Medium | 4     | PM         | Active |
+| R-007   | Technical | Platform Scalability Issues         | Low         | High   | 3     | SA         | Active |
+| R-008   | Content   | Content Creation Bottleneck         | Medium      | Medium | 4     | PO         | Active |
+| R-009   | External  | Theological Advisor Availability    | Medium      | Medium | 4     | PM         | Active |
+| R-010   | Team      | Remote Team Coordination            | Medium      | Low    | 2     | PM         | Active |
+| R-011   | Technical | Security Vulnerabilities            | Low         | High   | 3     | SA         | Active |
+| R-012   | External  | Third-Party Service Disruptions     | Low         | Medium | 2     | SA         | Active |
+| R-013   | User      | Privacy/Data Protection Concerns    | Low         | High   | 3     | PM/SA      | Active |
+| R-014   | Market    | Competitor Emergence                | Low         | Medium | 2     | PO         | Active |
+| R-015   | Technical | Mobile Platform Fragmentation       | Medium      | Low    | 2     | Mobile Dev | Active |
 
 ---
 
@@ -63,12 +67,14 @@ Risk Score = Probability × Impact
 **Risk Score**: 6
 
 **Triggers**:
+
 - Limited applicant pool
 - Competing offers from other companies
 - Salary/budget constraints
 - Timing conflicts
 
 **Mitigation Strategies**:
+
 1. **Proactive Recruitment**:
    - Start recruitment immediately
    - Network in Catholic tech communities
@@ -88,6 +94,7 @@ Risk Score = Probability × Impact
    - Flexible working conditions
 
 **Contingency Plan**:
+
 - If hiring delayed beyond Week 2: Reduce Sprint 1 scope
 - If critical role unfilled: Contract specialist or consultant
 - If multiple roles unfilled: Extend Phase 1 timeline by 2-4 weeks
@@ -108,6 +115,7 @@ Risk Score = Probability × Impact
 **Risk Score**: 6
 
 **Triggers**:
+
 - Inadequate theological review
 - Rush to publish content
 - Lack of qualified reviewers
@@ -115,6 +123,7 @@ Risk Score = Probability × Impact
 - Different theological interpretations
 
 **Mitigation Strategies**:
+
 1. **Review Process**:
    - Establish multi-level review process
    - Require theological advisor approval before publication
@@ -140,6 +149,7 @@ Risk Score = Probability × Impact
    - Have backup content ready
 
 **Contingency Plan**:
+
 - If inaccuracy discovered: Immediate content correction protocol
 - If reviewer unavailable: Backup reviewer list
 - If major theological concern: Escalate to diocese/higher authority
@@ -161,6 +171,7 @@ Risk Score = Probability × Impact
 **Risk Score**: 6
 
 **Triggers**:
+
 - Stakeholder feature requests
 - Team enthusiasm for new ideas
 - User feedback requesting features
@@ -168,6 +179,7 @@ Risk Score = Probability × Impact
 - Unclear MVP definition
 
 **Mitigation Strategies**:
+
 1. **Clear Definition**:
    - Document MVP scope explicitly
    - Create "Future Features" backlog
@@ -193,6 +205,7 @@ Risk Score = Probability × Impact
    - Celebrate saying "no"
 
 **Contingency Plan**:
+
 - If scope expands 10%: Reassess timeline or reduce other features
 - If scope expands 20%: Formal schedule/budget revision
 - If critical feature needed: Trade for existing feature
@@ -214,6 +227,7 @@ Risk Score = Probability × Impact
 **Risk Score**: 4
 
 **Triggers**:
+
 - Novel technology integration
 - Cross-platform compatibility issues
 - Performance optimization needs
@@ -221,6 +235,7 @@ Risk Score = Probability × Impact
 - Third-party API limitations
 
 **Mitigation Strategies**:
+
 1. **Technical Planning**:
    - Architecture Decision Records (ADRs)
    - Proof of concepts for risky areas
@@ -246,6 +261,7 @@ Risk Score = Probability × Impact
    - Security audits
 
 **Contingency Plan**:
+
 - If complexity discovered early: Revise approach or simplify
 - If blockers encountered: Escalate to architect or external expert
 - If timeline impact: Adjust sprint scope or extend timeline
@@ -267,6 +283,7 @@ Risk Score = Probability × Impact
 **Risk Score**: 6
 
 **Triggers**:
+
 - Poor user experience
 - Lack of compelling content
 - Insufficient marketing
@@ -274,6 +291,7 @@ Risk Score = Probability × Impact
 - Mismatch with user needs
 
 **Mitigation Strategies**:
+
 1. **User-Centered Design**:
    - Early and frequent user research
    - Usability testing throughout development
@@ -300,6 +318,7 @@ Risk Score = Probability × Impact
    - App store optimization
 
 **Contingency Plan**:
+
 - If low initial adoption: Increase marketing, gather feedback
 - If high churn: Conduct exit surveys, improve retention features
 - If specific persona not engaging: Targeted content and features
@@ -321,6 +340,7 @@ Risk Score = Probability × Impact
 **Risk Score**: 4
 
 **Triggers**:
+
 - Underestimated costs
 - Delayed funding
 - Cost overruns
@@ -328,6 +348,7 @@ Risk Score = Probability × Impact
 - Economic conditions
 
 **Mitigation Strategies**:
+
 1. **Budget Management**:
    - Detailed budget tracking
    - Regular financial reviews
@@ -355,6 +376,7 @@ Risk Score = Probability × Impact
    - Potential premium features
 
 **Contingency Plan**:
+
 - If 10% over budget: Reduce contingency, optimize costs
 - If 20% over budget: Reduce scope or extend timeline
 - If funding delayed: Reduce team hours or pause non-critical work
@@ -376,6 +398,7 @@ Risk Score = Probability × Impact
 **Risk Score**: 3
 
 **Triggers**:
+
 - Rapid user growth
 - Viral content or events
 - Poor architecture decisions
@@ -383,6 +406,7 @@ Risk Score = Probability × Impact
 - Inadequate infrastructure
 
 **Mitigation Strategies**:
+
 1. **Scalable Architecture**:
    - Stateless services
    - Horizontal scaling capability
@@ -409,6 +433,7 @@ Risk Score = Probability × Impact
    - Proactive capacity planning
 
 **Contingency Plan**:
+
 - If performance degradation: Scale infrastructure immediately
 - If database bottleneck: Optimize queries, add read replicas
 - If sudden traffic spike: Activate auto-scaling, add resources
@@ -430,6 +455,7 @@ Risk Score = Probability × Impact
 **Risk Score**: 4
 
 **Triggers**:
+
 - Limited content creators
 - Theological review delays
 - Quality standards slow production
@@ -437,6 +463,7 @@ Risk Score = Probability × Impact
 - Content creator unavailability
 
 **Mitigation Strategies**:
+
 1. **Content Pipeline**:
    - Build 3-4 week content buffer
    - Content calendar planning
@@ -462,6 +489,7 @@ Risk Score = Probability × Impact
    - Backup content options
 
 **Contingency Plan**:
+
 - If content delayed 1 week: Use buffer content
 - If content delayed 2 weeks: Adjust launch date or reduce content scope
 - If reviewer unavailable: Use backup reviewer
@@ -490,6 +518,7 @@ Risk Score = Probability × Impact
 ## Escalation Criteria
 
 Escalate to Project Sponsor when:
+
 - Critical risk (score 9) identified
 - High risk cannot be adequately mitigated
 - Risk requires funding beyond current budget
@@ -500,9 +529,9 @@ Escalate to Project Sponsor when:
 
 ## Document History
 
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2025-10-19 | Project Manager | Initial risk register creation |
+| Version | Date       | Author          | Changes                        |
+| ------- | ---------- | --------------- | ------------------------------ |
+| 1.0     | 2025-10-19 | Project Manager | Initial risk register creation |
 
 ---
 

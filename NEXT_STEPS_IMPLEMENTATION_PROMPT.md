@@ -1,4 +1,5 @@
 # Next Steps Implementation Prompt
+
 ## For: Building the Eucharist Understanding Platform
 
 **Document Version**: 1.0  
@@ -17,6 +18,7 @@ You are tasked with implementing the **Eucharist Understanding Platform**, a Cat
 ## 📋 Current Status
 
 ### What's Complete ✅
+
 - ✅ **Discovery Phase**: Complete requirements, user research, and planning
 - ✅ **Architecture Design**: Full system architecture, database schemas, API design
 - ✅ **Technical Roadmap**: Sprint-by-sprint implementation plan (12 months)
@@ -25,6 +27,7 @@ You are tasked with implementing the **Eucharist Understanding Platform**, a Cat
 - ✅ **Product Backlog**: User stories, epics, acceptance criteria
 
 ### What's Missing ❌
+
 - ❌ **NO implementation code exists** (backend, frontend, mobile)
 - ❌ **NO databases set up** (PostgreSQL, MongoDB, Redis)
 - ❌ **NO development environment** configured
@@ -53,7 +56,7 @@ You will set up the foundational technical infrastructure for the platform accor
 2. **[TECHNICAL_ROADMAP.md](TECHNICAL_ROADMAP.md)** - Sprint 1 Section (15 min)
    - Lines 46-175: Sprint 1 detailed tasks
    - Backend setup checklist
-   - Frontend setup checklist  
+   - Frontend setup checklist
    - Database schema (lines 115-167)
 
 3. **[docs/sdlc/SOFTWARE_ARCHITECT.md](docs/sdlc/SOFTWARE_ARCHITECT.md)** (20 min)
@@ -86,6 +89,7 @@ You must implement **ALL** of the following tasks according to specifications:
 **Directory**: `/web/backend/`
 
 #### Required Tasks:
+
 ```bash
 ✅ Initialize Node.js project with TypeScript
 ✅ Set up Express server
@@ -100,6 +104,7 @@ You must implement **ALL** of the following tasks according to specifications:
 ```
 
 #### Technical Requirements:
+
 - **TypeScript**: Use strict mode, all types defined
 - **Express**: Version 4.x with async/await patterns
 - **Port**: 3000 for development
@@ -108,6 +113,7 @@ You must implement **ALL** of the following tasks according to specifications:
 - **Logging**: Structured logging with Winston (JSON format)
 
 #### Key Files to Create:
+
 ```
 web/backend/
 ├── src/
@@ -131,6 +137,7 @@ web/backend/
 ```
 
 #### Code Example (from TECHNICAL_ROADMAP.md lines 69-94):
+
 See `TECHNICAL_ROADMAP.md` for complete implementation patterns.
 
 ---
@@ -140,6 +147,7 @@ See `TECHNICAL_ROADMAP.md` for complete implementation patterns.
 **Directory**: `/web/frontend/`
 
 #### Required Tasks:
+
 ```bash
 ✅ Create React app with TypeScript (use Vite or Next.js 14)
 ✅ Set up React Router (or Next.js App Router)
@@ -153,6 +161,7 @@ See `TECHNICAL_ROADMAP.md` for complete implementation patterns.
 ```
 
 #### Technical Requirements:
+
 - **React**: Version 18+ with TypeScript
 - **Styling**: Tailwind CSS v3+
 - **State Management**: Zustand or React Query (see ADRs)
@@ -161,6 +170,7 @@ See `TECHNICAL_ROADMAP.md` for complete implementation patterns.
 - **Routing**: React Router v6 or Next.js App Router
 
 #### Key Files to Create:
+
 ```
 web/frontend/
 ├── src/
@@ -288,7 +298,7 @@ services:
       POSTGRES_USER: dev_user
       POSTGRES_PASSWORD: dev_password
     ports:
-      - "5432:5432"
+      - '5432:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
@@ -298,14 +308,14 @@ services:
       MONGO_INITDB_ROOT_USERNAME: dev_user
       MONGO_INITDB_ROOT_PASSWORD: dev_password
     ports:
-      - "27017:27017"
+      - '27017:27017'
     volumes:
       - mongo_data:/data/db
 
   redis:
     image: redis:7-alpine
     ports:
-      - "6379:6379"
+      - '6379:6379'
     volumes:
       - redis_data:/data
 
@@ -320,6 +330,7 @@ volumes:
 Create `.env.example` files for both backend and frontend with all required variables.
 
 **Backend Example**:
+
 ```env
 NODE_ENV=development
 PORT=3000
@@ -428,11 +439,13 @@ Use TypeScript ESLint with recommended rules:
 ## 🧪 Testing Requirements
 
 ### Minimum Standards (ADR-005):
+
 - **Unit test coverage**: 80% minimum
 - **Co-locate tests**: `*.test.ts` next to `*.ts` files
 - **Framework**: Jest for backend, Jest + React Testing Library for frontend
 
 ### Sprint 1 Testing Tasks:
+
 ```bash
 ✅ Set up Jest configuration
 ✅ Create test utilities and helpers
@@ -467,6 +480,7 @@ Use TypeScript ESLint with recommended rules:
 Before considering Sprint 1 complete, verify:
 
 ### Backend Checklist:
+
 - [ ] Express server runs without errors on `http://localhost:3000`
 - [ ] Health check endpoint responds: `GET /api/health` returns 200 OK
 - [ ] PostgreSQL connection established and verified
@@ -481,6 +495,7 @@ Before considering Sprint 1 complete, verify:
 - [ ] Database indexes created (see schema)
 
 ### Frontend Checklist:
+
 - [ ] React app loads in browser on `http://localhost:5173` or `3001`
 - [ ] Basic layout renders (Header, Footer, main content area)
 - [ ] Tailwind CSS styles apply correctly
@@ -492,6 +507,7 @@ Before considering Sprint 1 complete, verify:
 - [ ] Build process completes successfully (`npm run build`)
 
 ### Infrastructure Checklist:
+
 - [ ] Docker Compose brings up all services
 - [ ] Can connect to all databases from backend
 - [ ] CI/CD pipeline runs successfully on GitHub
@@ -500,6 +516,7 @@ Before considering Sprint 1 complete, verify:
 - [ ] Build job completes
 
 ### Documentation Checklist:
+
 - [ ] README.md updated with setup instructions
 - [ ] Developer onboarding guide created
 - [ ] API endpoint documentation started
@@ -510,6 +527,7 @@ Before considering Sprint 1 complete, verify:
 ## ⚠️ Critical Guidelines
 
 ### DO:
+
 ✅ Follow the **THREE-LAYER PATTERN**: Presentation → Service → Repository  
 ✅ Use **TypeScript strict mode** everywhere  
 ✅ Follow **naming conventions** in PROJECT_STRUCTURE.md  
@@ -518,9 +536,10 @@ Before considering Sprint 1 complete, verify:
 ✅ Use **async/await** patterns (no callbacks)  
 ✅ Follow **RESTful API conventions**  
 ✅ Commit frequently with **Conventional Commits** (`feat:`, `fix:`, `docs:`)  
-✅ Reference **ADRs** for architectural decisions  
+✅ Reference **ADRs** for architectural decisions
 
 ### DON'T:
+
 ❌ Mix database concerns (users in PostgreSQL, content in MongoDB)  
 ❌ Store secrets in code or commit `.env` files  
 ❌ Skip security measures (even in development)  
@@ -528,7 +547,7 @@ Before considering Sprint 1 complete, verify:
 ❌ Create implementation code without reading docs first  
 ❌ Skip writing tests  
 ❌ Make architectural changes without creating ADR  
-❌ Use Firebase for backend database (only for mobile auth in Phase 2)  
+❌ Use Firebase for backend database (only for mobile auth in Phase 2)
 
 ---
 
@@ -554,6 +573,7 @@ Sprint 1 is **DONE** when:
 Once Sprint 1 is complete, you'll move to **Sprint 2: Authentication & User Management (Weeks 3-4)**
 
 Preview of Sprint 2 tasks:
+
 - Implement user registration endpoint
 - Implement login with JWT
 - Password reset flow
@@ -577,17 +597,17 @@ Preview of Sprint 2 tasks:
 
 ### Key Documentation Map:
 
-| Need | Document | Lines |
-|------|----------|-------|
-| Architecture patterns | SOFTWARE_ARCHITECT.md | 44-300 |
-| Database schemas | SOFTWARE_ARCHITECT.md | 400-800 |
-| API design | SOFTWARE_ARCHITECT.md | 800-950 |
-| Sprint 1 tasks | TECHNICAL_ROADMAP.md | 46-175 |
-| Sprint 2 tasks | TECHNICAL_ROADMAP.md | 176-275 |
-| Code examples | TECHNICAL_ROADMAP.md | 69-94, 199-245 |
-| Directory structure | PROJECT_STRUCTURE.md | 1-200 |
-| Security requirements | SOFTWARE_ARCHITECT.md | 1000-1100 |
-| CI/CD specs | ADR-005 | Full document |
+| Need                  | Document              | Lines          |
+| --------------------- | --------------------- | -------------- |
+| Architecture patterns | SOFTWARE_ARCHITECT.md | 44-300         |
+| Database schemas      | SOFTWARE_ARCHITECT.md | 400-800        |
+| API design            | SOFTWARE_ARCHITECT.md | 800-950        |
+| Sprint 1 tasks        | TECHNICAL_ROADMAP.md  | 46-175         |
+| Sprint 2 tasks        | TECHNICAL_ROADMAP.md  | 176-275        |
+| Code examples         | TECHNICAL_ROADMAP.md  | 69-94, 199-245 |
+| Directory structure   | PROJECT_STRUCTURE.md  | 1-200          |
+| Security requirements | SOFTWARE_ARCHITECT.md | 1000-1100      |
+| CI/CD specs           | ADR-005               | Full document  |
 
 ---
 

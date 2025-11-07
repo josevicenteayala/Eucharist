@@ -1,0 +1,41 @@
+{
+  "name": "eucharist-platform",
+  "version": "1.0.0",
+  "description": "Catholic education platform helping people understand and live the Eucharist",
+  "private": true,
+  "workspaces": [
+    "web/backend",
+    "web/frontend"
+  ],
+  "scripts": {
+    "lint": "npm run lint --workspaces --if-present",
+    "lint:fix": "npm run lint:fix --workspaces --if-present",
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,md,yml,yaml}'",
+    "format:check": "prettier --check '**/*.{js,jsx,ts,tsx,json,md,yml,yaml}'",
+    "test": "npm run test --workspaces --if-present",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "eucharist",
+    "catholic",
+    "education",
+    "spiritual",
+    "faith"
+  ],
+  "author": "Eucharist Platform Team",
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.4.2"
+  }
+}
