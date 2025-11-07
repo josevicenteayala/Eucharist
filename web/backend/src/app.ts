@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { config } from './config/env';
+import { stream } from './config/logger';
 import { errorHandler } from './middleware/errorHandler';
 import routes from './routes';
 
@@ -23,11 +24,11 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Logging middleware
+// Logging middleware - integrate Morgan with Winston
 if (config.nodeEnv === 'development') {
-  app.use(morgan('dev'));
+  app.use(morgan('dev', { stream }));
 } else {
-  app.use(morgan('combined'));
+  app.use(morgan('combined', { stream }));
 }
 
 // API routes

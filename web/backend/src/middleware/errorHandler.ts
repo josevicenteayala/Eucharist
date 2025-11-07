@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { config } from '../config/env';
+import logger from '../config/logger';
 
 export interface ApiError extends Error {
   statusCode?: number;
@@ -12,11 +13,14 @@ export const errorHandler = (err: ApiError, _req: Request, res: Response, _next:
   const message = err.message || 'Internal Server Error';
   const code = err.code || 'INTERNAL_ERROR';
 
-  // Log error (in production, use proper logging library like Winston)
-  if (config.nodeEnv === 'development') {
-    // eslint-disable-next-line no-console
-    console.error('Error:', err);
-  }
+  // Log error using Winston
+  logger.error('API Error', {
+    statusCode,
+    code,
+    message,
+    stack: err.stack,
+    details: err.details,
+  });
 
   const errorResponse: {
     success: boolean;
