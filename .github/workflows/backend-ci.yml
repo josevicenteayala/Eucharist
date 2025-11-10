@@ -16,6 +16,9 @@ defaults:
   run:
     working-directory: web/backend
 
+env:
+  HUSKY: 0  # Skip Husky Git hooks installation in CI
+
 jobs:
   lint:
     runs-on: ubuntu-latest
