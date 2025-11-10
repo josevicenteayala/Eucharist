@@ -1,5 +1,8 @@
 # Eucharist Web Backend
 
+[![Backend CI](https://github.com/josevicenteayala/Eucharist/actions/workflows/backend-ci.yml/badge.svg)](https://github.com/josevicenteayala/Eucharist/actions/workflows/backend-ci.yml)
+[![codecov](https://codecov.io/gh/josevicenteayala/Eucharist/branch/main/graph/badge.svg?flag=backend)](https://codecov.io/gh/josevicenteayala/Eucharist)
+
 Node.js + Express + TypeScript REST API backend for the Eucharist Understanding Platform.
 
 ## Overview
