@@ -151,8 +151,8 @@ describe('MongoDB Connection', () => {
     expect(mockConnect).toHaveBeenCalledWith(
       expect.stringContaining('mongodb://'),
       expect.objectContaining({
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+        serverSelectionTimeoutMS: expect.any(Number),
+        socketTimeoutMS: expect.any(Number),
       })
     );
   });
