@@ -1,0 +1,147 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'web/backend/**'
+      - '.github/workflows/backend-ci.yml'
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - 'web/backend/**'
+      - '.github/workflows/backend-ci.yml'
+
+env:
+  HUSKY: 0  # Skip Husky Git hooks installation in CI
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: web/backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: web/backend
+
+      - name: Run ESLint
+        run: npm run lint
+        working-directory: web/backend
+
+      - name: Check code formatting
+        run: npm run format:check
+        working-directory: web/backend
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: web/backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: web/backend
+
+      - name: Run tests with coverage
+        run: npm run test:coverage
+        working-directory: web/backend
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./web/backend/coverage/coverage-final.json
+          flags: backend
+          name: backend-coverage
+          fail_ci_if_error: false
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload coverage reports as artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: backend-coverage-report
+          path: web/backend/coverage/
+          retention-days: 30
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: web/backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: web/backend
+
+      - name: Run TypeScript compiler check
+        run: npm run typecheck
+        working-directory: web/backend
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: web/backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: web/backend
+
+      - name: Run npm audit
+        run: npm audit --audit-level=moderate
+        working-directory: web/backend
+
+  build:
+    needs: [lint, test, typecheck, security]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: web/backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: web/backend
+
+      - name: Build
+        run: npm run build
+        working-directory: web/backend
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-build
+          path: web/backend/dist/
+          retention-days: 7
