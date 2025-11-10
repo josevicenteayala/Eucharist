@@ -109,10 +109,10 @@ jobs:
 
       - name: Run npm audit
         run: npm audit --audit-level=moderate
-        continue-on-error: true
+
 
   build:
-    needs: [lint, test, typecheck]
+    needs: [lint, test, typecheck, security]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
