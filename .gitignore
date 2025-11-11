@@ -250,3 +250,11 @@ docker-compose.override.yml
 *.sqlite
 *.sqlite3
 # Root package-lock.json is tracked for reproducible builds
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+
+# Vercel
+.vercel
