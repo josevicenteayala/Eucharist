@@ -252,7 +252,51 @@ flutter build apk          # Mobile
 
 **Note:** Git hooks will automatically run linting and formatting on staged files before commit.
 
-### 5. Keep Your Branch Updated
+### 5. Code Coverage Requirements
+
+All code contributions must maintain or improve test coverage:
+
+**Minimum Coverage Thresholds: 80%**
+
+- Lines: 80%
+- Branches: 80%
+- Functions: 80%
+- Statements: 80%
+
+**Running Coverage Reports:**
+
+```bash
+# Backend coverage
+cd web/backend && npm run test:coverage
+
+# View coverage report in browser
+# Open web/backend/coverage/lcov-report/index.html
+```
+
+**Coverage Guidelines:**
+
+- Write tests for all new functions and features
+- Test both success and error paths
+- Include edge cases and boundary conditions
+- Mock external dependencies (databases, APIs)
+- Co-locate unit tests next to source files when appropriate
+- Use test files named `*.test.ts` or `*.spec.ts`
+
+**CI/CD Integration:**
+
+- Coverage reports are automatically generated on every PR
+- Coverage badges show current coverage status
+- PRs that significantly decrease coverage may be rejected
+- View detailed coverage reports in GitHub Actions artifacts
+
+**Understanding Coverage Reports:**
+
+- **Lines**: Percentage of executable lines run during tests
+- **Branches**: Percentage of conditional branches (if/else) tested
+- **Functions**: Percentage of functions called during tests
+- **Statements**: Percentage of statements executed
+
+### 6. Keep Your Branch Updated
 
 ```bash
 git fetch upstream

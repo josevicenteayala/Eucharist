@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Discovery%20Phase-yellow.svg)]()
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Backend CI](https://github.com/josevicenteayala/Eucharist/actions/workflows/backend-ci.yml/badge.svg)](https://github.com/josevicenteayala/Eucharist/actions/workflows/backend-ci.yml)
+[![codecov](https://codecov.io/gh/josevicenteayala/Eucharist/branch/main/graph/badge.svg)](https://codecov.io/gh/josevicenteayala/Eucharist)
 
 ## 🙏 Mission
 
