@@ -12,10 +12,12 @@ module.exports = [
       '**/*.config.js',
       '**/.next/**',
       '**/out/**',
+      'web/frontend/**',
     ],
   },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    ignores: ['web/frontend/**'],
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {
