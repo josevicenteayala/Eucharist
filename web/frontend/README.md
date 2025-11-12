@@ -86,6 +86,8 @@ NEXT_PUBLIC_APP_NAME=Eucharist Platform
 NEXT_PUBLIC_APP_URL=http://localhost:3001
 ```
 
+See the [Environment Setup Guide](../../ENVIRONMENT_SETUP.md) for detailed configuration instructions and troubleshooting.
+
 ## Available Scripts
 
 - `npm run dev` - Start development server on port 3000
@@ -107,7 +109,7 @@ Located in `src/store/`:
 Example usage:
 
 ```typescript
-import { useUserStore } from "@/store/userStore";
+import { useUserStore } from '@/store/userStore';
 
 function MyComponent() {
   const { user, isAuthenticated, setUser, logout } = useUserStore();
@@ -127,13 +129,13 @@ Configured in `src/components/common/Providers.tsx` with default options:
 Example usage:
 
 ```typescript
-import { useQuery } from "@tanstack/react-query";
-import { apiClient } from "@/services/api";
+import { useQuery } from '@tanstack/react-query';
+import { apiClient } from '@/services/api';
 
 function MyComponent() {
   const { data, isLoading, error } = useQuery({
-    queryKey: ["key"],
-    queryFn: () => apiClient.get("/endpoint").then((res) => res.data),
+    queryKey: ['key'],
+    queryFn: () => apiClient.get('/endpoint').then((res) => res.data),
   });
   // ...
 }

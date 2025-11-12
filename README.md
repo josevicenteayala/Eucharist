@@ -60,6 +60,7 @@ The Eucharist Understanding Platform will consist of:
 ### Core Documents
 
 - ⭐ **[Next Steps Implementation Prompt](NEXT_STEPS_IMPLEMENTATION_PROMPT.md)** - **NEW!** Complete guide for starting Sprint 1
+- **[Environment Setup Guide](ENVIRONMENT_SETUP.md)** - Configure environment variables for development
 - **[Discovery Phase Document](DISCOVERY.md)** - Comprehensive project vision, goals, and planning
 - **[Executive Summary](EXECUTIVE_SUMMARY.md)** - High-level overview for stakeholders
 - **[Quick Start for PM](QUICK_START_PM.md)** - Project Manager's first 4 weeks
@@ -152,7 +153,23 @@ _See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for detailed structure._
    npm install
    ```
 
-3. **Linting and Formatting**
+3. **Configure environment variables**
+
+   ```bash
+   # Backend
+   cd web/backend
+   cp .env.example .env
+   # Edit .env with your configuration
+
+   # Frontend
+   cd web/frontend
+   cp .env.example .env.local
+   # Edit .env.local with your configuration
+   ```
+
+   See [Environment Setup Guide](ENVIRONMENT_SETUP.md) for detailed configuration instructions.
+
+4. **Linting and Formatting**
 
    ```bash
    # Check code formatting
@@ -168,13 +185,13 @@ _See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for detailed structure._
    npm run lint:fix
    ```
 
-4. **Git Hooks**
+5. **Git Hooks**
 
    Pre-commit hooks are automatically installed via Husky. They will:
    - Run ESLint and fix issues on staged `.js`, `.jsx`, `.ts`, `.tsx` files
    - Format all staged files with Prettier
 
-5. **Working with Backend**
+6. **Working with Backend**
 
    ```bash
    cd web/backend
