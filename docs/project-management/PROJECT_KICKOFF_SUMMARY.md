@@ -168,7 +168,7 @@ As the Project Manager role for the Eucharist Understanding Platform, I have suc
 
 ### 7. Status Reporting Templates ✅
 
-**Location**: `docs/project-management/templates/STATUS_REPORTING_TEMPLATES.md`
+**Location**: `../templates/STATUS_REPORTING_TEMPLATES.md`
 
 **5 Templates Created**:
 
@@ -474,7 +474,7 @@ Every decision, every feature, every line of code should serve this mission. Whe
 
 **Getting Started**:
 
-- Review: docs/project-management/README.md
+- Review: README.md
 - Review: QUICK_START_PM.md
 
 ---
@@ -491,15 +491,15 @@ All necessary artifacts, plans, and documentation are in place to launch this pr
 
 ### Project Management Documentation
 
-- [Project Charter](docs/project-management/charters/PROJECT_CHARTER.md)
-- [User Stories Backlog](docs/project-management/stories/USER_STORIES_BACKLOG.md)
-- [Sprint 1 Plan](docs/project-management/plans/SPRINT_1_PLAN.md)
-- [Risk Register](docs/project-management/risks/RISK_REGISTER.md)
-- [Stakeholder Communication Plan](docs/project-management/plans/STAKEHOLDER_COMMUNICATION_PLAN.md)
-- [Team Roster Template](docs/project-management/templates/TEAM_ROSTER_TEMPLATE.md)
-- [Status Reporting Templates](docs/project-management/templates/STATUS_REPORTING_TEMPLATES.md)
-- [Role Coordination Guide](docs/project-management/ROLE_COORDINATION_GUIDE.md)
-- [PM Documentation README](docs/project-management/README.md)
+- [Project Charter](../charters/PROJECT_CHARTER.md)
+- [User Stories Backlog](../stories/USER_STORIES_BACKLOG.md)
+- [Sprint 1 Plan](../plans/SPRINT_1_PLAN.md)
+- [Risk Register](../risks/RISK_REGISTER.md)
+- [Stakeholder Communication Plan](../plans/STAKEHOLDER_COMMUNICATION_PLAN.md)
+- [Team Roster Template](../templates/TEAM_ROSTER_TEMPLATE.md)
+- [Status Reporting Templates](../templates/STATUS_REPORTING_TEMPLATES.md)
+- [Role Coordination Guide](../ROLE_COORDINATION_GUIDE.md)
+- [PM Documentation README](../README.md)
 
 ### SDLC Role Documents
 

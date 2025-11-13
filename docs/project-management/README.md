@@ -443,7 +443,7 @@ RISK_REGISTER
 
 ### Contributing
 
-See [CONTRIBUTING.md](../../CONTRIBUTING.md) for how to contribute to project documentation.
+See [CONTRIBUTING.md](../../docs/CONTRIBUTING.md) for how to contribute to project documentation.
 
 ---
 
@@ -476,7 +476,7 @@ This project management framework is built on:
 ### Development
 
 - [CONTRIBUTING.md](../../docs/CONTRIBUTING.md) - How to contribute
-- [README.md](../../docs/README.md) - Project readme
+- [README.md](README.md) - Project readme
 
 ---
 

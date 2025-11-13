@@ -1049,9 +1049,8 @@ Every feature must meet these criteria before acceptance:
 
 ### Catholic Resources
 
-- [Catechism of the Catholic Church](https://www.usccb.org/beliefs-and-teachings/what-we-believe/catechism) - Primary source
+- [Catechism of the Catholic Church](https://www.usccb.org/resources/catechism-catholic-church-0) - Primary source
 - [Vatican Documents](https://www.vatican.va/) - Official teaching
-- [USCCB](https://www.usccb.org/) - U.S. Catholic resources
 
 ### Product Management Resources
 

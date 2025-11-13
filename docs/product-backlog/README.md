@@ -114,10 +114,10 @@ See [PRODUCT_OWNER.md](/docs/sdlc/PRODUCT_OWNER.md) for detailed metrics and KPI
 
 ## Key Product Owner Resources
 
-- **[Product Owner Guide](/docs/sdlc/PRODUCT_OWNER.md)** - Complete PO role documentation
-- **[Discovery Document](/DISCOVERY.md)** - Project vision and requirements
-- **[Technical Roadmap](/TECHNICAL_ROADMAP.md)** - Technical implementation details
-- **[Project Structure](/PROJECT_STRUCTURE.md)** - Repository organization
+- **[Product Owner Guide](../sdlc/PRODUCT_OWNER.md)** - Complete PO role documentation
+- **[Discovery Document](../../DISCOVERY.md)** - Project vision and requirements
+- **[Technical Roadmap](../TECHNICAL_ROADMAP.md)** - Technical implementation details
+- **[Project Structure](../PROJECT_STRUCTURE.md)** - Repository organization
 
 ## Product Vision
 

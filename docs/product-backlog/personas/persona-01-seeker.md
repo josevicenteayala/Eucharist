@@ -8,7 +8,6 @@
 **Tech Savviness**: High - comfortable with apps and technology  
 **Faith Journey Stage**: Questioning / Exploring / Beginning
 
-![The Seeker](../../../docs/assets/personas/seeker.png)
 _Note: Add persona illustration when available_
 
 ## Background & Context
