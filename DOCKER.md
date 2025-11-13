@@ -89,6 +89,7 @@ docker compose down -v
 - **Health Check**: Pings `/api/v1/health` endpoint
 
 The backend service will:
+
 1. Install npm dependencies on first start (cached in named volume)
 2. Connect to all three databases
 3. Start the development server with `nodemon`
@@ -103,6 +104,7 @@ The backend service will:
 - **Health Check**: Pings root endpoint
 
 The frontend service will:
+
 1. Install npm dependencies on first start (cached in named volume)
 2. Start the Next.js development server
 3. Auto-reload when code changes are detected
@@ -138,11 +140,13 @@ The frontend service will:
 All code changes are automatically detected and hot-reloaded:
 
 **Backend Changes**:
+
 1. Edit files in `web/backend/src/`
 2. Nodemon detects changes and restarts the server
 3. Refresh your API client or browser
 
 **Frontend Changes**:
+
 1. Edit files in `web/frontend/src/`
 2. Next.js Fast Refresh updates the browser automatically
 3. Changes appear in seconds
@@ -150,6 +154,7 @@ All code changes are automatically detected and hot-reloaded:
 ### Installing New Dependencies
 
 **Backend**:
+
 ```bash
 # Option 1: Restart the container (will run npm install)
 docker compose restart backend
@@ -159,6 +164,7 @@ docker compose exec backend npm install <package-name>
 ```
 
 **Frontend**:
+
 ```bash
 # Option 1: Restart the container
 docker compose restart frontend
@@ -213,17 +219,20 @@ Data is stored in named Docker volumes and persists across container restarts:
 ### Backing Up Data
 
 **PostgreSQL**:
+
 ```bash
 docker compose exec postgres pg_dump -U postgres eucharist_db > backup.sql
 ```
 
 **MongoDB**:
+
 ```bash
 docker compose exec mongodb mongodump --db eucharist --out /data/backup
 docker compose cp mongodb:/data/backup ./mongodb-backup
 ```
 
 **Redis**:
+
 ```bash
 docker compose exec redis redis-cli SAVE
 docker compose cp redis:/data/dump.rdb ./redis-backup.rdb
@@ -232,12 +241,14 @@ docker compose cp redis:/data/dump.rdb ./redis-backup.rdb
 ### Resetting Data
 
 **All Databases** (WARNING: Deletes all data):
+
 ```bash
 docker compose down -v
 docker compose up -d
 ```
 
 **Specific Database**:
+
 ```bash
 # PostgreSQL
 docker compose exec postgres psql -U postgres -c "DROP DATABASE eucharist_db;"
@@ -255,17 +266,20 @@ docker compose exec redis redis-cli FLUSHALL
 ### Containers Won't Start
 
 **Check Docker is running**:
+
 ```bash
 docker ps
 ```
 
 **View logs for errors**:
+
 ```bash
 docker compose logs backend
 docker compose logs frontend
 ```
 
 **Clean restart**:
+
 ```bash
 docker compose down
 docker compose up -d
@@ -276,6 +290,7 @@ docker compose up -d
 If you see "port is already allocated" errors:
 
 **Check what's using the port**:
+
 ```bash
 # Linux/macOS
 lsof -i :3000
@@ -289,11 +304,12 @@ netstat -ano | findstr :3000
 ```
 
 **Solution**:
+
 1. Stop the conflicting service, OR
 2. Edit `docker-compose.yml` to use different ports:
    ```yaml
    ports:
-     - '3010:3000'  # Maps host port 3010 to container port 3000
+     - '3010:3000' # Maps host port 3010 to container port 3000
    ```
 
 ### Database Connection Issues
@@ -301,12 +317,15 @@ netstat -ano | findstr :3000
 **Backend can't connect to databases**:
 
 1. Check all databases are healthy:
+
    ```bash
    docker compose ps
    ```
+
    All services should show `healthy` status.
 
 2. Check database logs:
+
    ```bash
    docker compose logs postgres
    docker compose logs mongodb
@@ -325,12 +344,14 @@ netstat -ano | findstr :3000
 **If code changes don't trigger reload**:
 
 1. Check the logs for errors:
+
    ```bash
    docker compose logs -f backend
    docker compose logs -f frontend
    ```
 
 2. Manually restart the service:
+
    ```bash
    docker compose restart backend
    docker compose restart frontend
@@ -355,12 +376,14 @@ docker compose up -d
 ### Container Keeps Restarting
 
 Check logs for the failing service:
+
 ```bash
 docker compose logs backend
 docker compose logs frontend
 ```
 
 Common causes:
+
 - Syntax errors in code
 - Missing dependencies (run `npm install` inside container)
 - Database not ready (check health status)
@@ -372,6 +395,7 @@ You may want to run backend/frontend natively for better performance:
 ### 1. Start Only Databases
 
 Create `docker-compose.databases.yml`:
+
 ```yaml
 services:
   postgres:
@@ -383,6 +407,7 @@ services:
 ```
 
 Or use the provided backend docker-compose:
+
 ```bash
 cd web/backend
 docker compose up -d
@@ -413,6 +438,7 @@ npm run dev
 ⚠️ **This docker-compose.yml is for DEVELOPMENT ONLY**
 
 For production:
+
 - Use proper secrets management (not hardcoded passwords)
 - Build optimized production images
 - Use separate docker-compose for production
