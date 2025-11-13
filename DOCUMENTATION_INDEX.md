@@ -112,7 +112,7 @@ These detailed documents define specific tasks, workflows, and best practices fo
 - **[ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md)** - Configure environment variables for development
 - **[TECHNICAL_ROADMAP.md](docs/TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
 - **[docs/sdlc/SOFTWARE_ARCHITECT.md](docs/sdlc/SOFTWARE_ARCHITECT.md)** - Architecture reference
-- **[PROJECT_STRUCTURE.md](/ocs/PROJECT_STRUCTURE.md)** - Code organization
+- **[PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)** - Code organization
 - **[CONTRIBUTING.md](docs/CONTRIBUTING.md)** - Development guidelines
 
 **Key Sections:**
@@ -129,7 +129,7 @@ These detailed documents define specific tasks, workflows, and best practices fo
 **Start Here:**
 
 - **[DISCOVERY.md](DISCOVERY.md)** - User personas and use cases
-- **[CONTRIBUTING.md](/docs/CONTRIBUTING.md)** - Design contribution guidelines
+- **[CONTRIBUTING.md](docs/CONTRIBUTING.md)** - Design contribution guidelines
 
 **Key Sections:**
 
@@ -143,7 +143,7 @@ These detailed documents define specific tasks, workflows, and best practices fo
 
 **Start Here:**
 
-- **[CONTRIBUTING.md](/docs/CONTRIBUTING.md)** - Content guidelines and review process
+- **[CONTRIBUTING.md](docs/CONTRIBUTING.md)** - Content guidelines and review process
 - **[DISCOVERY.md](DISCOVERY.md)** - Content strategy and topics
 
 **Key Sections:**
@@ -159,7 +159,7 @@ These detailed documents define specific tasks, workflows, and best practices fo
 **Start Here:**
 
 - **[README.md](README.md)** - Project overview
-- **[CONTRIBUTING.md](/docs/CONTRIBUTING.md)** - How to contribute
+- **[CONTRIBUTING.md](docs/CONTRIBUTING.md)** - How to contribute
 
 **Key Sections:**
 
@@ -197,15 +197,15 @@ These detailed documents define specific tasks, workflows, and best practices fo
 
 ### Development Process
 
-- **[TECHNICAL_ROADMAP.md](/docs/TECHNICAL_ROADMAP.md)** - Sprint-by-sprint plan
-- **[PROJECT_STRUCTURE.md](/docs/PROJECT_STRUCTURE.md)** - Development workflow
-- **[CONTRIBUTING.md](/docs/CONTRIBUTING.md)** - Development standards
+- **[TECHNICAL_ROADMAP.md](docs/TECHNICAL_ROADMAP.md)** - Sprint-by-sprint plan
+- **[PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)** - Development workflow
+- **[CONTRIBUTING.md](docs/CONTRIBUTING.md)** - Development standards
 
 ### Content Strategy
 
 - **[DISCOVERY.md](DISCOVERY.md)** - Section: Content Strategy
-- **[PROJECT_STRUCTURE.md](/docs/PROJECT_STRUCTURE.md)** - Section: Content Management
-- **[CONTRIBUTING.md](/docs/CONTRIBUTING.md)** - Section: Content Guidelines
+- **[PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)** - Section: Content Management
+- **[CONTRIBUTING.md](docs/CONTRIBUTING.md)** - Section: Content Guidelines
 
 ### Roadmap & Timeline
 
@@ -336,7 +336,7 @@ These detailed documents define specific tasks, workflows, and best practices fo
 - Performance optimization
 - Monitoring setup
 
-### [CONTRIBUTING.md](/docs/CONTRIBUTING.md)
+### [CONTRIBUTING.md](docs/CONTRIBUTING.md)
 
 **Purpose:** Guide for all contributors  
 **Length:** ~585 lines  
