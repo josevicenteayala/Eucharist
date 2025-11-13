@@ -332,10 +332,10 @@ npm test -- --coverage --collectCoverageFrom="src/config/database/mongodb.ts"
 
 ## Resources
 
-- [Testing Guide](../../web/backend/TESTING.md)
+- [Testing Guide](../../../web/backend/TESTING.md)
 - [Jest Documentation](https://jestjs.io/docs/getting-started)
 - [Testing Best Practices](https://github.com/goldbergyoni/javascript-testing-best-practices)
-- [Coverage Reports in CI](../../.github/workflows/backend-ci.yml)
+- [Coverage Reports in CI](../../../.github/workflows/backend-ci.yml)
 
 ## Questions & Support
 
