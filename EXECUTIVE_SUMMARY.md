@@ -283,7 +283,7 @@ This repository contains comprehensive documentation for all aspects of the proj
 
 1. **Review** the [Discovery Document](DISCOVERY.md) for complete details
 2. **Check** the [Quick Start Guide](QUICK_START_PM.md) for immediate actions
-3. **Explore** the [Technical Roadmap](TECHNICAL_ROADMAP.md) for implementation plan
+3. **Explore** the [Technical Roadmap](/docs/TECHNICAL_ROADMAP.md) for implementation plan
 4. **Join** the project team or become a contributor
 
 ### Questions?
@@ -318,7 +318,7 @@ _— Second Vatican Council, Lumen Gentium_
 
 **Let's Build This Together! 🙏✝️**
 
-[Read Full Discovery](DISCOVERY.md) • [Start as PM](QUICK_START_PM.md) • [Technical Roadmap](TECHNICAL_ROADMAP.md) • [Contribute](CONTRIBUTING.md)
+[Read Full Discovery](DISCOVERY.md) • [Start as PM](QUICK_START_PM.md) • [Technical Roadmap](/docs/TECHNICAL_ROADMAP.md) • [Contribute](/docs/CONTRIBUTING.md)
 
 </div>
 
