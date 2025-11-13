@@ -90,8 +90,8 @@ These detailed documents define specific tasks, workflows, and best practices fo
 **Start Here:**
 
 - **[docs/sdlc/SOFTWARE_ARCHITECT.md](docs/sdlc/SOFTWARE_ARCHITECT.md)** - ⭐ **NEW** Architecture handbook
-- **[TECHNICAL_ROADMAP.md](TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
-- **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** - Architecture and code organization
+- **[TECHNICAL_ROADMAP.md](docs/TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
+- **[PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)** - Architecture and code organization
 
 **What's New in Architect Guide:**
 
@@ -110,10 +110,10 @@ These detailed documents define specific tasks, workflows, and best practices fo
 
 - ⭐ **[NEXT_STEPS_IMPLEMENTATION_PROMPT.md](NEXT_STEPS_IMPLEMENTATION_PROMPT.md)** - **NEW!** Start building Sprint 1
 - **[ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md)** - Configure environment variables for development
-- **[TECHNICAL_ROADMAP.md](/docs/TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
+- **[TECHNICAL_ROADMAP.md](docs/TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
 - **[docs/sdlc/SOFTWARE_ARCHITECT.md](docs/sdlc/SOFTWARE_ARCHITECT.md)** - Architecture reference
-- **[PROJECT_STRUCTURE.md](/docs/PROJECT_STRUCTURE.md)** - Code organization
-- **[CONTRIBUTING.md](/docs/CONTRIBUTING.md)** - Development guidelines
+- **[PROJECT_STRUCTURE.md](/ocs/PROJECT_STRUCTURE.md)** - Code organization
+- **[CONTRIBUTING.md](docs/CONTRIBUTING.md)** - Development guidelines
 
 **Key Sections:**
 

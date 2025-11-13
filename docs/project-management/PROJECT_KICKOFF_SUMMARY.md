@@ -491,15 +491,15 @@ All necessary artifacts, plans, and documentation are in place to launch this pr
 
 ### Project Management Documentation
 
-- [Project Charter](../charters/PROJECT_CHARTER.md)
-- [User Stories Backlog](../stories/USER_STORIES_BACKLOG.md)
-- [Sprint 1 Plan](../plans/SPRINT_1_PLAN.md)
-- [Risk Register](../risks/RISK_REGISTER.md)
-- [Stakeholder Communication Plan](../plans/STAKEHOLDER_COMMUNICATION_PLAN.md)
-- [Team Roster Template](../templates/TEAM_ROSTER_TEMPLATE.md)
-- [Status Reporting Templates](../templates/STATUS_REPORTING_TEMPLATES.md)
-- [Role Coordination Guide](../ROLE_COORDINATION_GUIDE.md)
-- [PM Documentation README](../README.md)
+- [Project Charter](charters/PROJECT_CHARTER.md)
+- [User Stories Backlog](stories/USER_STORIES_BACKLOG.md)
+- [Sprint 1 Plan](plans/SPRINT_1_PLAN.md)
+- [Risk Register](risks/RISK_REGISTER.md)
+- [Stakeholder Communication Plan](plans/STAKEHOLDER_COMMUNICATION_PLAN.md)
+- [Team Roster Template](templates/TEAM_ROSTER_TEMPLATE.md)
+- [Status Reporting Templates](templates/STATUS_REPORTING_TEMPLATES.md)
+- [Role Coordination Guide](ROLE_COORDINATION_GUIDE.md)
+- [PM Documentation README](README.md)
 
 ### SDLC Role Documents
 
