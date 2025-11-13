@@ -1057,7 +1057,6 @@ Every feature must meet these criteria before acceptance:
 - [Roman Pichler Blog](https://www.romanpichler.com/) - Product ownership
 - [Mind the Product](https://www.mindtheproduct.com/) - PM community
 - [Product Coalition](https://productcoalition.com/) - PM articles
-- [Pragmatic Institute](https://www.pragmaticinstitute.com/) - PM framework
 
 ---
 

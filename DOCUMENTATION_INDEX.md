@@ -190,8 +190,8 @@ These detailed documents define specific tasks, workflows, and best practices fo
 
 ### Technical Architecture
 
-- **[TECHNICAL_ROADMAP.md](TECHNICAL_ROADMAP.md)** - Complete technical implementation
-- **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** - Architecture and organization
+- **[TECHNICAL_ROADMAP.md](docs/TECHNICAL_ROADMAP.md)** - Complete technical implementation
+- **[PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)** - Architecture and organization
 - **[ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md)** - Environment configuration guide
 - **[DISCOVERY.md](DISCOVERY.md)** - Section: Technical Architecture
 
@@ -210,7 +210,7 @@ These detailed documents define specific tasks, workflows, and best practices fo
 ### Roadmap & Timeline
 
 - **[DISCOVERY.md](DISCOVERY.md)** - Section: Development Roadmap
-- **[TECHNICAL_ROADMAP.md](TECHNICAL_ROADMAP.md)** - Detailed technical timeline
+- **[TECHNICAL_ROADMAP.md](docs/TECHNICAL_ROADMAP.md)** - Detailed technical timeline
 - **[EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)** - Section: Development Roadmap
 
 ### Team & Organization
@@ -300,7 +300,7 @@ These detailed documents define specific tasks, workflows, and best practices fo
 - Budget worksheet
 - Common challenges
 
-### [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)
+### [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)
 
 **Purpose:** Technical architecture and project organization  
 **Length:** ~625 lines  
@@ -318,7 +318,7 @@ These detailed documents define specific tasks, workflows, and best practices fo
 - Quality assurance
 - Deployment strategy
 
-### [TECHNICAL_ROADMAP.md](TECHNICAL_ROADMAP.md)
+### [TECHNICAL_ROADMAP.md](docs/TECHNICAL_ROADMAP.md)
 
 **Purpose:** Sprint-by-sprint technical implementation guide  
 **Length:** ~900 lines  
