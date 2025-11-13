@@ -175,9 +175,9 @@ Typical review periods:
 ## Related Documentation
 
 - [Software Architect Role](../../sdlc/SOFTWARE_ARCHITECT.md) - Detailed architecture guide
-- [Technical Roadmap](../../../TECHNICAL_ROADMAP.md) - Implementation timeline
-- [Project Structure](../../../PROJECT_STRUCTURE.md) - Code organization
-- [Contributing Guide](../../../CONTRIBUTING.md) - How to contribute
+- [Technical Roadmap](../../TECHNICAL_ROADMAP.md) - Implementation timeline
+- [Project Structure](../../PROJECT_STRUCTURE.md) - Code organization
+- [Contributing Guide](../../CONTRIBUTING.md) - How to contribute
 
 ## Questions?
 

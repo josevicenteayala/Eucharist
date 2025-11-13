@@ -443,7 +443,7 @@ RISK_REGISTER
 
 ### Contributing
 
-See [CONTRIBUTING.md](../../CONTRIBUTING.md) for how to contribute to project documentation.
+See [CONTRIBUTING.md](../../docs/CONTRIBUTING.md) for how to contribute to project documentation.
 
 ---
 
@@ -464,8 +464,8 @@ This project management framework is built on:
 
 - [DISCOVERY.md](../../DISCOVERY.md) - Complete project vision
 - [EXECUTIVE_SUMMARY.md](../../EXECUTIVE_SUMMARY.md) - High-level overview
-- [TECHNICAL_ROADMAP.md](../../TECHNICAL_ROADMAP.md) - Technical implementation
-- [PROJECT_STRUCTURE.md](../../PROJECT_STRUCTURE.md) - Technical architecture
+- [TECHNICAL_ROADMAP.md](../../docs/TECHNICAL_ROADMAP.md) - Technical implementation
+- [PROJECT_STRUCTURE.md](../../docs/PROJECT_STRUCTURE.md) - Technical architecture
 
 ### SDLC Role Documents
 
@@ -475,8 +475,8 @@ This project management framework is built on:
 
 ### Development
 
-- [CONTRIBUTING.md](../../CONTRIBUTING.md) - How to contribute
-- [README.md](../../README.md) - Project readme
+- [CONTRIBUTING.md](../../docs/CONTRIBUTING.md) - How to contribute
+- [README.md](README.md) - Project readme
 
 ---
 

@@ -4,8 +4,10 @@
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Discovery%20Phase-yellow.svg)]()
-[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](docs/CONTRIBUTING.md)
+[![CI](https://github.com/josevicenteayala/Eucharist/actions/workflows/ci.yml/badge.svg)](https://github.com/josevicenteayala/Eucharist/actions/workflows/ci.yml)
 [![Backend CI](https://github.com/josevicenteayala/Eucharist/actions/workflows/backend-ci.yml/badge.svg)](https://github.com/josevicenteayala/Eucharist/actions/workflows/backend-ci.yml)
+[![Frontend CI](https://github.com/josevicenteayala/Eucharist/actions/workflows/frontend-ci.yml/badge.svg)](https://github.com/josevicenteayala/Eucharist/actions/workflows/frontend-ci.yml)
 [![codecov](https://codecov.io/gh/josevicenteayala/Eucharist/branch/main/graph/badge.svg)](https://codecov.io/gh/josevicenteayala/Eucharist)
 
 ## 🙏 Mission
@@ -64,9 +66,9 @@ The Eucharist Understanding Platform will consist of:
 - **[Discovery Phase Document](DISCOVERY.md)** - Comprehensive project vision, goals, and planning
 - **[Executive Summary](EXECUTIVE_SUMMARY.md)** - High-level overview for stakeholders
 - **[Quick Start for PM](QUICK_START_PM.md)** - Project Manager's first 4 weeks
-- **[Technical Roadmap](TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
-- **[Project Structure](PROJECT_STRUCTURE.md)** - Technical architecture and organization
-- **[Contributing Guide](CONTRIBUTING.md)** - How to contribute to the project
+- **[Technical Roadmap](docs/TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
+- **[Project Structure](docs/PROJECT_STRUCTURE.md)** - Technical architecture and organization
+- **[Contributing Guide](docs/CONTRIBUTING.md)** - How to contribute to the project
 
 ### SDLC Role Documentation
 
@@ -129,7 +131,7 @@ Eucharist/
 └── scripts/          # Automation scripts
 ```
 
-_See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for detailed structure._
+_See [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for detailed structure._
 
 ## 🔧 Development Setup
 
@@ -221,13 +223,13 @@ We welcome contributions from:
 - **Translators** (Spanish, Portuguese, etc.)
 - **Testers** (QA, user testing)
 
-Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
+Please read our [Contributing Guide](docs/CONTRIBUTING.md) to get started.
 
 ### How to Contribute
 
 1. Read the [Discovery Document](DISCOVERY.md) to understand the project
 2. Check [Issues](https://github.com/josevicenteayala/Eucharist/issues) for tasks
-3. Review the [Contributing Guide](CONTRIBUTING.md)
+3. Review the [Contributing Guide](docs/CONTRIBUTING.md)
 4. Fork the repository and make your changes
 5. Submit a Pull Request
 
@@ -279,7 +281,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Repository:** [github.com/josevicenteayala/Eucharist](https://github.com/josevicenteayala/Eucharist)
 - **Issues:** [GitHub Issues](https://github.com/josevicenteayala/Eucharist/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/josevicenteayala/Eucharist/discussions)
 
 ## 🙏 Acknowledgments
 
@@ -299,6 +300,6 @@ _— Second Vatican Council, Lumen Gentium_
 
 _Ad Majorem Dei Gloriam_ ✝️
 
-[Get Started](DISCOVERY.md) • [Contribute](CONTRIBUTING.md) • [Documentation](docs/)
+[Get Started](DISCOVERY.md) • [Contribute](docs/CONTRIBUTING.md) • [Documentation](docs/)
 
 </div>

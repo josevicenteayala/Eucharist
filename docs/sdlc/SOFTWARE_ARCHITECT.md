@@ -1450,9 +1450,9 @@ test('User can read daily gospel', async ({ page }) => {
 
 ### Internal Documents
 
-- [TECHNICAL_ROADMAP.md](/TECHNICAL_ROADMAP.md) - Implementation guide
-- [PROJECT_STRUCTURE.md](/PROJECT_STRUCTURE.md) - Code organization
-- [CONTRIBUTING.md](/CONTRIBUTING.md) - Development guidelines
+- [TECHNICAL_ROADMAP.md](../TECHNICAL_ROADMAP.md) - Implementation guide
+- [PROJECT_STRUCTURE.md](../PROJECT_STRUCTURE.md) - Code organization
+- [CONTRIBUTING.md](../CONTRIBUTING.md) - Development guidelines
 
 ### External Resources
 

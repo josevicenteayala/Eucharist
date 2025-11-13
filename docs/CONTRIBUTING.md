@@ -621,8 +621,6 @@ Use code blocks for technical content
 
 [Link text](https://example.com) for external links
 
-![Alt text for image](path/to/image.jpg)
-
 ```
 
 ## Community

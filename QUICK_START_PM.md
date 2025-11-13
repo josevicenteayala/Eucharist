@@ -24,13 +24,13 @@ Before your first meeting, review these documents:
    - Features and technical architecture
    - Development roadmap
 
-2. **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** _(20 min read)_
+2. **[PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)** _(20 min read)_
    - Technical structure and organization
    - Technology stack details
    - Development workflow
    - Content management approach
 
-3. **[CONTRIBUTING.md](CONTRIBUTING.md)** _(15 min read)_
+3. **[CONTRIBUTING.md](docs/CONTRIBUTING.md)** _(15 min read)_
    - How team members will contribute
    - Quality standards
    - Review processes
@@ -570,7 +570,7 @@ _Adjust based on your actual team composition, rates, and in-kind contributions.
 
 ### Catholic Resources
 
-- [Catechism of the Catholic Church](https://www.usccb.org/beliefs-and-teachings/what-we-believe/catechism)
+- [Catechism of the Catholic Church](https://www.usccb.org/resources/catechism-catholic-church-0)
 - [Vatican Documents](https://www.vatican.va/)
 - [USCCB Website](https://www.usccb.org/)
 

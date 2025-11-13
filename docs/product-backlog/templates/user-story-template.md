@@ -49,7 +49,7 @@ Guidance:
 
 ## Epic
 
-Link to parent epic: [Epic Name](../epics/epic-XX-name.md)
+Link to parent epic: <Epic Name> with the structure epic-XX-name.md)
 
 ## Dependencies
 

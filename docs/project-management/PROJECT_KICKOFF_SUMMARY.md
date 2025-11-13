@@ -16,7 +16,7 @@ As the Project Manager role for the Eucharist Understanding Platform, I have suc
 
 ### 1. Project Charter ✅
 
-**Location**: `docs/project-management/charters/PROJECT_CHARTER.md`
+**Location**: `../charters/PROJECT_CHARTER.md`
 
 **Key Contents**:
 
@@ -35,7 +35,7 @@ As the Project Manager role for the Eucharist Understanding Platform, I have suc
 
 ### 2. User Stories Backlog ✅
 
-**Location**: `docs/project-management/stories/USER_STORIES_BACKLOG.md`
+**Location**: `../stories/USER_STORIES_BACKLOG.md`
 
 **Key Contents**:
 
@@ -63,7 +63,7 @@ As the Project Manager role for the Eucharist Understanding Platform, I have suc
 
 ### 3. Sprint 1 Plan ✅
 
-**Location**: `docs/project-management/plans/SPRINT_1_PLAN.md`
+**Location**: `../plans/SPRINT_1_PLAN.md`
 
 **Sprint Goal**: Establish project foundation, development environment, and core authentication system
 
@@ -86,7 +86,7 @@ As the Project Manager role for the Eucharist Understanding Platform, I have suc
 
 ### 4. Risk Register ✅
 
-**Location**: `docs/project-management/risks/RISK_REGISTER.md`
+**Location**: `../risks/RISK_REGISTER.md`
 
 **15 Identified Risks**:
 
@@ -120,7 +120,7 @@ As the Project Manager role for the Eucharist Understanding Platform, I have suc
 
 ### 5. Stakeholder Communication Plan ✅
 
-**Location**: `docs/project-management/plans/STAKEHOLDER_COMMUNICATION_PLAN.md`
+**Location**: `../plans/STAKEHOLDER_COMMUNICATION_PLAN.md`
 
 **Key Contents**:
 
@@ -144,7 +144,7 @@ As the Project Manager role for the Eucharist Understanding Platform, I have suc
 
 ### 6. Team Roster Template ✅
 
-**Location**: `docs/project-management/templates/TEAM_ROSTER_TEMPLATE.md`
+**Location**: `../templates/TEAM_ROSTER_TEMPLATE.md`
 
 **Key Contents**:
 
@@ -168,7 +168,7 @@ As the Project Manager role for the Eucharist Understanding Platform, I have suc
 
 ### 7. Status Reporting Templates ✅
 
-**Location**: `docs/project-management/templates/STATUS_REPORTING_TEMPLATES.md`
+**Location**: `../templates/STATUS_REPORTING_TEMPLATES.md`
 
 **5 Templates Created**:
 
@@ -184,7 +184,7 @@ As the Project Manager role for the Eucharist Understanding Platform, I have suc
 
 ### 8. Role Coordination Guide ✅
 
-**Location**: `docs/project-management/ROLE_COORDINATION_GUIDE.md`
+**Location**: `ROLE_COORDINATION_GUIDE.md`
 
 **Key Contents**:
 
@@ -217,7 +217,7 @@ As the Project Manager role for the Eucharist Understanding Platform, I have suc
 
 ### 10. Project Management README ✅
 
-**Location**: `docs/project-management/README.md`
+**Location**: `README.md`
 
 **Purpose**: Central navigation and quick start guide for all project management documentation
 
@@ -474,7 +474,7 @@ Every decision, every feature, every line of code should serve this mission. Whe
 
 **Getting Started**:
 
-- Review: docs/project-management/README.md
+- Review: README.md
 - Review: QUICK_START_PM.md
 
 ---
@@ -491,30 +491,30 @@ All necessary artifacts, plans, and documentation are in place to launch this pr
 
 ### Project Management Documentation
 
-- [Project Charter](docs/project-management/charters/PROJECT_CHARTER.md)
-- [User Stories Backlog](docs/project-management/stories/USER_STORIES_BACKLOG.md)
-- [Sprint 1 Plan](docs/project-management/plans/SPRINT_1_PLAN.md)
-- [Risk Register](docs/project-management/risks/RISK_REGISTER.md)
-- [Stakeholder Communication Plan](docs/project-management/plans/STAKEHOLDER_COMMUNICATION_PLAN.md)
-- [Team Roster Template](docs/project-management/templates/TEAM_ROSTER_TEMPLATE.md)
-- [Status Reporting Templates](docs/project-management/templates/STATUS_REPORTING_TEMPLATES.md)
-- [Role Coordination Guide](docs/project-management/ROLE_COORDINATION_GUIDE.md)
-- [PM Documentation README](docs/project-management/README.md)
+- [Project Charter](charters/PROJECT_CHARTER.md)
+- [User Stories Backlog](stories/USER_STORIES_BACKLOG.md)
+- [Sprint 1 Plan](plans/SPRINT_1_PLAN.md)
+- [Risk Register](risks/RISK_REGISTER.md)
+- [Stakeholder Communication Plan](plans/STAKEHOLDER_COMMUNICATION_PLAN.md)
+- [Team Roster Template](templates/TEAM_ROSTER_TEMPLATE.md)
+- [Status Reporting Templates](templates/STATUS_REPORTING_TEMPLATES.md)
+- [Role Coordination Guide](ROLE_COORDINATION_GUIDE.md)
+- [PM Documentation README](README.md)
 
 ### SDLC Role Documents
 
-- [PROJECT_MANAGER.md](docs/sdlc/PROJECT_MANAGER.md)
-- [PRODUCT_OWNER.md](docs/sdlc/PRODUCT_OWNER.md)
-- [SOFTWARE_ARCHITECT.md](docs/sdlc/SOFTWARE_ARCHITECT.md)
+- [PROJECT_MANAGER.md](../sdlc/PROJECT_MANAGER.md)
+- [PRODUCT_OWNER.md](../sdlc/PRODUCT_OWNER.md)
+- [SOFTWARE_ARCHITECT.md](../sdlc/SOFTWARE_ARCHITECT.md)
 
 ### Project Vision Documents
 
-- [DISCOVERY.md](DISCOVERY.md)
-- [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)
-- [TECHNICAL_ROADMAP.md](TECHNICAL_ROADMAP.md)
-- [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)
-- [QUICK_START_PM.md](QUICK_START_PM.md)
-- [CONTRIBUTING.md](CONTRIBUTING.md)
+- [DISCOVERY.md](../../DISCOVERY.md)
+- [EXECUTIVE_SUMMARY.md](../../EXECUTIVE_SUMMARY.md)
+- [TECHNICAL_ROADMAP.md](../../docs/TECHNICAL_ROADMAP.md)
+- [PROJECT_STRUCTURE.md](../../docs/PROJECT_STRUCTURE.md)
+- [QUICK_START_PM.md](../../QUICK_START_PM.md)
+- [CONTRIBUTING.md](../../docs/CONTRIBUTING.md)
 
 ---
 

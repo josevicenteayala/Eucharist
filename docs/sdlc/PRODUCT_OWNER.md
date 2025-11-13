@@ -1042,23 +1042,21 @@ Every feature must meet these criteria before acceptance:
 
 ### Internal Documents
 
-- [DISCOVERY.md](/DISCOVERY.md) - Project vision and requirements
-- [EXECUTIVE_SUMMARY.md](/EXECUTIVE_SUMMARY.md) - High-level overview
-- [TECHNICAL_ROADMAP.md](/TECHNICAL_ROADMAP.md) - Technical implementation
+- [DISCOVERY.md](../../DISCOVERY.md) - Project vision and requirements
+- [EXECUTIVE_SUMMARY.md](../../EXECUTIVE_SUMMARY.md) - High-level overview
+- [TECHNICAL_ROADMAP.md](../../docs/TECHNICAL_ROADMAP.md) - Technical implementation
 - [PROJECT_MANAGER.md](PROJECT_MANAGER.md) - PM responsibilities
 
 ### Catholic Resources
 
-- [Catechism of the Catholic Church](https://www.usccb.org/beliefs-and-teachings/what-we-believe/catechism) - Primary source
+- [Catechism of the Catholic Church](https://www.usccb.org/resources/catechism-catholic-church-0) - Primary source
 - [Vatican Documents](https://www.vatican.va/) - Official teaching
-- [USCCB](https://www.usccb.org/) - U.S. Catholic resources
 
 ### Product Management Resources
 
 - [Roman Pichler Blog](https://www.romanpichler.com/) - Product ownership
 - [Mind the Product](https://www.mindtheproduct.com/) - PM community
 - [Product Coalition](https://productcoalition.com/) - PM articles
-- [Pragmatic Institute](https://www.pragmaticinstitute.com/) - PM framework
 
 ---
 

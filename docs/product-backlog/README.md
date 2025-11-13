@@ -110,14 +110,14 @@ Track these metrics for product success:
 - **Content Quality**: User ratings and completion rates
 - **Retention**: 7-day, 30-day, and 90-day retention rates
 
-See [PRODUCT_OWNER.md](/docs/sdlc/PRODUCT_OWNER.md) for detailed metrics and KPIs.
+See [PRODUCT_OWNER.md](../sdlc/PRODUCT_OWNER.md) for detailed metrics and KPIs.
 
 ## Key Product Owner Resources
 
-- **[Product Owner Guide](/docs/sdlc/PRODUCT_OWNER.md)** - Complete PO role documentation
-- **[Discovery Document](/DISCOVERY.md)** - Project vision and requirements
-- **[Technical Roadmap](/TECHNICAL_ROADMAP.md)** - Technical implementation details
-- **[Project Structure](/PROJECT_STRUCTURE.md)** - Repository organization
+- **[Product Owner Guide](../sdlc/PRODUCT_OWNER.md)** - Complete PO role documentation
+- **[Discovery Document](../../DISCOVERY.md)** - Project vision and requirements
+- **[Technical Roadmap](../TECHNICAL_ROADMAP.md)** - Technical implementation details
+- **[Project Structure](../PROJECT_STRUCTURE.md)** - Repository organization
 
 ## Product Vision
 
