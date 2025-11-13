@@ -269,7 +269,7 @@ env:
 - [Backend README](web/backend/README.md)
 - [Frontend README](web/frontend/README.md)
 - [Database Setup Guide](web/backend/DATABASE_SETUP.md)
-- [Contributing Guide](/docs/CONTRIBUTING.md)
+- [Contributing Guide](docs/CONTRIBUTING.md)
 
 ## Support
 

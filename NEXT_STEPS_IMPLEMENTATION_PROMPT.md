@@ -53,7 +53,7 @@ You will set up the foundational technical infrastructure for the platform accor
    - Architecture patterns and conventions
    - Common mistakes to avoid
 
-2. **[TECHNICAL_ROADMAP.md](/docs/TECHNICAL_ROADMAP.md)** - Sprint 1 Section (15 min)
+2. **[TECHNICAL_ROADMAP.md](docs/TECHNICAL_ROADMAP.md)** - Sprint 1 Section (15 min)
    - Lines 46-175: Sprint 1 detailed tasks
    - Backend setup checklist
    - Frontend setup checklist
@@ -65,7 +65,7 @@ You will set up the foundational technical infrastructure for the platform accor
    - Lines 800-950: API design patterns
    - Lines 1000-1100: Security architecture
 
-4. **[PROJECT_STRUCTURE.md](/docs/PROJECT_STRUCTURE.md)** (10 min)
+4. **[PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)** (10 min)
    - Lines 1-200: Directory structure and organization
    - Module organization patterns
 
