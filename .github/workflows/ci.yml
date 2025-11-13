@@ -75,7 +75,6 @@ jobs:
         with:
           use-quiet-mode: 'yes'
           config-file: '.github/markdown-link-check-config.json'
-        continue-on-error: true
 
       - name: Validate README exists
         run: |
