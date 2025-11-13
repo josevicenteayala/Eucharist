@@ -5,16 +5,19 @@ This directory contains unit tests, widget tests, and integration tests for the 
 ## Test Types
 
 ### Unit Tests
+
 - Test business logic in isolation
 - Test utility functions
 - Test data models
 
 ### Widget Tests
+
 - Test UI components
 - Test user interactions
 - Test widget behavior
 
 ### Integration Tests
+
 - Test complete user flows
 - Test navigation
 - Test data flow through app

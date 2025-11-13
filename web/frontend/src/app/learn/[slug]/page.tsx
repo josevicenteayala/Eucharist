@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 interface PageProps {
   params: {
@@ -8,15 +8,18 @@ interface PageProps {
 
 export default function ArticlePage({ params }: PageProps) {
   const { slug } = params;
-  
+
   // This would normally fetch from an API or CMS
   const article = {
-    title: slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
-    category: "Eucharist Basics",
-    author: "Theological Review Team",
-    date: "November 2025",
-    reviewedBy: "Fr. John Doe",
-    readTime: "5 min read"
+    title: slug
+      .split('-')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' '),
+    category: 'Eucharist Basics',
+    author: 'Theological Review Team',
+    date: 'November 2025',
+    reviewedBy: 'Fr. John Doe',
+    readTime: '5 min read',
   };
 
   return (
@@ -25,7 +28,7 @@ export default function ArticlePage({ params }: PageProps) {
         <Link href="/learn" className="text-blue-600 hover:underline mb-4 inline-block">
           ← Back to Learning Center
         </Link>
-        
+
         <div className="mb-8">
           <span className="text-sm font-semibold text-blue-600 uppercase tracking-wide">
             {article.category}
@@ -38,35 +41,35 @@ export default function ArticlePage({ params }: PageProps) {
             <span>•</span>
             <span>{article.readTime}</span>
           </div>
-          <p className="text-sm text-gray-500 mt-2">
-            Reviewed by: {article.reviewedBy}
-          </p>
+          <p className="text-sm text-gray-500 mt-2">Reviewed by: {article.reviewedBy}</p>
         </div>
 
         <div className="prose prose-lg max-w-none">
           <section className="mb-8">
             <h2>Introduction</h2>
             <p>
-              The Catholic Church teaches that in the Eucharist, the bread and wine truly become
-              the Body and Blood of Jesus Christ. This teaching, known as the Real Presence, is
-              central to Catholic faith and practice.
+              The Catholic Church teaches that in the Eucharist, the bread and wine truly become the
+              Body and Blood of Jesus Christ. This teaching, known as the Real Presence, is central
+              to Catholic faith and practice.
             </p>
           </section>
 
           <section className="mb-8">
             <h2>What is the Real Presence?</h2>
             <p>
-              The Real Presence refers to the Catholic doctrine that Jesus Christ is truly,
-              really, and substantially present in the Eucharist under the appearances of bread
-              and wine. This is not merely a symbol or a memorial, but Christ Himself—body, blood,
-              soul, and divinity.
+              The Real Presence refers to the Catholic doctrine that Jesus Christ is truly, really,
+              and substantially present in the Eucharist under the appearances of bread and wine.
+              This is not merely a symbol or a memorial, but Christ Himself—body, blood, soul, and
+              divinity.
             </p>
             <blockquote className="border-l-4 border-blue-500 pl-4 my-6 italic text-gray-700">
-              "The mode of Christ's presence under the Eucharistic species is unique...
-              In the most blessed sacrament of the Eucharist 'the body and blood, together with
-              the soul and divinity, of our Lord Jesus Christ and, therefore, the whole Christ
-              is truly, really, and substantially contained.'"
-              <footer className="text-sm mt-2 not-italic">— Catechism of the Catholic Church, 1374</footer>
+              "The mode of Christ's presence under the Eucharistic species is unique... In the most
+              blessed sacrament of the Eucharist 'the body and blood, together with the soul and
+              divinity, of our Lord Jesus Christ and, therefore, the whole Christ is truly, really,
+              and substantially contained.'"
+              <footer className="text-sm mt-2 not-italic">
+                — Catechism of the Catholic Church, 1374
+              </footer>
             </blockquote>
           </section>
 

@@ -18,12 +18,7 @@ The test utilities are organized into the following categories:
 Import utilities from the main export:
 
 ```typescript
-import {
-  assertSuccessResponse,
-  createMockUser,
-  createEnvScope,
-  createGetRequest,
-} from './utils';
+import { assertSuccessResponse, createMockUser, createEnvScope, createGetRequest } from './utils';
 ```
 
 Or import from specific modules:
@@ -230,12 +225,7 @@ const response = await createPostRequest(app, '/api/v1/users', {
 Create an authenticated request with Bearer token.
 
 ```typescript
-const response = await createAuthenticatedRequest(
-  app,
-  'GET',
-  '/api/v1/profile',
-  'jwt-token-here'
-);
+const response = await createAuthenticatedRequest(app, 'GET', '/api/v1/profile', 'jwt-token-here');
 ```
 
 ### `createCorsRequest(app, method, path, origin)`
@@ -243,12 +233,7 @@ const response = await createAuthenticatedRequest(
 Create a request with CORS headers.
 
 ```typescript
-const response = await createCorsRequest(
-  app,
-  'GET',
-  '/api/v1/health',
-  'http://localhost:3001'
-);
+const response = await createCorsRequest(app, 'GET', '/api/v1/health', 'http://localhost:3001');
 ```
 
 ### `createPreflightRequest(app, path, origin, method, headers?)`
@@ -392,12 +377,9 @@ assertErrorPassedToNext(next, 'Expected error message');
 Test async error handling.
 
 ```typescript
-await testAsyncError(
-  async () => {
-    throw new Error('Test error');
-  },
-  'Test error'
-);
+await testAsyncError(async () => {
+  throw new Error('Test error');
+}, 'Test error');
 ```
 
 ### `suppressConsoleLogs()`

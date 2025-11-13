@@ -1,49 +1,52 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function LearnPage() {
   const articles = [
     {
-      id: "understanding-real-presence",
-      title: "Understanding the Real Presence",
-      category: "Eucharist Basics",
-      description: "Discover what the Catholic Church teaches about Christ's true presence in the Eucharist.",
-      readTime: "5 min read"
+      id: 'understanding-real-presence',
+      title: 'Understanding the Real Presence',
+      category: 'Eucharist Basics',
+      description:
+        "Discover what the Catholic Church teaches about Christ's true presence in the Eucharist.",
+      readTime: '5 min read',
     },
     {
-      id: "biblical-foundation",
-      title: "The Biblical Foundation of the Eucharist",
-      category: "Scripture",
-      description: "Explore the scriptural roots of the Eucharist from the Last Supper to early Church practice.",
-      readTime: "8 min read"
+      id: 'biblical-foundation',
+      title: 'The Biblical Foundation of the Eucharist',
+      category: 'Scripture',
+      description:
+        'Explore the scriptural roots of the Eucharist from the Last Supper to early Church practice.',
+      readTime: '8 min read',
     },
     {
-      id: "eucharistic-miracles",
-      title: "Eucharistic Miracles Through History",
-      category: "History",
-      description: "Learn about documented miracles that confirm the Real Presence throughout the centuries.",
-      readTime: "10 min read"
+      id: 'eucharistic-miracles',
+      title: 'Eucharistic Miracles Through History',
+      category: 'History',
+      description:
+        'Learn about documented miracles that confirm the Real Presence throughout the centuries.',
+      readTime: '10 min read',
     },
     {
-      id: "preparing-for-mass",
-      title: "Preparing Your Heart for Mass",
-      category: "Living the Eucharist",
-      description: "Practical guidance on how to prepare spiritually to receive the Eucharist.",
-      readTime: "6 min read"
+      id: 'preparing-for-mass',
+      title: 'Preparing Your Heart for Mass',
+      category: 'Living the Eucharist',
+      description: 'Practical guidance on how to prepare spiritually to receive the Eucharist.',
+      readTime: '6 min read',
     },
     {
-      id: "parts-of-the-mass",
-      title: "Understanding the Parts of the Mass",
-      category: "Liturgy",
-      description: "A detailed guide to the structure and meaning of the Catholic Mass.",
-      readTime: "12 min read"
+      id: 'parts-of-the-mass',
+      title: 'Understanding the Parts of the Mass',
+      category: 'Liturgy',
+      description: 'A detailed guide to the structure and meaning of the Catholic Mass.',
+      readTime: '12 min read',
     },
     {
-      id: "eucharist-and-transformation",
-      title: "The Eucharist and Personal Transformation",
-      category: "Living the Eucharist",
-      description: "How regular reception of the Eucharist shapes and sanctifies our lives.",
-      readTime: "7 min read"
-    }
+      id: 'eucharist-and-transformation',
+      title: 'The Eucharist and Personal Transformation',
+      category: 'Living the Eucharist',
+      description: 'How regular reception of the Eucharist shapes and sanctifies our lives.',
+      readTime: '7 min read',
+    },
   ];
 
   return (
@@ -67,9 +70,7 @@ export default function LearnPage() {
               <h2 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
                 {article.title}
               </h2>
-              <p className="text-gray-600 mb-4">
-                {article.description}
-              </p>
+              <p className="text-gray-600 mb-4">{article.description}</p>
               <div className="flex justify-between items-center text-sm text-gray-500">
                 <span>{article.readTime}</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -81,7 +82,8 @@ export default function LearnPage() {
         <section className="mt-16 p-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
           <h2 className="text-2xl font-bold mb-4">Learning Path</h2>
           <p className="text-gray-700 mb-6">
-            New to learning about the Eucharist? We recommend starting with these foundational articles:
+            New to learning about the Eucharist? We recommend starting with these foundational
+            articles:
           </p>
           <ol className="space-y-2">
             <li className="flex items-start">

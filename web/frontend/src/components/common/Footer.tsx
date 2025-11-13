@@ -1,22 +1,22 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     about: [
-      { href: "/about", label: "About Us" },
-      { href: "/mission", label: "Our Mission" },
-      { href: "/contact", label: "Contact" },
+      { href: '/about', label: 'About Us' },
+      { href: '/mission', label: 'Our Mission' },
+      { href: '/contact', label: 'Contact' },
     ],
     resources: [
-      { href: "/learn", label: "Learn" },
-      { href: "/gospel", label: "Daily Gospel" },
-      { href: "/community", label: "Community" },
+      { href: '/learn', label: 'Learn' },
+      { href: '/gospel', label: 'Daily Gospel' },
+      { href: '/community', label: 'Community' },
     ],
     legal: [
-      { href: "/privacy", label: "Privacy Policy" },
-      { href: "/terms", label: "Terms of Service" },
+      { href: '/privacy', label: 'Privacy Policy' },
+      { href: '/terms', label: 'Terms of Service' },
     ],
   };
 

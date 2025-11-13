@@ -1,6 +1,6 @@
 /**
  * Gospel Service
- * 
+ *
  * API service for fetching daily gospel readings and reflections.
  * Demonstrates proper usage of the Axios API client.
  */
@@ -45,10 +45,10 @@ export interface GospelReading {
 
 /**
  * Get today's gospel reading
- * 
+ *
  * @returns Promise with today's gospel reading data
  * @throws ApiError if request fails
- * 
+ *
  * @example
  * ```typescript
  * try {
@@ -67,11 +67,11 @@ export async function getTodaysGospel() {
 
 /**
  * Get gospel reading for a specific date
- * 
+ *
  * @param date - Date in ISO format (YYYY-MM-DD)
  * @returns Promise with gospel reading data for the specified date
  * @throws ApiError if request fails
- * 
+ *
  * @example
  * ```typescript
  * const response = await getGospelByDate('2025-11-11');
@@ -84,7 +84,7 @@ export async function getGospelByDate(date: string) {
 
 /**
  * Get gospel readings for a date range
- * 
+ *
  * @param startDate - Start date in ISO format (YYYY-MM-DD)
  * @param endDate - End date in ISO format (YYYY-MM-DD)
  * @returns Promise with array of gospel readings
@@ -92,13 +92,13 @@ export async function getGospelByDate(date: string) {
  */
 export async function getGospelRange(startDate: string, endDate: string) {
   return get<GospelReading[]>('/gospel/range', {
-    params: { startDate, endDate }
+    params: { startDate, endDate },
   });
 }
 
 /**
  * Search gospel readings by keyword
- * 
+ *
  * @param query - Search query string
  * @param options - Optional search parameters
  * @returns Promise with search results
@@ -112,6 +112,6 @@ export async function searchGospel(
   }
 ) {
   return get<GospelReading[]>('/gospel/search', {
-    params: { q: query, ...options }
+    params: { q: query, ...options },
   });
 }

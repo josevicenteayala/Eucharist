@@ -1,12 +1,10 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-center font-mono text-sm">
-        <h1 className="text-4xl font-bold text-center mb-8">
-          Eucharist Platform
-        </h1>
+        <h1 className="text-4xl font-bold text-center mb-8">Eucharist Platform</h1>
         <p className="text-center text-lg mb-4">
           Catholic education platform helping people understand and live the Eucharist
         </p>
@@ -16,7 +14,7 @@ export default function Home() {
             className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100"
           >
             <h2 className="mb-3 text-2xl font-semibold">
-              Daily Gospel{" "}
+              Daily Gospel{' '}
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 →
               </span>
@@ -31,7 +29,7 @@ export default function Home() {
             className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100"
           >
             <h2 className="mb-3 text-2xl font-semibold">
-              Learn{" "}
+              Learn{' '}
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 →
               </span>
@@ -46,7 +44,7 @@ export default function Home() {
             className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100"
           >
             <h2 className="mb-3 text-2xl font-semibold">
-              Community{" "}
+              Community{' '}
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 →
               </span>

@@ -5,6 +5,7 @@ This directory contains shared API interface definitions used across frontend an
 ## Purpose
 
 Maintains consistent API contracts between:
+
 - Backend API endpoints
 - Frontend API clients
 - Mobile app API clients

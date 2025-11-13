@@ -25,6 +25,7 @@ docker-compose up --build
 ## Services
 
 Docker Compose will configure:
+
 - Backend API server
 - Frontend web application
 - PostgreSQL database

@@ -13,6 +13,7 @@ This directory contains constants used across multiple applications in the platf
 ## Usage
 
 Import constants from this shared location to maintain consistency across:
+
 - Web frontend
 - Web backend
 - Mobile application
