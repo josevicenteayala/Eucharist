@@ -9,6 +9,7 @@ The project uses ESLint for code quality checking and Prettier for code formatti
 ## Configuration Files
 
 ### Root Level
+
 - `eslint.config.js` - ESLint flat config for root-level files
 - `.prettierrc` - Prettier configuration (shared settings)
 - `.eslintignore` - Files to ignore for ESLint
@@ -16,16 +17,19 @@ The project uses ESLint for code quality checking and Prettier for code formatti
 - `.lintstagedrc.json` - Lint-staged configuration for pre-commit hooks
 
 ### Backend (`web/backend/`)
+
 - `eslint.config.js` - Backend-specific ESLint configuration
 - `.prettierrc` - Backend Prettier configuration
 
 ### Frontend (`web/frontend/`)
+
 - `eslint.config.js` - Frontend-specific ESLint configuration (React/Next.js)
 - `.prettierrc` - Frontend Prettier configuration
 
 ## Available Scripts
 
 ### Root Level
+
 ```bash
 # Check code quality across all workspaces
 npm run lint
@@ -41,6 +45,7 @@ npm run format:check
 ```
 
 ### Backend
+
 ```bash
 cd web/backend
 
@@ -58,6 +63,7 @@ npm run format:check
 ```
 
 ### Frontend
+
 ```bash
 cd web/frontend
 
@@ -79,9 +85,11 @@ npm run format:check
 The project uses Husky and lint-staged to automatically lint and format files before commits.
 
 ### Setup
+
 Pre-commit hooks are automatically installed when you run `npm install` via the `prepare` script.
 
 ### What Gets Checked
+
 - **TypeScript/JavaScript files** (`.ts`, `.tsx`, `.js`, `.jsx`): ESLint + Prettier
 - **JSON files** (`.json`): Prettier
 - **Markdown files** (`.md`): Prettier
@@ -90,6 +98,7 @@ Pre-commit hooks are automatically installed when you run `npm install` via the 
 ## ESLint Configuration
 
 ### Key Rules
+
 - **TypeScript**: Strict type checking with `@typescript-eslint`
 - **Explicit any**: Warning (should be avoided)
 - **Unused variables**: Error (must start with `_` if intentionally unused)
@@ -97,6 +106,7 @@ Pre-commit hooks are automatically installed when you run `npm install` via the 
 - **Prettier integration**: Prettier rules enforced as ESLint errors
 
 ### Ignored Patterns
+
 - `node_modules/**`
 - `dist/**`
 - `build/**`
@@ -108,6 +118,7 @@ Pre-commit hooks are automatically installed when you run `npm install` via the 
 ## Prettier Configuration
 
 ### Code Style
+
 - **Semicolons**: Required
 - **Quotes**: Single quotes (for JS/TS), double quotes (for JSX attributes)
 - **Trailing commas**: ES5 style
@@ -119,11 +130,14 @@ Pre-commit hooks are automatically installed when you run `npm install` via the 
 ## IDE Integration
 
 ### VS Code
+
 Install these extensions:
+
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 Add to `.vscode/settings.json`:
+
 ```json
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -131,16 +145,12 @@ Add to `.vscode/settings.json`:
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ]
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
 }
 ```
 
 ### IntelliJ/WebStorm
+
 1. Go to **Settings** > **Languages & Frameworks** > **JavaScript** > **Code Quality Tools** > **ESLint**
 2. Enable "Automatic ESLint configuration"
 3. Go to **Settings** > **Languages & Frameworks** > **JavaScript** > **Prettier**
@@ -149,6 +159,7 @@ Add to `.vscode/settings.json`:
 ## Troubleshooting
 
 ### ESLint not working
+
 ```bash
 # Clear cache and reinstall
 rm -rf node_modules package-lock.json
@@ -156,9 +167,11 @@ npm install
 ```
 
 ### Prettier conflicts with ESLint
+
 The project uses `eslint-config-prettier` to disable ESLint formatting rules that conflict with Prettier. If you see conflicts, ensure you're using the latest configuration.
 
 ### Pre-commit hook fails
+
 ```bash
 # Manually fix issues
 npm run lint:fix
@@ -170,13 +183,16 @@ git commit -m "Your message"
 ```
 
 ### Different ESLint versions in workspaces
+
 The project uses npm workspaces. Ensure you're running commands from the correct directory:
+
 - Root commands affect all workspaces
 - Workspace commands only affect that specific workspace
 
 ## CI/CD Integration
 
 The GitHub Actions CI pipeline runs:
+
 1. `npm run lint` - Check code quality
 2. `npm run format:check` - Verify code formatting
 3. `npm test` - Run tests
@@ -189,13 +205,16 @@ All checks must pass before merging to the main branch.
 If migrating from older ESLint configurations:
 
 ### From `.eslintrc.json` to `eslint.config.js`
+
 The project now uses ESLint flat config format (ESLint 9+). Key differences:
+
 - Configuration is JavaScript instead of JSON
 - Plugins are imported directly
 - Rules are defined per file pattern
 - More explicit and type-safe
 
 ### Breaking Changes
+
 - ESLint 9+ uses flat config by default
 - Some plugins may need updates
 - Old `.eslintrc.*` files are no longer used
@@ -211,6 +230,7 @@ The project now uses ESLint flat config format (ESLint 9+). Key differences:
 ## Support
 
 For issues or questions about the linting setup, please:
+
 1. Check this documentation
 2. Review the configuration files
 3. Create an issue in the repository
