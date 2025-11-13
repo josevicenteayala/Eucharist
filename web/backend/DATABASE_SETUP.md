@@ -197,7 +197,7 @@ sudo systemctl start redis-server
 ```
 
 **Windows**:
-Download and install from https://redis.io/downloads or use WSL2
+Download and install from redis or use WSL2
 
 ## Database Management Tools
 
