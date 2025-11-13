@@ -409,6 +409,5 @@ if (!window.location.pathname.includes('/login')) {
 ## Further Reading
 
 - [Axios Documentation](https://axios-http.com/docs/intro)
-- [React Query Documentation](https://tanstack.com/query/latest)
 - [Next.js API Routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes)
 - Project: `web/frontend/src/services/README.md`

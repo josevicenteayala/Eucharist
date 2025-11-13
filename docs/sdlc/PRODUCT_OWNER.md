@@ -1042,9 +1042,9 @@ Every feature must meet these criteria before acceptance:
 
 ### Internal Documents
 
-- [DISCOVERY.md](/DISCOVERY.md) - Project vision and requirements
-- [EXECUTIVE_SUMMARY.md](/EXECUTIVE_SUMMARY.md) - High-level overview
-- [TECHNICAL_ROADMAP.md](/TECHNICAL_ROADMAP.md) - Technical implementation
+- [DISCOVERY.md](../../DISCOVERY.md) - Project vision and requirements
+- [EXECUTIVE_SUMMARY.md](../../EXECUTIVE_SUMMARY.md) - High-level overview
+- [TECHNICAL_ROADMAP.md](../../docs/TECHNICAL_ROADMAP.md) - Technical implementation
 - [PROJECT_MANAGER.md](PROJECT_MANAGER.md) - PM responsibilities
 
 ### Catholic Resources

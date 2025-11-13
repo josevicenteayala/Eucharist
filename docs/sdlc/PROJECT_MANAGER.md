@@ -586,16 +586,15 @@ As the Project Manager (PM) for the Eucharist Understanding Platform, you are re
 
 ### Internal Documents
 
-- [DISCOVERY.md](/DISCOVERY.md) - Complete project vision
-- [QUICK_START_PM.md](/QUICK_START_PM.md) - First 4 weeks guide
-- [TECHNICAL_ROADMAP.md](/TECHNICAL_ROADMAP.md) - Technical implementation
-- [PROJECT_STRUCTURE.md](/PROJECT_STRUCTURE.md) - Technical architecture
-- [CONTRIBUTING.md](/CONTRIBUTING.md) - Team contribution guidelines
+- [DISCOVERY.md](../../DISCOVERY.md) - Complete project vision
+- [QUICK_START_PM.md](../../QUICK_START_PM.md) - First 4 weeks guide
+- [TECHNICAL_ROADMAP.md](../TECHNICAL_ROADMAP.md) - Technical implementation
+- [PROJECT_STRUCTURE.md](../PROJECT_STRUCTURE.md) - Technical architecture
+- [CONTRIBUTING.md](../CONTRIBUTING.md) - Team contribution guidelines
 
 ### External Resources
 
 - [Scrum Guide](https://scrumguides.org/) - Agile framework
-- [PMI PMBOK Guide](https://www.pmi.org/pmbok-guide-standards) - Project management standards
 - [Shape Up by Basecamp](https://basecamp.com/shapeup) - Alternative approach
 - [Atlassian Agile Coach](https://www.atlassian.com/agile) - Practical guides
 

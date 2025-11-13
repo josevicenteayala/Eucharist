@@ -415,4 +415,4 @@ _"Whatever you do, work at it with all your heart, as working for the Lord."_ - 
 
 **Questions?** Check [INDEX.md](INDEX.md) or create an issue in the repository.
 
-**Want to contribute?** See [CONTRIBUTING.md](../../CONTRIBUTING.md) for guidelines.
+**Want to contribute?** See [CONTRIBUTING.md](../../docs/CONTRIBUTING.md) for guidelines.
