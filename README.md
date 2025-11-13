@@ -281,7 +281,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Repository:** [github.com/josevicenteayala/Eucharist](https://github.com/josevicenteayala/Eucharist)
 - **Issues:** [GitHub Issues](https://github.com/josevicenteayala/Eucharist/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/josevicenteayala/Eucharist/discussions)
 
 ## 🙏 Acknowledgments
 

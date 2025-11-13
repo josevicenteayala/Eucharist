@@ -49,9 +49,9 @@ System architecture visuals are currently being prepared. Until the diagrams fol
 ## Quick Links
 
 - [Software Architect Role](../sdlc/SOFTWARE_ARCHITECT.md)
-- [Technical Roadmap](/TECHNICAL_ROADMAP.md)
-- [Project Structure](/PROJECT_STRUCTURE.md)
-- [Contributing Guidelines](/CONTRIBUTING.md)
+- [Technical Roadmap](../TECHNICAL_ROADMAP.md)
+- [Project Structure](../PROJECT_STRUCTURE.md)
+- [Contributing Guidelines](../CONTRIBUTING.md)
 
 ## Contact
 
