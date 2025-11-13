@@ -1,6 +1,6 @@
 /**
  * API Response Types
- * 
+ *
  * Standard response format for all API endpoints.
  * Based on project conventions defined in repository instructions.
  */
@@ -75,8 +75,6 @@ export function isApiSuccessResponse<T>(
 /**
  * Type guard to check if response is an error
  */
-export function isApiErrorResponse(
-  response: ApiResponse
-): response is ApiErrorResponse {
+export function isApiErrorResponse(response: ApiResponse): response is ApiErrorResponse {
   return response.success === false;
 }

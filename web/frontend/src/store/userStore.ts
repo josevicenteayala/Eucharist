@@ -1,5 +1,5 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 interface User {
   id: string;
@@ -24,7 +24,7 @@ export const useUserStore = create<UserState>()(
       logout: () => set({ user: null, isAuthenticated: false }),
     }),
     {
-      name: "eucharist-user-storage",
+      name: 'eucharist-user-storage',
     }
   )
 );

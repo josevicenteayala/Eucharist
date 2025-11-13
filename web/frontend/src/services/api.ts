@@ -1,6 +1,6 @@
 /**
  * Axios API Client Configuration
- * 
+ *
  * Configured axios instance with:
  * - Request/response interceptors
  * - Authentication token handling
@@ -39,12 +39,13 @@ apiClient.interceptors.request.use(
         config.headers.Authorization = `Bearer ${token}`;
       }
     }
-    
+
     // Log request in development
     if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console
       console.log(`[API Request] ${config.method?.toUpperCase()} ${config.url}`);
     }
-    
+
     return config;
   },
   (error) => {
@@ -60,9 +61,13 @@ apiClient.interceptors.response.use(
   (response: AxiosResponse<ApiResponse>) => {
     // Log response in development
     if (process.env.NODE_ENV === 'development') {
-      console.log(`[API Response] ${response.config.method?.toUpperCase()} ${response.config.url}`, response.status);
+      // eslint-disable-next-line no-console
+      console.log(
+        `[API Response] ${response.config.method?.toUpperCase()} ${response.config.url}`,
+        response.status
+      );
     }
-    
+
     return response;
   },
   (error: AxiosError<ApiErrorResponse>) => {
@@ -79,13 +84,13 @@ apiClient.interceptors.response.use(
 
     // Transform error to ApiError
     const apiError = transformAxiosError(error);
-    
+
     // Log error
     console.error('[API Error]', {
       message: apiError.message,
       code: apiError.code,
       statusCode: apiError.statusCode,
-      ...(process.env.NODE_ENV === 'development' && { details: apiError.details })
+      ...(process.env.NODE_ENV === 'development' && { details: apiError.details }),
     });
 
     return Promise.reject(apiError);
@@ -99,12 +104,7 @@ function transformAxiosError(error: AxiosError<ApiErrorResponse>): ApiError {
   // Server responded with error
   if (error.response?.data?.error) {
     const { code, message, details } = error.response.data.error;
-    return new ApiError(
-      message,
-      code,
-      error.response.status,
-      details
-    );
+    return new ApiError(message, code, error.response.status, details);
   }
 
   // Network error or no response
@@ -134,11 +134,11 @@ export async function get<T>(
   config?: AxiosRequestConfig
 ): Promise<ApiSuccessResponse<T>> {
   const response = await apiClient.get<ApiResponse<T>>(url, config);
-  
+
   if (response.data.success) {
     return response.data as ApiSuccessResponse<T>;
   }
-  
+
   // This shouldn't happen if interceptor works correctly, but added for type safety
   const errorData = response.data as ApiErrorResponse;
   throw new ApiError(
@@ -158,11 +158,11 @@ export async function post<T, D = unknown>(
   config?: AxiosRequestConfig
 ): Promise<ApiSuccessResponse<T>> {
   const response = await apiClient.post<ApiResponse<T>>(url, data, config);
-  
+
   if (response.data.success) {
     return response.data as ApiSuccessResponse<T>;
   }
-  
+
   const errorData = response.data as ApiErrorResponse;
   throw new ApiError(
     errorData.error.message,
@@ -181,11 +181,11 @@ export async function put<T, D = unknown>(
   config?: AxiosRequestConfig
 ): Promise<ApiSuccessResponse<T>> {
   const response = await apiClient.put<ApiResponse<T>>(url, data, config);
-  
+
   if (response.data.success) {
     return response.data as ApiSuccessResponse<T>;
   }
-  
+
   const errorData = response.data as ApiErrorResponse;
   throw new ApiError(
     errorData.error.message,
@@ -204,11 +204,11 @@ export async function patch<T, D = unknown>(
   config?: AxiosRequestConfig
 ): Promise<ApiSuccessResponse<T>> {
   const response = await apiClient.patch<ApiResponse<T>>(url, data, config);
-  
+
   if (response.data.success) {
     return response.data as ApiSuccessResponse<T>;
   }
-  
+
   const errorData = response.data as ApiErrorResponse;
   throw new ApiError(
     errorData.error.message,
@@ -226,11 +226,11 @@ export async function del<T>(
   config?: AxiosRequestConfig
 ): Promise<ApiSuccessResponse<T>> {
   const response = await apiClient.delete<ApiResponse<T>>(url, config);
-  
+
   if (response.data.success) {
     return response.data as ApiSuccessResponse<T>;
   }
-  
+
   const errorData = response.data as ApiErrorResponse;
   throw new ApiError(
     errorData.error.message,

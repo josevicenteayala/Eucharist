@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export function Header() {
   const pathname = usePathname();
 
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/gospel", label: "Daily Gospel" },
-    { href: "/learn", label: "Learn" },
-    { href: "/community", label: "Community" },
+    { href: '/', label: 'Home' },
+    { href: '/gospel', label: 'Daily Gospel' },
+    { href: '/learn', label: 'Learn' },
+    { href: '/community', label: 'Community' },
   ];
 
   return (
@@ -20,7 +20,7 @@ export function Header() {
           <Link href="/" className="flex items-center">
             <span className="text-xl font-bold text-blue-600">Eucharist Platform</span>
           </Link>
-          
+
           <nav className="flex space-x-8" aria-label="Main navigation">
             {navItems.map((item) => (
               <Link
@@ -28,10 +28,10 @@ export function Header() {
                 href={item.href}
                 className={`text-sm font-medium transition-colors hover:text-blue-600 ${
                   pathname === item.href
-                    ? "text-blue-600 border-b-2 border-blue-600"
-                    : "text-gray-700"
+                    ? 'text-blue-600 border-b-2 border-blue-600'
+                    : 'text-gray-700'
                 }`}
-                aria-current={pathname === item.href ? "page" : undefined}
+                aria-current={pathname === item.href ? 'page' : undefined}
               >
                 {item.label}
               </Link>

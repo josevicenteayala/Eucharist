@@ -13,6 +13,7 @@ This directory contains guidelines for creating and reviewing content for the Eu
 ## Key Requirements
 
 All spiritual and educational content must include:
+
 - Theological review metadata
 - Magisterium references (e.g., CCC citations)
 - Review date and reviewer information

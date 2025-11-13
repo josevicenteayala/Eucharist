@@ -50,6 +50,7 @@ The Navigation component is included in the root layout and appears on all pages
 Dynamic routes use square brackets in the folder name. The article detail page accepts a `slug` parameter and displays content based on that slug.
 
 Example URLs:
+
 - `/learn/understanding-real-presence`
 - `/learn/biblical-foundation`
 - `/learn/eucharistic-miracles`
@@ -57,30 +58,36 @@ Example URLs:
 ## Key Features
 
 ### 1. Client-Side Navigation
+
 - Uses Next.js `<Link>` component for optimized navigation
 - Prefetches linked pages on hover
 - No full page reloads
 
 ### 2. Server Components by Default
+
 - All pages are React Server Components unless marked with `"use client"`
 - The Navigation component uses `"use client"` for interactive features
 
 ### 3. Automatic Code Splitting
+
 - Each route is automatically code-split
 - Only loads JavaScript needed for the current page
 
 ### 4. Layouts
+
 - Root layout includes Navigation and applies global styles
 - Can create nested layouts for specific route segments
 
 ## Adding New Routes
 
 ### Static Route
+
 1. Create a new folder under `src/app/`
 2. Add a `page.tsx` file
 3. Export a default React component
 
 Example:
+
 ```typescript
 // src/app/prayers/page.tsx
 export default function PrayersPage() {
@@ -89,10 +96,12 @@ export default function PrayersPage() {
 ```
 
 ### Dynamic Route
+
 1. Create a folder with square brackets: `[paramName]`
 2. Add a `page.tsx` file that accepts params
 
 Example:
+
 ```typescript
 // src/app/articles/[id]/page.tsx
 interface PageProps {
@@ -115,7 +124,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Daily Gospel',
-  description: 'Read today\'s Gospel reading',
+  description: "Read today's Gospel reading",
 };
 
 export default function GospelPage() {

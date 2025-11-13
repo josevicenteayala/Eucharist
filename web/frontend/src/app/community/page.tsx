@@ -2,25 +2,25 @@ export default function CommunityPage() {
   const prayerIntentions = [
     {
       id: 1,
-      author: "Maria G.",
+      author: 'Maria G.',
       intention: "For my mother's healing and comfort during her illness",
       prayers: 234,
-      timeAgo: "2 hours ago"
+      timeAgo: '2 hours ago',
     },
     {
       id: 2,
-      author: "John D.",
-      intention: "Thanksgiving for answered prayers and blessings received",
+      author: 'John D.',
+      intention: 'Thanksgiving for answered prayers and blessings received',
       prayers: 156,
-      timeAgo: "5 hours ago"
+      timeAgo: '5 hours ago',
     },
     {
       id: 3,
-      author: "Patricia L.",
-      intention: "For peace in our troubled world and unity among all people",
+      author: 'Patricia L.',
+      intention: 'For peace in our troubled world and unity among all people',
       prayers: 412,
-      timeAgo: "1 day ago"
-    }
+      timeAgo: '1 day ago',
+    },
   ];
 
   return (

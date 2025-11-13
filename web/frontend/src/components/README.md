@@ -17,6 +17,6 @@ components/
 - Use functional components with hooks
 - Implement proper TypeScript typing
 - Include accessibility attributes (ARIA)
-- Co-locate component tests (*.test.tsx)
+- Co-locate component tests (\*.test.tsx)
 - Keep components focused and single-purpose
 - Use composition over inheritance

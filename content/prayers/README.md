@@ -13,6 +13,7 @@ This directory contains Catholic prayers related to the Eucharist.
 ## Format
 
 Prayers should include:
+
 - Original language (if applicable)
 - Translations
 - Attribution/source

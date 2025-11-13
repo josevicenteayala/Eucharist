@@ -5,6 +5,7 @@ This directory contains CI/CD workflows for automated testing, building, and dep
 ## Workflows
 
 ### ci.yml - Continuous Integration
+
 - Lint code (ESLint, Prettier)
 - Run TypeScript compilation
 - Run unit tests
@@ -13,12 +14,14 @@ This directory contains CI/CD workflows for automated testing, building, and dep
 - Code coverage reports
 
 ### cd.yml - Continuous Deployment
+
 - Build applications
 - Deploy to staging/production
 - Database migrations
 - Smoke tests
 
 ### tests.yml - Test Automation
+
 - Automated test runs
 - E2E tests with Playwright/Cypress
 - Mobile tests
@@ -42,6 +45,7 @@ This directory contains CI/CD workflows for automated testing, building, and dep
 ## Environment Variables
 
 Store sensitive values in GitHub Secrets:
+
 - Database credentials
 - API keys
 - Deployment tokens

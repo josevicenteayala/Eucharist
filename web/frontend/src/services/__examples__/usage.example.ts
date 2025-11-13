@@ -1,11 +1,12 @@
+/* eslint-disable no-console */
 /**
  * API Usage Examples
- * 
+ *
  * This file demonstrates how to use the Axios API client.
  * These are examples only - not executable tests.
  */
 
-import { get, post, put, patch, del } from '../api';
+import { get, post } from '../api';
 import { getTodaysGospel, getGospelByDate } from '../gospelService';
 import { ApiError } from '@/types/api';
 
@@ -44,13 +45,10 @@ async function examplePostRequest() {
   }
 
   try {
-    const response = await post<User, CreateUserDto>(
-      '/users',
-      {
-        email: 'user@example.com',
-        name: 'John Doe'
-      }
-    );
+    const response = await post<User, CreateUserDto>('/users', {
+      email: 'user@example.com',
+      name: 'John Doe',
+    });
     console.log('Created user:', response.data);
   } catch (error) {
     if (error instanceof ApiError) {
@@ -89,8 +87,8 @@ async function examplePagination() {
     const response = await get<Article[]>('/articles', {
       params: {
         page: 1,
-        limit: 10
-      }
+        limit: 10,
+      },
     });
 
     console.log('Articles:', response.data);
@@ -135,5 +133,5 @@ export {
   examplePostRequest,
   exampleGospelService,
   examplePagination,
-  exampleErrorHandling
+  exampleErrorHandling,
 };

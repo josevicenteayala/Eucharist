@@ -5,6 +5,7 @@ This document explains how Axios is configured for API calls in the Eucharist Pl
 ## Overview
 
 The Axios HTTP client is fully configured with:
+
 - TypeScript type safety
 - Request/response interceptors
 - Automatic authentication token handling
@@ -34,10 +35,10 @@ const response = await get<User>('/users/me');
 console.log(response.data); // Type: User
 
 // POST request
-const newUser = await post<User, CreateUserDto>(
-  '/users',
-  { email: 'user@example.com', name: 'John Doe' }
-);
+const newUser = await post<User, CreateUserDto>('/users', {
+  email: 'user@example.com',
+  name: 'John Doe',
+});
 
 // PUT request
 const updated = await put<User>('/users/123', { name: 'Jane Doe' });
@@ -65,7 +66,7 @@ try {
     console.error('Message:', error.message);
     console.error('Status:', error.statusCode);
     console.error('Details:', error.details);
-    
+
     // Handle specific error codes
     switch (error.code) {
       case 'NOT_FOUND':
@@ -78,7 +79,7 @@ try {
         // Handle network error
         break;
       default:
-        // Handle other errors
+      // Handle other errors
     }
   }
 }
@@ -137,7 +138,7 @@ function GospelComponent() {
 
   // Mutation example
   const mutation = useMutation({
-    mutationFn: (bookmarkId: string) => 
+    mutationFn: (bookmarkId: string) =>
       post('/bookmarks', { gospelId: bookmarkId }),
     onSuccess: () => {
       // Handle success
@@ -151,7 +152,7 @@ function GospelComponent() {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
-  
+
   return <div>{data?.liturgicalDay}</div>;
 }
 ```
@@ -204,7 +205,7 @@ Authentication is handled automatically:
 // Login example
 const loginResponse = await post<{ token: string }>('/auth/login', {
   email: 'user@example.com',
-  password: 'password123'
+  password: 'password123',
 });
 
 // Store token (handled by your auth logic)
@@ -218,12 +219,14 @@ localStorage.setItem('authToken', loginResponse.data.token);
 ### Request Interceptor
 
 Automatically adds:
+
 - Authorization header with Bearer token
 - Development logging
 
 ### Response Interceptor
 
 Handles:
+
 - 401 errors (clears token, redirects to login)
 - Error transformation to `ApiError`
 - Development logging
@@ -275,25 +278,22 @@ class ApiError extends Error {
   code: string;
   details?: unknown;
   statusCode?: number;
-  
-  constructor(
-    message: string,
-    code: string,
-    statusCode?: number,
-    details?: unknown
-  );
+
+  constructor(message: string, code: string, statusCode?: number, details?: unknown);
 }
 ```
 
 ## Best Practices
 
 1. **Always use generic types** for type-safe responses:
+
    ```typescript
    const response = await get<User>('/users/me');
    // response.data is typed as User
    ```
 
 2. **Handle errors properly**:
+
    ```typescript
    try {
      const data = await getResource();
@@ -311,10 +311,11 @@ class ApiError extends Error {
    - `contentService.ts` - Content management
 
 4. **Document service functions** with JSDoc:
+
    ```typescript
    /**
     * Get today's gospel reading
-    * 
+    *
     * @returns Promise with today's gospel reading data
     * @throws ApiError if request fails
     */
@@ -339,29 +340,31 @@ import MockAdapter from 'axios-mock-adapter';
 
 describe('MyComponent', () => {
   const mock = new MockAdapter(apiClient);
-  
+
   afterEach(() => {
     mock.reset();
   });
-  
+
   it('fetches data successfully', async () => {
     mock.onGet('/gospel/today').reply(200, {
       success: true,
-      data: { /* mock data */ }
+      data: {
+        /* mock data */
+      },
     });
-    
+
     // Test your component
   });
-  
+
   it('handles errors', async () => {
     mock.onGet('/gospel/today').reply(500, {
       success: false,
       error: {
         code: 'SERVER_ERROR',
-        message: 'Internal server error'
-      }
+        message: 'Internal server error',
+      },
     });
-    
+
     // Test error handling
   });
 });

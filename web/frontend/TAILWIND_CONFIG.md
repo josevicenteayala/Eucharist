@@ -5,6 +5,7 @@ This document describes the Tailwind CSS configuration for the Eucharist Platfor
 ## Overview
 
 The Tailwind CSS configuration has been set up according to ADR-006 specifications with:
+
 - Autoprefixer for cross-browser compatibility
 - Custom theme colors for brand consistency
 - Extended utilities for flexible layout options
@@ -13,12 +14,15 @@ The Tailwind CSS configuration has been set up according to ADR-006 specificatio
 ## Configuration Files
 
 ### 1. `tailwind.config.ts`
+
 Main Tailwind configuration file with custom theme extensions.
 
 ### 2. `postcss.config.mjs`
+
 PostCSS configuration including Tailwind and Autoprefixer plugins.
 
 ### 3. `src/app/globals.css`
+
 Global styles with Tailwind directives.
 
 ## Custom Theme
@@ -26,29 +30,39 @@ Global styles with Tailwind directives.
 ### Colors
 
 #### Primary (Blue)
+
 Used for main actions, links, and branding elements.
+
 ```tsx
 <button className="bg-primary-500 hover:bg-primary-600">Click me</button>
 ```
+
 - `primary-50` through `primary-950` (11 shades)
 
 #### Secondary (Purple)
+
 Used for secondary actions and supporting elements.
+
 ```tsx
 <div className="bg-secondary-100 text-secondary-800">Info box</div>
 ```
+
 - `secondary-50` through `secondary-950` (11 shades)
 
 #### Accent (Pink/Magenta)
+
 Used for highlights, special calls-to-action, and emphasis.
+
 ```tsx
 <span className="text-accent-600">Important!</span>
 ```
+
 - `accent-50` through `accent-950` (11 shades)
 
 ### Typography
 
 #### Font Families
+
 - **Sans**: Geist Sans variable font (default)
   ```tsx
   <p className="font-sans">Body text</p>
@@ -61,6 +75,7 @@ Used for highlights, special calls-to-action, and emphasis.
 ### Extended Utilities
 
 #### Spacing
+
 - `h-128` / `w-128`: 32rem (512px)
 - `h-144` / `w-144`: 36rem (576px)
 
@@ -69,6 +84,7 @@ Used for highlights, special calls-to-action, and emphasis.
 ```
 
 #### Border Radius
+
 - `rounded-4xl`: 2rem (32px)
 
 ```tsx
@@ -76,6 +92,7 @@ Used for highlights, special calls-to-action, and emphasis.
 ```
 
 #### Max Width
+
 - `max-w-8xl`: 88rem (1408px)
 - `max-w-9xl`: 96rem (1536px)
 
@@ -86,6 +103,7 @@ Used for highlights, special calls-to-action, and emphasis.
 ## Dark Mode
 
 Dark mode is configured to use CSS media queries:
+
 ```css
 @media (prefers-color-scheme: dark) {
   /* Dark mode styles */
@@ -93,15 +111,15 @@ Dark mode is configured to use CSS media queries:
 ```
 
 Tailwind classes automatically adapt based on system preference:
+
 ```tsx
-<div className="bg-white dark:bg-gray-900">
-  Content adapts to system theme
-</div>
+<div className="bg-white dark:bg-gray-900">Content adapts to system theme</div>
 ```
 
 ## Content Paths
 
 Tailwind scans the following directories for class usage:
+
 - `src/pages/**/*.{js,ts,jsx,tsx,mdx}`
 - `src/components/**/*.{js,ts,jsx,tsx,mdx}`
 - `src/app/**/*.{js,ts,jsx,tsx,mdx}`
@@ -113,6 +131,7 @@ Tailwind scans the following directories for class usage:
 ## Autoprefixer
 
 Autoprefixer automatically adds vendor prefixes for:
+
 - Flexbox properties
 - Grid layout
 - Transform properties
@@ -120,6 +139,7 @@ Autoprefixer automatically adds vendor prefixes for:
 - And more...
 
 Example output:
+
 ```css
 /* Input */
 .element {
@@ -137,6 +157,7 @@ Example output:
 ## Usage Examples
 
 ### Button with Primary Color
+
 ```tsx
 <button className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg">
   Submit
@@ -144,6 +165,7 @@ Example output:
 ```
 
 ### Card with Custom Styling
+
 ```tsx
 <div className="max-w-8xl mx-auto bg-white rounded-4xl shadow-lg p-8">
   <h2 className="text-2xl font-bold text-primary-700">Card Title</h2>
@@ -152,6 +174,7 @@ Example output:
 ```
 
 ### Hero Section with Extended Spacing
+
 ```tsx
 <section className="h-128 flex items-center justify-center bg-gradient-to-r from-primary-500 to-secondary-500">
   <h1 className="text-5xl font-bold text-white">Welcome</h1>
@@ -159,11 +182,10 @@ Example output:
 ```
 
 ### Responsive Layout
+
 ```tsx
 <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {/* Grid items */}
-  </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">{/* Grid items */}</div>
 </div>
 ```
 
@@ -178,10 +200,11 @@ Example output:
 4. **Avoid arbitrary values**: Use theme values instead of arbitrary values when possible.
 
 5. **Compose utilities**: Prefer composition over custom CSS:
+
    ```tsx
    // Good
    <div className="flex items-center space-x-4">
-   
+
    // Avoid
    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
    ```
@@ -189,6 +212,7 @@ Example output:
 ## Build Optimization
 
 Tailwind automatically:
+
 - Removes unused CSS in production builds
 - Minifies the output
 - Optimizes for performance
@@ -204,16 +228,19 @@ Production build size is optimized to only include classes actually used in the 
 ## Troubleshooting
 
 ### Classes not applying
+
 1. Check if the file is in a content path
 2. Ensure the class name is correct
 3. Clear `.next` cache and rebuild
 
 ### Build errors
+
 1. Verify `tailwindcss` and `autoprefixer` are installed
 2. Check PostCSS configuration
 3. Ensure `globals.css` has Tailwind directives
 
 ### Hot reload not working
+
 1. Restart the dev server
 2. Check if the file is being watched
 3. Verify content paths in config

@@ -39,10 +39,10 @@ console.log(response.data); // Typed as User
 ```typescript
 import { post } from '@/services/api';
 
-const response = await post<User, CreateUserDto>(
-  '/users',
-  { email: 'user@example.com', name: 'John' }
-);
+const response = await post<User, CreateUserDto>('/users', {
+  email: 'user@example.com',
+  name: 'John',
+});
 ```
 
 ### Error Handling
@@ -87,6 +87,7 @@ export async function createResource(data: Omit<Resource, 'id'>) {
 All API responses follow a standard format:
 
 **Success Response:**
+
 ```typescript
 {
   success: true,
@@ -100,6 +101,7 @@ All API responses follow a standard format:
 ```
 
 **Error Response:**
+
 ```typescript
 {
   success: false,
