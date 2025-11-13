@@ -85,6 +85,8 @@ cp .env.example .env
 # Edit .env with your configuration
 ```
 
+See the [Environment Setup Guide](../../ENVIRONMENT_SETUP.md) for detailed configuration instructions.
+
 3. Set up databases:
 
 **PostgreSQL**:

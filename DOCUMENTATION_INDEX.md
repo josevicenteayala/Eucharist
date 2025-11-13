@@ -109,6 +109,7 @@ These detailed documents define specific tasks, workflows, and best practices fo
 **Start Here:**
 
 - ⭐ **[NEXT_STEPS_IMPLEMENTATION_PROMPT.md](NEXT_STEPS_IMPLEMENTATION_PROMPT.md)** - **NEW!** Start building Sprint 1
+- **[ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md)** - Configure environment variables for development
 - **[TECHNICAL_ROADMAP.md](TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
 - **[docs/sdlc/SOFTWARE_ARCHITECT.md](docs/sdlc/SOFTWARE_ARCHITECT.md)** - Architecture reference
 - **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** - Code organization
@@ -191,6 +192,7 @@ These detailed documents define specific tasks, workflows, and best practices fo
 
 - **[TECHNICAL_ROADMAP.md](TECHNICAL_ROADMAP.md)** - Complete technical implementation
 - **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** - Architecture and organization
+- **[ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md)** - Environment configuration guide
 - **[DISCOVERY.md](DISCOVERY.md)** - Section: Technical Architecture
 
 ### Development Process
