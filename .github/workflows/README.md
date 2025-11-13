@@ -235,8 +235,8 @@ When adding new workflows:
 
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [ADR-005: CI/CD with GitHub Actions](../../docs/architecture/adr/ADR-005-cicd-github-actions.md)
-- [Project Technical Roadmap](../../TECHNICAL_ROADMAP.md)
-- [Contributing Guidelines](../../CONTRIBUTING.md)
+- [Project Technical Roadmap](../../docs/TECHNICAL_ROADMAP.md)
+- [Contributing Guidelines](../../docs/CONTRIBUTING.md)
 
 ---
 

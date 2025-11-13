@@ -488,7 +488,7 @@ See `.github/workflows/` for pipeline configurations.
 4. Run linting and formatting
 5. Update documentation as needed
 
-See [CONTRIBUTING.md](../../CONTRIBUTING.md) for more details.
+See [CONTRIBUTING.md](../../docs/CONTRIBUTING.md) for more details.
 
 ## License
 

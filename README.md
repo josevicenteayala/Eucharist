@@ -66,9 +66,9 @@ The Eucharist Understanding Platform will consist of:
 - **[Discovery Phase Document](DISCOVERY.md)** - Comprehensive project vision, goals, and planning
 - **[Executive Summary](EXECUTIVE_SUMMARY.md)** - High-level overview for stakeholders
 - **[Quick Start for PM](QUICK_START_PM.md)** - Project Manager's first 4 weeks
-- **[Technical Roadmap](TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
-- **[Project Structure](PROJECT_STRUCTURE.md)** - Technical architecture and organization
-- **[Contributing Guide](CONTRIBUTING.md)** - How to contribute to the project
+- **[Technical Roadmap](/docs/TECHNICAL_ROADMAP.md)** - Sprint-by-sprint implementation guide
+- **[Project Structure](/docs/PROJECT_STRUCTURE.md)** - Technical architecture and organization
+- **[Contributing Guide](/docs/CONTRIBUTING.md)** - How to contribute to the project
 
 ### SDLC Role Documentation
 

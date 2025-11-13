@@ -174,4 +174,4 @@ This project follows:
 
 ## Contributing
 
-See the root [CONTRIBUTING.md](../../CONTRIBUTING.md) for contribution guidelines.
+See the root [CONTRIBUTING.md](../../docs/CONTRIBUTING.md) for contribution guidelines.
