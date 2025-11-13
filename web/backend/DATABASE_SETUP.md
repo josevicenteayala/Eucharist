@@ -18,84 +18,62 @@ The backend uses three different databases, each serving a specific purpose:
 
 ## Quick Start with Docker (Recommended)
 
-The easiest way to set up all databases is using Docker Compose:
+The easiest way to set up all databases is using Docker Compose.
 
-### 1. Create docker-compose.yml
+### Option 1: Complete Development Environment (Recommended)
 
-Create a `docker-compose.yml` file in your project root:
-
-```yaml
-version: '3.8'
-
-services:
-  postgres:
-    image: postgres:16-alpine
-    container_name: eucharist-postgres
-    environment:
-      POSTGRES_DB: eucharist_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-    ports:
-      - '5432:5432'
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U postgres']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  mongodb:
-    image: mongo:7-jammy
-    container_name: eucharist-mongodb
-    environment:
-      MONGO_INITDB_DATABASE: eucharist
-    ports:
-      - '27017:27017'
-    volumes:
-      - mongodb_data:/data/db
-    healthcheck:
-      test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  redis:
-    image: redis:7-alpine
-    container_name: eucharist-redis
-    ports:
-      - '6379:6379'
-    volumes:
-      - redis_data:/data
-    healthcheck:
-      test: ['CMD', 'redis-cli', 'ping']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-volumes:
-  postgres_data:
-  mongodb_data:
-  redis_data:
-```
-
-### 2. Start the databases
+Use the root-level `docker-compose.yml` which includes databases AND the backend/frontend services:
 
 ```bash
-docker-compose up -d
+# From repository root
+docker compose up -d
 ```
 
-### 3. Verify databases are running
+This starts all services including PostgreSQL, MongoDB, Redis, backend API, and frontend web app.
+See [DOCKER.md](../../DOCKER.md) for complete documentation.
+
+### Option 2: Databases Only
+
+If you prefer to run backend/frontend natively, use the docker-compose.yml in the backend directory:
 
 ```bash
-docker-compose ps
+# From repository root
+cd web/backend
+docker compose up -d
 ```
 
-You should see all three services running and healthy.
+This starts only the three databases (PostgreSQL, MongoDB, Redis).
 
-### 4. Configure environment variables
+### Configuration Details
 
-Update your `.env` file:
+**PostgreSQL**: Port 5432, database `eucharist_db`, user `postgres`, password `postgres`  
+**MongoDB**: Port 27017, database `eucharist`  
+**Redis**: Port 6379
+
+See the actual `docker-compose.yml` files for complete configuration including health checks and volumes.
+
+### Starting the Databases
+
+```bash
+# Option 1: Full stack (from repository root)
+docker compose up -d
+
+# Option 2: Databases only (from web/backend)
+cd web/backend
+docker compose up -d
+```
+
+### Verify Databases are Running
+
+```bash
+docker compose ps
+```
+
+You should see all three database services running and healthy.
+
+### Configure Environment Variables
+
+Update your `.env` file in `web/backend/`:
 
 ```env
 # PostgreSQL
@@ -114,7 +92,7 @@ REDIS_PORT=6379
 REDIS_PASSWORD=
 ```
 
-### 5. Test the connection
+### Test the Connection
 
 Start your backend server:
 
