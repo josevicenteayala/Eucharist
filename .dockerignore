@@ -4,7 +4,7 @@
 .github
 
 # Documentation (not needed in containers)
-*.md
+/*.md
 docs/
 
 # Node.js

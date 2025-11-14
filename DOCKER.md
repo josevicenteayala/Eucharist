@@ -366,11 +366,16 @@ netstat -ano | findstr :3000
 If you see module-related errors:
 
 ```bash
-# Clear and rebuild node_modules
-docker compose down
-docker volume rm eucharist-platform_backend_node_modules
-docker volume rm eucharist-platform_frontend_node_modules
+# Clear and rebuild node_modules volumes
+# Recommended: Remove all volumes associated with the current Compose project
+docker compose down -v
 docker compose up -d
+
+# Alternatively, to remove only node_modules volumes (if you want to keep database data):
+docker volume ls | grep node_modules
+# Then remove the actual volume names shown, e.g.:
+# docker volume rm eucharist_backend_node_modules
+# docker volume rm eucharist_frontend_node_modules
 ```
 
 ### Container Keeps Restarting
@@ -493,5 +498,5 @@ docker stats
 
 ---
 
-**Last Updated**: November 13, 2025  
+**Last Updated**: November 6, 2025  
 **Version**: 1.0.0
