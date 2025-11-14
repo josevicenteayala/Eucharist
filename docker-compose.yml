@@ -86,7 +86,11 @@ services:
       # JWT
       # WARNING: This secret is for development only. DO NOT use in production.
       # Generate a secure secret for production using: openssl rand -base64 32
-      JWT_SECRET: dev-secret-change-in-production
+      # WARNING: This secret is for development only. DO NOT use in production.
+      # For production, set JWT_SECRET to a strong, unique value.
+      # For local development, this will generate a random secret if not set.
+      # See DOCKER.md for instructions on generating a secure secret.
+      JWT_SECRET: ${JWT_SECRET:-$(openssl rand -base64 32)}
       JWT_ACCESS_TOKEN_EXPIRY: 15m
       JWT_REFRESH_TOKEN_EXPIRY: 7d
       # CORS
