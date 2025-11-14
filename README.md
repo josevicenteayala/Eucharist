@@ -140,7 +140,6 @@ _See [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for detailed structure._
 - **Option 1: Docker** (Recommended)
   - Docker Desktop or Docker Engine + Docker Compose
   - [Installation Guide](DOCKER.md)
-  
 - **Option 2: Native**
   - Node.js 18+ and npm 9+
   - PostgreSQL, MongoDB, and Redis
@@ -161,7 +160,6 @@ _See [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for detailed structure._
    ```
 
 3. **Access the applications**
-
    - Frontend: http://localhost:3001
    - Backend API: http://localhost:3000
    - API Health: http://localhost:3000/api/v1/health
