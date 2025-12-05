@@ -81,7 +81,7 @@ export function assertValidTimestamp(timestamp: string) {
 /**
  * Assert response data contains required fields
  */
-export function assertHasFields(data: any, fields: string[]) {
+export function assertHasFields(data: Record<string, unknown>, fields: string[]) {
   fields.forEach((field) => {
     expect(data).toHaveProperty(field);
   });

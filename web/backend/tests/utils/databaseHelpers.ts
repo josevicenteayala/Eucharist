@@ -152,7 +152,7 @@ export function createMockDatabaseError(
   message: string = 'Database error',
   code: string = 'ECONNREFUSED'
 ): Error {
-  const error = new Error(message) as any;
+  const error = new Error(message) as Error & { code?: string };
   error.code = code;
   return error;
 }

@@ -143,22 +143,22 @@ export function testSyncError(fn: () => void, expectedError: string | RegExp): v
  */
 export function suppressConsoleLogs() {
   const originalError = console.error;
+
   const originalWarn = console.warn;
+  // eslint-disable-next-line no-console
   const originalLog = console.log;
 
   beforeAll(() => {
-    // eslint-disable-next-line no-console
     console.error = jest.fn();
-    // eslint-disable-next-line no-console
+
     console.warn = jest.fn();
     // eslint-disable-next-line no-console
     console.log = jest.fn();
   });
 
   afterAll(() => {
-    // eslint-disable-next-line no-console
     console.error = originalError;
-    // eslint-disable-next-line no-console
+
     console.warn = originalWarn;
     // eslint-disable-next-line no-console
     console.log = originalLog;
@@ -173,8 +173,11 @@ export function captureConsoleOutput() {
   const errors: string[] = [];
   const warns: string[] = [];
 
+  // eslint-disable-next-line no-console
   const originalLog = console.log;
+
   const originalError = console.error;
+
   const originalWarn = console.warn;
 
   beforeEach(() => {
@@ -186,11 +189,11 @@ export function captureConsoleOutput() {
     console.log = jest.fn((...args: unknown[]) => {
       logs.push(args.join(' '));
     });
-    // eslint-disable-next-line no-console
+
     console.error = jest.fn((...args: unknown[]) => {
       errors.push(args.join(' '));
     });
-    // eslint-disable-next-line no-console
+
     console.warn = jest.fn((...args: unknown[]) => {
       warns.push(args.join(' '));
     });
@@ -199,9 +202,9 @@ export function captureConsoleOutput() {
   afterEach(() => {
     // eslint-disable-next-line no-console
     console.log = originalLog;
-    // eslint-disable-next-line no-console
+
     console.error = originalError;
-    // eslint-disable-next-line no-console
+
     console.warn = originalWarn;
   });
 
