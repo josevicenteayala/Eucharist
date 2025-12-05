@@ -137,10 +137,36 @@ _See [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for detailed structure._
 
 ### Prerequisites
 
-- Node.js 18+ and npm 9+
-- Git
+- **Option 1: Docker** (Recommended)
+  - Docker Desktop or Docker Engine + Docker Compose
+  - [Installation Guide](DOCKER.md)
+- **Option 2: Native**
+  - Node.js 18+ and npm 9+
+  - PostgreSQL, MongoDB, and Redis
 
-### Getting Started
+### Quick Start with Docker (Recommended)
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/josevicenteayala/Eucharist.git
+   cd Eucharist
+   ```
+
+2. **Start all services**
+
+   ```bash
+   docker compose up -d
+   ```
+
+3. **Access the applications**
+   - Frontend: http://localhost:3001
+   - Backend API: http://localhost:3000
+   - API Health: http://localhost:3000/api/v1/health
+
+See the [Docker Guide](DOCKER.md) for complete documentation.
+
+### Native Setup
 
 1. **Clone the repository**
 
@@ -155,7 +181,12 @@ _See [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for detailed structure._
    npm install
    ```
 
-3. **Configure environment variables**
+3. **Set up databases**
+
+   Install and start PostgreSQL, MongoDB, and Redis.
+   See [Database Setup Guide](web/backend/DATABASE_SETUP.md) for detailed instructions.
+
+4. **Configure environment variables**
 
    ```bash
    # Backend
@@ -171,7 +202,7 @@ _See [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for detailed structure._
 
    See [Environment Setup Guide](ENVIRONMENT_SETUP.md) for detailed configuration instructions.
 
-4. **Linting and Formatting**
+5. **Linting and Formatting**
 
    ```bash
    # Check code formatting
@@ -187,13 +218,13 @@ _See [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for detailed structure._
    npm run lint:fix
    ```
 
-5. **Git Hooks**
+6. **Git Hooks**
 
    Pre-commit hooks are automatically installed via Husky. They will:
    - Run ESLint and fix issues on staged `.js`, `.jsx`, `.ts`, `.tsx` files
    - Format all staged files with Prettier
 
-6. **Working with Backend**
+7. **Working with Backend**
 
    ```bash
    cd web/backend
