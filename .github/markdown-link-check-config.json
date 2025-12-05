@@ -5,6 +5,9 @@
     },
     {
       "pattern": "^https://localhost"
+    },
+    {
+      "pattern": "^https://www.romanpichler.com"
     }
   ],
   "timeout": "20s",
