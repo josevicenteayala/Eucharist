@@ -31,7 +31,6 @@ CREATE TABLE IF NOT EXISTS gospel_readings (
 );
 
 -- Indexes for gospel_readings table
-CREATE INDEX IF NOT EXISTS idx_gospel_readings_date ON gospel_readings(date);
 CREATE INDEX IF NOT EXISTS idx_gospel_readings_season ON gospel_readings(liturgical_season);
 CREATE INDEX IF NOT EXISTS idx_gospel_readings_year ON gospel_readings(liturgical_year);
 CREATE INDEX IF NOT EXISTS idx_gospel_readings_feast ON gospel_readings(feast_day) WHERE feast_day IS NOT NULL;
