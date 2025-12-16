@@ -15,6 +15,7 @@ models/
 The PostgreSQL schema is defined in `src/database/migrations/`. See `src/database/README.md` for details.
 
 **Core tables**:
+
 - `users` - User authentication and account information
 - `user_profiles` - Extended user profile and preferences
 - `gospel_readings` - Daily liturgical readings

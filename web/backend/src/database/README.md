@@ -22,12 +22,12 @@ database/
 
 ### Core Tables
 
-| Table | Description |
-|-------|-------------|
-| `users` | User authentication and account information |
-| `user_profiles` | Extended user profile and preferences |
+| Table             | Description                                            |
+| ----------------- | ------------------------------------------------------ |
+| `users`           | User authentication and account information            |
+| `user_profiles`   | Extended user profile and preferences                  |
 | `gospel_readings` | Daily liturgical readings from the Catholic lectionary |
-| `reflections` | User reflections on gospel readings |
+| `reflections`     | User reflections on gospel readings                    |
 
 ### Entity Relationships
 
