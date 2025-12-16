@@ -15,12 +15,15 @@ module.exports = {
     },
   },
   transform: {
-    '^.+\\.ts$': ['ts-jest', {
-      diagnostics: {
-        ignoreCodes: [2339],
+    '^.+\\.ts$': [
+      'ts-jest',
+      {
+        diagnostics: {
+          ignoreCodes: [2339],
+        },
+        isolatedModules: true,
       },
-      isolatedModules: true,
-    }],
+    ],
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
