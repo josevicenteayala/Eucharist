@@ -2,6 +2,7 @@ import app from './app';
 import { config } from './config/env';
 import logger from './config/logger';
 import { connectDatabases, disconnectDatabases } from './config/database';
+import { UserModel } from './models/postgres/User';
 
 const PORT = config.port;
 
@@ -9,6 +10,9 @@ async function startServer() {
   try {
     // Connect to databases
     await connectDatabases();
+
+    // Initialize Database Tables
+    await UserModel.initializeTable();
 
     // Start HTTP server
     const server = app.listen(PORT, () => {
