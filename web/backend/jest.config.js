@@ -14,6 +14,12 @@ module.exports = {
       statements: 35,
     },
   },
+  'ts-jest': {
+    diagnostics: {
+      ignoreCodes: [2339],
+    },
+    isolatedModules: true,
+  },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },

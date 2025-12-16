@@ -43,6 +43,19 @@ jobs:
   test:
     runs-on: ubuntu-latest
     services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: eucharist_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
       mongodb:
         image: mongo:6.0
         ports:
@@ -71,6 +84,11 @@ jobs:
         run: npm run test:coverage
         working-directory: web/backend
         env:
+          POSTGRES_HOST: localhost
+          POSTGRES_PORT: 5432
+          POSTGRES_DB: eucharist_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
           MONGODB_URI: mongodb://localhost:27017/eucharist_test
           REDIS_HOST: localhost
           REDIS_PORT: 6379

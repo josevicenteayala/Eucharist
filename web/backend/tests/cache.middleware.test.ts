@@ -27,11 +27,13 @@ describe('Cache Middleware', () => {
   });
 
   afterEach(async () => {
-    // Clean up test cache keys
-    const client = redisDb.getClient();
-    const keys = await client.keys('api:*');
-    if (keys.length > 0) {
-      await Promise.all(keys.map((key) => redisDb.del(key)));
+    // Clean up test cache keys only if connected
+    if (redisDb.isConnectionActive()) {
+      const client = redisDb.getClient();
+      const keys = await client.keys('api:*');
+      if (keys.length > 0) {
+        await Promise.all(keys.map((key) => redisDb.del(key)));
+      }
     }
   });
 
@@ -315,14 +317,16 @@ describe('Cache Middleware', () => {
       // Disconnect Redis to simulate error
       await redisDb.disconnect();
 
-      // Requests should still work (just without caching)
-      await request(app).get('/api/resilient').expect(200);
-      await request(app).get('/api/resilient').expect(200);
+      try {
+        // Requests should still work (just without caching)
+        await request(app).get('/api/resilient').expect(200);
+        await request(app).get('/api/resilient').expect(200);
 
-      expect(requestCount).toBe(2); // Both requests processed
-
-      // Reconnect for other tests
-      await redisDb.connect();
+        expect(requestCount).toBe(2); // Both requests processed
+      } finally {
+        // Reconnect for other tests guaranteed
+        await redisDb.connect();
+      }
     });
   });
 });
