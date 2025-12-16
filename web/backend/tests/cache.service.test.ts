@@ -234,6 +234,10 @@ describe('Cache Service', () => {
       const prefix = 'counter:';
 
       const value = await cacheService.increment(key, { prefix });
+
+      // Cleanup custom key
+      await cacheService.del(key, { prefix });
+
       expect(value).toBe(1);
     });
   });
