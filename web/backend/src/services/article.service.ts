@@ -42,7 +42,6 @@ export class ArticleService {
 
   async findBySlug(slug: string) {
     const article = await Article.findOne({ slug, status: 'published' });
-    if (!article) throw new Error('Article not found');
     return article;
   }
 
@@ -54,13 +53,11 @@ export class ArticleService {
 
   async update(id: string, data: Partial<IArticle>) {
     const article = await Article.findByIdAndUpdate(id, data, { new: true });
-    if (!article) throw new Error('Article not found');
     return article;
   }
 
   async delete(id: string) {
     const article = await Article.findByIdAndDelete(id);
-    if (!article) throw new Error('Article not found');
     return article;
   }
 }

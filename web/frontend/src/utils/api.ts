@@ -34,6 +34,9 @@ api.interceptors.response.use(
       // For now, we might just let the UI handle the error
       useAuthStore.getState().logout();
     }
+    if (error.response?.status && error.response.status >= 500) {
+      console.error('Server Error:', error.response.data);
+    }
     return Promise.reject(error);
   }
 );

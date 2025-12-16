@@ -38,7 +38,6 @@ export class PrayerService {
 
   async findBySlug(slug: string) {
     const prayer = await Prayer.findOne({ slug });
-    if (!prayer) throw new Error('Prayer not found');
     return prayer;
   }
 
@@ -49,13 +48,11 @@ export class PrayerService {
 
   async update(id: string, data: Partial<IPrayer>) {
     const prayer = await Prayer.findByIdAndUpdate(id, data, { new: true });
-    if (!prayer) throw new Error('Prayer not found');
     return prayer;
   }
 
   async delete(id: string) {
     const prayer = await Prayer.findByIdAndDelete(id);
-    if (!prayer) throw new Error('Prayer not found');
     return prayer;
   }
 }

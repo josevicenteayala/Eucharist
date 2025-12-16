@@ -3,12 +3,14 @@ import jwt from 'jsonwebtoken';
 import { CreateUserDTO, UserModel, User } from '../models/postgres/User';
 import { config } from '../config/env';
 
+import { AppError } from '../utils/AppError';
+
 export class AuthService {
   async register(data: CreateUserDTO): Promise<{ user: User; token: string }> {
     // 1. Check if user exists
     const existingUser = await UserModel.findByEmail(data.email);
     if (existingUser) {
-      throw new Error('User already exists');
+      throw new AppError('User already exists', 409);
     }
 
     // 2. Hash password
@@ -31,13 +33,13 @@ export class AuthService {
     // 1. Find user
     const user = await UserModel.findByEmail(email);
     if (!user) {
-      throw new Error('Invalid credentials');
+      throw new AppError('Invalid credentials', 401);
     }
 
     // 2. Verify password
     const isPasswordValid = await bcrypt.compare(password, user.password_hash);
     if (!isPasswordValid) {
-      throw new Error('Invalid credentials');
+      throw new AppError('Invalid credentials', 401);
     }
 
     // 3. Generate token

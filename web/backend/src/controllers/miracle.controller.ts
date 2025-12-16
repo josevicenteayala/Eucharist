@@ -1,51 +1,42 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 import { miracleService } from '../services/miracle.service';
+import { catchAsync } from '../utils/catchAsync';
+import { AppError } from '../utils/AppError';
 
 export class MiracleController {
-  async list(req: Request, res: Response, next: NextFunction) {
-    try {
-      const result = await miracleService.findAll(req.query);
-      res.json(result);
-    } catch (error) {
-      next(error);
-    }
-  }
+  list = catchAsync(async (req: Request, res: Response) => {
+    const result = await miracleService.findAll(req.query);
+    res.json(result);
+  });
 
-  async get(req: Request, res: Response, next: NextFunction) {
-    try {
-      const miracle = await miracleService.findBySlug(req.params.slug);
-      res.json(miracle);
-    } catch (error) {
-      next(error);
+  get = catchAsync(async (req: Request, res: Response) => {
+    const miracle = await miracleService.findBySlug(req.params.slug);
+    if (!miracle) {
+      throw new AppError('Miracle not found', 404);
     }
-  }
+    res.json(miracle);
+  });
 
-  async create(req: Request, res: Response, next: NextFunction) {
-    try {
-      const miracle = await miracleService.create(req.body);
-      res.status(201).json(miracle);
-    } catch (error) {
-      next(error);
-    }
-  }
+  create = catchAsync(async (req: Request, res: Response) => {
+    const miracle = await miracleService.create(req.body);
+    res.status(201).json(miracle);
+  });
 
-  async update(req: Request, res: Response, next: NextFunction) {
-    try {
-      const miracle = await miracleService.update(req.params.id, req.body);
-      res.json(miracle);
-    } catch (error) {
-      next(error);
+  update = catchAsync(async (req: Request, res: Response) => {
+    const miracle = await miracleService.update(req.params.id, req.body);
+    if (!miracle) {
+      throw new AppError('Miracle not found', 404);
     }
-  }
+    res.json(miracle);
+  });
 
-  async delete(req: Request, res: Response, next: NextFunction) {
-    try {
-      await miracleService.delete(req.params.id);
-      res.status(204).send();
-    } catch (error) {
-      next(error);
+  delete = catchAsync(async (req: Request, res: Response) => {
+    const miracle = await miracleService.delete(req.params.id);
+    if (!miracle) {
+      throw new AppError('Miracle not found', 404);
     }
-  }
+    res.status(204).send();
+  });
 }
 
 export const miracleController = new MiracleController();

@@ -38,7 +38,6 @@ export class MiracleService {
 
   async findBySlug(slug: string) {
     const miracle = await Miracle.findOne({ slug });
-    if (!miracle) throw new Error('Miracle not found');
     return miracle;
   }
 
@@ -49,13 +48,11 @@ export class MiracleService {
 
   async update(id: string, data: Partial<IMiracle>) {
     const miracle = await Miracle.findByIdAndUpdate(id, data, { new: true });
-    if (!miracle) throw new Error('Miracle not found');
     return miracle;
   }
 
   async delete(id: string) {
     const miracle = await Miracle.findByIdAndDelete(id);
-    if (!miracle) throw new Error('Miracle not found');
     return miracle;
   }
 }

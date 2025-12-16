@@ -1,51 +1,42 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 import { prayerService } from '../services/prayer.service';
+import { catchAsync } from '../utils/catchAsync';
+import { AppError } from '../utils/AppError';
 
 export class PrayerController {
-  async list(req: Request, res: Response, next: NextFunction) {
-    try {
-      const result = await prayerService.findAll(req.query);
-      res.json(result);
-    } catch (error) {
-      next(error);
-    }
-  }
+  list = catchAsync(async (req: Request, res: Response) => {
+    const result = await prayerService.findAll(req.query);
+    res.json(result);
+  });
 
-  async get(req: Request, res: Response, next: NextFunction) {
-    try {
-      const prayer = await prayerService.findBySlug(req.params.slug);
-      res.json(prayer);
-    } catch (error) {
-      next(error);
+  get = catchAsync(async (req: Request, res: Response) => {
+    const prayer = await prayerService.findBySlug(req.params.slug);
+    if (!prayer) {
+      throw new AppError('Prayer not found', 404);
     }
-  }
+    res.json(prayer);
+  });
 
-  async create(req: Request, res: Response, next: NextFunction) {
-    try {
-      const prayer = await prayerService.create(req.body);
-      res.status(201).json(prayer);
-    } catch (error) {
-      next(error);
-    }
-  }
+  create = catchAsync(async (req: Request, res: Response) => {
+    const prayer = await prayerService.create(req.body);
+    res.status(201).json(prayer);
+  });
 
-  async update(req: Request, res: Response, next: NextFunction) {
-    try {
-      const prayer = await prayerService.update(req.params.id, req.body);
-      res.json(prayer);
-    } catch (error) {
-      next(error);
+  update = catchAsync(async (req: Request, res: Response) => {
+    const prayer = await prayerService.update(req.params.id, req.body);
+    if (!prayer) {
+      throw new AppError('Prayer not found', 404);
     }
-  }
+    res.json(prayer);
+  });
 
-  async delete(req: Request, res: Response, next: NextFunction) {
-    try {
-      await prayerService.delete(req.params.id);
-      res.status(204).send();
-    } catch (error) {
-      next(error);
+  delete = catchAsync(async (req: Request, res: Response) => {
+    const prayer = await prayerService.delete(req.params.id);
+    if (!prayer) {
+      throw new AppError('Prayer not found', 404);
     }
-  }
+    res.status(204).send();
+  });
 }
 
 export const prayerController = new PrayerController();
