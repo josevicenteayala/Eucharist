@@ -16,3 +16,4 @@ export {
   ConflictError,
   InternalServerError,
 } from './errors';
+export { cacheMiddleware, generateCacheKey, generateUserCacheKey } from './cache';
