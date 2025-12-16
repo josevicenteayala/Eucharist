@@ -12,6 +12,7 @@ Educational content about the Eucharist, Mass, Catholic theology, and spirituali
 **Collection Name**: `articles`
 
 **Key Features**:
+
 - Flexible content with Markdown support
 - Theological review workflow
 - SEO metadata
@@ -19,6 +20,7 @@ Educational content about the Eucharist, Mass, Catholic theology, and spirituali
 - Related articles linking
 
 **Indexes**:
+
 - `slug` (unique)
 - `category + status` (compound)
 - `tags`
@@ -26,6 +28,7 @@ Educational content about the Eucharist, Mass, Catholic theology, and spirituali
 - `author.id`
 
 **Usage**:
+
 ```typescript
 import { Article } from './models/mongodb';
 
@@ -49,6 +52,7 @@ Eucharistic miracles from around the world with historical and scientific docume
 **Collection Name**: `miracles`
 
 **Key Features**:
+
 - Location with GPS coordinates
 - Scientific evidence documentation
 - Church approval tracking
@@ -56,12 +60,14 @@ Eucharistic miracles from around the world with historical and scientific docume
 - Source references
 
 **Indexes**:
+
 - `slug` (unique)
 - `location.country`
 - `date.year`
 - `location.coordinates` (2dsphere for geospatial queries)
 
 **Usage**:
+
 ```typescript
 import { Miracle } from './models/mongodb';
 
@@ -71,7 +77,7 @@ const miracle = new Miracle({
   location: {
     city: 'Lanciano',
     country: 'Italy',
-    coordinates: { lat: 42.2317, lng: 14.3894 }
+    coordinates: { lat: 42.2317, lng: 14.3894 },
   },
   date: { year: 700 },
   summary: 'Brief summary...',
@@ -89,6 +95,7 @@ Traditional Catholic prayers related to the Eucharist and devotional life.
 **Collection Name**: `prayers`
 
 **Key Features**:
+
 - Multiple language translations
 - Latin text support
 - Categorization by type and usage
@@ -96,6 +103,7 @@ Traditional Catholic prayers related to the Eucharist and devotional life.
 - Related prayers linking
 
 **Indexes**:
+
 - `slug` (unique)
 - `category`
 - `usage`
@@ -103,6 +111,7 @@ Traditional Catholic prayers related to the Eucharist and devotional life.
 - `isTraditional`
 
 **Usage**:
+
 ```typescript
 import { Prayer } from './models/mongodb';
 
@@ -129,7 +138,7 @@ article.theologicalReview = {
   reviewed: true,
   reviewedBy: 'Fr. Smith',
   reviewedAt: new Date(),
-  notes: 'Approved for publication'
+  notes: 'Approved for publication',
 };
 ```
 
@@ -141,7 +150,7 @@ Articles include SEO metadata:
 article.seo = {
   metaTitle: 'SEO-optimized title',
   metaDescription: 'Description for search engines',
-  keywords: ['eucharist', 'catholic', 'theology']
+  keywords: ['eucharist', 'catholic', 'theology'],
 };
 ```
 
@@ -155,15 +164,16 @@ const nearby = await Miracle.find({
   'location.coordinates': {
     $near: {
       $geometry: { type: 'Point', coordinates: [lng, lat] },
-      $maxDistance: 100000 // meters
-    }
-  }
+      $maxDistance: 100000, // meters
+    },
+  },
 });
 ```
 
 ## Testing
 
 All models have comprehensive test coverage in `tests/models/`:
+
 - Schema validation
 - Unique constraints
 - Enum validation
@@ -171,6 +181,7 @@ All models have comprehensive test coverage in `tests/models/`:
 - Index verification
 
 Run tests:
+
 ```bash
 npm test -- tests/models/
 ```
@@ -195,6 +206,7 @@ See `src/database/README.md` for PostgreSQL schema documentation.
 ## Future Enhancements
 
 Planned additions:
+
 - Full-text search indexes
 - Content versioning history
 - Multi-language content variants

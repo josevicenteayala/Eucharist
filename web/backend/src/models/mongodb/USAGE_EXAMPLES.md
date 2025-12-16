@@ -25,7 +25,7 @@ const article = new Article({
   author: {
     id: '123e4567-e89b-12d3-a456-426614174000', // PostgreSQL user UUID
     name: 'Fr. John Smith',
-    bio: 'Theology professor at Sacred Heart Seminary'
+    bio: 'Theology professor at Sacred Heart Seminary',
   },
   content: `
 # Understanding Transubstantiation
@@ -41,15 +41,15 @@ The term was officially adopted at the Fourth Lateran Council in 1215...
   coverImage: {
     url: 'https://cdn.example.com/transubstantiation.jpg',
     alt: 'Eucharistic host and chalice',
-    caption: 'The Real Presence of Christ'
+    caption: 'The Real Presence of Christ',
   },
   readingTime: 8,
   status: 'draft',
   seo: {
     metaTitle: 'Understanding Transubstantiation | Catholic Theology',
     metaDescription: 'Learn about the Catholic doctrine of transubstantiation',
-    keywords: ['transubstantiation', 'eucharist', 'catholic', 'theology']
-  }
+    keywords: ['transubstantiation', 'eucharist', 'catholic', 'theology'],
+  },
 });
 
 await article.save();
@@ -61,7 +61,7 @@ await article.save();
 // Find published articles in a category
 const articles = await Article.find({
   category: 'eucharist-basics',
-  status: 'published'
+  status: 'published',
 })
   .sort({ publishedAt: -1 })
   .limit(10);
@@ -69,7 +69,7 @@ const articles = await Article.find({
 // Find articles by tag
 const taggedArticles = await Article.find({
   tags: 'real-presence',
-  status: 'published'
+  status: 'published',
 });
 
 // Find article by slug
@@ -102,7 +102,7 @@ article.theologicalReview = {
   reviewed: true,
   reviewedBy: 'Fr. Thomas Aquinas',
   reviewedAt: new Date(),
-  notes: 'Doctrinally sound. Approved for publication.'
+  notes: 'Doctrinally sound. Approved for publication.',
 };
 article.status = 'published';
 article.publishedAt = new Date();
@@ -122,12 +122,12 @@ const miracle = new Miracle({
     country: 'Italy',
     coordinates: {
       lat: 42.2317,
-      lng: 14.3894
-    }
+      lng: 14.3894,
+    },
   },
   date: {
     year: 700,
-    approximateDate: 'Circa 700 AD'
+    approximateDate: 'Circa 700 AD',
   },
   summary: 'A miraculous transformation of bread and wine into flesh and blood',
   fullStory: `
@@ -145,34 +145,34 @@ In 1970-1971, Professor Odoardo Linoli conducted scientific tests...
     findings: 'The flesh is real human cardiac tissue. The blood is real human blood, type AB.',
     documentation: [
       'https://example.com/linoli-report-1971.pdf',
-      'https://example.com/who-study-1981.pdf'
-    ]
+      'https://example.com/who-study-1981.pdf',
+    ],
   },
   images: [
     {
       url: 'https://cdn.example.com/lanciano-host.jpg',
       caption: 'The miraculous host preserved in Lanciano',
-      credit: 'Sanctuary of the Eucharistic Miracle'
-    }
+      credit: 'Sanctuary of the Eucharistic Miracle',
+    },
   ],
   sources: [
     {
       title: 'The Eucharistic Miracles of the World',
       url: 'https://www.miracolieucaristici.org',
-      type: 'church-document'
+      type: 'church-document',
     },
     {
       title: 'Scientific Analysis of the Miracle of Lanciano',
-      type: 'article'
-    }
+      type: 'article',
+    },
   ],
   churchApproval: {
     approved: true,
     approvedBy: 'Archbishop Bruno Forte',
-    approvalDate: new Date('1574-01-01')
+    approvalDate: new Date('1574-01-01'),
   },
   tags: ['italy', 'scientific', 'medieval'],
-  publishedAt: new Date()
+  publishedAt: new Date(),
 });
 
 await miracle.save();
@@ -186,12 +186,12 @@ const italianMiracles = await Miracle.find({ 'location.country': 'Italy' });
 
 // Find miracles by century
 const medievalMiracles = await Miracle.find({
-  'date.year': { $gte: 1000, $lt: 1500 }
+  'date.year': { $gte: 1000, $lt: 1500 },
 });
 
 // Find miracles with scientific evidence
 const scientificMiracles = await Miracle.find({
-  'scientificEvidence.tested': true
+  'scientificEvidence.tested': true,
 });
 
 // Geospatial query - find miracles near a location
@@ -200,11 +200,11 @@ const nearbyMiracles = await Miracle.find({
     $near: {
       $geometry: {
         type: 'Point',
-        coordinates: [14.3894, 42.2317] // [longitude, latitude]
+        coordinates: [14.3894, 42.2317], // [longitude, latitude]
       },
-      $maxDistance: 100000 // 100km in meters
-    }
-  }
+      $maxDistance: 100000, // 100km in meters
+    },
+  },
 });
 ```
 
@@ -220,7 +220,7 @@ const miraclesForMap = await Miracle.find(
     'location.city': 1,
     'location.country': 1,
     'location.coordinates': 1,
-    summary: 1
+    summary: 1,
   }
 );
 ```
@@ -265,8 +265,8 @@ In saecula saeculorum. Amen.`,
     {
       language: 'es',
       text: 'Alma de Cristo, santifícame...',
-      source: 'Spanish Roman Missal'
-    }
+      source: 'Spanish Roman Missal',
+    },
   ],
   author: 'Attributed to Pope John XXII',
   source: 'Medieval prayer, 14th century',
@@ -274,7 +274,7 @@ In saecula saeculorum. Amen.`,
   tags: ['post-communion', 'traditional', 'saints'],
   audioUrl: 'https://cdn.example.com/prayers/anima-christi.mp3',
   isTraditional: true,
-  publishedAt: new Date()
+  publishedAt: new Date(),
 });
 
 await prayer.save();
@@ -292,17 +292,16 @@ const adorationPrayers = await Prayer.find({ usage: 'adoration' });
 // Find traditional prayers with Latin text
 const latinPrayers = await Prayer.find({
   isTraditional: true,
-  latinText: { $exists: true }
+  latinText: { $exists: true },
 });
 
 // Find prayers with audio
 const prayersWithAudio = await Prayer.find({
-  audioUrl: { $exists: true }
+  audioUrl: { $exists: true },
 });
 
 // Find related prayers
-const prayer = await Prayer.findOne({ slug: 'anima-christi' })
-  .populate('relatedPrayers');
+const prayer = await Prayer.findOne({ slug: 'anima-christi' }).populate('relatedPrayers');
 ```
 
 ### Linking Related Prayers
@@ -329,12 +328,11 @@ try {
     slug: 'new-article',
     // ... other fields
   });
-  
+
   await article.save();
-  
+
   // Log creation in your application
   console.log('Article created:', article._id);
-  
 } catch (error) {
   if (error.code === 11000) {
     // Duplicate slug
@@ -351,7 +349,7 @@ try {
 const categoryCounts = await Article.aggregate([
   { $match: { status: 'published' } },
   { $group: { _id: '$category', count: { $sum: 1 } } },
-  { $sort: { count: -1 } }
+  { $sort: { count: -1 } },
 ]);
 
 // Find most popular tags
@@ -360,18 +358,18 @@ const popularTags = await Article.aggregate([
   { $unwind: '$tags' },
   { $group: { _id: '$tags', count: { $sum: 1 } } },
   { $sort: { count: -1 } },
-  { $limit: 10 }
+  { $limit: 10 },
 ]);
 
 // Miracles by century
 const miraclesByCentury = await Miracle.aggregate([
   {
     $project: {
-      century: { $floor: { $divide: ['$date.year', 100] } }
-    }
+      century: { $floor: { $divide: ['$date.year', 100] } },
+    },
   },
   { $group: { _id: '$century', count: { $sum: 1 } } },
-  { $sort: { _id: 1 } }
+  { $sort: { _id: 1 } },
 ]);
 ```
 
@@ -427,9 +425,7 @@ try {
 
 ```typescript
 // Use lean() for faster queries when you don't need Mongoose documents
-const articles = await Article.find({ status: 'published' })
-  .lean()
-  .limit(20);
+const articles = await Article.find({ status: 'published' }).lean().limit(20);
 
 // Select only needed fields
 const articlesMinimal = await Article.find({ status: 'published' })
@@ -437,8 +433,7 @@ const articlesMinimal = await Article.find({ status: 'published' })
   .limit(20);
 
 // Use explain() to analyze query performance
-const explanation = await Article.find({ category: 'theology' })
-  .explain('executionStats');
+const explanation = await Article.find({ category: 'theology' }).explain('executionStats');
 ```
 
 ## See Also
