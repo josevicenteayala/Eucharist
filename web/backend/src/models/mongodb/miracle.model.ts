@@ -144,7 +144,10 @@ const MiracleSchema = new Schema<IMiracle>(
         type: Boolean,
         default: false,
       },
-      testingBody: String,
+      testingBody: {
+        type: String,
+        trim: true,
+      },
       findings: String,
       documentation: [String],
     },
@@ -153,9 +156,16 @@ const MiracleSchema = new Schema<IMiracle>(
         url: {
           type: String,
           required: true,
+          match: [/^https?:\/\/.+/, 'Please enter a valid URL'],
         },
-        caption: String,
-        credit: String,
+        caption: {
+          type: String,
+          trim: true,
+        },
+        credit: {
+          type: String,
+          trim: true,
+        },
       },
     ],
     sources: [
@@ -164,7 +174,10 @@ const MiracleSchema = new Schema<IMiracle>(
           type: String,
           required: true,
         },
-        url: String,
+        url: {
+          type: String,
+          match: [/^https?:\/\/.+/, 'Please enter a valid URL'],
+        },
         type: {
           type: String,
           enum: ['book', 'article', 'video', 'church-document'],
@@ -196,5 +209,9 @@ const MiracleSchema = new Schema<IMiracle>(
 MiracleSchema.index({ 'location.country': 1 });
 MiracleSchema.index({ 'date.year': 1 });
 MiracleSchema.index({ 'location.coordinates': '2dsphere' });
+MiracleSchema.index(
+  { title: 'text', summary: 'text', fullStory: 'text' },
+  { weights: { title: 10, summary: 5, fullStory: 1 } }
+);
 
 export const Miracle = mongoose.model<IMiracle>('Miracle', MiracleSchema);

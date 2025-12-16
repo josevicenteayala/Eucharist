@@ -103,7 +103,10 @@ const ArticleSchema = new Schema<IArticle>(
         type: String,
         required: true,
       },
-      bio: String,
+      bio: {
+        type: String,
+        trim: true,
+      },
     },
     content: {
       type: String,
@@ -115,9 +118,18 @@ const ArticleSchema = new Schema<IArticle>(
       maxlength: 500,
     },
     coverImage: {
-      url: String,
-      alt: String,
-      caption: String,
+      url: {
+        type: String,
+        match: [/^https?:\/\/.+/, 'Please enter a valid URL'],
+      },
+      alt: {
+        type: String,
+        trim: true,
+      },
+      caption: {
+        type: String,
+        trim: true,
+      },
     },
     readingTime: {
       type: Number,
@@ -169,6 +181,10 @@ ArticleSchema.index({ category: 1, status: 1 });
 ArticleSchema.index({ tags: 1 });
 ArticleSchema.index({ publishedAt: -1 });
 ArticleSchema.index({ 'author.id': 1 });
+ArticleSchema.index(
+  { title: 'text', excerpt: 'text', content: 'text' },
+  { weights: { title: 10, excerpt: 5, content: 1 } }
+);
 
 // Pre-save middleware to update version
 ArticleSchema.pre('save', function (next) {

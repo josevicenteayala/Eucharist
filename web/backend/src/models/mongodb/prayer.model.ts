@@ -85,22 +85,29 @@ const PrayerSchema = new Schema<IPrayer>(
     },
     translations: [
       {
-        language: {
-          type: String,
-          required: true,
-        },
         text: {
           type: String,
           required: true,
+          trim: true,
         },
-        source: String,
+        source: {
+          type: String,
+          trim: true,
+        },
+        language: {
+          type: String,
+          required: true,
+          trim: true,
+        },
       },
     ],
     author: {
       type: String,
+      trim: true,
     },
     source: {
       type: String,
+      trim: true,
     },
     historicalContext: {
       type: String,
@@ -111,6 +118,7 @@ const PrayerSchema = new Schema<IPrayer>(
     },
     audioUrl: {
       type: String,
+      match: [/^https?:\/\/.+/, 'Please enter a valid URL'],
     },
     relatedPrayers: [
       {
@@ -135,5 +143,6 @@ PrayerSchema.index({ category: 1 });
 PrayerSchema.index({ usage: 1 });
 PrayerSchema.index({ tags: 1 });
 PrayerSchema.index({ isTraditional: 1 });
+PrayerSchema.index({ title: 'text', text: 'text' }, { weights: { title: 10, text: 5 } });
 
 export const Prayer = mongoose.model<IPrayer>('Prayer', PrayerSchema);
