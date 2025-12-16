@@ -96,7 +96,10 @@ async function runMigration(client: PoolClient, migrationFile: string): Promise<
     logger.info(`✅ Applied migration: ${migrationFile}`);
   } catch (error) {
     await client.query('ROLLBACK');
-    logger.error(`❌ Failed to apply migration: ${migrationFile}`, { error: error instanceof Error ? error.message : error, migrationFile });
+    logger.error(`❌ Failed to apply migration: ${migrationFile}`, {
+      error: error instanceof Error ? error.message : error,
+      migrationFile,
+    });
     throw error;
   }
 }
