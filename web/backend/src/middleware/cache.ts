@@ -29,10 +29,14 @@ export function cacheMiddleware(options: CacheMiddlewareOptions = {}) {
       const cachedResponse = await cacheService.get<{
         status: number;
         data: unknown;
+        headers: Record<string, string>;
       }>(cacheKey, { prefix: keyPrefix });
 
       if (cachedResponse) {
         logger.debug(`Serving cached response for: ${cacheKey}`);
+        if (cachedResponse.headers) {
+          res.set(cachedResponse.headers);
+        }
         return res.status(cachedResponse.status).json(cachedResponse.data);
       }
 
@@ -49,6 +53,7 @@ export function cacheMiddleware(options: CacheMiddlewareOptions = {}) {
               {
                 status: res.statusCode,
                 data,
+                headers: res.getHeaders() as Record<string, string>,
               },
               { ttl, prefix: keyPrefix }
             )

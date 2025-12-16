@@ -144,6 +144,24 @@ describe('Cache Middleware', () => {
       const exists = await cacheService.exists('custom-/api/keygen', { prefix: 'api:' });
       expect(exists).toBe(true);
     });
+    it('should cache response headers', async () => {
+      let requestCount = 0;
+
+      app.get('/api/headers', cacheMiddleware({ ttl: 60 }), (_req: Request, res: Response) => {
+        requestCount++;
+        res.set('X-Custom-Header', 'custom-value');
+        res.json({ success: true, data: { count: requestCount } });
+      });
+
+      // First request
+      const response1 = await request(app).get('/api/headers').expect(200);
+      expect(response1.headers['x-custom-header']).toBe('custom-value');
+
+      // Second request (cached)
+      const response2 = await request(app).get('/api/headers').expect(200);
+      expect(response2.headers['x-custom-header']).toBe('custom-value');
+      expect(requestCount).toBe(1);
+    });
   });
 
   describe('Non-GET request handling', () => {
