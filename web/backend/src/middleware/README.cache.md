@@ -109,6 +109,7 @@ router.get(
 Default key format: `{prefix}{url}?{sortedQueryParams}`
 
 Examples:
+
 - `/api/articles` → `api:/api/articles`
 - `/api/articles?page=2&limit=10` → `api:/api/articles?limit=10&page=2`
 - `/api/users/123` → `api:/api/users/123`

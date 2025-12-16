@@ -197,11 +197,9 @@ The cache service already handles failures gracefully, but always have a fallbac
 async function getArticle(id: string) {
   try {
     // Try cache first
-    return await cacheService.getOrSet(
-      `article:${id}`,
-      async () => await Article.findById(id),
-      { ttl: 3600 }
-    );
+    return await cacheService.getOrSet(`article:${id}`, async () => await Article.findById(id), {
+      ttl: 3600,
+    });
   } catch (error) {
     // If everything fails, fetch from database
     return await Article.findById(id);
@@ -407,11 +405,10 @@ class ArticleService {
   private ITEM_CACHE_TTL = 3600; // 1 hour
 
   async getById(id: string) {
-    return await cacheService.getOrSet(
-      `content:${id}`,
-      async () => await Article.findById(id),
-      { ttl: this.ITEM_CACHE_TTL, prefix: this.CACHE_PREFIX }
-    );
+    return await cacheService.getOrSet(`content:${id}`, async () => await Article.findById(id), {
+      ttl: this.ITEM_CACHE_TTL,
+      prefix: this.CACHE_PREFIX,
+    });
   }
 
   async getPublished() {
@@ -462,12 +459,14 @@ export const articleService = new ArticleService();
 ### Cache Not Working
 
 1. Check Redis connection:
+
    ```bash
    redis-cli ping
    # Should return: PONG
    ```
 
 2. Verify environment variables in `.env`:
+
    ```
    REDIS_HOST=localhost
    REDIS_PORT=6379
@@ -482,6 +481,7 @@ export const articleService = new ArticleService();
 ### Cache Not Expiring
 
 1. Verify TTL is set:
+
    ```bash
    redis-cli
    > TTL eucharist:article:123
@@ -497,11 +497,13 @@ export const articleService = new ArticleService();
 ### High Memory Usage
 
 1. Monitor Redis memory:
+
    ```bash
    redis-cli INFO memory
    ```
 
 2. Set maxmemory policy in redis.conf:
+
    ```
    maxmemory 256mb
    maxmemory-policy allkeys-lru

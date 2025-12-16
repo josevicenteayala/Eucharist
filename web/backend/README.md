@@ -452,11 +452,7 @@ router.get('/api/articles', cacheMiddleware({ ttl: 300 }), getArticles);
 
 // User-specific caching
 import { generateUserCacheKey } from './middleware/cache';
-router.get(
-  '/api/profile',
-  cacheMiddleware({ keyGenerator: generateUserCacheKey }),
-  getProfile
-);
+router.get('/api/profile', cacheMiddleware({ keyGenerator: generateUserCacheKey }), getProfile);
 ```
 
 **Low-Level Redis Operations**:
