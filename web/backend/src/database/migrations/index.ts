@@ -47,14 +47,32 @@ function getMigrationFiles(): string[] {
   const migrationsDir = path.join(__dirname);
   const files = fs.readdirSync(migrationsDir);
 
-  return files
+  // Only include files that start with a numeric prefix followed by an underscore
+  const migrationFilePattern = /^\d+_/;
+  const validFiles = files
     .filter((file) => file.endsWith('.sql'))
-    .sort((a, b) => {
-      // Sort by migration number prefix
-      const numA = parseInt(a.split('_')[0], 10);
-      const numB = parseInt(b.split('_')[0], 10);
-      return numA - numB;
-    });
+    .filter((file) => migrationFilePattern.test(file));
+
+  // Warn about invalid migration files
+  const invalidFiles = files
+    .filter((file) => file.endsWith('.sql'))
+    .filter((file) => !migrationFilePattern.test(file));
+  if (invalidFiles.length > 0) {
+    logger.warn(
+      `Ignoring migration files with invalid name format (should start with number and underscore): ${invalidFiles.join(', ')}`
+    );
+  }
+
+  return validFiles.sort((a, b) => {
+    // Sort by migration number prefix
+    const numA = parseInt(a.split('_')[0], 10);
+    const numB = parseInt(b.split('_')[0], 10);
+    // Defensive: If either is NaN, treat as 0 (should not happen due to filter)
+    if (isNaN(numA) && isNaN(numB)) return 0;
+    if (isNaN(numA)) return 1;
+    if (isNaN(numB)) return -1;
+    return numA - numB;
+  });
 }
 
 /**
