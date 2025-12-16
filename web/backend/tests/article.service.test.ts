@@ -41,9 +41,10 @@ describe('ArticleService', () => {
       expect(result).toEqual(mockArticle);
     });
 
-    it('should throw if not found', async () => {
+    it('should return null if not found', async () => {
       (Article.findOne as jest.Mock).mockResolvedValue(null);
-      await expect(articleService.findBySlug('test')).rejects.toThrow('Article not found');
+      const result = await articleService.findBySlug('test');
+      expect(result).toBeNull();
     });
   });
 });
