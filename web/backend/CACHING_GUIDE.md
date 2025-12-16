@@ -520,4 +520,3 @@ export const articleService = new ArticleService();
 - [Cache Service API](./src/services/README.md#cache-service)
 - [Cache Middleware Guide](./src/middleware/README.cache.md)
 - [Redis Configuration](./src/config/database/redis.ts)
-- [Performance Guidelines](../../CLAUDE.md#performance-guidelines)
