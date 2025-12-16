@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS user_profiles (
     bio TEXT,
     location VARCHAR(100),
     interests TEXT[],
-    prayer_streak INTEGER DEFAULT 0,
+    prayer_streak INTEGER DEFAULT 0 CHECK (prayer_streak >= 0),
     last_active_date DATE,
     preferences JSONB DEFAULT '{}',
     notification_settings JSONB DEFAULT '{
