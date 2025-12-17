@@ -17,6 +17,7 @@ export class UserModel {
   private static tableName = 'users';
 
   static async initializeTable(): Promise<void> {
+    const enablePgcrypto = 'CREATE EXTENSION IF NOT EXISTS "pgcrypto";';
     const query = `
       CREATE TABLE IF NOT EXISTS ${this.tableName} (
         id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -30,6 +31,7 @@ export class UserModel {
     `;
 
     try {
+      await postgresDb.query(enablePgcrypto);
       await postgresDb.query(query);
       logger.info(`✅ Table ${this.tableName} initialized`);
     } catch (error) {
