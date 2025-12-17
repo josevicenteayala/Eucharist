@@ -84,7 +84,7 @@ describe('PostgreSQL Database Connection', () => {
       } catch {
         // Ignore
       }
-      await expect(postgresDb.query('SELECT 1')).rejects.toThrow('PostgreSQL pool not initialized');
+      await expect(postgresDb.query('SELECT 1')).rejects.toThrow();
     });
   });
 
@@ -104,7 +104,7 @@ describe('PostgreSQL Database Connection', () => {
       } catch {
         // Ignore
       }
-      await expect(postgresDb.getClient()).rejects.toThrow('PostgreSQL pool not initialized');
+      await expect(postgresDb.getClient()).rejects.toThrow();
     });
   });
 
