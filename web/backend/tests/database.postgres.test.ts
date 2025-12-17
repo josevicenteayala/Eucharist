@@ -8,11 +8,19 @@ describe('PostgreSQL Database Connection', () => {
     return;
   }
 
-  afterEach(async () => {
-    await postgresDb.disconnect();
+  afterAll(async () => {
+    // Clean up after all tests
+    try {
+      await postgresDb.disconnect();
+    } catch {
+      // Ignore errors if already disconnected
+    }
   });
 
   describe('connect()', () => {
+    afterEach(async () => {
+      await postgresDb.disconnect();
+    });
     it('should connect to PostgreSQL successfully', async () => {
       await expect(postgresDb.connect()).resolves.not.toThrow();
       expect(postgresDb.isConnectionActive()).toBe(true);
@@ -32,6 +40,12 @@ describe('PostgreSQL Database Connection', () => {
     });
 
     it('should handle disconnect when not connected', async () => {
+      // Ensure we're disconnected first
+      try {
+        await postgresDb.disconnect();
+      } catch {
+        // Ignore
+      }
       await expect(postgresDb.disconnect()).resolves.not.toThrow();
     });
   });
@@ -41,9 +55,16 @@ describe('PostgreSQL Database Connection', () => {
       await postgresDb.connect();
       const pool = postgresDb.getPool();
       expect(pool).toBeDefined();
+      await postgresDb.disconnect();
     });
 
-    it('should throw error when not connected', () => {
+    it('should throw error when not connected', async () => {
+      // Ensure we're disconnected first
+      try {
+        await postgresDb.disconnect();
+      } catch {
+        // Ignore
+      }
       expect(() => postgresDb.getPool()).toThrow('PostgreSQL pool not initialized');
     });
   });
@@ -53,9 +74,16 @@ describe('PostgreSQL Database Connection', () => {
       await postgresDb.connect();
       const result = await postgresDb.query('SELECT 1 as num');
       expect(result).toBeDefined();
+      await postgresDb.disconnect();
     });
 
     it('should throw error when not connected', async () => {
+      // Ensure we're disconnected first
+      try {
+        await postgresDb.disconnect();
+      } catch {
+        // Ignore
+      }
       await expect(postgresDb.query('SELECT 1')).rejects.toThrow('PostgreSQL pool not initialized');
     });
   });
@@ -66,9 +94,16 @@ describe('PostgreSQL Database Connection', () => {
       const client = await postgresDb.getClient();
       expect(client).toBeDefined();
       client.release();
+      await postgresDb.disconnect();
     });
 
     it('should throw error when not connected', async () => {
+      // Ensure we're disconnected first
+      try {
+        await postgresDb.disconnect();
+      } catch {
+        // Ignore
+      }
       await expect(postgresDb.getClient()).rejects.toThrow('PostgreSQL pool not initialized');
     });
   });
@@ -78,9 +113,16 @@ describe('PostgreSQL Database Connection', () => {
       await postgresDb.connect();
       const health = await postgresDb.healthCheck();
       expect(health.status).toBe('healthy');
+      await postgresDb.disconnect();
     });
 
     it('should return disconnected status when not connected', async () => {
+      // Ensure we're disconnected first
+      try {
+        await postgresDb.disconnect();
+      } catch {
+        // Ignore
+      }
       const health = await postgresDb.healthCheck();
       expect(health.status).toBe('disconnected');
       expect(health.message).toBe('PostgreSQL not connected');

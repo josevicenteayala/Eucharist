@@ -6,9 +6,9 @@ import { postgresDb } from '../src/config/database/postgres';
 describe('Auth Routes Integration', () => {
   beforeAll(async () => {
     await postgresDb.connect();
-    // Clean up users table
-    await postgresDb.query('TRUNCATE TABLE users CASCADE');
+    // Initialize table first, then clean up
     await UserModel.initializeTable();
+    await postgresDb.query('TRUNCATE TABLE users CASCADE');
   });
 
   afterAll(async () => {

@@ -11,6 +11,8 @@ describe('Miracle Model', () => {
 
   beforeAll(async () => {
     await mongoDb.connect();
+    // Ensure indexes are created
+    await Miracle.createIndexes();
   }, 10000);
 
   afterAll(async () => {
