@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
 export default function PrayerDetailPage() {
-  const { slug } = useParams<{ slug: string }>();
+  const params = useParams<{ slug: string }>();
+  const slug = params?.slug ?? '';
   const { data: prayer, isLoading, error } = usePrayer(slug);
 
   if (isLoading) {
