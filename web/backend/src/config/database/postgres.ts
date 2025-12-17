@@ -44,6 +44,7 @@ class PostgresDatabase {
 
     try {
       await this.pool.end();
+      this.pool = null;
       this.isConnected = false;
       logger.info('PostgreSQL disconnected successfully');
     } catch (error) {
