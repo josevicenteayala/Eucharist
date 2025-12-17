@@ -58,6 +58,7 @@ class RedisDatabase {
 
     try {
       await this.client.quit();
+      this.client = null;
       this.isConnected = false;
       logger.info('Redis disconnected successfully');
     } catch (error) {

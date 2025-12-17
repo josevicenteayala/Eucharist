@@ -415,7 +415,49 @@ For caching:
 - Automatic retry with exponential backoff
 - Helper methods for common operations
 
-**Usage Example**:
+**Cache Service Usage**:
+
+The cache service provides a high-level abstraction for caching operations:
+
+```typescript
+import { cacheService } from './services/cache.service';
+
+// Cache-aside pattern - automatically fetch if not cached
+const article = await cacheService.getOrSet(
+  'article:123',
+  async () => await Article.findById('123'),
+  { ttl: 3600 } // 1 hour
+);
+
+// Manual caching
+await cacheService.set('user:456', userData, { ttl: 600 });
+const user = await cacheService.get('user:456');
+
+// Pattern-based deletion
+await cacheService.delPattern('user:*'); // Clear all user caches
+
+// Counter operations (rate limiting)
+const count = await cacheService.increment('api:limit:user:123', { ttl: 60 });
+```
+
+**Cache Middleware Usage**:
+
+Automatically cache GET request responses:
+
+```typescript
+import { cacheMiddleware } from './middleware/cache';
+
+// Cache for 5 minutes
+router.get('/api/articles', cacheMiddleware({ ttl: 300 }), getArticles);
+
+// User-specific caching
+import { generateUserCacheKey } from './middleware/cache';
+router.get('/api/profile', cacheMiddleware({ keyGenerator: generateUserCacheKey }), getProfile);
+```
+
+**Low-Level Redis Operations**:
+
+For advanced use cases, access the Redis client directly:
 
 ```typescript
 import { redisDb } from './config/database';
@@ -433,6 +475,11 @@ await redisDb.del('user:123');
 const client = redisDb.getClient();
 await client.setex('key', 60, 'value');
 ```
+
+**Documentation**:
+
+- [Cache Service](./src/services/README.md#cache-service) - Detailed cache service documentation
+- [Cache Middleware](./src/middleware/README.cache.md) - HTTP response caching guide
 
 ### Database Lifecycle
 

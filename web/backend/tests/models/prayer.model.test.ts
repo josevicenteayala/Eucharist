@@ -11,6 +11,8 @@ describe('Prayer Model', () => {
 
   beforeAll(async () => {
     await mongoDb.connect();
+    // Ensure indexes are created
+    await Prayer.createIndexes();
   }, 10000);
 
   afterAll(async () => {

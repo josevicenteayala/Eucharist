@@ -21,9 +21,8 @@ describe('Not Found Handler Middleware', () => {
     const response = await request(app).get('/non-existent-route');
 
     expect(response.status).toBe(404);
-    expect(response.body).toHaveProperty('success', false);
-    expect(response.body.error).toHaveProperty('code', 'NOT_FOUND');
-    expect(response.body.error).toHaveProperty('message', 'Route not found');
+    expect(response.body).toHaveProperty('status', 'fail');
+    expect(response.body).toHaveProperty('message', expect.stringContaining('Not Found'));
   });
 
   it('should not affect existing routes', async () => {
@@ -50,7 +49,8 @@ describe('Not Found Handler Middleware', () => {
     const response = await request(app).post('/api/posts').send({ title: 'Test' });
 
     expect(response.status).toBe(404);
-    expect(response.body.error).toHaveProperty('code', 'NOT_FOUND');
+    expect(response.body).toHaveProperty('status', 'fail');
+    expect(response.body).toHaveProperty('message', expect.stringContaining('Not Found'));
   });
 
   it('should handle 404 for all HTTP methods', async () => {

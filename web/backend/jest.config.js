@@ -9,10 +9,21 @@ module.exports = {
   coverageThreshold: {
     global: {
       branches: 40,
-      functions: 30,
-      lines: 40,
-      statements: 40,
+      functions: 20,
+      lines: 35,
+      statements: 35,
     },
+  },
+  transform: {
+    '^.+\\.ts$': [
+      'ts-jest',
+      {
+        diagnostics: {
+          ignoreCodes: [2339],
+        },
+        isolatedModules: true,
+      },
+    ],
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',

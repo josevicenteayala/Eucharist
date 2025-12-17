@@ -1,66 +1,65 @@
 import { Request, Response, NextFunction } from 'express';
 import { config } from '../config/env';
 import logger from '../config/logger';
-import { ApiError } from './errors';
+import { AppError } from '../utils/AppError';
 
-/**
- * Global Error Handler Middleware
- *
- * Catches all errors thrown in the application and returns a standardized
- * error response format. Integrates with Winston logger for error tracking.
- *
- * Error Response Format:
- * {
- *   success: false,
- *   error: {
- *     code: "ERROR_CODE",
- *     message: "Human-readable message",
- *     details: {...} // Only in development
- *   }
- * }
- */
-export const errorHandler = (
-  err: Error | ApiError,
-  _req: Request,
-  res: Response,
-  _next: NextFunction
-) => {
-  // Determine if this is a known ApiError or unknown error
-  const isApiError = err instanceof ApiError;
+const handleCastErrorDB = (err: any) => {
+  const message = `Invalid ${err.path}: ${err.value}.`;
+  return new AppError(message, 400);
+};
 
-  const statusCode = isApiError ? err.statusCode : 500;
-  const message = err.message || 'Internal Server Error';
-  const code = isApiError ? err.code : 'INTERNAL_ERROR';
-  const details = isApiError ? err.details : undefined;
+const handleDuplicateFieldsDB = (err: any) => {
+  const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
+  const message = `Duplicate field value: ${value}. Please use another value!`;
+  return new AppError(message, 400);
+};
 
-  // Log error using Winston
-  logger.error('API Error', {
-    statusCode,
-    code,
-    message,
+const handleValidationErrorDB = (err: any) => {
+  const errors = Object.values(err.errors).map((el: any) => el.message);
+  const message = `Invalid input data. ${errors.join('. ')}`;
+  return new AppError(message, 400);
+};
+
+const sendErrorDev = (err: any, res: Response) => {
+  res.status(err.statusCode).json({
+    status: err.status,
+    error: err,
+    message: err.message,
     stack: err.stack,
-    details,
   });
+};
 
-  const errorResponse: {
-    success: boolean;
-    error: {
-      code: string;
-      message: string;
-      details?: unknown;
-    };
-  } = {
-    success: false,
-    error: {
-      code,
-      message,
-    },
-  };
-
-  // Include error details in development mode
-  if (config.nodeEnv === 'development' && details) {
-    errorResponse.error.details = details;
+const sendErrorProd = (err: any, res: Response) => {
+  // Operational, trusted error: send message to client
+  if (err.isOperational) {
+    res.status(err.statusCode).json({
+      status: err.status,
+      message: err.message,
+    });
+  } else {
+    // Programming or other unknown error: don't leak details
+    logger.error('ERROR 💥', err);
+    res.status(500).json({
+      status: 'error',
+      message: 'Something went very wrong!',
+    });
   }
+};
 
-  res.status(statusCode).json(errorResponse);
+export const errorHandler = (err: any, _req: Request, res: Response, _next: NextFunction) => {
+  err.statusCode = err.statusCode || 500;
+  err.status = err.status || 'error';
+
+  if (config.nodeEnv === 'development') {
+    sendErrorDev(err, res);
+  } else {
+    let error = { ...err };
+    error.message = err.message;
+
+    if (err.name === 'CastError') error = handleCastErrorDB(error);
+    if (err.code === 11000) error = handleDuplicateFieldsDB(error);
+    if (err.name === 'ValidationError') error = handleValidationErrorDB(error);
+
+    sendErrorProd(error, res);
+  }
 };

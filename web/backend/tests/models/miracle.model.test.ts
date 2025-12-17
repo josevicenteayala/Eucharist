@@ -11,6 +11,8 @@ describe('Miracle Model', () => {
 
   beforeAll(async () => {
     await mongoDb.connect();
+    // Ensure indexes are created
+    await Miracle.createIndexes();
   }, 10000);
 
   afterAll(async () => {
@@ -210,17 +212,22 @@ describe('Miracle Model', () => {
 
     it('should have location.country index', async () => {
       const indexes = await Miracle.collection.getIndexes();
-      expect(indexes).toHaveProperty('location.country_1');
+      expect(indexes['location.country_1']).toBeDefined();
+      expect(indexes['location.country_1']).toEqual([['location.country', 1]]);
     });
 
     it('should have date.year index', async () => {
       const indexes = await Miracle.collection.getIndexes();
-      expect(indexes).toHaveProperty('date.year_1');
+      expect(indexes['date.year_1']).toBeDefined();
+      expect(indexes['date.year_1']).toEqual([['date.year', 1]]);
     });
 
     it('should have 2dsphere index on coordinates', async () => {
       const indexes = await Miracle.collection.getIndexes();
-      expect(indexes).toHaveProperty('location.coordinates_2dsphere');
+      expect(indexes['location.coordinates_2dsphere']).toBeDefined();
+      expect(indexes['location.coordinates_2dsphere']).toEqual([
+        ['location.coordinates', '2dsphere'],
+      ]);
     });
   });
 });
