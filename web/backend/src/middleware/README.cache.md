@@ -235,4 +235,4 @@ describe('Cached Article Endpoint', () => {
 
 - [Cache Service](../services/README.md#cache-service) - Low-level caching utilities
 - [Redis Configuration](../config/database/redis.ts) - Redis connection setup
-- [Project Guidelines](../../../CLAUDE.md) - Project development guidelines and best practices
+- Project Guidelines (`CLAUDE.md`) - Project development guidelines and best practices
