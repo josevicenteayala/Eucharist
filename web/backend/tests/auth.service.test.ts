@@ -79,4 +79,38 @@ describe('AuthService', () => {
       );
     });
   });
+
+  describe('verifyToken', () => {
+    it('should verify a valid token successfully', () => {
+      const mockPayload = {
+        userId: '123',
+        email: 'test@test.com',
+      };
+
+      (jwt.verify as jest.Mock).mockReturnValue(mockPayload);
+
+      const result = AuthService.verifyToken('valid-token');
+
+      expect(jwt.verify).toHaveBeenCalledWith('valid-token', expect.anything());
+      expect(result).toEqual(mockPayload);
+    });
+
+    it('should throw AppError on invalid token', () => {
+      (jwt.verify as jest.Mock).mockImplementation(() => {
+        throw new Error('invalid token');
+      });
+
+      expect(() => AuthService.verifyToken('invalid-token')).toThrow('Invalid token');
+    });
+
+    it('should throw AppError on expired token', () => {
+      (jwt.verify as jest.Mock).mockImplementation(() => {
+        const error = new Error('jwt expired');
+        error.name = 'TokenExpiredError';
+        throw error;
+      });
+
+      expect(() => AuthService.verifyToken('expired-token')).toThrow('Invalid token');
+    });
+  });
 });
