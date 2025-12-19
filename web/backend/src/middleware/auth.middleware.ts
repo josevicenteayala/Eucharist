@@ -1,46 +1,53 @@
 import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
-import { config } from '../config/env';
+import { AuthService } from '../services/auth.service';
 import { UserModel } from '../models/postgres/User';
 import logger from '../config/logger';
-
-interface JwtPayload {
-  id: string;
-  email: string;
-}
+import { AppError } from '../utils/AppError';
+import { sanitizeUser } from '../utils/sanitizeUser';
 
 export const authenticate = async (
   req: Request,
-  res: Response,
+  _res: Response,
   next: NextFunction
 ): Promise<void> => {
   try {
     const authHeader = req.headers.authorization;
-    if (!authHeader?.startsWith('Bearer ')) {
-      res.status(401).json({ message: 'No token provided' });
-      return;
+
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      throw new AppError('Unauthorized - No token provided', 401);
     }
 
     const token = authHeader.split(' ')[1];
-    const decoded = jwt.verify(token, config.jwt.secret) as JwtPayload;
+    const payload = AuthService.verifyToken(token);
 
-    const user = await UserModel.findById(decoded.id);
+    // Always verify the user still exists in the DB for security (e.g., deleted/banned accounts)
+    // If this becomes a performance bottleneck, optimize via caching (e.g., Redis) rather than skipping this check
+    const user = await UserModel.findById(payload.userId);
+
     if (!user) {
-      res.status(401).json({ message: 'Invalid token' });
-      return;
+      throw new AppError('Unauthorized - User not found', 401);
     }
 
-    // Attach user to request
-    (req as any).user = user;
+    // Attach sanitized user to request
+    req.user = sanitizeUser(user);
+
     next();
   } catch (error) {
-    if (error instanceof jwt.TokenExpiredError) {
-      res.status(401).json({ message: 'Token expired' });
-    } else if (error instanceof jwt.JsonWebTokenError) {
-      res.status(401).json({ message: 'Invalid token' });
+    if (process.env.NODE_ENV === 'production') {
+      const err = error as Error;
+      logger.error('Authentication error', {
+        message: err.message,
+        name: err.name,
+      });
     } else {
-      logger.error('Auth middleware error:', error);
-      res.status(500).json({ message: 'Internal server error' });
+      logger.error('Authentication error:', error);
+    }
+
+    // Pass AppError to error handler, or create one if it's not already
+    if (error instanceof AppError) {
+      next(error);
+    } else {
+      next(new AppError('Unauthorized - Invalid token', 401));
     }
   }
 };
