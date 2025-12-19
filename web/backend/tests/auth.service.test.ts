@@ -8,10 +8,7 @@ jest.mock('bcrypt');
 jest.mock('jsonwebtoken');
 
 describe('AuthService', () => {
-  let authService: AuthService;
-
   beforeEach(() => {
-    authService = new AuthService();
     jest.clearAllMocks();
   });
 
@@ -30,7 +27,7 @@ describe('AuthService', () => {
       (UserModel.create as jest.Mock).mockResolvedValue(mockUser);
       (jwt.sign as jest.Mock).mockReturnValue('token');
 
-      const result = await authService.register({
+      const result = await AuthService.register({
         email: 'test@test.com',
         password_hash: 'password', // Note: service expects 'password_hash' property name for raw password in DTO currently, which is slightly confusing naming but matches implementation
         first_name: 'Test',
@@ -47,13 +44,13 @@ describe('AuthService', () => {
       (UserModel.findByEmail as jest.Mock).mockResolvedValue({ id: '1' });
 
       await expect(
-        authService.register({
+        AuthService.register({
           email: 'test@test.com',
           password_hash: 'password',
           first_name: 'Test',
           last_name: 'User',
         })
-      ).rejects.toThrow('User already exists');
+      ).rejects.toThrow('User with this email already exists');
     });
   });
 
@@ -69,7 +66,7 @@ describe('AuthService', () => {
       (bcrypt.compare as jest.Mock).mockResolvedValue(true);
       (jwt.sign as jest.Mock).mockReturnValue('token');
 
-      const result = await authService.login('test@test.com', 'password');
+      const result = await AuthService.login('test@test.com', 'password');
 
       expect(result).toEqual({ user: mockUser, token: 'token' });
     });
@@ -77,8 +74,8 @@ describe('AuthService', () => {
     it('should throw error on invalid credentials', async () => {
       (UserModel.findByEmail as jest.Mock).mockResolvedValue(null);
 
-      await expect(authService.login('test@test.com', 'password')).rejects.toThrow(
-        'Invalid credentials'
+      await expect(AuthService.login('test@test.com', 'password')).rejects.toThrow(
+        'Invalid email or password'
       );
     });
   });
