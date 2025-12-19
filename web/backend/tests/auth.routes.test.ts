@@ -19,14 +19,14 @@ describe('Auth Routes Integration', () => {
     it('should register a new user', async () => {
       const res = await request(app).post('/api/v1/auth/register').send({
         email: 'integration@test.com',
-        password_hash: 'password123',
+        password: 'password123',
         first_name: 'Integration',
         last_name: 'Test',
       });
 
       expect(res.status).toBe(201);
-      expect(res.body).toHaveProperty('token');
-      expect(res.body.user).toHaveProperty('email', 'integration@test.com');
+      expect(res.body.data).toHaveProperty('token');
+      expect(res.body.data.user).toHaveProperty('email', 'integration@test.com');
     });
   });
 
@@ -38,7 +38,7 @@ describe('Auth Routes Integration', () => {
       });
 
       expect(res.status).toBe(200);
-      expect(res.body).toHaveProperty('token');
+      expect(res.body.data).toHaveProperty('token');
     });
 
     it('should fail with invalid credentials', async () => {
