@@ -1,45 +1,58 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { CreateUserDTO, UserModel, User } from '../models/postgres/User';
+import { UserModel, CreateUserDTO, User } from '../models/postgres/User';
 import { config } from '../config/env';
+import logger from '../config/logger';
 
-import { AppError } from '../utils/AppError';
+export interface AuthTokenPayload {
+  userId: string;
+  email: string;
+  role?: string;
+}
 
 export class AuthService {
-  async register(data: CreateUserDTO): Promise<{ user: User; token: string }> {
-    // 1. Check if user exists
-    const existingUser = await UserModel.findByEmail(data.email);
+  private static saltRounds = 12;
+
+  /**
+   * Register a new user
+   */
+  static async register(userDto: CreateUserDTO): Promise<{ user: User; token: string }> {
+    // 1. Check if user already exists
+    const existingUser = await UserModel.findByEmail(userDto.email);
     if (existingUser) {
-      throw new AppError('User already exists', 409);
+      throw new Error('User with this email already exists');
     }
 
     // 2. Hash password
-    const saltRounds = 10;
-    const hashedPassword = await bcrypt.hash(data.password_hash, saltRounds);
+    const hashedPassword = await bcrypt.hash(userDto.password_hash, this.saltRounds);
 
     // 3. Create user
     const newUser = await UserModel.create({
-      ...data,
+      ...userDto,
       password_hash: hashedPassword,
     });
 
     // 4. Generate token
     const token = this.generateToken(newUser);
 
+    // Remove password from returned object should be handled by controller, but safe here too for internal use
     return { user: newUser, token };
   }
 
-  async login(email: string, password: string): Promise<{ user: User; token: string }> {
+  /**
+   * Login user
+   */
+  static async login(email: string, password: string): Promise<{ user: User; token: string }> {
     // 1. Find user
     const user = await UserModel.findByEmail(email);
     if (!user) {
-      throw new AppError('Invalid credentials', 401);
+      throw new Error('Invalid email or password');
     }
 
     // 2. Verify password
     const isPasswordValid = await bcrypt.compare(password, user.password_hash);
     if (!isPasswordValid) {
-      throw new AppError('Invalid credentials', 401);
+      throw new Error('Invalid email or password');
     }
 
     // 3. Generate token
@@ -48,11 +61,33 @@ export class AuthService {
     return { user, token };
   }
 
-  private generateToken(user: User): string {
-    return jwt.sign({ id: user.id, email: user.email }, config.jwt.secret, {
-      expiresIn: config.jwt.accessTokenExpiry as any,
-    });
+  /**
+   * Generate JWT
+   */
+  private static generateToken(user: User): string {
+    const payload: AuthTokenPayload = {
+      userId: user.id,
+      email: user.email,
+    };
+
+    return jwt.sign(
+      payload,
+      config.jwt.secret as any,
+      {
+        expiresIn: config.jwt.accessTokenExpiry,
+      } as any
+    );
+  }
+
+  /**
+   * Verify JWT
+   */
+  static verifyToken(token: string): AuthTokenPayload {
+    try {
+      return jwt.verify(token, config.jwt.secret) as AuthTokenPayload;
+    } catch (error) {
+      logger.error('Token verification failed:', error);
+      throw new Error('Invalid token');
+    }
   }
 }
-
-export const authService = new AuthService();

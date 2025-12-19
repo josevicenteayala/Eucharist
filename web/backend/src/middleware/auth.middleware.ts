@@ -1,13 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
-import { config } from '../config/env';
+import { AuthService } from '../services/auth.service';
 import { UserModel } from '../models/postgres/User';
 import logger from '../config/logger';
-
-interface JwtPayload {
-  id: string;
-  email: string;
-}
 
 export const authenticate = async (
   req: Request,
@@ -16,31 +10,34 @@ export const authenticate = async (
 ): Promise<void> => {
   try {
     const authHeader = req.headers.authorization;
-    if (!authHeader?.startsWith('Bearer ')) {
-      res.status(401).json({ message: 'No token provided' });
+
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      res.status(401).json({ success: false, message: 'Unauthorized - No token provided' });
       return;
     }
 
     const token = authHeader.split(' ')[1];
-    const decoded = jwt.verify(token, config.jwt.secret) as JwtPayload;
+    const payload = AuthService.verifyToken(token);
 
-    const user = await UserModel.findById(decoded.id);
+    // Optionally check if user still exists in DB (adds security but also latency)
+    // For now, let's verify user exists to ensure we have fresh data
+    const user = await UserModel.findById(payload.userId);
+
     if (!user) {
-      res.status(401).json({ message: 'Invalid token' });
+      res.status(401).json({ success: false, message: 'Unauthorized - User not found' });
       return;
     }
 
     // Attach user to request
-    (req as any).user = user;
+    // Remove password hash before attaching
+    const safeUser = { ...user } as any;
+    delete safeUser.password_hash;
+
+    (req as any).user = safeUser;
+
     next();
   } catch (error) {
-    if (error instanceof jwt.TokenExpiredError) {
-      res.status(401).json({ message: 'Token expired' });
-    } else if (error instanceof jwt.JsonWebTokenError) {
-      res.status(401).json({ message: 'Invalid token' });
-    } else {
-      logger.error('Auth middleware error:', error);
-      res.status(500).json({ message: 'Internal server error' });
-    }
+    logger.error('Authentication error:', error);
+    res.status(401).json({ success: false, message: 'Unauthorized - Invalid token' });
   }
 };
