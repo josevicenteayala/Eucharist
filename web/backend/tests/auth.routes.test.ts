@@ -19,7 +19,7 @@ describe('Auth Routes Integration', () => {
     it('should register a new user', async () => {
       const res = await request(app).post('/api/v1/auth/register').send({
         email: 'integration@test.com',
-        password: 'password123',
+        password: 'Password123!',
         first_name: 'Integration',
         last_name: 'Test',
       });
@@ -34,7 +34,7 @@ describe('Auth Routes Integration', () => {
     it('should login with valid credentials', async () => {
       const res = await request(app).post('/api/v1/auth/login').send({
         email: 'integration@test.com',
-        password: 'password123',
+        password: 'Password123!',
       });
 
       expect(res.status).toBe(200);
