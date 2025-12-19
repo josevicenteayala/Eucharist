@@ -1,7 +1,7 @@
 import { Article } from '../../src/models/mongodb/article.model';
 import { mongoDb } from '../../src/config/database/mongodb';
 
-const hasMongoDB = process.env.MONGODB_URI;
+const hasMongoDB = process.env.MONGODB_URI || 'mongodb://localhost:27017/eucharist';
 
 describe('Article Model', () => {
   if (!hasMongoDB) {
